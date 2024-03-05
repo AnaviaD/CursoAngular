@@ -20,4 +20,15 @@ export class HeroComponent {
   changeAge():void {
     this.age = 20
   }
+
+  reset():void {
+    this.name = 'Ironman';
+    this.age = 45
+
+    //Errores dificiles de corregir
+    //Por eso existen las variables y la impresion de esas variables {{name}}
+    document.querySelectorAll('h1')!.forEach(element => {
+      element.innerHTML = `<h1>Desde Angular!</h1>`;
+    });
+  }
 }
