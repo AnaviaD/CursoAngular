@@ -12,7 +12,7 @@ export class HomePageComponent {
 
   }
 
-  get gifs(): Gif[]{
+  get gifList(): Gif[]{
     return this.gifServis.gifList;
   }
 
