@@ -1,21 +1,13 @@
 <div class="row">
 
-  <div *ngFor="let gif of gifs"
-  class="col-md-3 col-sm-6">
-    <div class="card mb-2 text-center bg-dark">
-
-      <!-- TODO Crear imagen -->
-      <img
-        [src]="gif.images.downsized.url"
-        [alt]="gif.title" alt=""
-        class="card-img-top"
-        >
-
-      <div class="card-body text-white">
-        <p class="card-text">
-          {{  gif.title }}
-        </p>
-      </div>
-    </div>
-  </div>
+  <!-- [gif]="gif" -->
+  <!-- Esta linea esta un poco confusa pero quiere decir que
+  en gifs-card component se declaro una variable que declaramos ahi
+  esa variable es de tipo Gif y esta siendo alimentada por el ngFor -->
+  <gifs-card
+    *ngFor="let gif of gifs"
+    [gif]="gif"
+    class="col-md-3 col-sm-6"
+  >
+  </gifs-card>
 </div>
