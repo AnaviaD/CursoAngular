@@ -12,6 +12,10 @@ export class SidebarComponent {
 
   constructor( private gifServis: GifService){}
 
+  getGifs( tagName: string ){
+    this.gifServis.searchTag(tagName);
+  }
+
   get tags(){
     return this.gifServis.tagsHistory;
   }
