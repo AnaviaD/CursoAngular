@@ -31,10 +31,10 @@
     const todayDate = new Date();
     
     // días transcurridos - elapsed time in days
-    const daysFrom: number = 23;
+    const elapsedTimeInDays: number = 23;
     
     // número de archivos en un directorio - number of files in directory
-    const dirFiles = 33;
+    const numberFilesInDirectory = 33;
     
     // primer nombre - first name
     const firstName = 'Fernando';
