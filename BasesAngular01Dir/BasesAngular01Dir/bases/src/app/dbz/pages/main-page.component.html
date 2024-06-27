@@ -8,6 +8,8 @@
   </div>
 
   <div class="col">
-    <app-dbz-add-character></app-dbz-add-character>
+    <app-dbz-add-character
+    (onNewCharacter)="onNewCharacterPadre($event)"
+    ></app-dbz-add-character>
   </div>
 </div>

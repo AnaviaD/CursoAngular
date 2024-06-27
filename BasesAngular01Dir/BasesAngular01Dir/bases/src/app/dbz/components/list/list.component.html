@@ -6,7 +6,12 @@
   let isFirst = first;
   let isLast = last;
   let isEven = even;"
-  class="list-group-item">
+  class="list-group-item "
+  [ngClass]="{
+    'list-group-item-dark'    : isLast,
+    'list-group-item-primary' : isEven
+
+  }">
 
   <span class="text-primary"> {{i + 1}}. </span>
 

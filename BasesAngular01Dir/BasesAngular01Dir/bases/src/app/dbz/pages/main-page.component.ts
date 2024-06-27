@@ -24,4 +24,10 @@ export class MainPageComponent{
       power   :7000
     }];
 
+    onNewCharacterPadre(caracter:Character): void
+    {
+      console.log('MainPage');
+      console.log(caracter);
+    }
+
 }
