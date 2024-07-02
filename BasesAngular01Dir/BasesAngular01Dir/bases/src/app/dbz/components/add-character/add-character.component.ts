@@ -19,13 +19,14 @@ export class AddCharacterComponent {
 
   emitCharacter():void
   {
+    // debugger;
     console.log(this.caracter);
 
     if (  this.caracter.name.length === 0) return;
 
     this.onNewCharacter.emit(this.caracter);
 
-    this.caracter.name = '';
-    this.caracter.power = 0;
+    //Si igualamos los valores de character esto trae problemas
+    this.caracter = {name: '', power: 0};
   }
 }
