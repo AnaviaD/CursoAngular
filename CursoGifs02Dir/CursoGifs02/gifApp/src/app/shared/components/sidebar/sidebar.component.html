@@ -5,8 +5,9 @@
 
   <div class="list-group list-reset">
     <button
+    *ngFor="let searchTag of tagsList"
      class="list-group-item list-group-item-action">
-     Valorant
+     {{ searchTag | titlecase  }}
     </button>
   </div>
 
