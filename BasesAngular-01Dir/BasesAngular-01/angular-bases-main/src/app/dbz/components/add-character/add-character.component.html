@@ -5,17 +5,20 @@ class="row"
 
 
   <input type="text"
+    [(ngModel)]="character.name"
     name="name"
     class="form-control mb-2"
     placeholder="Nombre">
 
   <input
+    [(ngModel)]="character.power"
     name="power"
     type="number"
     class="form-control mb-2"
     placeholder="Poder">
 
   <button
+  (click)="emitCharacter(character)"
   type="submit"
   class="btn btn-primary"
   >
