@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Three3DModule } from './three3-d/three3-d.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     BrowserModule,
     AppRoutingModule,
+    Three3DModule,
 
     HttpClientModule
   ],

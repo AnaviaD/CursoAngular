@@ -1,0 +1,10 @@
+.card-body {
+  position: relative;
+  width: 400px;
+  height: 400px; /* Ajusta la altura según sea necesario */
+}
+
+#three-container {
+  width: 100%;
+  height: 100%;
+}
