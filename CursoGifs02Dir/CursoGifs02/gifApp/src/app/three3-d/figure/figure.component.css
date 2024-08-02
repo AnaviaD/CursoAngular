@@ -1,10 +1,48 @@
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 20px;
+  background-color: #fff;
+}
+
 .card-body {
-  position: relative;
-  width: 400px;
-  height: 400px; /* Ajusta la altura según sea necesario */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #three-container {
   width: 100%;
-  height: 100%;
+  height: 300px; /* Ajusta la altura según sea necesario */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.details {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.details h3 {
+  margin-top: 0;
+}
+
+.details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.details ul li {
+  margin-bottom: 10px;
+}
+
+.details ul li strong {
+  font-weight: bold;
 }

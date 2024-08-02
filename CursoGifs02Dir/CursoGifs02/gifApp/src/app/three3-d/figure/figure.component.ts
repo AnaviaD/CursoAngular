@@ -12,7 +12,7 @@ import * as THREE from 'three';
 })
 export class FigureComponent implements AfterViewInit {
 
-  constructor(private elementRef: ElementRef){}
+  constructor(private elementRef: ElementRef) {}
 
   ngAfterViewInit(): void {
     const container = this.elementRef.nativeElement.querySelector('#three-container');
@@ -41,7 +41,6 @@ export class FigureComponent implements AfterViewInit {
       mesh.rotation.y = time / 1000;
       renderer.render(scene, camera);
     }
-
 
     renderer.setAnimationLoop(animate);
   }
