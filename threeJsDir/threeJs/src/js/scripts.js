@@ -90,7 +90,7 @@ gui.addColor(options, 'sphereColor').onChange(function(e){
 
 gui.add(options, 'speed', 0, 0.1);
 
-let step = 0 ;
+let step = 1;
 
 
 // box.rotation.set(5, 5, 5);
