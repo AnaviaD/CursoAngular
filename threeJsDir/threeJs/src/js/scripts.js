@@ -5,6 +5,8 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 const renderer= new THREE.WebGLRenderer();
 
+renderer.shadowMap.enabled = true;
+
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.domElement);
@@ -25,12 +27,12 @@ const axesHelper = new THREE.AxesHelper(5);
 scene.add(axesHelper);
 
 //Sirve para actualizar la posicion
-camera.position.set(0,2,5);
+camera.position.set(0,12,15);
 orbit.update();
 
 //  ==============   Agregando un cubo  ==============
 const boxGeometry = new THREE.BoxGeometry();
-const boxMaterial = new THREE.MeshBasicMaterial(
+const boxMaterial = new THREE.MeshStandardMaterial(
     {color: 0x00FF00}
 );
 const box = new THREE.Mesh(boxGeometry, boxMaterial);
@@ -39,7 +41,7 @@ scene.add(box);
 
 //  ==============   Agregando un Plano  ==============
 const planeGeometry = new THREE.PlaneGeometry(20, 20);
-const planeMaterial = new THREE.MeshBasicMaterial(
+const planeMaterial = new THREE.MeshStandardMaterial(
     {
         color: 0xFFFFFF,
         side: THREE.DoubleSide,
@@ -48,6 +50,7 @@ const planeMaterial = new THREE.MeshBasicMaterial(
 const plane = new THREE.Mesh(planeGeometry, planeMaterial);
 scene.add(plane);
 plane.rotation.set(-0.5*Math.PI, 0, 0);
+plane.receiveShadow = true;
 //  ==============   Agregando un Plano  ============== 
 
 
@@ -58,15 +61,37 @@ scene.add(gridHelper);
 
 //  ==============   Agregando una Esfera  ==============
 const sphereGeometry = new THREE.SphereGeometry(2, 10, 10);
-const sphereMaterial = new THREE.MeshBasicMaterial(
+const sphereMaterial = new THREE.MeshStandardMaterial(
     {   
         color: 0x0000FF,
-        wireframe: true,
+        wireframe: false,
     }
 );
 const spere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+spere.position.x = -5;
+spere.castShadow = true;
 scene.add(spere);
+
 //  ==============   Agregando una Esfera  ==============
+
+//Agregamos una instancia de luz de ambiente
+const ambientLight =  new THREE.AmbientLight(0x33333333);
+scene.add(ambientLight);
+
+//Agregamos luz direccional
+const directionalLight = new THREE.DirectionalLight(0xFFFFFFFF, 0.8);
+scene.add(directionalLight);
+directionalLight.position.set(-20, 20, 0);
+directionalLight.castShadow = true;
+directionalLight.shadow.camera.bottom = -12;
+
+//Agregamos un helper que nos ayude a ver de donde viene la luz dir
+const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight, 5);
+scene.add(directionalLightHelper);
+
+const dlightShadowHelper = new THREE.CameraHelper(directionalLight.shadow.camera);
+scene.add(dlightShadowHelper);
+
 
 //creamos instancia de gui
 const gui = new dat.GUI();
@@ -75,7 +100,7 @@ const gui = new dat.GUI();
 //Iteraccion con los valores del objeto
 const options = {
     sphereColor: '#ffea00',
-    wireframe: true,
+    wireframe: false,
     speed: 0.01,
 
 };
