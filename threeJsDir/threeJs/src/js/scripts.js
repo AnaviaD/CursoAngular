@@ -3,6 +3,11 @@ import * as dat from 'dat.gui';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
+//Importamos unas imagenes
+import nino01 from '../img/nino01.jpeg';
+import nino02 from '../img/nino02.jpg';
+import stars01 from '../img/stars01.jpg';
+
 const renderer= new THREE.WebGLRenderer();
 
 renderer.shadowMap.enabled = true;
@@ -40,7 +45,7 @@ scene.add(box);
 //  ==============   Agregando un cubo  ==============
 
 //  ==============   Agregando un Plano  ==============
-const planeGeometry = new THREE.PlaneGeometry(20, 20);
+const planeGeometry = new THREE.PlaneGeometry(5, 1);
 const planeMaterial = new THREE.MeshStandardMaterial(
     {
         color: 0xFFFFFF,
@@ -55,7 +60,7 @@ plane.receiveShadow = true;
 
 
 //  Agregamos la separacion del plano
-const gridHelper = new THREE.GridHelper(20, 40);
+const gridHelper = new THREE.GridHelper(20, 10);
 scene.add(gridHelper);
 
 
@@ -72,25 +77,57 @@ spere.position.x = -5;
 spere.castShadow = true;
 scene.add(spere);
 
-//  ==============   Agregando una Esfera  ==============
 
-//Agregamos una instancia de luz de ambiente
-const ambientLight =  new THREE.AmbientLight(0x33333333);
-scene.add(ambientLight);
+// const spotLight = new THREE.SpotLight(0xffffff, 1);
+// scene.add(spotLight);
+// spotLight.position.set(0, 10, 10);
+// spotLight.castShadow = true;
+// spotLight.angle = 0.2;
 
-//Agregamos luz direccional
-const directionalLight = new THREE.DirectionalLight(0xFFFFFFFF, 0.8);
+// const spotLightHelper = new THREE.SpotLightHelper(spotLight);
+// scene.add(spotLightHelper);
+
+// ========== Agregamos una instancia de luz de ambiente ==========
+// const ambientLight =  new THREE.AmbientLight(0x404040, 10);
+// scene.add(ambientLight);
+
+//================= Agregamos luz direccional   =================
+const directionalLight = new THREE.DirectionalLight(0xFFFFFFFF, 1);
 scene.add(directionalLight);
 directionalLight.position.set(-20, 20, 0);
 directionalLight.castShadow = true;
 directionalLight.shadow.camera.bottom = -12;
 
 //Agregamos un helper que nos ayude a ver de donde viene la luz dir
-const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight, 5);
+const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight, 50);
 scene.add(directionalLightHelper);
-
 const dlightShadowHelper = new THREE.CameraHelper(directionalLight.shadow.camera);
 scene.add(dlightShadowHelper);
+
+// //Creamos una instancia de el cargador de texturas
+const textureLoader = new THREE.TextureLoader();
+// scene.background = textureLoader.load(stars01);
+
+//Cargamos imagenes como background de las imag
+const cubeTextureLoader = new THREE.CubeTextureLoader();
+scene.background = cubeTextureLoader.load([
+    nino01,
+    nino02,
+    nino02,
+    stars01,
+    nino01,
+    nino02
+]);
+
+// ==================== Agregamos Cubo 02   ====================
+//Tenemos que crear el cubo despues porque tiene que cargar el texture loader
+const box02Geometry = new THREE.BoxGeometry(4, 4, 4);
+const box02Material = new THREE.MeshBasicMaterial({
+    map: textureLoader.load(nino01)
+});
+const box02 = new THREE.Mesh(box02Geometry, box02Material);
+scene.add(box02);
+box02.position.set(0, 5, -10);
 
 
 //creamos instancia de gui
@@ -102,6 +139,9 @@ const options = {
     sphereColor: '#ffea00',
     wireframe: false,
     speed: 0.01,
+    angle: 0.01,
+    penumbra: 0,
+    intensity: 1,
 
 };
 
@@ -114,6 +154,9 @@ gui.addColor(options, 'sphereColor').onChange(function(e){
 });
 
 gui.add(options, 'speed', 0, 0.1);
+gui.add(options, 'angle', 0, 1);
+gui.add(options, 'penumbra', 0, 1);
+gui.add(options, 'intensity', 0, 10);
 
 let step = 1;
 
@@ -123,8 +166,14 @@ function animate(time) {
     box.rotation.x = time/1000;
     box.rotation.y = time/1000;
 
+    //Tomamos los valores de options y actualizamos las cosas    
     step += options.speed;
     spere.position.y = 10 * Math.abs(Math.sin(step));
+
+    directionalLight.setSize = options.angle;
+    directionalLight.penumbra = options.penumbra;
+    directionalLight.intensity = options.intensity;
+    directionalLightHelper.update();
 
     renderer.render(scene, camera);
 }
