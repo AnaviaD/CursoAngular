@@ -160,6 +160,21 @@ gui.add(options, 'intensity', 0, 10);
 
 let step = 1;
 
+//Creamos una instancia de la posicion del mouse
+const mousePosition = new THREE.Vector2();
+
+//Creamos una constancia para poder seleccionar objetos
+window.addEventListener('mousemove', function(e){
+    mousePosition.x (e.clientX /window.innerWidth) * 2 - 1;
+    mousePosition.y (e.clientX /window.innerHeight) * 2 - 1;
+}); 
+
+//Creamos una instancia del Raycaster
+const rayCaster = new THREE.Raycaster();
+
+const spereId = spere.id;
+
+
 
 // box.rotation.set(5, 5, 5);
 function animate(time) {
@@ -174,6 +189,17 @@ function animate(time) {
     directionalLight.penumbra = options.penumbra;
     directionalLight.intensity = options.intensity;
     directionalLightHelper.update();
+
+    rayCaster.setFromCamera(mousePosition, camera);
+    const intersects = rayCaster.intersectObjects(scene.children);
+    console.log(intersects);
+
+    for (let index = 0; index < intersects.length; index++) {
+        if (intersects[index].object.id === spereId) {
+            intersects[index].object.material.color.set(0xFF0000);
+        }
+        
+    }
 
     renderer.render(scene, camera);
 }
