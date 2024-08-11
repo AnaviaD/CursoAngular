@@ -165,8 +165,8 @@ const mousePosition = new THREE.Vector2();
 
 //Creamos una constancia para poder seleccionar objetos
 window.addEventListener('mousemove', function(e){
-    mousePosition.x (e.clientX /window.innerWidth) * 2 - 1;
-    mousePosition.y (e.clientX /window.innerHeight) * 2 - 1;
+    mousePosition.x =  (e.clientX /window.innerWidth) * 2 - 1;
+    mousePosition.y = - (e.clientY /window.innerHeight) * 2 + 1;
 }); 
 
 //Creamos una instancia del Raycaster
