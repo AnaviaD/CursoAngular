@@ -1,12 +1,17 @@
 import * as THREE from 'three';
 import * as dat from 'dat.gui';
 
+//Esta libreria es para la camara
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+//Esta libreria es para cargar objetos glb 
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 //Importamos unas imagenes
 import nino01 from '../img/nino01.jpeg';
 import nino02 from '../img/nino02.jpg';
 import stars01 from '../img/stars01.jpg';
+
+const weightUrl = new URL('../assets/Weight.glb', import.meta.url);
 
 const renderer= new THREE.WebGLRenderer();
 
@@ -45,7 +50,7 @@ scene.add(box);
 //  ==============   Agregando un cubo  ==============
 
 //  ==============   Agregando un Plano  ==============
-const planeGeometry = new THREE.PlaneGeometry(5, 1);
+const planeGeometry = new THREE.PlaneGeometry(20, 20);
 const planeMaterial = new THREE.MeshStandardMaterial(
     {
         color: 0xFFFFFF,
@@ -129,6 +134,20 @@ const box02 = new THREE.Mesh(box02Geometry, box02Material);
 scene.add(box02);
 box02.position.set(0, 5, -10);
 
+// ==================== Agregamos Otro plano   ====================
+
+
+//creamos una instancia de el cargador de archivos glb
+const assetLoader = new GLTFLoader();
+
+assetLoader.load(weightUrl.href, function(gltf) {
+    const model = gltf.scene;
+    scene.add(model);
+    model.position.set(-12, 4, 10);
+}, undefined, function(err){
+    console.error(err);
+});
+
 
 //creamos instancia de gui
 const gui = new dat.GUI();
@@ -173,6 +192,7 @@ window.addEventListener('mousemove', function(e){
 const rayCaster = new THREE.Raycaster();
 
 const spereId = spere.id;
+box02.name = 'theBox02';
 
 
 
@@ -192,11 +212,16 @@ function animate(time) {
 
     rayCaster.setFromCamera(mousePosition, camera);
     const intersects = rayCaster.intersectObjects(scene.children);
-    console.log(intersects);
+    // console.log(intersects);
 
     for (let index = 0; index < intersects.length; index++) {
         if (intersects[index].object.id === spereId) {
             intersects[index].object.material.color.set(0xFF0000);
+        }
+
+        if (intersects[index].object.name === 'theBox02') {
+            intersects[index].object.rotation.x = time/1000;
+            intersects[index].object.rotation.y = time/1000;
         }
         
     }
@@ -205,3 +230,9 @@ function animate(time) {
 }
 
 renderer.setAnimationLoop(animate);
+
+window.addEventListener('resize', function () {
+    camera.aspect = this.window.innerWidth / this.window.innerHeight;
+    camera.updateWorldMatrix();
+    renderer.setSize(this.window.innerWidth, this.window.innerHeight);
+});
