@@ -1,18 +1,45 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+import { RGBELoader } from 'three/addons/loaders/RGBELoader.js'
 import Stats from 'three/addons/libs/stats.module.js'
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js'
 
 const scene = new THREE.Scene()
 
-const gridHelper = new THREE.GridHelper()
-scene.add(gridHelper)
+// const environmentTexture = new THREE.CubeTextureLoader().setPath('https://sbcode.net/img/').load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'])
+// scene.environment = environmentTexture
+// scene.background = environmentTexture
+
+// const hdr = 'https://sbcode.net/img/rustig_koppie_puresky_1k.hdr'
+const hdr = 'https://sbcode.net/img/venice_sunset_1k.hdr'
+//const hdr = 'https://sbcode.net/img/spruit_sunrise_1k.hdr'
+
+let environmentTexture: THREE.DataTexture
+
+new RGBELoader().load(hdr, (texture) => {
+  environmentTexture = texture
+  environmentTexture.mapping = THREE.EquirectangularReflectionMapping
+  scene.environment = environmentTexture
+  scene.background = environmentTexture
+  scene.environmentIntensity = 1 // added in Three r163
+})
+
+const directionallight = new THREE.DirectionalLight(0xebfeff, Math.PI)
+directionallight.position.set(1, 0.1, 1)
+directionallight.visible = false
+scene.add(directionallight)
+
+const ambientLight = new THREE.AmbientLight(0xebfeff, Math.PI / 16)
+ambientLight.visible = false
+scene.add(ambientLight)
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100)
-camera.position.set(-1, 4, 2.5)
+camera.position.set(-2, 0.5, 2)
 
 const renderer = new THREE.WebGLRenderer({ antialias: true })
+renderer.toneMapping = THREE.ACESFilmicToneMapping
 renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
 
@@ -25,179 +52,99 @@ window.addEventListener('resize', () => {
 const controls = new OrbitControls(camera, renderer.domElement)
 controls.enableDamping = true
 
-const plane = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.MeshStandardMaterial())
+const texture = new THREE.TextureLoader().load('https://sbcode.net/img/grid.png')
+texture.colorSpace = THREE.SRGBColorSpace
+
+const material = new THREE.MeshPhysicalMaterial()
+material.side = THREE.DoubleSide
+// material.envMapIntensity = 0.7
+// material.roughness = 0.17
+// material.metalness = 0.07
+// material.clearcoat = 0.43
+// material.iridescence = 1
+// material.transmission = 1
+// material.thickness = 5.12
+// material.ior = 1.78
+
+const plane = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), material)
 plane.rotation.x = -Math.PI / 2
+plane.position.y = -1
+plane.visible = false
 scene.add(plane)
 
-const data = { color: 0x00ff00, lightColor: 0xffffff }
+new GLTFLoader().load('https://sbcode.net/models/suzanne_no_material.glb', (gltf) => {
+  gltf.scene.traverse((child) => {
+    ;(child as THREE.Mesh).material = material
+  })
+  scene.add(gltf.scene)
+})
 
-const geometry = new THREE.IcosahedronGeometry(1, 1)
-
-const meshes = [
-  new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: data.color })),
-  new THREE.Mesh(geometry, new THREE.MeshNormalMaterial({ flatShading: true })),
-  new THREE.Mesh(geometry, new THREE.MeshPhongMaterial({ color: data.color, flatShading: true })),
-  new THREE.Mesh(geometry, new THREE.MeshStandardMaterial({ color: data.color, flatShading: true })),
-]
-
-meshes[0].position.set(-3, 1, 0)
-meshes[1].position.set(-1, 1, 0)
-meshes[2].position.set(1, 1, 0)
-meshes[3].position.set(3, 1, 0)
-
-scene.add(...meshes)
+const data = { environment: true, background: true, mapEnabled: false, planeVisible: false }
 
 const gui = new GUI()
 
-// #region AmbientLight
-
-const ambientLight = new THREE.AmbientLight(data.lightColor, Math.PI)
-ambientLight.visible = false
-scene.add(ambientLight)
-
-const ambientLightFolder = gui.addFolder('AmbientLight')
-ambientLightFolder.add(ambientLight, 'visible')
-ambientLightFolder.addColor(data, 'lightColor').onChange(() => {
-  ambientLight.color.set(data.lightColor)
+gui.add(data, 'environment').onChange(() => {
+  if (data.environment) {
+    scene.environment = environmentTexture
+    directionallight.visible = false
+    ambientLight.visible = false
+  } else {
+    scene.environment = null
+    directionallight.visible = true
+    ambientLight.visible = true
+  }
 })
-ambientLightFolder.add(ambientLight, 'intensity', 0, Math.PI)
 
-// #endregion
+gui.add(scene, 'environmentIntensity', 0, 2, 0.01) // new in Three r163. Can be used instead of `renderer.toneMapping` with `renderer.toneMappingExposure`
 
-// #region DirectionalLight
+gui.add(renderer, 'toneMappingExposure', 0, 2, 0.01)
 
-const directionalLight = new THREE.DirectionalLight(data.lightColor, Math.PI)
-directionalLight.position.set(1, 1, 1)
-scene.add(directionalLight)
-
-const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight)
-directionalLightHelper.visible = false
-scene.add(directionalLightHelper)
-
-const directionalLightFolder = gui.addFolder('DirectionalLight')
-directionalLightFolder.add(directionalLight, 'visible')
-directionalLightFolder.addColor(data, 'lightColor').onChange(() => {
-  directionalLight.color.set(data.lightColor)
+gui.add(data, 'background').onChange(() => {
+  if (data.background) {
+    scene.background = environmentTexture
+  } else {
+    scene.background = null
+  }
 })
-directionalLightFolder.add(directionalLight, 'intensity', 0, Math.PI * 10)
 
-const directionalLightFolderControls = directionalLightFolder.addFolder('Controls')
-directionalLightFolderControls.add(directionalLight.position, 'x', -1, 1, 0.001).onChange(() => {
-  directionalLightHelper.update()
-})
-directionalLightFolderControls.add(directionalLight.position, 'y', -1, 1, 0.001).onChange(() => {
-  directionalLightHelper.update()
-})
-directionalLightFolderControls.add(directionalLight.position, 'z', -1, 1, 0.001).onChange(() => {
-  directionalLightHelper.update()
-})
-directionalLightFolderControls.add(directionalLightHelper, 'visible').name('Helper Visible')
-directionalLightFolderControls.close()
+gui.add(scene, 'backgroundBlurriness', 0, 1, 0.01)
 
-// #endregion
-
-// #region Pointlight
-
-const pointLight = new THREE.PointLight(data.lightColor, Math.PI)
-pointLight.position.set(2, 0, 0)
-pointLight.visible = false
-scene.add(pointLight)
-
-const pointLightHelper = new THREE.PointLightHelper(pointLight)
-pointLightHelper.visible = false
-scene.add(pointLightHelper)
-
-const pointLightFolder = gui.addFolder('Pointlight')
-pointLightFolder.add(pointLight, 'visible')
-pointLightFolder.addColor(data, 'lightColor').onChange(() => {
-  pointLight.color.set(data.lightColor)
+gui.add(data, 'mapEnabled').onChange(() => {
+  if (data.mapEnabled) {
+    material.map = texture
+  } else {
+    material.map = null
+  }
+  material.needsUpdate = true
 })
-pointLightFolder.add(pointLight, 'intensity', 0, Math.PI * 10)
 
-const pointLightFolderControls = pointLightFolder.addFolder('Controls')
-pointLightFolderControls.add(pointLight.position, 'x', -10, 10)
-pointLightFolderControls.add(pointLight.position, 'y', -10, 10)
-pointLightFolderControls.add(pointLight.position, 'z', -10, 10)
-pointLightFolderControls.add(pointLight, 'distance', 0, 20).onChange(() => {
-  spotLightHelper.update()
+gui.add(data, 'planeVisible').onChange((v) => {
+  plane.visible = v
 })
-pointLightFolderControls.add(pointLight, 'decay', 0, 10).onChange(() => {
-  spotLightHelper.update()
-})
-pointLightFolderControls.add(pointLightHelper, 'visible').name('Helper Visible')
-pointLightFolderControls.close()
 
-// #endregion
-
-// #region Spotlight
-
-const spotLight = new THREE.SpotLight(data.lightColor, Math.PI)
-spotLight.position.set(3, 2.5, 1)
-spotLight.visible = false
-//spotLight.target.position.set(5, 0, -5)
-scene.add(spotLight)
-
-const spotLightHelper = new THREE.SpotLightHelper(spotLight)
-spotLightHelper.visible = false
-scene.add(spotLightHelper)
-
-const spotLightFolder = gui.addFolder('Spotlight')
-spotLightFolder.add(spotLight, 'visible')
-spotLightFolder.addColor(data, 'lightColor').onChange(() => {
-  spotLight.color.set(data.lightColor)
-})
-spotLightFolder.add(spotLight, 'intensity', 0, Math.PI * 10)
-
-const spotLightFolderControls = spotLightFolder.addFolder('Controls')
-spotLightFolderControls.add(spotLight.position, 'x', -10, 10).onChange(() => {
-  spotLightHelper.update()
-})
-spotLightFolderControls.add(spotLight.position, 'y', -10, 10).onChange(() => {
-  spotLightHelper.update()
-})
-spotLightFolderControls.add(spotLight.position, 'z', -10, 10).onChange(() => {
-  spotLightHelper.update()
-})
-spotLightFolderControls.add(spotLight, 'distance', 0, 20).onChange(() => {
-  spotLightHelper.update()
-})
-spotLightFolderControls.add(spotLight, 'decay', 0, 10).onChange(() => {
-  spotLightHelper.update()
-})
-spotLightFolderControls.add(spotLight, 'angle', 0, 1).onChange(() => {
-  spotLightHelper.update()
-})
-spotLightFolderControls.add(spotLight, 'penumbra', 0, 1, 0.001).onChange(() => {
-  spotLightHelper.update()
-})
-spotLightFolderControls.add(spotLightHelper, 'visible').name('Helper Visible')
-spotLightFolderControls.close()
-
-// #endregion
+const materialFolder = gui.addFolder('meshPhysicalMaterial')
+materialFolder.add(material, 'envMapIntensity', 0, 1.0, 0.01).onChange(() => {
+  // Since r163, `envMap` is no longer copied from `scene.environment`. You will need to manually copy it, if you want to modify `envMapIntensity`
+  if (!material.envMap) {
+    material.envMap = scene.environment
+  }
+}) // from meshStandardMaterial
+materialFolder.add(material, 'roughness', 0, 1.0, 0.01) // from meshStandardMaterial
+materialFolder.add(material, 'metalness', 0, 1.0, 0.01) // from meshStandardMaterial
+materialFolder.add(material, 'clearcoat', 0, 1.0, 0.01)
+materialFolder.add(material, 'iridescence', 0, 1.0, 0.01)
+materialFolder.add(material, 'transmission', 0, 1.0, 0.01)
+materialFolder.add(material, 'thickness', 0, 10.0, 0.01)
+materialFolder.add(material, 'ior', 1.0, 2.333, 0.01)
+materialFolder.close()
 
 const stats = new Stats()
 document.body.appendChild(stats.dom)
-
-const labels = document.querySelectorAll<HTMLDivElement>('.label')
-
-let x, y
-const v = new THREE.Vector3()
 
 function animate() {
   requestAnimationFrame(animate)
 
   controls.update()
-
-  for (let i = 0; i < 4; i++) {
-    v.copy(meshes[i].position)
-    v.project(camera)
-
-    x = ((1 + v.x) / 2) * innerWidth - 50
-    y = ((1 - v.y) / 2) * innerHeight
-
-    labels[i].style.left = x + 'px'
-    labels[i].style.top = y + 'px'
-  }
 
   renderer.render(scene, camera)
 
