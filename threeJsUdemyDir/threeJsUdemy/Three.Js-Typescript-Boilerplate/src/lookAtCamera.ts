@@ -60,19 +60,21 @@ scene.add(directionalLight);
 function animate() {
   requestAnimationFrame(animate);
   controls.update();
+
   
-  camera.lookAt(targetLook);
-
+  // camera.lookAt(targetLook);
+  
   if (isAnimating) {
-      // Interpola la posición de la cámara hacia la posición objetivo
-      camera.position.lerp(targetPosition, 0.1);
-
-      // Interpola la dirección en la que la cámara mira hacia el cubo objetivo
-      camera.lookAt(targetLook);
-
-      // Detener la animación si la cámara está cerca de la posición objetivo
-      if (camera.position.distanceTo(targetPosition) < 0.1) {
-          isAnimating = false;
+    // Interpola la posición de la cámara hacia la posición objetivo
+    camera.position.lerp(targetPosition, 0.1);
+    
+    // Interpola la dirección en la que la cámara mira hacia el cubo objetivo
+    camera.lookAt(targetLook);
+    
+    // Detener la animación si la cámara está cerca de la posición objetivo
+    if (camera.position.distanceTo(targetPosition) < 0.1) {
+      controls.target.set(targetLook.x, targetLook.y, targetLook.z);
+      isAnimating = false;
       }
   }
 
