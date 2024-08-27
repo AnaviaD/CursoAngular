@@ -33,7 +33,7 @@ plane.rotation.x = -Math.PI / 2;
 scene.add(plane);
 
 // Función para generar cubos aleatoriamente en el plano
-const cubes = [];
+const cubes: Array<THREE.Mesh<THREE.BoxGeometry>> = [];
 const cubeGeometry = new THREE.BoxGeometry(2, 2, 2);
 const cubeMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
 
@@ -80,7 +80,7 @@ function animate() {
 }
 
 // Detectar clic en los cubos y mover la cámara
-function onMouseClick(event) {
+function onMouseClick(event: { clientX: number; clientY: number; }) {
   const mouse = new THREE.Vector2(
       (event.clientX / window.innerWidth) * 2 - 1,
       -(event.clientY / window.innerHeight) * 2 + 1
