@@ -1,0 +1,17 @@
+/* styles.css o el archivo CSS específico del componente */
+shared-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px; /* Ancho del sidebar */
+  height: 100%;
+  z-index: 1000; /* Asegura que esté sobre otros elementos */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilos para el contenido principal */
+.main-content {
+
+  position: relative; /* Necesario para superponer elementos */
+}
