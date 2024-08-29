@@ -1,12 +1,10 @@
-
-  <div class="col-3">
-    <shared-sidebar></shared-sidebar>
+<div class="main-content">
+  <div class="sidebar-container">
+    <div class="col-3 sidebar">
+      <shared-sidebar></shared-sidebar>
+    </div>
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-
-
-  <div >
-    <!-- <shared-home-page></shared-home-page> -->
-    <!-- <shared-about-page></shared-about-page> -->
-     <router-outlet></router-outlet>
-  </div>
-
+</div>
