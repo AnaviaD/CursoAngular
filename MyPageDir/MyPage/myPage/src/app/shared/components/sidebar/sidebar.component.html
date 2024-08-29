@@ -1,4 +1,4 @@
-  <ul class="list-group">
+  <!-- <ul class="list-group">
 
     <li routerLink=""
         routerLinkActive="active"
@@ -25,4 +25,44 @@
       Contact Page
     </li>
 
-  </ul>
+  </ul> -->
+
+  <div class="sidenav" [ngClass]="collapsed_ ? 'sidenav-collapsed': '' " >
+    <div class="logo-container">
+      <button class="logo">A</button>
+      <div
+        class="logo-text"
+        *ngIf="collapsed_"
+        >Angular</div>
+      <button
+        class="btn-close"
+        *ngIf="collapsed_"
+        >
+        <i
+          class="fal fa-times close-icon"
+          ></i>
+    </button>
+    </div>
+
+    <ul class="sidenav-nav">
+      <li
+        class="sidenav-nav-item"
+        *ngfor="let data of navData">
+
+        <a
+          href="" class="sidenav-nav-link"
+          routerLink = "data.routeLink">
+
+          <i
+            class="sidenav-link-icon"
+            [class] = "data.icon"
+            ></i>
+          <span
+            class="sidenav-link-text"
+            *ngIf="collapsed_"
+            {{data.label}}
+            ></span>
+        </a>
+      </li>
+    </ul>
+  </div>
