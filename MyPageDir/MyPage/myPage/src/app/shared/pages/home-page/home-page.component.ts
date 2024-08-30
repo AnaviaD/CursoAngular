@@ -8,13 +8,13 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HomePageComponent {
 
-  // constructor(private translate: TranslateService) {
-  //   // Establecer el idioma predeterminado
-  //   this.translate.setDefaultLang('en');
-  // }
+  constructor(private translate: TranslateService) {
+    // Establecer el idioma predeterminado
+    this.translate.setDefaultLang('en');
+  }
 
-  // switchLanguage(language: string) {
-  //   this.translate.use(language);
-  // }
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
 
 }

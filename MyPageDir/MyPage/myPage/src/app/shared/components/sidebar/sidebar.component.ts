@@ -23,7 +23,7 @@ export class SidebarComponent {
 
   constructor(private translate: TranslateService) {
     // Establecer el idioma predeterminado
-    this.translate.setDefaultLang('en');
+    this.translate.setDefaultLang('es');
   }
 
   switchLanguage(language: string) {
