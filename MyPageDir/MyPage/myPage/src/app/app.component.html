@@ -1,7 +1,7 @@
-<div class="main-content">
-  <div class="sidebar-container">
-    <div class="col-3 sidebar">
-      <shared-sidebar></shared-sidebar>
+<div>
+  <div>
+    <div>
+      <shared-sidebar (onToggleSideNav)="onToggleSideNav($event)"></shared-sidebar>
     </div>
     <div class="col">
       <router-outlet></router-outlet>

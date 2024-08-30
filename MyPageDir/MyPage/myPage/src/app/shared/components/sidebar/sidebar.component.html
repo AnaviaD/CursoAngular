@@ -29,15 +29,16 @@
 
   <div class="sidenav" [ngClass]="collapsed_ ? 'sidenav-collapsed': '' " >
     <div class="logo-container">
-      <button class="logo">A</button>
+      <button class="logo" (click)="toggleCollapse()">A</button>
       <div
         class="logo-text"
         *ngIf="collapsed_"
         >Angular</div>
       <button
         class="btn-close"
-        *ngIf="collapsed_"
-        >
+        (click) = "closeSidebar()"
+        *ngIf="collapsed_">
+
         <i
           class="fal fa-times close-icon"
           ></i>
@@ -47,11 +48,11 @@
     <ul class="sidenav-nav">
       <li
         class="sidenav-nav-item"
-        *ngfor="let data of navData">
+        *ngFor="let data of navData">
 
         <a
           href="" class="sidenav-nav-link"
-          routerLink = "data.routeLink">
+          [routerLink] = "[data.routeLink]">
 
           <i
             class="sidenav-link-icon"
@@ -60,8 +61,7 @@
           <span
             class="sidenav-link-text"
             *ngIf="collapsed_"
-            {{data.label}}
-            ></span>
+            >{{data.label}}</span>
         </a>
       </li>
     </ul>
