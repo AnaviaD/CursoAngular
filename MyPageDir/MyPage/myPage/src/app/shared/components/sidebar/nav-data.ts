@@ -7,7 +7,32 @@ export const navbarData =
   },
   {
     routeLink: 'opening/welcome',
-    icon: 'fal fa-home',
+    icon: 'fal fa-truck',
+    label:'MainPage'
+  },
+  {
+    routeLink: 'opening/welcome',
+    icon: 'fal fa-car',
+    label:'MainPage'
+  },
+  {
+    routeLink: 'opening/welcome',
+    icon: 'fal fa-school',
+    label:'MainPage'
+  },
+  {
+    routeLink: 'opening/welcome',
+    icon: 'fal fa-gamepad',
+    label:'MainPage'
+  },
+  {
+    routeLink: 'opening/welcome',
+    icon: 'fal fa-rocket',
+    label:'MainPage'
+  },
+  {
+    routeLink: 'opening/welcome',
+    icon: 'fal fa-ship',
     label:'MainPage'
   }
 ];
