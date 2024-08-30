@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { navbarData } from './nav-data';
+import { TranslateService } from '@ngx-translate/core';
 
 interface SideNavToggle{
   screenWidth: number;
@@ -19,6 +20,15 @@ export class SidebarComponent {
   collapsed_ = false;
   screenWidth = 0;
   navData =  navbarData;
+
+  constructor(private translate: TranslateService) {
+    // Establecer el idioma predeterminado
+    this.translate.setDefaultLang('en');
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
 
   toggleCollapse() {
     this.collapsed_= !this.collapsed_;

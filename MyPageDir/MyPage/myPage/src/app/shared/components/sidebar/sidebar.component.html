@@ -27,42 +27,79 @@
 
   </ul> -->
 
-  <div class="sidenav" [ngClass]="collapsed_ ? 'sidenav-collapsed': '' " >
-    <div class="logo-container">
-      <button class="logo" (click)="toggleCollapse()">A</button>
-      <div
-        class="logo-text"
-        *ngIf="collapsed_"
-        >Angular</div>
-      <button
-        class="btn-close"
-        (click) = "closeSidebar()"
-        *ngIf="collapsed_">
+<div class="sidenav" [ngClass]="collapsed_ ? 'sidenav-collapsed': '' " >
+  <div class="logo-container">
+    <button class="logo" (click)="toggleCollapse()">A</button>
+    <div
+      class="logo-text"
+      *ngIf="collapsed_"
+      >Angular</div>
+    <button
+      class="btn-close"
+      (click) = "closeSidebar()"
+      *ngIf="collapsed_">
+
+      <i
+        class="fal fa-times close-icon"
+        ></i>
+  </button>
+  </div>
+
+  <ul class="sidenav-nav">
+    <li
+      class="sidenav-nav-item"
+      *ngFor="let data of navData">
+
+      <a
+        href="" class="sidenav-nav-link"
+        [routerLink] = "[data.routeLink]">
 
         <i
-          class="fal fa-times close-icon"
+          class="sidenav-link-icon"
+          [class] = "data.icon"
           ></i>
-    </button>
-    </div>
+        <span
+          class="sidenav-link-text"
+          *ngIf="collapsed_"
+          >{{data.label}}</span>
+      </a>
+    </li>
 
-    <ul class="sidenav-nav">
-      <li
-        class="sidenav-nav-item"
-        *ngFor="let data of navData">
+    <li
+      class="sidenav-nav-item"
+      >
 
-        <a
-          href="" class="sidenav-nav-link"
-          [routerLink] = "[data.routeLink]">
+      <a
+        href="" class="sidenav-nav-link"
+        (click)="switchLanguage('en')"
+        >
 
-          <i
-            class="sidenav-link-icon"
-            [class] = "data.icon"
-            ></i>
-          <span
-            class="sidenav-link-text"
-            *ngIf="collapsed_"
-            >{{data.label}}</span>
-        </a>
-      </li>
-    </ul>
-  </div>
+        <i
+          class="sidenav-link-icon fal fa-ship"
+          ></i>
+        <span
+          class="sidenav-link-text"
+          *ngIf="collapsed_"
+          >ENG</span>
+      </a>
+    </li>
+
+    <li
+      class="sidenav-nav-item"
+      >
+      <a
+        href="" class="sidenav-nav-link"
+        (click)="switchLanguage('es')"
+        >
+
+        <i
+          class="sidenav-link-icon fal fa-ship"
+          ></i>
+        <span
+          class="sidenav-link-text"
+          *ngIf="collapsed_"
+          >ESP</span>
+      </a>
+    </li>
+  </ul>
+</div>
