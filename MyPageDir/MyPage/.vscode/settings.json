@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/58cd6367-25ba-42eb-88fb-eecbaf0f7ac6/resourceGroups/desarrollo/providers/Microsoft.Web/sites/albertodev",
+    "appService.deploySubpath": "myPage\\dist\\my-page"
+}
