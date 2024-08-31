@@ -6,7 +6,10 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 
-
+//Translate imports
+import {  HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 @NgModule({
@@ -14,11 +17,19 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
     HomePageComponent,
     AboutPageComponent,
     SidebarComponent,
-    ContactPageComponent
+    ContactPageComponent,
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   exports: [
     HomePageComponent,
@@ -28,3 +39,8 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
   ]
 })
 export class SharedModule { }
+
+//Esta funcion es la encargada de mandar la traduccion correcta
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, "../assets/i18n/", ".json");
+}
