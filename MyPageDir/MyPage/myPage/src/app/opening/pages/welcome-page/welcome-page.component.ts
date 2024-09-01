@@ -7,7 +7,7 @@ import { GUI } from 'dat.gui';
 @Component({
   selector: 'app-welcome-page',
   templateUrl: './welcome-page.component.html',
-  styleUrl: 'welcome-page.component.css'
+  styleUrls: ['welcome-page.component.css']
 })
 export class WelcomePageComponent implements AfterViewInit {
 

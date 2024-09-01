@@ -69,12 +69,15 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "myPage:build"
+          },
           "configurations": {
             "production": {
-              "buildTarget": "myPage:build:production"
+              "browserTarget": "myPage:build:production"
             },
             "development": {
-              "buildTarget": "myPage:build:development"
+              "browserTarget": "myPage:build:development"
             }
           },
           "defaultConfiguration": "development"

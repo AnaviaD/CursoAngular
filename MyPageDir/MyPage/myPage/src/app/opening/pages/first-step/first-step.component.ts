@@ -4,7 +4,6 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-first-step',
   templateUrl: './first-step.component.html',
-  styles: ``
 })
 export class FirstStepComponent {
 
