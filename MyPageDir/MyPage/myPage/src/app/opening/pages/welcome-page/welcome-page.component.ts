@@ -44,6 +44,7 @@ export class WelcomePageComponent implements AfterViewInit {
     let targetLook = new THREE.Vector3();
     let isAnimating = false; // Bandera para indicar si se está animando
     let isRotating = false; // Bandera para indicar si se está rotando
+    let isPosicion = false; // Bandera para indicar si se está rotando
     let previousTime = 0;
 
 
@@ -58,6 +59,9 @@ export class WelcomePageComponent implements AfterViewInit {
 
     // Añadir controles de órbita
     const controls = new OrbitControls(camera, renderer.domElement);
+    // Limitar el ángulo de inclinación (elevación) de la cámara
+    controls.minPolarAngle = THREE.MathUtils.degToRad(30); // 30 grados
+    controls.maxPolarAngle = THREE.MathUtils.degToRad(70); // 70 grados
     controls.update();
 
     // Crear el plano (piso)
@@ -108,7 +112,13 @@ export class WelcomePageComponent implements AfterViewInit {
       }
 
       //Va a checar si el objetivo esta cerca de la camara
-      if ((camera.position.distanceTo(targetPosition) < 15.15) && !isAnimating) {
+      if ((camera.position.distanceTo(targetPosition) < 15.15) || (camera.position.distanceTo(targetPosition) < 10.15) && !isAnimating) {
+        posicionateCamera();
+      }else{
+        isPosicion = false;
+      }
+
+      if (isRotating) {
         rotateCameraAnimation(deltaTime);
       }else{
         isRotating = false;
@@ -117,15 +127,55 @@ export class WelcomePageComponent implements AfterViewInit {
       renderer.render(scene, camera);
     }
 
+    function posicionateCamera(){
+      const x = targetPosition.x + 12 * Math.sin(rotationSpeed);
+      const z = targetPosition.z + 12 * Math.cos(rotationSpeed);
+
+      function animatePosition() {
+
+        if (isPosicion) {
+          console.log("posicionando");
+
+          // Calcula la nueva posición de la cámara
+
+
+          targetPositionRotation.set(
+            x,
+            camera.position.y,
+            z
+          );
+
+
+          // camera.position.set(x , camera.position.y, z);
+          camera.position.lerp(targetPositionRotation, .01);
+
+          // Mantén la cámara mirando al objetivo
+          camera.lookAt(targetLook);
+
+          console.log("antes del if", camera.position.distanceTo(targetPositionRotation))
+
+          if ((camera.position.distanceTo(targetPositionRotation) < 0.15) || (camera.position.distanceTo(targetPositionRotation) < 0.20)) {
+            console.log("despues del if", camera.position.distanceTo(targetPositionRotation))
+            isRotating = true;
+          }
+
+          // Continua la animación en el siguiente frame
+          requestAnimationFrame(animatePosition);
+        }
+      }
+      // Inicia la rotación
+      animatePosition();
+    }
+
     function rotateCameraAnimation(deltaTime: number){
       // Define el radio y el ángulo de rotación
-      let radius = 10;
+      let radius = 12;
 
       function animateRotation() {
 
         if (isRotating) {
 
-
+          isPosicion = false;
           // Calcula la nueva posición de la cámara
           angle += rotationSpeed;
 
@@ -156,16 +206,20 @@ export class WelcomePageComponent implements AfterViewInit {
 
     function cameraOnClickAnimation(){
 
-      camera.position.lerp(targetPosition, 0.1);
+      controls.target.set(targetPosition.x, targetPosition.y, targetPosition.z);
+      camera.position.lerp(targetPosition, 0.40);
 
       // Interpola la dirección en la que la cámara mira hacia el cubo objetivo
       camera.lookAt(targetLook);
 
+      console.log("look",camera.position.distanceTo(targetLook));
+      console.log("pos",camera.position.distanceTo(targetPosition));
+
       // Detener la animación si la cámara está cerca de la posición objetivo
-      if (camera.position.distanceTo(targetPosition) < 0.1) {
-        controls.target.set(targetLook.x, targetLook.y, targetLook.z);
+      if (camera.position.distanceTo(targetLook) < 10) {
+        controls.target.set(targetPosition.x, targetPosition.y, targetPosition.z);
         isAnimating = false;
-        isRotating = true;
+        isPosicion = true;
       }
     }
 
@@ -188,14 +242,14 @@ export class WelcomePageComponent implements AfterViewInit {
 
           // Configura la posición objetivo y la bandera de animación
           targetPosition.set(
-              targetCube.position.x + 5,
-              targetCube.position.y + 5,
-              targetCube.position.z + 5
+              targetCube.position.x,
+              1,
+              targetCube.position.z
           );
 
           targetLook.set(
               targetCube.position.x,
-              targetCube.position.y,
+              1,
               targetCube.position.z
           );
 
@@ -203,7 +257,16 @@ export class WelcomePageComponent implements AfterViewInit {
       }
     }
 
+    function onWheelDown(){
+      isPosicion = false;
+      isRotating = false;
+      isAnimating = false;
+    }
+
     window.addEventListener('click', onMouseClick);
+
+    window.addEventListener('wheel', onWheelDown);
+
 
     // Iniciar la animación
     animate(0);
