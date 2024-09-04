@@ -37,9 +37,15 @@ export class WelcomePageComponent implements AfterViewInit {
 
 
     // Variables globales para la animación de la cámara
+    const rotationSpeed = (2 * Math.PI) / 60000;
+    let angle = 0;
     let targetPosition = new THREE.Vector3();
+    let targetPositionRotation = new THREE.Vector3();
     let targetLook = new THREE.Vector3();
     let isAnimating = false; // Bandera para indicar si se está animando
+    let isRotating = false; // Bandera para indicar si se está rotando
+    let previousTime = 0;
+
 
     // Crear la escena
     const scene = new THREE.Scene();
@@ -86,29 +92,81 @@ export class WelcomePageComponent implements AfterViewInit {
     directionalLight.position.set(10, 20, 10);
     scene.add(directionalLight);
 
+
+
     // Función para animar la escena
-    function animate() {
+    function animate(time: number) {
       requestAnimationFrame(animate);
       controls.update();
+      const deltaTime = (time - previousTime) * 0.0001; // Convierte el tiempo delta a segundos
+      previousTime = time; // Actualiza el tiempo previo para el siguiente frame
 
-
-      // camera.lookAt(targetLook);
 
       if (isAnimating) {
         // Interpola la posición de la cámara hacia la posición objetivo
-        camera.position.lerp(targetPosition, 0.1);
+        cameraOnClickAnimation();
+      }
 
-        // Interpola la dirección en la que la cámara mira hacia el cubo objetivo
-        camera.lookAt(targetLook);
-
-        // Detener la animación si la cámara está cerca de la posición objetivo
-        if (camera.position.distanceTo(targetPosition) < 0.1) {
-          controls.target.set(targetLook.x, targetLook.y, targetLook.z);
-          isAnimating = false;
-          }
+      //Va a checar si el objetivo esta cerca de la camara
+      if ((camera.position.distanceTo(targetPosition) < 15.15) && !isAnimating) {
+        rotateCameraAnimation(deltaTime);
+      }else{
+        isRotating = false;
       }
 
       renderer.render(scene, camera);
+    }
+
+    function rotateCameraAnimation(deltaTime: number){
+      // Define el radio y el ángulo de rotación
+      let radius = 10;
+
+      function animateRotation() {
+
+        if (isRotating) {
+
+
+          // Calcula la nueva posición de la cámara
+          angle += rotationSpeed;
+
+          const x = targetPosition.x + radius * Math.sin(angle);
+          const z = targetPosition.z + radius * Math.cos(angle);
+
+          targetPositionRotation.set(
+            x,
+            camera.position.y,
+            z
+          );
+
+
+          camera.position.set(x , camera.position.y, z);
+          console.log("Rotando")
+          console.log(x, camera.position.y, z);
+
+          // Mantén la cámara mirando al objetivo
+          camera.lookAt(targetLook);
+
+          // Continua la animación en el siguiente frame
+          requestAnimationFrame(animateRotation);
+        }
+      }
+      // Inicia la rotación
+      animateRotation();
+    }
+
+    function cameraOnClickAnimation(){
+
+      camera.position.lerp(targetPosition, 0.1);
+
+      // Interpola la dirección en la que la cámara mira hacia el cubo objetivo
+      camera.lookAt(targetLook);
+
+      // Detener la animación si la cámara está cerca de la posición objetivo
+      if (camera.position.distanceTo(targetPosition) < 0.1) {
+        controls.target.set(targetLook.x, targetLook.y, targetLook.z);
+        isAnimating = false;
+        isRotating = true;
+      }
     }
 
     // Detectar clic en los cubos y mover la cámara
@@ -148,7 +206,7 @@ export class WelcomePageComponent implements AfterViewInit {
     window.addEventListener('click', onMouseClick);
 
     // Iniciar la animación
-    animate();
+    animate(0);
   }
 
 
