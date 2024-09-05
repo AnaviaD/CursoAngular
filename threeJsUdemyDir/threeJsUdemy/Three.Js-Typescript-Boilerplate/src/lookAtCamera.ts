@@ -26,6 +26,7 @@ controls.update();
 
 // Crear el plano (piso)
 const planeSize = 60;
+
 const planeGeometry = new THREE.PlaneGeometry(planeSize, planeSize);
 const planeMaterial = new THREE.MeshBasicMaterial({ color: 0x808080, side: THREE.DoubleSide });
 const plane = new THREE.Mesh(planeGeometry, planeMaterial);
