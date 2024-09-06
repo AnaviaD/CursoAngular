@@ -36,6 +36,9 @@ export class WelcomePageComponent implements AfterViewInit {
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
+    const progressBar = document.getElementById('progress-bar') as HTMLProgressElement;;
+    const progressBarContainer = document.getElementById('progress-bar-cont') as HTMLProgressElement;;
+
 
 
     // Variables globales para la animación de la cámara
@@ -66,10 +69,30 @@ export class WelcomePageComponent implements AfterViewInit {
     controls.maxPolarAngle = THREE.MathUtils.degToRad(70); // 70 grados
     controls.update();
 
-    // Cargar modelos
-    const loader = new GLTFLoader();
+    const loadingManager = new THREE.LoadingManager();
+    //inicio de la carga
+    loadingManager.onStart = function(url, item, total){
+      console.log(`Started loading ${url}`);
+    }
+
+    loadingManager.onProgress = function(url, loaded, total){
+      console.log(`Progress loading ${url}`);
+      progressBar.value = (loaded / total) * 100;
+    }
+
+    loadingManager.onLoad = function(){
+      progressBarContainer.style.display = 'none';
+    }
+
+    loadingManager.onError = function(url){
+      console.error(`Error loading   ${url}`);
+    }
+
+    // Creamos el loader
+    const loader = new GLTFLoader(loadingManager);
     let gltObject: THREE.Object3D;
 
+    // Cargamos los modelos
     loader.load(
       'assets/House_medieval01.glb',
       (gltf) => {
@@ -80,6 +103,18 @@ export class WelcomePageComponent implements AfterViewInit {
         console.error('Error al cargar el modelo GLTF:', error);
       }
     );
+
+    loader.load(
+      'assets/Switch01.glb',
+      (gltf) => {
+        scene.add(gltf.scene);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+    );
+
 
     loader.load(
       'assets/Mustang.glb',
