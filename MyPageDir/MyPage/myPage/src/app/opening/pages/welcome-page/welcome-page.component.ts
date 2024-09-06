@@ -1,6 +1,8 @@
 import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
 import Stats from 'three/examples/jsm/libs/stats.module.js';
 import { GUI } from 'dat.gui';
 
@@ -63,6 +65,34 @@ export class WelcomePageComponent implements AfterViewInit {
     controls.minPolarAngle = THREE.MathUtils.degToRad(30); // 30 grados
     controls.maxPolarAngle = THREE.MathUtils.degToRad(70); // 70 grados
     controls.update();
+
+    // Cargar modelos
+    const loader = new GLTFLoader();
+    let gltObject: THREE.Object3D;
+
+    loader.load(
+      'assets/House_medieval01.glb',
+      (gltf) => {
+        scene.add(gltf.scene);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+    );
+
+    loader.load(
+      'assets/Mustang.glb',
+      (gltf) => {
+        scene.add(gltf.scene);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+    );
+
+
 
     // Crear el plano (piso)
     const planeSize = 60;
