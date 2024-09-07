@@ -321,8 +321,8 @@ export class WelcomePageComponent implements AfterViewInit {
 
 
           camera.position.set(x , camera.position.y, z);
-          console.log("Rotando")
-          console.log(x, camera.position.y, z);
+          // console.log("Rotando")
+          // console.log(x, camera.position.y, z);
 
           // Mantén la cámara mirando al objetivo
           camera.lookAt(targetLook);
@@ -389,6 +389,7 @@ export class WelcomePageComponent implements AfterViewInit {
         );
 
         isAnimating = true; // Activa la animación
+        this.btnNextStepClicked = false;
       }else{
 
         if (this.btnNextStepClicked) {
@@ -408,6 +409,7 @@ export class WelcomePageComponent implements AfterViewInit {
             );
 
             isAnimating = true; // Activa la animación
+            this.btnNextStepClicked = false;
         }
       }
 
