@@ -13,9 +13,16 @@ import { GUI } from 'dat.gui';
 })
 export class WelcomePageComponent implements AfterViewInit {
 
+  public btnNextStepClicked: boolean = false;
   @ViewChild('threeContainer', { static: true }) threeContainer!: ElementRef;
 
   constructor() {}
+
+
+  nextStep() {
+    this.btnNextStepClicked = true;
+    console.log('Next step button clicked');
+  }
 
   ngAfterViewInit(): void {
     this.initThreeJS();
@@ -55,7 +62,6 @@ export class WelcomePageComponent implements AfterViewInit {
     let isRotating = false; // Bandera para indicar si se está rotando
     let isPosicion = false; // Bandera para indicar si se está rotando
     let previousTime = 0;
-
 
 
     // Crear la escena
@@ -178,7 +184,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
     /*==============  Animation   ============== */
     // Función para animar la escena
-    function animate(time: number) {
+    const animate = (time: number) => {
       requestAnimationFrame(animate);
       controls.update();
       const deltaTime = (time - previousTime) * 0.0001; // Convierte el tiempo delta a segundos
@@ -191,14 +197,20 @@ export class WelcomePageComponent implements AfterViewInit {
       limitCameraMovement();
       updateFollowerCube();
 
-      if (isAnimating) {
+      if (this.btnNextStepClicked) {
+        selectRandomObject()
+      }
+
+      if ((isAnimating || this.btnNextStepClicked) || (isAnimating && this.btnNextStepClicked)) {
         // Interpola la posición de la cámara hacia la posición objetivo
         cameraOnClickAnimation();
       }
-      if (isRotating) {
+      if ((isRotating  || this.btnNextStepClicked) || (isRotating  && this.btnNextStepClicked)) {
         rotateCameraAnimation(deltaTime);
       }else{
         isRotating = false;
+        this.btnNextStepClicked = false;
+
       }
       //#endregion
 
@@ -251,7 +263,7 @@ export class WelcomePageComponent implements AfterViewInit {
       function animatePosition() {
 
         if (isPosicion) {
-          console.log("posicionando");
+          // console.log("posicionando");
 
           // Calcula la nueva posición de la cámara
 
@@ -347,7 +359,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
     // Detectar clic en los cubos y mover la cámara
     //#region    onMouseClick
-    function onMouseClick(event: { clientX: number; clientY: number; }) {
+    const onMouseClick = (event: { clientX: number; clientY: number; }) => {
       const mouse = new THREE.Vector2(
           (event.clientX / window.innerWidth) * 2 - 1,
           -(event.clientY / window.innerHeight) * 2 + 1
@@ -359,44 +371,47 @@ export class WelcomePageComponent implements AfterViewInit {
       const intersects = raycaster.intersectObjects(cubes);
 
       if (intersects.length > 0) {
-          const targetCube = intersects[0].object;
+        const targetCube = intersects[0].object;
 
-          console.log('Cubo clicado:', targetCube.position);
+        console.log('Cubo clicado:', targetCube.position);
 
-          // Configura la posición objetivo y la bandera de animación
-          targetPosition.set(
-              targetCube.position.x,
-              1,
-              targetCube.position.z
-          );
-
-          targetLook.set(
-              targetCube.position.x,
-              1,
-              targetCube.position.z
-          );
-
-          isAnimating = true; // Activa la animación
-      }
-
-      if (raycaster.intersectObject(followerCube)){
-        console.log('btn Cube clicado ');
-        const randomObject = selectRandomObject();
-
+        // Configura la posición objetivo y la bandera de animación
         targetPosition.set(
-              randomObject!.position.x,
-              1,
-              randomObject!.position.z
-          );
+          targetCube.position.x,
+          1,
+          targetCube.position.z
+        );
 
-          targetLook.set(
-              randomObject!.position.x,
-              1,
-              randomObject!.position.z
-          );
+        targetLook.set(
+          targetCube.position.x,
+          1,
+          targetCube.position.z
+        );
 
-          isAnimating = true; // Activa la animación
+        isAnimating = true; // Activa la animación
+      }else{
+
+        if (this.btnNextStepClicked) {
+          const randomObject = selectRandomObject();
+          console.log('btn Cube clicado ');
+
+          targetPosition.set(
+                randomObject!.position.x,
+                1,
+                randomObject!.position.z
+            );
+
+            targetLook.set(
+                randomObject!.position.x,
+                1,
+                randomObject!.position.z
+            );
+
+            isAnimating = true; // Activa la animación
+        }
       }
+
+
     }
     //#endregion
 
@@ -420,10 +435,11 @@ export class WelcomePageComponent implements AfterViewInit {
       return selectedObject;
     }
 
-    function onWheelDown(){
+    const onWheelDown = () =>{
       isPosicion = false;
       isRotating = false;
       isAnimating = false;
+      this.btnNextStepClicked = false;
     }
 
     window.addEventListener('click', onMouseClick);

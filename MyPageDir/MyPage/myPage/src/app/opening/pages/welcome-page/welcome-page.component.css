@@ -35,3 +35,34 @@ label{
   color: white;
   font-size: 2rem;
 }
+
+
+/* #three-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+} */
+
+.floating-btn {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16.66%; /* 1/6 of the screen */
+  height: 100px; /* Large button */
+  font-size: 1.5em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  z-index: 1000; /* Ensure it floats over the scene */
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .floating-btn {
+    width: 33.33%; /* 1/3 of the screen when small */
+  }
+}
