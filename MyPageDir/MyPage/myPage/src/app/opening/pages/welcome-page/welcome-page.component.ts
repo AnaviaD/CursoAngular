@@ -53,8 +53,11 @@ export class WelcomePageComponent implements AfterViewInit {
     let remainingObjects: THREE.Object3D[] = [...cubes]; // Copia inicial de objetos disponibles
 
     // Variables globales para la animación de la cámara
+    const defaultPosition = new THREE.Vector3(0, 10, 0); // Posición por defecto cuando targetPosition es indeterminada
     const rotationSpeed = (2 * Math.PI) / 60000;
+    const radius = 5;
     let angle = 0;
+    let intensity = 1.0; // UFO Variable para controlar la intensidad de la luz
     let targetPosition = new THREE.Vector3();
     let targetPositionRotation = new THREE.Vector3();
     let targetLook = new THREE.Vector3();
@@ -62,6 +65,12 @@ export class WelcomePageComponent implements AfterViewInit {
     let isRotating = false; // Bandera para indicar si se está rotando
     let isPosicion = false; // Bandera para indicar si se está rotando
     let previousTime = 0;
+
+    //#region GLTF obj
+    //  Variables GLTF
+    let ufoObject: THREE.Object3D; // Variable global para referenciar el objeto
+    //#endregion
+
 
 
     // Crear la escena
@@ -80,6 +89,7 @@ export class WelcomePageComponent implements AfterViewInit {
     controls.maxPolarAngle = THREE.MathUtils.degToRad(70); // 70 grados
     controls.update();
 
+    //#region   Light
     // Añadir luz a la escena
     const ambientLight = new THREE.AmbientLight(0x404040);
     scene.add(ambientLight);
@@ -87,6 +97,12 @@ export class WelcomePageComponent implements AfterViewInit {
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(10, 20, 10);
     scene.add(directionalLight);
+
+    // Crear la luz direccional que apuntará a targetPosition
+    const ufoLight = new THREE.DirectionalLight(0xffffff, intensity);
+    ufoLight.position.set(0, 20, 0); // Posición inicial de la luz
+    scene.add(ufoLight);
+    //#endregion
 
 
     //#region    LoadingManager(LoadingScreen)
@@ -149,6 +165,20 @@ export class WelcomePageComponent implements AfterViewInit {
       }
     );
 
+    loader.load(
+      'assets/UfoObj.glb',
+      (gltf) => {
+        ufoObject = gltf.scene; // Almacena el objeto en la variable global
+        scene.add(gltf.scene);
+
+        ufoObject.position.set(0, 15, 0); // Ejemplo: moverlo a (10, 5, 0)
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+    );
+
 
 
     // Crear el plano (piso)
@@ -173,12 +203,7 @@ export class WelcomePageComponent implements AfterViewInit {
         cubes.push(cube);
     }
 
-    //Cubo boton
-    const followerCube = new THREE.Mesh(
-      new THREE.BoxGeometry(1, 1, 1),
-      new THREE.MeshBasicMaterial({ color: 0xff0000 })
-    );
-    scene.add(followerCube);
+
 
 
 
@@ -195,7 +220,7 @@ export class WelcomePageComponent implements AfterViewInit {
       //#region    CameraMovents
       //Va a checar si el objetivo esta cerca de la camara
       limitCameraMovement();
-      updateFollowerCube();
+      UfoAnimation(deltaTime);
 
       if (this.btnNextStepClicked) {
         selectRandomObject()
@@ -210,7 +235,6 @@ export class WelcomePageComponent implements AfterViewInit {
       }else{
         isRotating = false;
         this.btnNextStepClicked = false;
-
       }
       //#endregion
 
@@ -218,24 +242,32 @@ export class WelcomePageComponent implements AfterViewInit {
     }
 
 
-    //#region    CubeBtn
-    function updateFollowerCube() {
-      // Obtén la dirección en la que la cámara está mirando
-      const cameraDirection = new THREE.Vector3();
-      camera.getWorldDirection(cameraDirection);
+    function UfoAnimation(deltaTime: number)
+    {
+      if (ufoObject) {
+        console.log("animando UFO")
+        let target = targetPosition || defaultPosition; // Si targetPosition no está definida, usa la posición por defecto
 
-      // Calcula la nueva posición para el cubo a 5 unidades de distancia frente a la cámara
-      const distance = 7; // Distancia desde la cámara
-      const newPosition = new THREE.Vector3().copy(camera.position).add(cameraDirection.multiplyScalar(distance));
+        // Rotación sobre sí mismo
+        ufoObject.rotation.y += rotationSpeed * -10;
 
-      // Ajusta el cubo para que esté más arriba en la pantalla (por ejemplo, 2 unidades más arriba en el eje Y)
-      const verticalOffset = 3; // Ajusta este valor para mover el cubo más arriba o abajo
-      newPosition.y += verticalOffset;
+        // Movimiento en circunferencia alrededor de targetPosition (o defaultPosition si targetPosition es indeterminada)
+        angle += rotationSpeed * 100;
 
-      // Actualiza la posición del cubo
-      followerCube.position.copy(newPosition);
+        const x = target.x + radius * Math.cos(angle);
+        const z = target.z + radius * Math.sin(angle);
+
+        ufoObject.position.set(x, 5, z);
+        ufoObject.lookAt(target); // Mantiene el Ufo mirando hacia el centro de la circunferencia
+
+        // Actualizar la posición y dirección de la luz para que siempre apunte a targetPosition
+        ufoLight.position.set(ufoObject.position.x, ufoObject.position.y + 10, ufoObject.position.z);
+        ufoLight.target.position.copy(target); // La luz siempre mira a targetPosition
+        ufoLight.target.updateMatrixWorld(); // Asegura que la luz actualice su objetivo
+      }
     }
-    //#endregion
+
+
 
     //#region    limitCameraMovement
     function limitCameraMovement() {
@@ -308,7 +340,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
           isPosicion = false;
           // Calcula la nueva posición de la cámara
-          angle += rotationSpeed;
+          angle += rotationSpeed * 0.5;
 
           const x = targetPosition.x + radius * Math.sin(angle);
           const z = targetPosition.z + radius * Math.cos(angle);
