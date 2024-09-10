@@ -44,6 +44,9 @@ export class WelcomePageComponent implements AfterViewInit {
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
+    window.addEventListener('contextmenu', (event) => {
+      event.preventDefault();
+    });
 
 
 
@@ -91,6 +94,10 @@ export class WelcomePageComponent implements AfterViewInit {
     // Limitar el ángulo de inclinación (elevación) de la cámara
     controls.minPolarAngle = THREE.MathUtils.degToRad(30); // 30 grados
     controls.maxPolarAngle = THREE.MathUtils.degToRad(70); // 70 grados
+
+    // // Limitar la rotación de la cámara en el eje horizontal, si es necesario
+    // controls.minAzimuthAngle = -Math.PI / 2; // Limitar la rotación horizontal (opcional)
+    // controls.maxAzimuthAngle = Math.PI / 2;
     controls.update();
 
     //#region   Light
@@ -98,7 +105,7 @@ export class WelcomePageComponent implements AfterViewInit {
     // const ambientLight = new THREE.AmbientLight(0x404040);
     // scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.1);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.01);
     directionalLight.position.set(10, 20, 10);
     scene.add(directionalLight);
 
@@ -199,7 +206,7 @@ export class WelcomePageComponent implements AfterViewInit {
     scene.add(plane);
 
     const cubeGeometry = new THREE.BoxGeometry(2, 2, 2);
-    const cubeMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+    const cubeMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
 
     for (let i = 0; i < 5; i++) {
         const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
@@ -283,9 +290,11 @@ export class WelcomePageComponent implements AfterViewInit {
         }
       }else {
         const distance = ufoObject.position.distanceTo(currentTarget!.position);
+        let targetPositionWithOffset = currentTarget?.position.clone();
+        targetPositionWithOffset?.setY(currentTarget!.position.y + 3);
 
         // Verifica si el cubo ha llegado al objetivo
-        if (distance < 0.1) {
+        if (distance < 3.6) {
           // Selecciona una nueva posición cuando llega al destino
 
           currentTarget = selectRandomObject();
@@ -293,7 +302,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
         if (currentTarget) {
           // Interpolación de la posición del cubo hacia el objetivo
-          ufoObject.position.lerp(currentTarget.position, 40 * deltaTime);
+          ufoObject.position.lerp(targetPositionWithOffset!, 40 * deltaTime);
 
           // Si quieres que el cubo siempre mire hacia el objetivo:
           ufoObject.lookAt(currentTarget.position);
