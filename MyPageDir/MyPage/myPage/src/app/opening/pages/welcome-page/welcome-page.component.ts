@@ -63,9 +63,11 @@ export class WelcomePageComponent implements AfterViewInit {
     let targetPosition = new THREE.Vector3();
     let targetPositionRotation = new THREE.Vector3();
     let targetLook = new THREE.Vector3();
+    let currentTarget = selectRandomObject(); // Selecciona el primer objetivo
     let isAnimating = false; // Bandera para indicar si se está animando
     let isRotating = false; // Bandera para indicar si se está rotando
     let isPosicion = false; // Bandera para indicar si se está rotando
+    let UfoFollows = false; // Bandera para indicar el movimiento del UFO
     let previousTime = 0;
 
     //#region GLTF obj
@@ -255,27 +257,54 @@ export class WelcomePageComponent implements AfterViewInit {
     //#region
     function UfoAnimation(deltaTime: number)
     {
-      if (ufoObject) {
-        console.log("animando UFO")
-        let target = targetPosition || defaultPosition; // Si targetPosition no está definida, usa la posición por defecto
+      let target = targetPosition || defaultPosition; // Si targetPosition no está definida, usa la posición por defecto
 
-        // Rotación sobre sí mismo
-        ufoObject.rotation.y += rotationSpeed * -10;
+      // console.log(UfoFollows)
+      if (!UfoFollows) {
+        if (ufoObject) {
+          // console.log("animando UFO")
 
-        // Movimiento en circunferencia alrededor de targetPosition (o defaultPosition si targetPosition es indeterminada)
-        angle += rotationSpeed * 100;
+          // Rotación sobre sí mismo
+          ufoObject.rotation.y += rotationSpeed * -10;
 
-        const x = target.x + radius * Math.cos(angle);
-        const z = target.z + radius * Math.sin(angle);
+          // Movimiento en circunferencia alrededor de targetPosition (o defaultPosition si targetPosition es indeterminada)
+          angle += rotationSpeed * 100;
 
-        ufoObject.position.set(x, 5, z);
-        ufoObject.lookAt(target); // Mantiene el Ufo mirando hacia el centro de la circunferencia
+          const x = target.x + radius * Math.cos(angle);
+          const z = target.z + radius * Math.sin(angle);
 
-        // Actualizar la posición y dirección de la luz para que siempre apunte a targetPosition
-        ufoLight.position.set(ufoObject.position.x, ufoObject.position.y + 10, ufoObject.position.z);
-        ufoLight.target.position.copy(target); // La luz siempre mira a targetPosition
-        ufoLight.target.updateMatrixWorld(); // Asegura que la luz actualice su objetivo
+          ufoObject.position.set(x, 5, z);
+          ufoObject.lookAt(target); // Mantiene el Ufo mirando hacia el centro de la circunferencia
+
+          // Actualizar la posición y dirección de la luz para que siempre apunte a targetPosition
+          ufoLight.position.set(ufoObject.position.x, ufoObject.position.y + 10, ufoObject.position.z);
+          ufoLight.target.position.copy(target); // La luz siempre mira a targetPosition
+          ufoLight.target.updateMatrixWorld(); // Asegura que la luz actualice su objetivo
+        }
+      }else {
+        const distance = ufoObject.position.distanceTo(currentTarget!.position);
+
+        // Verifica si el cubo ha llegado al objetivo
+        if (distance < 0.1) {
+          // Selecciona una nueva posición cuando llega al destino
+
+          currentTarget = selectRandomObject();
+        }
+
+        if (currentTarget) {
+          // Interpolación de la posición del cubo hacia el objetivo
+          ufoObject.position.lerp(currentTarget.position, 40 * deltaTime);
+
+          // Si quieres que el cubo siempre mire hacia el objetivo:
+          ufoObject.lookAt(currentTarget.position);
+
+          // Actualizar la posición y dirección de la luz para que siempre apunte a targetPosition
+          ufoLight.position.set(ufoObject.position.x, ufoObject.position.y + 15, ufoObject.position.z);
+          ufoLight.target.position.copy(currentTarget.position); // La luz siempre mira a targetPosition
+          ufoLight.target.updateMatrixWorld(); // Asegura que la luz actualice su objetivo
+        }
       }
+
     }
     //#endregion
 
@@ -323,10 +352,10 @@ export class WelcomePageComponent implements AfterViewInit {
           // Mantén la cámara mirando al objetivo
           camera.lookAt(targetLook);
 
-          console.log("antes del if", camera.position.distanceTo(targetPositionRotation))
+          // console.log("antes del if", camera.position.distanceTo(targetPositionRotation))
 
           if ((camera.position.distanceTo(targetPositionRotation) < 0.15) || (camera.position.distanceTo(targetPositionRotation) < 0.20)) {
-            console.log("despues del if", camera.position.distanceTo(targetPositionRotation))
+            // console.log("despues del if", camera.position.distanceTo(targetPositionRotation))
             isRotating = true;
           }
 
@@ -387,8 +416,8 @@ export class WelcomePageComponent implements AfterViewInit {
       // Interpola la dirección en la que la cámara mira hacia el cubo objetivo
       camera.lookAt(targetLook);
 
-      console.log("look",camera.position.distanceTo(targetLook));
-      console.log("pos",camera.position.distanceTo(targetPosition));
+      // console.log("look",camera.position.distanceTo(targetLook));
+      // console.log("pos",camera.position.distanceTo(targetPosition));
 
       // Detener la animación si la cámara está cerca de la posición objetivo
       if (camera.position.distanceTo(targetLook) < 10) {
@@ -411,6 +440,7 @@ export class WelcomePageComponent implements AfterViewInit {
       raycaster.setFromCamera(mouse, camera);
 
       const intersects = raycaster.intersectObjects(cubes);
+      const ufoIntersections = raycaster.intersectObject(ufoObject);
 
       if (intersects.length > 0) {
         const targetCube = intersects[0].object;
@@ -430,30 +460,41 @@ export class WelcomePageComponent implements AfterViewInit {
           targetCube.position.z
         );
 
+        console.log('Cubo - cambiamos a false');
         isAnimating = true; // Activa la animación
         this.btnNextStepClicked = false;
-      }else{
-
-        if (this.btnNextStepClicked) {
-          const randomObject = selectRandomObject();
-          console.log('btn Cube clicado ');
-
-          targetPosition.set(
-                randomObject!.position.x,
-                1,
-                randomObject!.position.z
-            );
-
-            targetLook.set(
-                randomObject!.position.x,
-                1,
-                randomObject!.position.z
-            );
-
-            isAnimating = true; // Activa la animación
-            this.btnNextStepClicked = false;
-        }
+        UfoFollows = false;
       }
+
+      if (this.btnNextStepClicked) {
+        const randomObject = selectRandomObject();
+        console.log('btn Cube clicado ');
+
+        targetPosition.set(
+          randomObject!.position.x,
+          1,
+          randomObject!.position.z
+        );
+
+        targetLook.set(
+          randomObject!.position.x,
+          1,
+          randomObject!.position.z
+        );
+
+        console.log('BTN - cambiamos a false');
+        isAnimating = true; // Activa la animación
+        this.btnNextStepClicked = false;
+        UfoFollows = false;
+
+      }
+      if(ufoIntersections.length > 0)
+        {
+        console.log('Ufo clicado');
+        UfoFollows = true;
+        currentTarget = selectRandomObject();
+      }
+
 
 
     }
