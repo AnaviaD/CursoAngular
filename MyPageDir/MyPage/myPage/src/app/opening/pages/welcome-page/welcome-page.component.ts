@@ -35,6 +35,7 @@ export class WelcomePageComponent implements AfterViewInit {
     //No borrar esta parte que es la que obtiene el elemento del componente
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.shadowMap.enabled = true;
     this.threeContainer.nativeElement.appendChild(renderer.domElement);
 
     window.addEventListener('resize', () => {
@@ -43,8 +44,6 @@ export class WelcomePageComponent implements AfterViewInit {
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
-    const progressBar = document.getElementById('progress-bar') as HTMLProgressElement;;
-    const progressBarContainer = document.getElementById('progress-bar-cont') as HTMLProgressElement;;
 
 
 
@@ -53,11 +52,14 @@ export class WelcomePageComponent implements AfterViewInit {
     let remainingObjects: THREE.Object3D[] = [...cubes]; // Copia inicial de objetos disponibles
 
     // Variables globales para la animación de la cámara
+    const progressBar = document.getElementById('progress-bar') as HTMLProgressElement;;
+    const progressBarContainer = document.getElementById('progress-bar-cont') as HTMLProgressElement;;
+
     const defaultPosition = new THREE.Vector3(0, 10, 0); // Posición por defecto cuando targetPosition es indeterminada
     const rotationSpeed = (2 * Math.PI) / 60000;
     const radius = 5;
     let angle = 0;
-    let intensity = 1.0; // UFO Variable para controlar la intensidad de la luz
+    let intensity = 1000.40; // UFO Variable para controlar la intensidad de la luz
     let targetPosition = new THREE.Vector3();
     let targetPositionRotation = new THREE.Vector3();
     let targetLook = new THREE.Vector3();
@@ -75,7 +77,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
     // Crear la escena
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x87ceeb);
+    scene.background = new THREE.Color(0x000000);
 
     // Crear la cámara
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -91,16 +93,19 @@ export class WelcomePageComponent implements AfterViewInit {
 
     //#region   Light
     // Añadir luz a la escena
-    const ambientLight = new THREE.AmbientLight(0x404040);
-    scene.add(ambientLight);
+    // const ambientLight = new THREE.AmbientLight(0x404040);
+    // scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.1);
     directionalLight.position.set(10, 20, 10);
     scene.add(directionalLight);
 
     // Crear la luz direccional que apuntará a targetPosition
-    const ufoLight = new THREE.DirectionalLight(0xffffff, intensity);
+    const ufoLight = new THREE.SpotLight(0xffffff, intensity);
     ufoLight.position.set(0, 20, 0); // Posición inicial de la luz
+    ufoLight.castShadow = true;
+    ufoLight.angle = Math.PI / 18; // Ángulo de apertura del haz
+    ufoLight.penumbra = 1; // Suaviza los bordes del haz
     scene.add(ufoLight);
     //#endregion
 
@@ -126,6 +131,7 @@ export class WelcomePageComponent implements AfterViewInit {
     }
     //#endregion
 
+    //#region Load Models
     // Creamos el loader
     const loader = new GLTFLoader(loadingManager);
     let gltObject: THREE.Object3D;
@@ -178,13 +184,14 @@ export class WelcomePageComponent implements AfterViewInit {
         console.error('Error al cargar el modelo GLTF:', error);
       }
     );
+    //#endregion
 
 
 
     // Crear el plano (piso)
     const planeSize = 60;
     const planeGeometry = new THREE.PlaneGeometry(planeSize, planeSize);
-    const planeMaterial = new THREE.MeshBasicMaterial({ color: 0x808080, side: THREE.DoubleSide });
+    const planeMaterial = new THREE.MeshStandardMaterial({ color: 0x000000, side: THREE.DoubleSide });
     const plane = new THREE.Mesh(planeGeometry, planeMaterial);
     plane.rotation.x = -Math.PI / 2;
     scene.add(plane);
@@ -199,6 +206,8 @@ export class WelcomePageComponent implements AfterViewInit {
             1,
             Math.random() * planeSize - planeSize / 2
         );
+        cube.castShadow = true;
+        cube.receiveShadow = true;
         scene.add(cube);
         cubes.push(cube);
     }
@@ -242,6 +251,8 @@ export class WelcomePageComponent implements AfterViewInit {
     }
 
 
+    //UfoAnimation
+    //#region
     function UfoAnimation(deltaTime: number)
     {
       if (ufoObject) {
@@ -266,8 +277,7 @@ export class WelcomePageComponent implements AfterViewInit {
         ufoLight.target.updateMatrixWorld(); // Asegura que la luz actualice su objetivo
       }
     }
-
-
+    //#endregion
 
     //#region    limitCameraMovement
     function limitCameraMovement() {
@@ -449,8 +459,8 @@ export class WelcomePageComponent implements AfterViewInit {
     }
     //#endregion
 
-
     // Función para seleccionar un objeto aleatorio sin repetir
+    //#region
     function selectRandomObject(): THREE.Object3D | null {
       if (remainingObjects.length === 0) {
         // Si ya se han seleccionado todos, restablece la lista
@@ -475,6 +485,7 @@ export class WelcomePageComponent implements AfterViewInit {
       isAnimating = false;
       this.btnNextStepClicked = false;
     }
+    //#endregion
 
     window.addEventListener('click', onMouseClick);
 
