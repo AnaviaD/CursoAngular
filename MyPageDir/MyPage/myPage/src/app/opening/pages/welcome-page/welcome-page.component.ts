@@ -5,6 +5,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 import Stats from 'three/examples/jsm/libs/stats.module.js';
 import { GUI } from 'dat.gui';
+import { FloatingCardComponent } from '../../components/floating-card/floating-card.component';
 
 @Component({
   selector: 'app-welcome-page',
@@ -14,18 +15,25 @@ import { GUI } from 'dat.gui';
 export class WelcomePageComponent implements AfterViewInit {
 
   public btnNextStepClicked: boolean = false;
+
   @ViewChild('threeContainer', { static: true }) threeContainer!: ElementRef;
+
+  @ViewChild(FloatingCardComponent) floatingCard!: FloatingCardComponent;
 
   constructor() {}
 
 
   nextStep() {
     this.btnNextStepClicked = true;
+    this.floatingCard.open(1); // Call the open method to show the card
     console.log('Next step button clicked');
   }
 
   ngAfterViewInit(): void {
     this.initThreeJS();
+    if (!this.floatingCard) {
+      console.error('Floating card component is not available');
+    }
   }
 
 
@@ -76,6 +84,8 @@ export class WelcomePageComponent implements AfterViewInit {
     //#region GLTF obj
     //  Variables GLTF
     let ufoObject: THREE.Object3D; // Variable global para referenciar el objeto
+    let mustang01: THREE.Object3D; // Variable global para referenciar el objeto
+
     //#endregion
 
 
@@ -95,7 +105,7 @@ export class WelcomePageComponent implements AfterViewInit {
     controls.minPolarAngle = THREE.MathUtils.degToRad(30); // 30 grados
     controls.maxPolarAngle = THREE.MathUtils.degToRad(70); // 70 grados
 
-    // // Limitar la rotación de la cámara en el eje horizontal, si es necesario
+    // Limitar la rotación de la cámara en el eje horizontal, si es necesario
     // controls.minAzimuthAngle = -Math.PI / 2; // Limitar la rotación horizontal (opcional)
     // controls.maxAzimuthAngle = Math.PI / 2;
     controls.update();
@@ -105,7 +115,7 @@ export class WelcomePageComponent implements AfterViewInit {
     // const ambientLight = new THREE.AmbientLight(0x404040);
     // scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.01);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.51);
     directionalLight.position.set(10, 20, 10);
     scene.add(directionalLight);
 
@@ -118,6 +128,46 @@ export class WelcomePageComponent implements AfterViewInit {
     scene.add(ufoLight);
     //#endregion
 
+
+    // Variables para controlar el tiempo y el tamaño de la explosión
+    let explosionTime = 2; // Duración en segundos
+    let particleSize = 0.1; // Tamaño inicial de las partículas
+
+    // Parámetros del sistema de partículas
+    const particleCount = 100;
+    const particles = new THREE.BufferGeometry();
+    const particlePositions = new Float32Array(particleCount * 3);
+    const particleVelocities = [];
+    const particleMaterial = new THREE.PointsMaterial({
+      color: 0xffaa00,
+      size: particleSize,
+      transparent: true,
+      opacity: 0.8,
+    });
+
+    // Crear posiciones iniciales y velocidades aleatorias para las partículas
+    for (let i = 0; i < particleCount; i++) {
+      particlePositions[i * 3] = 0; // X
+      particlePositions[i * 3 + 1] = 0; // Y
+      particlePositions[i * 3 + 2] = 0; // Z
+
+      const velocity = new THREE.Vector3(
+        (Math.random() - 0.5) * 2, // Aleatoriedad en X
+        (Math.random() - 0.5) * 2, // Aleatoriedad en Y
+        (Math.random() - 0.5) * 2  // Aleatoriedad en Z
+      );
+      particleVelocities.push(velocity);
+    }
+
+    particles.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+
+    // Crear sistema de partículas
+    const particleSystem = new THREE.Points(particles, particleMaterial);
+    scene.add(particleSystem);
+
+    let elapsedTime = 0;
+
+    //#endregion
 
     //#region    LoadingManager(LoadingScreen)
     const loadingManager = new THREE.LoadingManager();
@@ -172,7 +222,12 @@ export class WelcomePageComponent implements AfterViewInit {
     loader.load(
       'assets/Mustang.glb',
       (gltf) => {
+        mustang01 = gltf.scene;
+
+
         scene.add(gltf.scene);
+        mustang01.position.set(10,0,0);
+
       },
       undefined,
       (error) => {
@@ -186,7 +241,7 @@ export class WelcomePageComponent implements AfterViewInit {
         ufoObject = gltf.scene; // Almacena el objeto en la variable global
         scene.add(gltf.scene);
 
-        ufoObject.position.set(0, 15, 0); // Ejemplo: moverlo a (10, 5, 0)
+        ufoObject.position.set(0, 22, 0); // Ejemplo: moverlo a (10, 5, 0)
       },
       undefined,
       (error) => {
@@ -248,7 +303,7 @@ export class WelcomePageComponent implements AfterViewInit {
         // Interpola la posición de la cámara hacia la posición objetivo
         cameraOnClickAnimation();
       }
-      if ((isRotating  || this.btnNextStepClicked) || (isRotating  && this.btnNextStepClicked)) {
+      if ((isRotating  || this.btnNextStepClicked) || (isRotating  && this.btnNextStepClicked) || (UfoFollows)) {
         rotateCameraAnimation(deltaTime);
       }else{
         isRotating = false;
@@ -258,6 +313,8 @@ export class WelcomePageComponent implements AfterViewInit {
 
       renderer.render(scene, camera);
     }
+
+
 
 
     //UfoAnimation
@@ -284,7 +341,7 @@ export class WelcomePageComponent implements AfterViewInit {
           ufoObject.lookAt(target); // Mantiene el Ufo mirando hacia el centro de la circunferencia
 
           // Actualizar la posición y dirección de la luz para que siempre apunte a targetPosition
-          ufoLight.position.set(ufoObject.position.x, ufoObject.position.y + 10, ufoObject.position.z);
+          ufoLight.position.set(ufoObject.position.x, ufoObject.position.y, ufoObject.position.z);
           ufoLight.target.position.copy(target); // La luz siempre mira a targetPosition
           ufoLight.target.updateMatrixWorld(); // Asegura que la luz actualice su objetivo
         }
@@ -302,15 +359,25 @@ export class WelcomePageComponent implements AfterViewInit {
 
         if (currentTarget) {
           // Interpolación de la posición del cubo hacia el objetivo
-          ufoObject.position.lerp(targetPositionWithOffset!, 40 * deltaTime);
+          ufoObject.position.lerp(targetPositionWithOffset!, 2.50 * deltaTime);
 
-          // Si quieres que el cubo siempre mire hacia el objetivo:
-          ufoObject.lookAt(currentTarget.position);
+          // Verifica si el cubo ha llegado al objetivo
+          if (distance > 9.5)
+          {
+            // Si quieres que el cubo siempre mire hacia el objetivo:
+            ufoObject.lookAt(currentTarget.position);
+            // Actualizar la posición y dirección de la luz para que siempre apunte a targetPosition
+            ufoLight.position.set(ufoObject.position.x, ufoObject.position.y + 1, ufoObject.position.z);
+            ufoLight.target.position.copy(currentTarget.position); // La luz siempre mira a targetPosition
+            ufoLight.target.updateMatrixWorld(); // Asegura que la luz actualice su objetivo
+          }else{
+            // Actualizar la posición y dirección de la luz para que siempre apunte a targetPosition
+            ufoLight.position.set(ufoObject.position.x, ufoObject.position.y - 1, ufoObject.position.z);
+            ufoLight.target.position.copy(currentTarget.position); // La luz siempre mira a targetPosition
+            ufoLight.target.updateMatrixWorld(); // Asegura que la luz actualice su objetivo
 
-          // Actualizar la posición y dirección de la luz para que siempre apunte a targetPosition
-          ufoLight.position.set(ufoObject.position.x, ufoObject.position.y + 15, ufoObject.position.z);
-          ufoLight.target.position.copy(currentTarget.position); // La luz siempre mira a targetPosition
-          ufoLight.target.updateMatrixWorld(); // Asegura que la luz actualice su objetivo
+          }
+
         }
       }
 
@@ -410,6 +477,28 @@ export class WelcomePageComponent implements AfterViewInit {
           // Continua la animación en el siguiente frame
           requestAnimationFrame(animateRotation);
         }
+
+         // Verifica si UfoFollows es verdadero
+        if (UfoFollows) {
+          const distance = targetLook.distanceTo(ufoObject.position);
+          console.log('Distancia entre la cámara y el ufoObject:', distance);
+
+          // Mantén la cámara a 5 unidades detrás y 5 unidades arriba del ufoObject
+          const ufoPos = ufoObject.position;
+
+          // Calcula la nueva posición de la cámara detrás y arriba del ufoObject
+          const cameraOffset = new THREE.Vector3(0, 5, -15); // 5 unidades arriba y 5 unidades atrás
+          const newCameraPos = ufoPos.clone().add(cameraOffset);
+
+          // Establece la nueva posición de la cámara
+          camera.position.set(newCameraPos.x, newCameraPos.y, newCameraPos.z);
+
+          // Mantén la cámara mirando hacia el currentTarget
+          camera.lookAt(ufoObject!.position);
+
+          // Continua la animación en el siguiente frame
+          requestAnimationFrame(animateRotation);
+        }
       }
       // Inicia la rotación
       animateRotation();
@@ -501,7 +590,12 @@ export class WelcomePageComponent implements AfterViewInit {
         {
         console.log('Ufo clicado');
         UfoFollows = true;
+        isRotating = false;
+        isPosicion = false;
+        isAnimating = false;
+
         currentTarget = selectRandomObject();
+        rotateCameraAnimation(1);
       }
 
 
@@ -533,6 +627,7 @@ export class WelcomePageComponent implements AfterViewInit {
       isPosicion = false;
       isRotating = false;
       isAnimating = false;
+      UfoFollows = false;
       this.btnNextStepClicked = false;
     }
     //#endregion
