@@ -1,0 +1,39 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dim background behind the card */
+  z-index: 1500; /* Ensure it floats over other content */
+}
+
+.floating-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 66%; /* 2/3 of the screen horizontally */
+  height: 66%; /* 2/3 of the screen vertically */
+  background-color: rgba(255, 255, 255, 0.249); /* Semi-translucent */
+  border-radius: 8px;
+  padding: 20px;
+  overflow-y: auto; /* Allow scrolling */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.content {
+  margin-top: 40px; /* Push content below close button */
+  font-size: 1.2em;
+  color: #333;
+}

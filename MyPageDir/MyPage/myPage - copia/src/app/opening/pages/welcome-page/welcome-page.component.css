@@ -1,0 +1,68 @@
+:host {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#three-container {
+  width: 100%;
+  height: 100%;
+}
+
+.progress-bar-container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#progress-bar{
+  width: 30%;
+  margin-top: 0.5%;
+  height: 20%;
+}
+
+label{
+  color: white;
+  font-size: 2rem;
+}
+
+
+/* #three-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+} */
+
+.floating-btn {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16.66%; /* 1/6 of the screen */
+  height: 100px; /* Large button */
+  font-size: 1.5em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  z-index: 1000; /* Ensure it floats over the scene */
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .floating-btn {
+    width: 33.33%; /* 1/3 of the screen when small */
+  }
+}
