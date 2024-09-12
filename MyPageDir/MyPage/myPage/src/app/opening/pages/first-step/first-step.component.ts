@@ -67,16 +67,36 @@ export class FirstStepComponent {
     scene.add(light);
     //#endregion
 
-    // Crear geometría y material para el cubo
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshStandardMaterial({ color: 0xffff00 });
 
-    // Crear y añadir el cubo a la escena
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-    cube.position.set(0, 0, 0);
+    function createBox(){
+      // Crear geometría y material para el cubo
+      const geometry = new THREE.BoxGeometry();
+      const material = new THREE.MeshStandardMaterial({ color: 0xffff00 });
 
+      // Crear y añadir el cubo a la escena
+      const cube = new THREE.Mesh(geometry, material);
+      cube.position.set(0, 0, 0);
+      cube.position.set(0, 0, 0);
 
+      scene.add(cube);
+
+      const tween1 = new TWEEN.Tween({x: 20, y: 5, z: 20})
+      .to({x: -20, y: 15, z: -15}, 4000)
+      .repeat(10)
+      .delay(1000)
+
+      tween1.onUpdate(function (object: {
+        x:number;
+        y:number;
+        z:number;
+      }, elapsed: number){
+        cube.position.set(object.x, object.y, object.z)
+      });
+      tween1.start();
+
+    }
+
+    createBox()
 
     let previousTime = 0;
 
@@ -90,8 +110,8 @@ export class FirstStepComponent {
       previousTime = time;
 
       // Rotar el cubo
-      cube.rotation.x += deltaTime;
-      cube.rotation.y += deltaTime;
+      // cube.rotation.x += deltaTime;
+      // cube.rotation.y += deltaTime;
 
       renderer.render(scene, camera);
     };
