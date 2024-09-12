@@ -247,29 +247,43 @@ export class WelcomePageComponent implements AfterViewInit {
 
     function tweenScale(shouldScaleUp: boolean)
     {
-      const goalScale = shouldScaleUp? cubeScale: 1;
+      const goalScale = shouldScaleUp? cubeScale: 0;
+      const delay = shouldScaleUp ? 0 : 5000;
       const scaleTween = new TWEEN.Tween(cube.scale)
+
       .to({x: goalScale, y: goalScale, z: goalScale}, 1000)
       .easing(TWEEN.Easing.Elastic.InOut)
+      .onComplete(() =>{
+        if (shouldScaleUp){
+          tweenScale(false);
+        }
+      })
+      .delay(delay)
       .start();
     }
 
     const cube = new THREE.Mesh(geometry, material);
+    cube.scale.setScalar(0);
     cube.userData = {start: () => tweenScale(true)};
     scene.add(cube);
     cube.position.set(0, 10, 0);
 
+    const interval = 987634503458976;
+    let nextTime = 500;
 
     /*==============  Animation   ============== */
     // Función para animar la escena
     const animate = (time: number) => {
       requestAnimationFrame(animate);
       controls.update();
+      TWEEN.update();
       const deltaTime = (time - previousTime) * 0.0001; // Convierte el tiempo delta a segundos
       previousTime = time; // Actualiza el tiempo previo para el siguiente frame
 
-      cube.userData['start']();
-      TWEEN.update();
+      if (time > nextTime) {
+        cube.userData['start']();
+        nextTime = time + interval;
+      }
 
 
       //#region    CameraMovents

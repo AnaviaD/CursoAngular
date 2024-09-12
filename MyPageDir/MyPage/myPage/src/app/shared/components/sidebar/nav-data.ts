@@ -11,7 +11,7 @@ export const navbarData =
     label:'MainPage'
   },
   {
-    routeLink: 'opening/welcome',
+    routeLink: 'opening/first',
     icon: 'fal fa-car',
     label:'MainPage'
   },
