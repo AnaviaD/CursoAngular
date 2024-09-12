@@ -2,7 +2,7 @@ import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-
+import TWEEN from '@tweenjs/tween.js'
 import Stats from 'three/examples/jsm/libs/stats.module.js';
 import { GUI } from 'dat.gui';
 import { FloatingCardComponent } from '../../components/floating-card/floating-card.component';
@@ -58,6 +58,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
 
 
+    //#region Variables
     // Estos serian los objetos interactuables del mapa
     const cubes: Array<THREE.Mesh<THREE.BoxGeometry>> = [];
     let remainingObjects: THREE.Object3D[] = [...cubes]; // Copia inicial de objetos disponibles
@@ -69,6 +70,7 @@ export class WelcomePageComponent implements AfterViewInit {
     const defaultPosition = new THREE.Vector3(0, 10, 0); // Posición por defecto cuando targetPosition es indeterminada
     const rotationSpeed = (2 * Math.PI) / 60000;
     const radius = 5;
+    const cubeScale = 0.5;
     let angle = 0;
     let intensity = 1000.40; // UFO Variable para controlar la intensidad de la luz
     let targetPosition = new THREE.Vector3();
@@ -80,6 +82,7 @@ export class WelcomePageComponent implements AfterViewInit {
     let isPosicion = false; // Bandera para indicar si se está rotando
     let UfoFollows = false; // Bandera para indicar el movimiento del UFO
     let previousTime = 0;
+    //#endregion
 
     //#region GLTF obj
     //  Variables GLTF
@@ -88,8 +91,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
     //#endregion
 
-
-
+    //#region Escena Camara y Controles
     // Crear la escena
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x000000);
@@ -109,6 +111,7 @@ export class WelcomePageComponent implements AfterViewInit {
     // controls.minAzimuthAngle = -Math.PI / 2; // Limitar la rotación horizontal (opcional)
     // controls.maxAzimuthAngle = Math.PI / 2;
     controls.update();
+    //#endregion
 
     //#region   Light
     // Añadir luz a la escena
@@ -126,47 +129,6 @@ export class WelcomePageComponent implements AfterViewInit {
     ufoLight.angle = Math.PI / 18; // Ángulo de apertura del haz
     ufoLight.penumbra = 1; // Suaviza los bordes del haz
     scene.add(ufoLight);
-    //#endregion
-
-
-    // Variables para controlar el tiempo y el tamaño de la explosión
-    let explosionTime = 2; // Duración en segundos
-    let particleSize = 0.1; // Tamaño inicial de las partículas
-
-    // Parámetros del sistema de partículas
-    const particleCount = 100;
-    const particles = new THREE.BufferGeometry();
-    const particlePositions = new Float32Array(particleCount * 3);
-    const particleVelocities = [];
-    const particleMaterial = new THREE.PointsMaterial({
-      color: 0xffaa00,
-      size: particleSize,
-      transparent: true,
-      opacity: 0.8,
-    });
-
-    // Crear posiciones iniciales y velocidades aleatorias para las partículas
-    for (let i = 0; i < particleCount; i++) {
-      particlePositions[i * 3] = 0; // X
-      particlePositions[i * 3 + 1] = 0; // Y
-      particlePositions[i * 3 + 2] = 0; // Z
-
-      const velocity = new THREE.Vector3(
-        (Math.random() - 0.5) * 2, // Aleatoriedad en X
-        (Math.random() - 0.5) * 2, // Aleatoriedad en Y
-        (Math.random() - 0.5) * 2  // Aleatoriedad en Z
-      );
-      particleVelocities.push(velocity);
-    }
-
-    particles.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
-
-    // Crear sistema de partículas
-    const particleSystem = new THREE.Points(particles, particleMaterial);
-    scene.add(particleSystem);
-
-    let elapsedTime = 0;
-
     //#endregion
 
     //#region    LoadingManager(LoadingScreen)
@@ -250,8 +212,7 @@ export class WelcomePageComponent implements AfterViewInit {
     );
     //#endregion
 
-
-
+    //#region testObjects
     // Crear el plano (piso)
     const planeSize = 60;
     const planeGeometry = new THREE.PlaneGeometry(planeSize, planeSize);
@@ -275,9 +236,28 @@ export class WelcomePageComponent implements AfterViewInit {
         scene.add(cube);
         cubes.push(cube);
     }
+    //#endregion
 
 
 
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshStandardMaterial({
+      color: 0xffff00,
+    });
+
+    function tweenScale(shouldScaleUp: boolean)
+    {
+      const goalScale = shouldScaleUp? cubeScale: 1;
+      const scaleTween = new TWEEN.Tween(cube.scale)
+      .to({x: goalScale, y: goalScale, z: goalScale}, 1000)
+      .easing(TWEEN.Easing.Elastic.InOut)
+      .start();
+    }
+
+    const cube = new THREE.Mesh(geometry, material);
+    cube.userData = {start: () => tweenScale(true)};
+    scene.add(cube);
+    cube.position.set(0, 10, 0);
 
 
     /*==============  Animation   ============== */
@@ -288,6 +268,8 @@ export class WelcomePageComponent implements AfterViewInit {
       const deltaTime = (time - previousTime) * 0.0001; // Convierte el tiempo delta a segundos
       previousTime = time; // Actualiza el tiempo previo para el siguiente frame
 
+      cube.userData['start']();
+      TWEEN.update();
 
 
       //#region    CameraMovents
