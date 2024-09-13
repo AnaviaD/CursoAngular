@@ -4,6 +4,7 @@ import * as THREE from 'three';
 import TWEEN from '@tweenjs/tween.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
+
 @Component({
   selector: 'app-first-step',
   templateUrl: './first-step.component.html',
@@ -67,36 +68,18 @@ export class FirstStepComponent {
     scene.add(light);
     //#endregion
 
+    // Crear geometría y material para el cubo
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshStandardMaterial({ color: 0xffff00 });
 
-    function createBox(){
-      // Crear geometría y material para el cubo
-      const geometry = new THREE.BoxGeometry();
-      const material = new THREE.MeshStandardMaterial({ color: 0xffff00 });
+    // Crear y añadir el cubo a la escena
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.set(0, 0, 0);
 
-      // Crear y añadir el cubo a la escena
-      const cube = new THREE.Mesh(geometry, material);
-      cube.position.set(0, 0, 0);
-      cube.position.set(0, 0, 0);
+    scene.add(cube);
 
-      scene.add(cube);
 
-      const tween1 = new TWEEN.Tween({x: 20, y: 5, z: 20})
-      .to({x: -20, y: 15, z: -15}, 4000)
-      .repeat(10)
-      .delay(1000)
 
-      tween1.onUpdate(function (object: {
-        x:number;
-        y:number;
-        z:number;
-      }, elapsed: number){
-        cube.position.set(object.x, object.y, object.z)
-      });
-      tween1.start();
-
-    }
-
-    createBox()
 
     let previousTime = 0;
 
