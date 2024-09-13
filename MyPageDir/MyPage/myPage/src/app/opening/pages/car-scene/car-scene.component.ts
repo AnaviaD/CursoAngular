@@ -1,9 +1,14 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+
 import * as THREE from 'three';
 import TWEEN from '@tweenjs/tween.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
+// @ts-ignore
+import vShader from "../../shaders/vertex.glsl";
+// @ts-ignore
+import fShader from "../../shaders/fragment.glsl";
 
 @Component({
   selector: 'app-car-scene',
@@ -11,6 +16,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
   styleUrls: ['./car-scene.component.css']
 })
 export class CarSceneComponent {
+
 
   constructor(private translate: TranslateService) {
     // Establecer el idioma predeterminado
@@ -70,7 +76,10 @@ export class CarSceneComponent {
 
     // Crear geometría y material para el cubo
     const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshStandardMaterial({ color: 0xffff00 });
+    const material = new THREE.RawShaderMaterial({
+      vertexShader    :vShader,
+      fragmentShader  :fShader
+    });
 
     // Crear y añadir el cubo a la escena
     const cube = new THREE.Mesh(geometry, material);
