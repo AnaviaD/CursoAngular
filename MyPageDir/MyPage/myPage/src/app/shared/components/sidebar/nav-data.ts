@@ -16,17 +16,17 @@ export const navbarData =
     label:'MainPage'
   },
   {
-    routeLink: 'opening/welcome',
+    routeLink: 'opening/GF',
     icon: 'fal fa-school',
     label:'MainPage'
   },
   {
-    routeLink: 'opening/welcome',
+    routeLink: 'opening/cat',
     icon: 'fal fa-gamepad',
     label:'MainPage'
   },
   {
-    routeLink: 'opening/welcome',
+    routeLink: 'opening/car',
     icon: 'fal fa-rocket',
     label:'MainPage'
   },
