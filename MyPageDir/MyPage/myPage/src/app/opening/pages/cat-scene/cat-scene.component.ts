@@ -3,7 +3,8 @@ import { TranslateService } from '@ngx-translate/core';
 import * as THREE from 'three';
 import TWEEN from '@tweenjs/tween.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-
+// @ts-ignore
+import { getParticleSystem } from '../../assets/getParticleSystem.js';
 
 @Component({
   selector: 'app-cat-scene',
@@ -78,6 +79,14 @@ export class CatSceneComponent {
 
     scene.add(cube);
 
+    const smokeEffect = getParticleSystem({
+      camera,
+      emitter : cube,
+      parent  : scene,
+      rate    : 10,
+      texture : "../../../../assets/img/smoke.png" ,
+    });
+
 
 
 
@@ -87,7 +96,8 @@ export class CatSceneComponent {
     const animate = (time: number) => {
       requestAnimationFrame(animate);
       controls.update();
-      TWEEN.update();
+      // TWEEN.update();
+      smokeEffect.update(0.016);
 
       const deltaTime = (time - previousTime) * 0.0001; // Convierte el tiempo delta a segundos
       previousTime = time;
