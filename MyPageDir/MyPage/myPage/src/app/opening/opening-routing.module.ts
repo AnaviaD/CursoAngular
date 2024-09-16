@@ -6,6 +6,7 @@ import { FirstStepComponent } from './pages/first-step/first-step.component';
 import { GFSceneComponent } from './pages/gfscene/gfscene.component';
 import { CatSceneComponent } from './pages/cat-scene/cat-scene.component';
 import { CarSceneComponent } from './pages/car-scene/car-scene.component';
+import { TransportComponent } from './pages/transport/transport.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'car',
     component : CarSceneComponent
+  },
+  {
+    path: 'transport',
+    component : TransportComponent
   }
 ];
 

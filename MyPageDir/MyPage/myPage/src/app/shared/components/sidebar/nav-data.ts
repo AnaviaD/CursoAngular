@@ -31,7 +31,7 @@ export const navbarData =
     label:'MainPage'
   },
   {
-    routeLink: 'opening/welcome',
+    routeLink: 'opening/transport',
     icon: 'fal fa-ship',
     label:'MainPage'
   }
