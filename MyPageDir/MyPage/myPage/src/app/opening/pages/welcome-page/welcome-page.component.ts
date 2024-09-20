@@ -1,11 +1,14 @@
 import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
+import { FloatingCardComponent } from '../../components/floating-card/floating-card.component';
+
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
 import TWEEN from '@tweenjs/tween.js'
+
 import Stats from 'three/examples/jsm/libs/stats.module.js';
 import { GUI } from 'dat.gui';
-import { FloatingCardComponent } from '../../components/floating-card/floating-card.component';
 
 @Component({
   selector: 'app-welcome-page',
@@ -71,6 +74,7 @@ export class WelcomePageComponent implements AfterViewInit {
     const rotationSpeed = (2 * Math.PI) / 60000;
     const radius = 5;
     const cubeScale = 0.5;
+    let mixer: THREE.AnimationMixer;
     let angle = 0;
     let intensity = 1000.40; // UFO Variable para controlar la intensidad de la luz
     let targetPosition = new THREE.Vector3();
@@ -86,8 +90,9 @@ export class WelcomePageComponent implements AfterViewInit {
 
     //#region GLTF obj
     //  Variables GLTF
-    let ufoObject: THREE.Object3D; // Variable global para referenciar el objeto
-    let mustang01: THREE.Object3D; // Variable global para referenciar el objeto
+    let ufoObject : THREE.Object3D; // Variable global para referenciar el objeto
+    let mustang01 : THREE.Object3D; // Variable global para referenciar el objeto
+    let eyeBath   : THREE.Object3D; // Variable global para referenciar el objeto
 
     //#endregion
 
@@ -169,6 +174,36 @@ export class WelcomePageComponent implements AfterViewInit {
       }
     );
 
+    // Cargamos los modelos
+    loader.load(
+      'assets/eyeBath.glb',
+      (gltf) => {
+        eyeBath = gltf.scene;
+
+        eyeBath.position.set(0,10,0);
+        eyeBath.scale.set(0.01, 0.01, 0.01);
+        scene.add(eyeBath);
+
+        mixer = new THREE.AnimationMixer(eyeBath);
+        const clips = eyeBath.animations;
+
+        gltf.animations.forEach(clip => {
+          const action = mixer.clipAction(clip);
+          action.timeScale = 0.1;
+          action.play();
+        });
+
+        console.log(clips);
+        console.log(mixer);
+        console.log(eyeBath);
+
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+    );
+
     loader.load(
       'assets/Switch01.glb',
       (gltf) => {
@@ -240,51 +275,18 @@ export class WelcomePageComponent implements AfterViewInit {
 
 
 
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshStandardMaterial({
-      color: 0xffff00,
-    });
-
-    function tweenScale(shouldScaleUp: boolean)
-    {
-      const goalScale = shouldScaleUp? cubeScale: 0;
-      const delay = shouldScaleUp ? 0 : 5000;
-      const scaleTween = new TWEEN.Tween(cube.scale)
-
-      .to({x: goalScale, y: goalScale, z: goalScale}, 1000)
-      .easing(TWEEN.Easing.Elastic.InOut)
-      .onComplete(() =>{
-        if (shouldScaleUp){
-          tweenScale(false);
-        }
-      })
-      .delay(delay)
-      .start();
-    }
-
-    const cube = new THREE.Mesh(geometry, material);
-    cube.scale.setScalar(0);
-    cube.userData = {start: () => tweenScale(true)};
-    scene.add(cube);
-    cube.position.set(0, 10, 0);
-
-    const interval = 987634503458976;
-    let nextTime = 500;
 
     /*==============  Animation   ============== */
     // Función para animar la escena
     const animate = (time: number) => {
       requestAnimationFrame(animate);
+      if (mixer) {
+        mixer.update(time);
+      }
       controls.update();
       TWEEN.update();
-      const deltaTime = (time - previousTime) * 0.0001; // Convierte el tiempo delta a segundos
+      const deltaTime = (time - previousTime) / 1000; // Convierte el tiempo delta a segundos
       previousTime = time; // Actualiza el tiempo previo para el siguiente frame
-
-      if (time > nextTime) {
-        cube.userData['start']();
-        nextTime = time + interval;
-      }
-
 
       //#region    CameraMovents
       //Va a checar si el objetivo esta cerca de la camara
