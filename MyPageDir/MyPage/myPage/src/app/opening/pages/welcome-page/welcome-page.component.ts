@@ -5,6 +5,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
+import { SkeletonUtils } from 'three-stdlib';
 import TWEEN from '@tweenjs/tween.js'
 
 import Stats from 'three/examples/jsm/libs/stats.module.js';
@@ -63,7 +64,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
     //#region Variables
     // Estos serian los objetos interactuables del mapa
-    const cubes: Array<THREE.Mesh<THREE.BoxGeometry>> = [];
+    const cubes: Array<THREE.Object3D> = [];
     let remainingObjects: THREE.Object3D[] = [...cubes]; // Copia inicial de objetos disponibles
 
     // Variables globales para la animación de la cámara
@@ -74,7 +75,14 @@ export class WelcomePageComponent implements AfterViewInit {
     const rotationSpeed = (2 * Math.PI) / 60000;
     const radius = 5;
     const cubeScale = 0.5;
+    const clones = [];
+    const numClones = 3;
+    const distanceBetweenClones = 2;
+
+    const mixerArray: THREE.AnimationMixer[] = [];
     let mixer: THREE.AnimationMixer;
+    let mixer01: THREE.AnimationMixer;
+    let mixer02: THREE.AnimationMixer;
     let angle = 0;
     let intensity = 1000.40; // UFO Variable para controlar la intensidad de la luz
     let targetPosition = new THREE.Vector3();
@@ -93,6 +101,9 @@ export class WelcomePageComponent implements AfterViewInit {
     let ufoObject : THREE.Object3D; // Variable global para referenciar el objeto
     let mustang01 : THREE.Object3D; // Variable global para referenciar el objeto
     let eyeBath   : THREE.Object3D; // Variable global para referenciar el objeto
+    let eyeBath01   : THREE.Object3D; // Variable global para referenciar el objeto
+    let eyeBath02   : THREE.Object3D; // Variable global para referenciar el objeto
+    let eyeBath03   : THREE.Object3D; // Variable global para referenciar el objeto
 
     //#endregion
 
@@ -174,29 +185,79 @@ export class WelcomePageComponent implements AfterViewInit {
       }
     );
 
-    // Cargamos los modelos
+     // // Cargamos los modelos
+    // loader.load(
+    //   'assets/eyeBath.glb',
+    //   (gltf) => {
+    //     eyeBath = gltf.scene;
+
+    //     eyeBath.position.set(10,1,10);
+    //     eyeBath.scale.set(0.01, 0.01, 0.01);
+    //     scene.add(eyeBath);
+    //     cubes.push(eyeBath);
+
+
+    //     mixer = new THREE.AnimationMixer(eyeBath);
+
+    //     gltf.animations.forEach(clip => {
+    //       const action = mixer.clipAction(clip);
+    //       action.timeScale = 0.1;
+    //       action.play();
+    //     });
+
+    //   },
+    //   undefined,
+    //   (error) => {
+    //     console.error('Error al cargar el modelo GLTF:', error);
+    //   }
+    // );
+
+
+
+
     loader.load(
       'assets/eyeBath.glb',
       (gltf) => {
-        eyeBath = gltf.scene;
+        const original = gltf.scene;
+        original.position.set(10, 1, 12);
+        original.scale.set(0.01, 0.01, 0.01);
+        scene.add(original);
+        cubes.push(original);
 
-        eyeBath.position.set(0,10,0);
-        eyeBath.scale.set(0.01, 0.01, 0.01);
-        scene.add(eyeBath);
-
-        mixer = new THREE.AnimationMixer(eyeBath);
-        const clips = eyeBath.animations;
-
+        // Crear un mixer para el objeto original
+        mixer = new THREE.AnimationMixer(original);
         gltf.animations.forEach(clip => {
           const action = mixer.clipAction(clip);
-          action.timeScale = 0.1;
+          action.timeScale = 1;
           action.play();
         });
 
-        console.log(clips);
-        console.log(mixer);
-        console.log(eyeBath);
+        // gltf.animations.forEach(clip => {
+        //   const action = mixer.clipAction(clip);
+        //   action.timeScale = 0.1;
+        //   action.play();
+        // });
 
+        // Crear clones dispersos
+          // Clonar el modelo
+          const clone = SkeletonUtils.clone(original); // Usar SkeletonUtils para clonar correctamente
+          clone.position.set(10, 0, 14);
+          scene.add(clone);
+          cubes.push(clone);
+
+          // Crear un nuevo mixer para cada clon
+          mixer01 = new THREE.AnimationMixer(clone);
+          gltf.animations.forEach((clip) => {
+            const action = mixer01.clipAction(clip);
+            action.timeScale = 1; // Ajusta la velocidad si es necesario
+            action.play();
+          });
+
+          mixerArray.push(mixer);
+          mixerArray.push(mixer01);
+
+          // // Guardar la referencia al clon y su mixer
+          // clones.push({ object: clone, mixer: mixer });
       },
       undefined,
       (error) => {
@@ -259,7 +320,7 @@ export class WelcomePageComponent implements AfterViewInit {
     const cubeGeometry = new THREE.BoxGeometry(2, 2, 2);
     const cubeMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 7; i++) {
         const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
         cube.position.set(
             Math.random() * planeSize - planeSize / 2,
@@ -280,9 +341,10 @@ export class WelcomePageComponent implements AfterViewInit {
     // Función para animar la escena
     const animate = (time: number) => {
       requestAnimationFrame(animate);
-      if (mixer) {
+      mixerArray.forEach((mixer) => {
         mixer.update(time);
-      }
+      });
+
       controls.update();
       TWEEN.update();
       const deltaTime = (time - previousTime) / 1000; // Convierte el tiempo delta a segundos
@@ -539,21 +601,34 @@ export class WelcomePageComponent implements AfterViewInit {
       const ufoIntersections = raycaster.intersectObject(ufoObject);
 
       if (intersects.length > 0) {
-        const targetCube = intersects[0].object;
+        let targetObject = intersects[0].object;
 
-        console.log('Cubo clicado:', targetCube.position);
+
+        // Verificar si el objeto tiene geometría (es un Mesh)
+      if (targetObject.isObject3D) {
+        console.log('Objeto clicado (Mesh):', targetObject.position);
+        // Si no tiene geometría, tratar de obtener la posición global
+        const globalPosition = new THREE.Vector3();
+        targetObject.getWorldPosition(globalPosition);
+        targetObject.position.set(globalPosition.x, globalPosition.y, globalPosition.z);
+        console.log('Posición global del objeto:', globalPosition);
+
+      }
+
+        console.log('Objeto clicado:', targetObject.position);
+        console.log('Objeto clicado:', targetObject);
 
         // Configura la posición objetivo y la bandera de animación
         targetPosition.set(
-          targetCube.position.x,
-          1,
-          targetCube.position.z
+            targetObject.position.x,
+            1,
+            targetObject.position.z
         );
 
         targetLook.set(
-          targetCube.position.x,
-          1,
-          targetCube.position.z
+            targetObject.position.x,
+            1,
+            targetObject.position.z
         );
 
         console.log('Cubo - cambiamos a false');
@@ -561,6 +636,7 @@ export class WelcomePageComponent implements AfterViewInit {
         this.btnNextStepClicked = false;
         UfoFollows = false;
       }
+
 
       if (this.btnNextStepClicked) {
         const randomObject = selectRandomObject();
