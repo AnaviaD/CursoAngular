@@ -241,7 +241,7 @@ export class WelcomePageComponent implements AfterViewInit {
         // Crear clones dispersos
           // Clonar el modelo
           const clone = SkeletonUtils.clone(original); // Usar SkeletonUtils para clonar correctamente
-          clone.position.set(10, 0, 14);
+          clone.position.set(10, 1, 14);
           scene.add(clone);
           cubes.push(clone);
 
