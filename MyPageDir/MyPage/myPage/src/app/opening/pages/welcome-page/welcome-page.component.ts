@@ -78,6 +78,7 @@ export class WelcomePageComponent implements AfterViewInit {
     const clones = [];
     const numClones = 3;
     const distanceBetweenClones = 2;
+    const clock = new THREE.Clock();
 
     const mixerArray: THREE.AnimationMixer[] = [];
     let mixer: THREE.AnimationMixer;
@@ -215,54 +216,53 @@ export class WelcomePageComponent implements AfterViewInit {
 
 
 
+
+    // Cargar el modelo
     loader.load(
-      'assets/eyeBath.glb',
-      (gltf) => {
-        const original = gltf.scene;
-        original.position.set(10, 1, 12);
-        original.scale.set(0.01, 0.01, 0.01);
-        scene.add(original);
-        cubes.push(original);
+    'assets/eyeBathRigged.glb',
+    (gltf) => {
+      const original = gltf.scene;
+      original.position.set(10, 1, 12);
+      original.scale.set(0.01, 0.01, 0.01);
+      scene.add(original);
+      cubes.push(original);
 
-        // Crear un mixer para el objeto original
-        mixer = new THREE.AnimationMixer(original);
-        gltf.animations.forEach(clip => {
-          const action = mixer.clipAction(clip);
-          action.timeScale = 1;
-          action.play();
-        });
+      // Crear un mixer para el objeto original
+      mixer = new THREE.AnimationMixer(original);
+      gltf.animations.forEach(clip => {
+        const action = mixer.clipAction(clip);
+        action.timeScale = 1;
+        action.play();
+      });
 
-        // gltf.animations.forEach(clip => {
-        //   const action = mixer.clipAction(clip);
-        //   action.timeScale = 0.1;
-        //   action.play();
-        // });
+      // Clonar el modelo correctamente
+      const clone = SkeletonUtils.clone(original);
+      clone.position.set(10, 1, 16);
 
-        // Crear clones dispersos
-          // Clonar el modelo
-          const clone = SkeletonUtils.clone(original); // Usar SkeletonUtils para clonar correctamente
-          clone.position.set(10, 1, 14);
-          scene.add(clone);
-          cubes.push(clone);
+      // // Asegurar que el clon tenga las mismas propiedades de transformación
+      // clone.position.copy(original.position);
+      // clone.scale.copy(original.scale);
+      // clone.rotation.copy(original.rotation);
 
-          // Crear un nuevo mixer para cada clon
-          mixer01 = new THREE.AnimationMixer(clone);
-          gltf.animations.forEach((clip) => {
-            const action = mixer01.clipAction(clip);
-            action.timeScale = 1; // Ajusta la velocidad si es necesario
-            action.play();
-          });
+      // scene.add(clone);
+      // cubes.push(clone);
 
-          mixerArray.push(mixer);
-          mixerArray.push(mixer01);
+      // // Crear un nuevo mixer para el clon
+      // mixer01 = new THREE.AnimationMixer(clone);
+      // gltf.animations.forEach((clip) => {
+      //   const action = mixer01.clipAction(clip);
+      //   action.timeScale = 1;
+      //   action.play();
+      // });
 
-          // // Guardar la referencia al clon y su mixer
-          // clones.push({ object: clone, mixer: mixer });
-      },
-      undefined,
-      (error) => {
-        console.error('Error al cargar el modelo GLTF:', error);
-      }
+      // Añadir los mixers al array para ser actualizados
+      mixerArray.push(mixer);
+      // mixerArray.push(mixer01);
+    },
+    undefined,
+    (error) => {
+      console.error('Error al cargar el modelo GLTF:', error);
+    }
     );
 
     loader.load(
@@ -335,15 +335,26 @@ export class WelcomePageComponent implements AfterViewInit {
     //#endregion
 
 
+    function updateMixers() {
+      const delta = clock.getDelta();
+
+      // Actualiza todos los mixers
+      mixerArray.forEach((mixer) => {
+        mixer.update(delta);
+      });
+
+      // Vuelve a llamar a la función en el siguiente frame
+      requestAnimationFrame(updateMixers);
+    }
+
+    // Inicia la actualización de los mixers
+    updateMixers();
 
 
     /*==============  Animation   ============== */
     // Función para animar la escena
     const animate = (time: number) => {
       requestAnimationFrame(animate);
-      mixerArray.forEach((mixer) => {
-        mixer.update(time);
-      });
 
       controls.update();
       TWEEN.update();
