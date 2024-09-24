@@ -276,6 +276,65 @@ export class WelcomePageComponent implements AfterViewInit {
       }
     );
 
+    // Cargar el modelo
+    loader.load(
+      'assets/pyramid02.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(10, 1, 12);
+        original.scale.set(0.01, 0.01, 0.01);
+        scene.add(original);
+        cubes.push(original);
+
+        // Crear un mixer para el objeto original
+        mixer = new THREE.AnimationMixer(original);
+        gltf.animations.forEach(clip => {
+          const action = mixer.clipAction(clip);
+          action.timeScale = 1;
+          action.play();
+        });
+
+        // Clonar el modelo correctamente
+        const clone = SkeletonUtils.clone(original);
+        clone.position.set(15, 1, 16);
+
+        // // Asegurar que el clon tenga las mismas propiedades de transformación
+        // clone.position.copy(original.position);
+        // clone.scale.copy(original.scale);
+        // clone.rotation.copy(original.rotation);
+
+        // scene.add(clone);
+        // cubes.push(clone);
+
+        // // Crear un nuevo mixer para el clon
+        // mixer01 = new THREE.AnimationMixer(clone);
+        // gltf.animations.forEach((clip) => {
+        //   const action = mixer01.clipAction(clip);
+        //   action.timeScale = 1;
+        //   action.play();
+        // });
+
+        // Añadir los mixers al array para ser actualizados
+        mixerArray.push(mixer);
+        // mixerArray.push(mixer01);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+      );
+
+      loader.load(
+        'assets/Switch01.glb',
+        (gltf) => {
+          scene.add(gltf.scene);
+        },
+        undefined,
+        (error) => {
+          console.error('Error al cargar el modelo GLTF:', error);
+        }
+      );
+
 
     loader.load(
       'assets/Mustang.glb',
