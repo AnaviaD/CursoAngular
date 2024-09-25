@@ -33,7 +33,7 @@
     <div
       class="logo-text"
       *ngIf="collapsed_"
-      >Angular</div>
+      >My Page</div>
     <button
       class="btn-close"
       (click) = "closeSidebar()"
@@ -54,7 +54,13 @@
         href="" class="sidenav-nav-link"
         [routerLink] = "[data.routeLink]">
 
-        <i
+        <img *ngIf="data.svg"
+          [src]="data.svg"
+          class="icon sidenav-link-icon"
+          [class] = "data.icon"
+          >
+
+        <i *ngIf="data.icon"
           class="sidenav-link-icon"
           [class] = "data.icon"
           ></i>

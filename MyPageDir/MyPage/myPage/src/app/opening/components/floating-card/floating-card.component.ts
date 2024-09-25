@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./floating-card.component.css']
 })
 export class FloatingCardComponent {
-  isVisible: boolean = false;
-  contentToShow: number | null = null; // Variable que decide qué contenido mostrar
+  isVisible: boolean = true;        //Cambiar a false
+  contentToShow: number | null = 1; // Variable que decide qué contenido mostrar
 
   open(contentNumber: number){
     this.isVisible = true;

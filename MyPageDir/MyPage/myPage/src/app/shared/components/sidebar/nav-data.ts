@@ -11,6 +11,12 @@ export const navbarData =
     label:'MainPage'
   },
   {
+    routeLink: 'opening/card',
+    icon: '',
+    svg:  'assets/mySVGs/address-card.svg',
+    label:'MainPage'
+  },
+  {
     routeLink: 'opening/first',
     icon: 'fal fa-car',
     label:'MainPage'

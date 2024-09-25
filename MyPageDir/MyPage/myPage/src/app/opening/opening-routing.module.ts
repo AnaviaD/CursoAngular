@@ -7,11 +7,16 @@ import { GFSceneComponent } from './pages/gfscene/gfscene.component';
 import { CatSceneComponent } from './pages/cat-scene/cat-scene.component';
 import { CarSceneComponent } from './pages/car-scene/car-scene.component';
 import { TransportComponent } from './pages/transport/transport.component';
+import { FloatingCardComponent } from './components/floating-card/floating-card.component';
 
 const routes: Routes = [
   {
     path: 'welcome',
     component: WelcomePageComponent,
+  },
+  {
+    path: 'card',
+    component: FloatingCardComponent,
   },
   {
     path: 'first',
