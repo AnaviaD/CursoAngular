@@ -1,11 +1,15 @@
+body {
+  overflow: hidden;
+}
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Dim background behind the card */
-  z-index: 1500; /* Ensure it floats over other content */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1500;
 }
 
 .floating-card {
@@ -13,14 +17,91 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 66%; /* 2/3 of the screen horizontally */
-  height: 66%; /* 2/3 of the screen vertically */
-  background-color: rgba(255, 255, 255, 0.249); /* Semi-translucent */
-  border-radius: 8px;
+  width: 66%;
+  height: 66%;
+  background-color: rgba(255, 255, 255, 0.249);
+  border-radius: 50px;
   padding: 20px;
-  overflow-y: auto; /* Allow scrolling */
+  overflow-y: hidden;
+  overflow-x: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+.mainDiv {
+  height: 100%;
+  overflow-y: auto; /* Activar scrollbar vertical */
+  overflow-x: hidden; /* Activar scrollbar vertical */
+  scrollbar-width: none;
+  scrollbar-color: rgba(165, 157, 211, 0.5) transparent;
+}
+
+.mainDiv::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mainDiv::-webkit-scrollbar-thumb {
+  background-color: rgba(165, 157, 211, 0.5);
+  border-radius: 30px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50px;
+  padding: 10px;
+  color: white;
+  flex: 1;
+  margin-right: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Scrollbars minimalistas */
+.svg-container {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: thin; /* Scrollbar minimalista */
+  scrollbar-color: #888 transparent; /* Color del scrollbar */
+}
+
+.svg-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.svg-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+
+
+
+.svg-card {
+  display: flex;
+}
+
+.svg-card .card {
+  flex-shrink: 0;
+  width: 120px; /* Mantén las tarjetas cuadradas */
+  height: 120px;
+  background-color: rgba(255, 255, 255, 0.3); /* Fondo con transparencia */
+  border-radius: 50%; /* Hacer los cards redondos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.svg-card img {
+  width: 80px; /* Ajustar tamaño de los íconos SVG */
+  height: 80px;
+}
+
 
 .close-btn {
   position: absolute;
@@ -30,10 +111,4 @@
   border: none;
   font-size: 1.5em;
   cursor: pointer;
-}
-
-.content {
-  margin-top: 40px; /* Push content below close button */
-  font-size: 1.2em;
-  color: #333;
 }

@@ -1,39 +1,101 @@
 <div class="overlay" *ngIf="isVisible">
-  <div class="floating-card">
+  <div class="floating-card ">
     <button class="close-btn" (click)="close()">X</button>
-    <div class="content" *ngIf="contentToShow === 1">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-        venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-        fermentum erat sit amet ex dignissim venenatis.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-        venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-        fermentum erat sit amet ex dignissim venenatis.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-        venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-        fermentum erat sit amet ex dignissim venenatis.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-        venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-        fermentum erat sit amet ex dignissim venenatis.
-      </p>
+
+    <div class="mainDiv">
+
+        <!-- Row 1 -->
+        <div class="row">
+          <div class="card ">
+            <h2>Experiencia</h2>
+          </div>
+          <div class="card ">
+            <!-- Imagen cuadrada aquí -->
+            <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
+          </div>
+        </div>
+
+        <!-- Row 2: SVG Cards with horizontal scroll -->
+        <div class="row svg-container ">
+          <div class="svg-card">
+              <!-- Imagen cuadrada aquí -->
+              <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
+              <!-- Imagen cuadrada aquí -->
+              <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
+              <!-- Imagen cuadrada aquí -->
+              <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
+              <!-- Imagen cuadrada aquí -->
+              <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
+              <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
+              <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
+            <!-- Añade más SVG cards aquí -->
+          </div>
+        </div>
+
+
+        <!-- Row 3: Paragraph with scrollbar -->
+        <div class="row card ">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+            fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+            fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+            fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+            fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+            fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+            fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+            fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+            fermentum erat sit amet ex dignissim venenatis.
+          </p>
+        </div>
+
+        <!-- Row 4: Time section -->
+        <div class="row card subtitle-card">
+          <h3>Tiempo</h3>
+          <p>Texto con dos renglones...</p>
+        </div>
+
+        <!-- Row 5: Another content section -->
+        <div class="row card subtitle-card">
+          <h3>Otro Título</h3>
+          <p>Texto con dos renglones...</p>
+        </div>
+      </div>
     </div>
 
-    <div class="content" *ngIf="contentToShow === 2">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-        venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-        fermentum erat sit amet ex dignissim venenatis.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-        venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-        fermentum erat sit amet ex dignissim venenatis.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-        venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-        fermentum erat sit amet ex dignissim venenatis.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-        venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-        fermentum erat sit amet ex dignissim venenatis.
-      </p>
-    </div>
-
-  </div>
 </div>
+
+
+
+
+<!-- <div class="content" *ngIf="contentToShow === 2">
+
+  <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Imagen" class="square-image" />
+
+        ngFor="let svg of svgs"
+        <div class="svg-card">
+          <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
+        </div>
+
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+    venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+    fermentum erat sit amet ex dignissim venenatis.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+    venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+    fermentum erat sit amet ex dignissim venenatis.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+    venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+    fermentum erat sit amet ex dignissim venenatis.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+    venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+    fermentum erat sit amet ex dignissim venenatis.
+  </p>
+</div> -->
