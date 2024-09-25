@@ -176,7 +176,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
     // Cargamos los modelos
     loader.load(
-      'assets/House_medieval01.glb',
+      'assets/glts/House_medieval01.glb',
       (gltf) => {
         scene.add(gltf.scene);
       },
@@ -188,7 +188,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
      // // Cargamos los modelos
     // loader.load(
-    //   'assets/eyeBath.glb',
+    //   'assets/glts/eyeBath.glb',
     //   (gltf) => {
     //     eyeBath = gltf.scene;
 
@@ -219,7 +219,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
     // Cargar el modelo
     loader.load(
-    'assets/eyeBathRigged.glb',
+    'assets/glts/eyeBathRigged.glb',
     (gltf) => {
       const original = gltf.scene;
       original.position.set(10, 1, 12);
@@ -266,7 +266,7 @@ export class WelcomePageComponent implements AfterViewInit {
     );
 
     loader.load(
-      'assets/Switch01.glb',
+      'assets/glts/Switch01.glb',
       (gltf) => {
         scene.add(gltf.scene);
       },
@@ -278,7 +278,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
     // Cargar el modelo
     loader.load(
-      'assets/pyramid01.glb',
+      'assets/glts/pyramid01.glb',
       (gltf) => {
         const original = gltf.scene;
         original.position.set(15, 1, 17);
@@ -305,7 +305,7 @@ export class WelcomePageComponent implements AfterViewInit {
       );
 
       loader.load(
-        'assets/Switch01.glb',
+        'assets/glts/Switch01.glb',
         (gltf) => {
           scene.add(gltf.scene);
         },
@@ -317,7 +317,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
 
     loader.load(
-      'assets/Mustang.glb',
+      'assets/glts/Mustang.glb',
       (gltf) => {
         mustang01 = gltf.scene;
 
@@ -333,7 +333,7 @@ export class WelcomePageComponent implements AfterViewInit {
     );
 
     loader.load(
-      'assets/UfoObj.glb',
+      'assets/glts/UfoObj.glb',
       (gltf) => {
         ufoObject = gltf.scene; // Almacena el objeto en la variable global
         scene.add(gltf.scene);
