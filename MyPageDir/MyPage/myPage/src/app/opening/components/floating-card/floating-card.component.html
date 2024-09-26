@@ -1,14 +1,19 @@
 <div class="overlay" *ngIf="isVisible">
   <div class="floating-card ">
-    <button class="close-btn" (click)="close()">X</button>
+    <button class="close-btn" (click)="close()">
+      <img src="assets/mySVGs/circle-xmark.svg" alt="">
+    </button>
 
     <div class="mainDiv">
 
         <!-- Row 1 -->
 
-         <div class="row card">
-           <h2>Desarrollador Jr</h2>
-         </div>
+        <div class="row card">
+            <img src="assets/mySVGs/wrench.svg" alt="">
+          <div class="col d-flex align-items-center">
+            <h2>Desarrollador Jr</h2>
+          </div>
+        </div>
 
          <!-- Posible scena#D -->
         <!-- <div class="row">
@@ -26,7 +31,12 @@
 
         <!-- Row 2: SVG Cards with horizontal scroll -->
         <div class="card">
-          <p>Tech Stack:</p>
+
+          <div class="row">
+            <img src="" alt="">
+            <p>Tech Stack:</p>
+          </div>
+
 
           <div class="svg-scroll-wrapper">
             <div class="svg-container">
