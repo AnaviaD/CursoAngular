@@ -129,3 +129,12 @@ body {
   width: 24px; /* Ajusta el tamaño como prefieras */
   height: 24px;
 }
+
+
+.icon-img {
+  width: 15px;
+  height: 15px;
+  max-width: 100%;
+  max-height: 100%;
+  margin-right: 10px; /* Añade espacio a la derecha de la imagen */
+}
