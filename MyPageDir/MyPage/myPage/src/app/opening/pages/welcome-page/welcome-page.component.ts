@@ -10,6 +10,7 @@ import TWEEN from '@tweenjs/tween.js'
 
 import Stats from 'three/examples/jsm/libs/stats.module.js';
 import { GUI } from 'dat.gui';
+import { transition } from '@angular/animations';
 
 @Component({
   selector: 'app-welcome-page',
@@ -278,13 +279,12 @@ export class WelcomePageComponent implements AfterViewInit {
 
     // Cargar el modelo
     loader.load(
-      'assets/glts/pyramid01.glb',
+      'assets/glts/pyramid03.glb',
       (gltf) => {
         const original = gltf.scene;
         original.position.set(15, 1, 17);
         original.scale.set(0.01, 0.01, 0.01);
         scene.add(original);
-        cubes.push(original);
 
         // Crear un mixer para el objeto original
         mixer = new THREE.AnimationMixer(original);
@@ -359,6 +359,13 @@ export class WelcomePageComponent implements AfterViewInit {
     const cubeGeometry = new THREE.BoxGeometry(2, 2, 2);
     const cubeMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
 
+    const baitCube = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube.position.set(15, 1, 17);
+    baitCube.castShadow = false;
+    baitCube.receiveShadow = false;
+    scene.add(baitCube);
+    cubes.push(baitCube);
+
     for (let i = 0; i < 7; i++) {
         const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
         cube.position.set(
@@ -371,6 +378,8 @@ export class WelcomePageComponent implements AfterViewInit {
         scene.add(cube);
         cubes.push(cube);
     }
+
+
     //#endregion
 
 
@@ -420,6 +429,13 @@ export class WelcomePageComponent implements AfterViewInit {
         this.btnNextStepClicked = false;
       }
       //#endregion
+
+      camera.updateMatrixWorld(true);
+      scene.updateMatrixWorld(true);
+
+      scene.traverse((object) => {
+        object.updateMatrixWorld(true); // Fuerza la actualización de todas las matrices
+      });
 
       renderer.render(scene, camera);
     }
@@ -618,7 +634,7 @@ export class WelcomePageComponent implements AfterViewInit {
     //#region    cameraOnClickAnimation
     function cameraOnClickAnimation(){
 
-      controls.target.set(targetPosition.x, targetPosition.y, targetPosition.z);
+      // controls.target.set(targetPosition.x, targetPosition.y, targetPosition.z);
       camera.position.lerp(targetPosition, 0.40);
 
       // Interpola la dirección en la que la cámara mira hacia el cubo objetivo
