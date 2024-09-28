@@ -1,106 +1,108 @@
-<div class="overlay" *ngIf="isVisible">
-  <div class="floating-card ">
-    <button class="close-btn" (click)="close()">
-      <img src="assets/mySVGs/circle-xmark.svg" alt="">
-    </button>
+<div class="content">
+  <div class="overlay" *ngIf="isVisible">
+    <div class="floating-card ">
+      <button class="close-btn" (click)="close()">
+        <img src="assets/mySVGs/circle-xmark.svg" alt="">
+      </button>
 
-    <div class="mainDiv">
+      <div class="mainDiv">
 
-        <!-- Row 1 -->
+          <!-- Row 1 -->
 
-        <div class="row card">
-          <div class="col d-flex align-items-center">
-            <img src="assets/mySVGs/wrench.svg" alt="" class="icon-img">
-            <h2>  Desarrollador Jr</h2>
-          </div>
-        </div>
-
-         <!-- Posible scena#D -->
-        <!-- <div class="row">
-          <div class="card ">
-            <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
-          </div>
-        </div> -->
-
-
-        <!-- Row 4: Time section -->
-        <div class="row card subtitle-card">
-          <div class="col d-flex align-items-center">
-            <img src="assets/mySVGs/cube.svg" alt="" class="icon-img">
-            <h3>Tech stack Version </h3>
-          </div>
-          <p>Net Core 6.5</p>
-        </div>
-
-        <!-- Row 2: SVG Cards with horizontal scroll -->
-        <div class="card">
-
-          <div class="row" style="margin-left: 10px;">
+          <div class="row card">
             <div class="col d-flex align-items-center">
-              <img src="assets/mySVGs/cubes.svg" alt="" class="icon-img">
-
-              <h3>Tech Stack:</h3>
+              <img src="assets/mySVGs/wrench.svg" alt="" class="icon-img">
+              <h2>{{ getTranslationKey('title')  | translate }}</h2>
             </div>
           </div>
 
-          <div class="svg-scroll-wrapper">
-            <div class="svg-container">
-              <div class="svg-card">
-                <!-- Imagen cuadrada aquí -->
-                <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
-                <!-- Imagen cuadrada aquí -->
-                <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
-                <!-- Imagen cuadrada aquí -->
-                <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
-                <!-- Imagen cuadrada aquí -->
-                <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
-                <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
-                <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
-              <!-- Añade más SVG cards aquí -->
+           <!-- Posible scena#D -->
+          <!-- <div class="row">
+            <div class="card ">
+              <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
+            </div>
+          </div> -->
+
+
+          <!-- Row 4: Time section -->
+          <div class="row card subtitle-card">
+            <div class="col d-flex align-items-center">
+              <img src="assets/mySVGs/cube.svg" alt="" class="icon-img">
+              <h3>Tech stack Version </h3>
+            </div>
+            <p>Net Core 6.5</p>
+          </div>
+
+          <!-- Row 2: SVG Cards with horizontal scroll -->
+          <div class="card">
+
+            <div class="row" style="margin-left: 10px;">
+              <div class="col d-flex align-items-center">
+                <img src="assets/mySVGs/cubes.svg" alt="" class="icon-img">
+
+                <h3>Tech Stack:</h3>
+              </div>
+            </div>
+
+            <div class="svg-scroll-wrapper">
+              <div class="svg-container">
+                <div class="svg-card">
+                  <!-- Imagen cuadrada aquí -->
+                  <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
+                  <!-- Imagen cuadrada aquí -->
+                  <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
+                  <!-- Imagen cuadrada aquí -->
+                  <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
+                  <!-- Imagen cuadrada aquí -->
+                  <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
+                  <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
+                  <img src="assets/mySVGs/nodejs01-svgrepo-com.svg" alt="Icono" />
+                <!-- Añade más SVG cards aquí -->
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
 
-        <!-- Row 3: Paragraph with scrollbar -->
-        <div class="row card ">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-            fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-            fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-            fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-            fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-            fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-            fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-            fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
-            fermentum erat sit amet ex dignissim venenatis.
-          </p>
-        </div>
+          <!-- Row 3: Paragraph with scrollbar -->
+          <div class="row card ">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+              venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+              fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+              venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+              fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+              venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+              fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+              venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+              fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+              venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+              fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+              venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+              fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+              venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+              fermentum erat sit amet ex dignissim venenatis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+              venenatis sem sit amet urna placerat, in interdum lectus bibendum. Fusce
+              fermentum erat sit amet ex dignissim venenatis.
+            </p>
+          </div>
 
-        <!-- Row 4: Time section -->
-        <div class="row card subtitle-card">
-          <h3>Tiempo</h3>
-          <p>Texto con dos renglones...</p>
-        </div>
+          <!-- Row 4: Time section -->
+          <div class="row card subtitle-card">
+            <h3>Tiempo</h3>
+            <p>Texto con dos renglones...</p>
+          </div>
 
 
-        <!-- Row 5: Another content section -->
-        <div class="row card subtitle-card">
-          <h3>Otro Título</h3>
-          <p>Texto con dos renglones...</p>
+          <!-- Row 5: Another content section -->
+          <div class="row card subtitle-card">
+            <h3>Otro Título</h3>
+            <p>Texto con dos renglones...</p>
+          </div>
         </div>
       </div>
-    </div>
 
+  </div>
 </div>
 
 

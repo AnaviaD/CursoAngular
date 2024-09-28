@@ -1,3 +1,19 @@
 {
-  "title": "hola espanol"
+  "title": "hola espanol",
+  "stupidFriendly":
+  {
+    "title01": "Des Jr",
+    "tech": ["assets/mySVGs/wrench.svg", "assets/mySVGs/cubes.svg"],
+    "techtack": ["dotNet 5.0", "node express 3.8"],
+    "description": " lorem ipsum dolor sit amet",
+    "achivement": "llorem ipsum dolor sit amet"
+  },
+  "SRE":
+  {
+    "title01": "Des Sr",
+    "tech": ["assets/mySVGs/wrench01.svg", "assets/mySVGs/cubes01.svg"],
+    "techtack": ["dotNet 5.0", "node express 3.8"],
+    "description": " lorem ipsum dolor sit amet",
+    "achivement": "llorem ipsum dolor sit amet"
+  }
 }

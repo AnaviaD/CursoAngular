@@ -8,6 +8,9 @@ import { GFSceneComponent } from './pages/gfscene/gfscene.component';
 import { CatSceneComponent } from './pages/cat-scene/cat-scene.component';
 import { CarSceneComponent } from './pages/car-scene/car-scene.component';
 import { TransportComponent } from './pages/transport/transport.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpLoaderFactory } from '../app.module';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -23,7 +26,14 @@ import { TransportComponent } from './pages/transport/transport.component';
   ],
   imports: [
     CommonModule,
-    OpeningRoutingModule
+    OpeningRoutingModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ]
 })
 export class OpeningModule { }
