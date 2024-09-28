@@ -117,8 +117,8 @@ body {
 
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: 15px;
+  right: 25px;
   background-color: transparent;
   border: none;
   font-size: 1.5em;
@@ -130,6 +130,40 @@ body {
   height: 24px;
 }
 
+.language-btn .row {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  border: none;
+  font-size: 1.5em;
+  background-color: transparent;
+}
+
+.language-btn img {
+  width: 24px; /* Ajusta el tamaño como prefieras */
+  height: 24px;
+}
+
+.language-btn button {
+  width: 24px; /* Ajusta el tamaño como prefieras */
+  height: 24px;
+}
+
+.language-btn, .close-btn {
+  background-color: transparent !important; /* Asegura que sea completamente transparente */
+  border: none !important; /* Elimina cualquier borde */
+  padding: 0; /* Elimina el padding */
+  margin: 0; /* Elimina el margen */
+}
+
+.language-btn img, .close-btn img {
+  width: 24px; /* Ajusta el tamaño de las imágenes */
+  height: 24px;
+  display: block; /* Asegura que la imagen ocupe todo el botón */
+  padding: 0; /* Elimina el padding de las imágenes */
+  border: none; /* Asegúrate de que no haya bordes */
+}
 
 .icon-img {
   width: 15px;
