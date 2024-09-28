@@ -2,15 +2,22 @@
   "title": "hola espanol",
   "stupidFriendly":
   {
-    "title01": "Des Jr",
+    "title": "Desarrollador FullStack Jr",
+    "techTitle": "Tecnologías Utilizadas:",
     "tech": ["assets/mySVGs/wrench.svg", "assets/mySVGs/cubes.svg"],
-    "techtack": ["dotNet 5.0", "node express 3.8"],
-    "description": " lorem ipsum dolor sit amet",
-    "achivement": "llorem ipsum dolor sit amet"
+    "techtack": ["dotNet 5.0", "node express 3.8", "C#"],
+    "descTitle": "Descripcion",
+    "description": "Realizar el mantenimiento continuo y las actualizaciones del sistema, identificando y corrigiendo proactivamente errores, así como gestionando las actualizaciones de dependencias para asegurar la estabilidad y funcionalidad óptima de la aplicación a lo largo del tiempo. ",
+    "dutiesTitle": "Responsabilidades:",
+    "duties": ["Encargado de el desarrollo de la arquitectura", "Mantenimiento constante de el RP"],
+    "achivementTitle": "Logros:",
+    "achivemens": ["Mejorar desempeño en querys", "Mejorar tiempo de bla bla"],
+    "timeTitle": "Tiempo:",
+    "time": "2 años"
   },
   "SRE":
   {
-    "title01": "Des Sr",
+    "title": "Des Sr",
     "tech": ["assets/mySVGs/wrench01.svg", "assets/mySVGs/cubes01.svg"],
     "techtack": ["dotNet 5.0", "node express 3.8"],
     "description": " lorem ipsum dolor sit amet",

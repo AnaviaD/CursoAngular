@@ -10,28 +10,38 @@ export class FloatingCardComponent {
   isVisible: boolean = true;        //Cambiar a false
   // contentToShow: number | null = 1; // Variable que decide qué contenido mostrar
   //Declaramos este obj como Default
+
   contentToShow: any = {
-    title: "stupidFriendly.title01",
-    tech: "Angular, TypeScript",
-    description: "Trabajando en desarrollo frontend"
+    title: "stupidFriendly.title",
+    techTitle: "stupidFriendly.techTitle",
+    tech: "stupidFriendly.tech",
+    techtack: "stupidFriendly.techtack",
+    descTitle: "stupidFriendly.descTitle",
+    description: "stupidFriendly.description",
+    dutiesTitle: "stupidFriendly.dutiesTitle",
+    duties: "stupidFriendly.duties",
+    achivementTitle: "stupidFriendly.achivementTitle",
+    achivemens: "stupidFriendly.achivemens",
+    timeTitle: "stupidFriendly.timeTitle",
+    time: "stupidFriendly.time"
   }; // Variable donde guardarás el JSON dinámico
 
   // JSONs que cambiarán dependiendo de contentNumber
   content1 = {
-    title: "stupidFriendly.title01",
-    tech: "Angular, TypeScript",
+    title: "stupidFriendly.title",
+    techtack: ["Angular, TypeScript"],
     description: "Trabajando en desarrollo frontend"
   };
 
   content2 = {
     title: "Desarrollador Sr",
-    tech: "Node.js, TypeScript, AWS",
+    techtack: ["Node.js, TypeScript, AWS"],
     description: "Trabajando en desarrollo backend"
   };
 
   defaultContent = {
     title: 'stupidFriendly.title0',
-    tech: "Default Tech",
+    techtack: "Default Tech",
     description: "Default Description"
   };
 
@@ -60,6 +70,14 @@ export class FloatingCardComponent {
   getTranslationKey(property: string): string {
     console.log(this.contentToShow[property]);
     return this.contentToShow[property];
+  }
+
+  changetoSp(){
+    this.translate.use('es');
+  }
+
+  changetoEn(){
+    this.translate.use('en');
   }
 
   constructor(private translate: TranslateService) {
