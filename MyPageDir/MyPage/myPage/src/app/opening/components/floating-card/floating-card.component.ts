@@ -29,8 +29,17 @@ export class FloatingCardComponent {
   // JSONs que cambiarán dependiendo de contentNumber
   content1 = {
     title: "stupidFriendly.title",
-    techtack: ["Angular, TypeScript"],
-    description: "Trabajando en desarrollo frontend"
+    techTitle: "stupidFriendly.techTitle",
+    tech: "stupidFriendly.tech",
+    techtack: "stupidFriendly.techtack",
+    descTitle: "stupidFriendly.descTitle",
+    description: "stupidFriendly.description",
+    dutiesTitle: "stupidFriendly.dutiesTitle",
+    duties: "stupidFriendly.duties",
+    achivementTitle: "stupidFriendly.achivementTitle",
+    achivemens: "stupidFriendly.achivemens",
+    timeTitle: "stupidFriendly.timeTitle",
+    time: "stupidFriendly.time"
   };
 
   content2 = {
@@ -57,7 +66,7 @@ export class FloatingCardComponent {
         this.contentToShow = this.content2; // Asigna el JSON 2
         break;
       default:
-        this.contentToShow = this.defaultContent; // Valor por defecto si no coincide
+        this.contentToShow = this.contentToShow; // Valor por defecto si no coincide
         break;
     }
   }

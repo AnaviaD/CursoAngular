@@ -34,6 +34,12 @@ export class WelcomePageComponent implements AfterViewInit {
     console.log('Next step button clicked');
   }
 
+  objClicked(clickedObject: number) {
+    this.btnNextStepClicked = true;
+    this.floatingCard.open(clickedObject); // Call the open method to show the card
+    console.log('Next step button clicked');
+  }
+
   ngAfterViewInit(): void {
     this.initThreeJS();
     if (!this.floatingCard) {
@@ -361,6 +367,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
     const baitCube = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
     baitCube.position.set(15, 1, 17);
+    baitCube.userData = { id: 1 }; // Asignamos un id único a cada cubo
     baitCube.castShadow = false;
     baitCube.receiveShadow = false;
     scene.add(baitCube);
@@ -395,9 +402,9 @@ export class WelcomePageComponent implements AfterViewInit {
       requestAnimationFrame(updateMixers);
     }
 
+
     // Inicia la actualización de los mixers
     updateMixers();
-
 
     /*==============  Animation   ============== */
     // Función para animar la escena
@@ -669,17 +676,24 @@ export class WelcomePageComponent implements AfterViewInit {
       if (intersects.length > 0) {
         let targetObject = intersects[0].object;
 
+        const cubeId = targetObject.userData['id'];
+        if (cubeId) {
+          console.log('Cubo clicado con id:', cubeId);
+
+          // Llamar a la función `objClicked` desde Angular
+          this.objClicked(cubeId);
+        }
+
 
         // Verificar si el objeto tiene geometría (es un Mesh)
-      if (targetObject.isObject3D) {
+        if (targetObject.isObject3D) {
         console.log('Objeto clicado (Mesh):', targetObject.position);
         // Si no tiene geometría, tratar de obtener la posición global
         const globalPosition = new THREE.Vector3();
         targetObject.getWorldPosition(globalPosition);
         targetObject.position.set(globalPosition.x, globalPosition.y, globalPosition.z);
         console.log('Posición global del objeto:', globalPosition);
-
-      }
+        }
 
         console.log('Objeto clicado:', targetObject.position);
         console.log('Objeto clicado:', targetObject);
