@@ -308,19 +308,73 @@ export class WelcomePageComponent implements AfterViewInit {
       (error) => {
         console.error('Error al cargar el modelo GLTF:', error);
       }
-      );
+    );
 
-      loader.load(
-        'assets/glts/Switch01.glb',
-        (gltf) => {
-          scene.add(gltf.scene);
-        },
-        undefined,
-        (error) => {
-          console.error('Error al cargar el modelo GLTF:', error);
-        }
-      );
+    loader.load(
+      'assets/glts/Switch01.glb',
+      (gltf) => {
+        scene.add(gltf.scene);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+    );
 
+
+    // Cargar el modelo
+    loader.load(
+    'assets/glts/waterTower01.glb',
+    (gltf) => {
+      const original = gltf.scene;
+      original.position.set(-15, 1, -17);
+      original.scale.set(0.1, 0.1, 0.1);
+      scene.add(original);
+
+      // Crear un mixer para el objeto original
+      mixer = new THREE.AnimationMixer(original);
+      gltf.animations.forEach(clip => {
+        const action = mixer.clipAction(clip);
+        action.timeScale = 1;
+        action.play();
+      });
+
+      // Añadir los mixers al array para ser actualizados
+      mixerArray.push(mixer);
+      // mixerArray.push(mixer1);
+    },
+    undefined,
+    (error) => {
+      console.error('Error al cargar el modelo GLTF:', error);
+    }
+    );
+
+
+    // Cargar el modelo
+    loader.load(
+      'assets/glts/totem.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(15, 1, -17);
+        original.scale.set(0.1, 0.1, 0.1);
+        scene.add(original);
+
+        // Crear un mixer para el objeto original
+        mixer = new THREE.AnimationMixer(original);
+        gltf.animations.forEach(clip => {
+          const action = mixer.clipAction(clip);
+          action.timeScale = 1;
+          action.play();
+        });
+
+        // Añadir los mixers al array para ser actualizados
+        mixerArray.push(mixer);
+        // mixerArray.push(mixer01);
+      },
+      undefined,
+    (error) => {
+      console.error('Error al cargar el modelo GLTF:', error);
+    });
 
     loader.load(
       'assets/glts/Mustang.glb',
@@ -362,7 +416,7 @@ export class WelcomePageComponent implements AfterViewInit {
     plane.rotation.x = -Math.PI / 2;
     scene.add(plane);
 
-    const cubeGeometry = new THREE.BoxGeometry(2, 2, 2);
+    const cubeGeometry = new THREE.BoxGeometry(2, 20, 2);
     const cubeMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
 
     const baitCube = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
@@ -373,18 +427,35 @@ export class WelcomePageComponent implements AfterViewInit {
     scene.add(baitCube);
     cubes.push(baitCube);
 
-    for (let i = 0; i < 7; i++) {
-        const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-        cube.position.set(
-            Math.random() * planeSize - planeSize / 2,
-            1,
-            Math.random() * planeSize - planeSize / 2
-        );
-        cube.castShadow = true;
-        cube.receiveShadow = true;
-        scene.add(cube);
-        cubes.push(cube);
-    }
+    const baitCube01 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube01.position.set(15, 1, -17);
+    baitCube01.userData = { id: 2 }; // Asignamos un id único a cada cubo
+    baitCube01.castShadow = false;
+    baitCube01.receiveShadow = false;
+    scene.add(baitCube01);
+    cubes.push(baitCube01);
+
+    const baitCube02 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube02.position.set(-15, 1, -17);
+    baitCube02.userData = { id: 3 }; // Asignamos un id único a cada cubo
+    baitCube02.castShadow = false;
+    baitCube02.receiveShadow = false;
+    scene.add(baitCube02);
+    cubes.push(baitCube02);
+
+
+    // for (let i = 0; i < 7; i++) {
+    //     const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+    //     cube.position.set(
+    //         Math.random() * planeSize - planeSize / 2,
+    //         1,
+    //         Math.random() * planeSize - planeSize / 2
+    //     );
+    //     cube.castShadow = true;
+    //     cube.receiveShadow = true;
+    //     scene.add(cube);
+    //     cubes.push(cube);
+    // }
 
 
     //#endregion

@@ -116,6 +116,9 @@ export class FloatingCardComponent {
       case 2:
         this.contentToShow = this.content2; // Asigna el JSON 2
         break;
+      case 3:
+        this.contentToShow = this.content3; // Asigna el JSON 2
+        break;
       default:
         this.contentToShow = this.contentToShow; // Valor por defecto si no coincide
         break;
