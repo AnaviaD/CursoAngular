@@ -30,7 +30,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
   nextStep() {
     this.btnNextStepClicked = true;
-    this.floatingCard.open(1); // Call the open method to show the card
+    this.floatingCard.open(Math.floor(Math.random() * 2) + 1); // Call the open method to show the card
     console.log('Next step button clicked');
   }
 
@@ -186,7 +186,7 @@ export class WelcomePageComponent implements AfterViewInit {
     'assets/glts/groundMap.glb',
     (gltf) => {
       const original = gltf.scene;
-      original.position.set(0, -33, 0);
+      original.position.set(0, -32, 0);
       original.scale.set(10, 10, 10);
       scene.add(original);
 
@@ -215,8 +215,8 @@ export class WelcomePageComponent implements AfterViewInit {
     'assets/glts/eyeBathRigged.glb',
     (gltf) => {
       const original = gltf.scene;
-      original.position.set(10, 1, 12);
-      original.scale.set(0.01, 0.01, 0.01);
+      original.position.set(10, 1, 120);
+      original.scale.set(0.1, 0.1, 0.1);
       scene.add(original);
       cubes.push(original);
 
@@ -263,8 +263,8 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/pyramid03.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(15, 1, 17);
-        original.scale.set(0.01, 0.01, 0.01);
+        original.position.set(15, 1, 170);
+        original.scale.set(0.05, 0.05, 0.05);
         scene.add(original);
 
         // Crear un mixer para el objeto original
@@ -291,7 +291,7 @@ export class WelcomePageComponent implements AfterViewInit {
     'assets/glts/waterTower01.glb',
     (gltf) => {
       const original = gltf.scene;
-      original.position.set(-15, 1, -17);
+      original.position.set(-15, 1, -170);
       original.scale.set(0.1, 0.1, 0.1);
       scene.add(original);
 
@@ -319,7 +319,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/totem.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(15, 1, -17);
+        original.position.set(150, 1, -170);
         original.scale.set(0.1, 0.1, 0.1);
         scene.add(original);
 
@@ -384,7 +384,7 @@ export class WelcomePageComponent implements AfterViewInit {
     const cubeMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
 
     const baitCube = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
-    baitCube.position.set(15, 1, 17);
+    baitCube.position.set(15, 1, 170);
     baitCube.userData = { id: 1 }; // Asignamos un id único a cada cubo
     baitCube.castShadow = false;
     baitCube.receiveShadow = false;
@@ -392,7 +392,7 @@ export class WelcomePageComponent implements AfterViewInit {
     cubes.push(baitCube);
 
     const baitCube01 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
-    baitCube01.position.set(15, 1, -17);
+    baitCube01.position.set(150, 1, -170);
     baitCube01.userData = { id: 2 }; // Asignamos un id único a cada cubo
     baitCube01.castShadow = false;
     baitCube01.receiveShadow = false;
@@ -400,7 +400,7 @@ export class WelcomePageComponent implements AfterViewInit {
     cubes.push(baitCube01);
 
     const baitCube02 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
-    baitCube02.position.set(-15, 1, -17);
+    baitCube02.position.set(-15, 1, -170);
     baitCube02.userData = { id: 3 }; // Asignamos un id único a cada cubo
     baitCube02.castShadow = false;
     baitCube02.receiveShadow = false;
@@ -559,8 +559,8 @@ export class WelcomePageComponent implements AfterViewInit {
       if (camera.position.y < 0) {
         camera.position.y = 0;
       }
-      if (camera.position.y > 30) {
-        camera.position.y = 30;
+      if (camera.position.y > 300) {
+        camera.position.y = 300;
       }
       if ((camera.position.distanceTo(targetPosition) < 15.15) || (camera.position.distanceTo(targetPosition) < 10.15) && !isAnimating) {
         posicionateCamera();
@@ -824,7 +824,6 @@ export class WelcomePageComponent implements AfterViewInit {
     window.addEventListener('click', onMouseClick);
 
     window.addEventListener('wheel', onWheelDown);
-
 
     // Iniciar la animación
     animate(0);
