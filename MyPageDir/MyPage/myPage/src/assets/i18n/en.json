@@ -1,5 +1,6 @@
 {
   "title": "welcome eng",
+
   "stupidFriendly": {
   "title": "Software Engineering Intern",
   "techTitle": "Technologies Used:",
@@ -11,23 +12,76 @@
   "achivemens": ["Improved system reliability by eliminating redundant functions, reducing errors and enhancing system performance by 15%.", "Streamlined processes by optimizing code, resulting in better information management and more efficient access for small business merchants."],
   "timeTitle": "Duration:",
   "time": "2014 July — 2016 Dec"
-},
+  },
+  "Infotec":
+  {
+    "title": "Junior Software Engineer",
+    "techTitle": "Technologies used:",
+    "tech": [
+      "assets/mySVGs/JSON.svg",
+      "assets/mySVGs/NETcore.svg",
+      "assets/mySVGs/Bootstrap.svg",
+      "assets/mySVGs/GitHub.svg",
+      "assets/mySVGs/HTML5.svg"
+    ],
+    "techtack": [
+      "Languages and Frameworks: .NET Framework 4.7.x, .NET Core 2.x, JavaScript (ES6), Angular 6.",
+      "Database: MySQL 5.7.",
+      "Tools: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017, phpMyAdmin 4.0."
+    ],
+    "descTitle": "Description:",
+    "description": "I participated in the development of two web projects focused on user management and appointment scheduling, which significantly contributed to the functionality and reach of the applications.",
+    "dutiesTitle": "Responsibilities:",
+    "duties": [
+      "Implemented front-end events and tracked event logic to the database.",
+      "Troubleshooting and system maintenance, including error identification and resolution.",
+      "Maintained continuous communication with early users to gather feedback and define new features with the QA team."
+    ],
+    "methodologiesTitle": "Methodologies:",
+    "methodologies": [
+      "I used agile methodologies (Scrum) to ensure continuous delivery of features, working in sprints to implement improvements based on constant feedback and ensuring an efficient workflow in collaboration with the team."
+    ],
+    "achivementTitle": "Achievements:",
+    "achivemens": [
+      "Improved system stability by resolving critical errors affecting user experience.",
+      "Collected and analyzed feedback, resulting in the implementation of features tailored to client needs."
+    ],
+    "timeTitle": "Time:",
+    "time": "2019 Feb — 2021 Sep"
+  },
   "FletesTransportes":
   {
-    "title": "Becario",
-    "techTitle": "Tecnologias utilizadas:",
-    "tech": ["assets/mySVGs/wrench.svg", "assets/mySVGs/cubes.svg"],
-    "techtack": ["dotNet 0", "node express 8", "C#"],
+    "title": "Junior Software Engineer",
+    "techTitle": "Technologies used:",
+    "tech": [
+      "assets/mySVGs/JSON.svg",
+      "assets/mySVGs/Microsoft SQL Server.svg",
+      "assets/mySVGs/Android.svg",
+      "assets/mySVGs/CSharp.svg",
+      "assets/mySVGs/NETcore.svg",
+      "assets/mySVGs/Bootstrap.svg",
+      "assets/mySVGs/GitHub.svg",
+      "assets/mySVGs/HTML5.svg"
+    ],
+    "techtack": ["Languages & Frameworks: Kotlin 1.4, SQLite 3.35, Retrofit 2.9, .NET Core 3.1, .NET Core 2.x, JavaScript (ES6), Angular 6, Node Express 4", "Database: MySQL 5.7", "Tools: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017 & 2019, phpMyAdmin 4.0"],
     "descTitle": "Description:",
-    "description": "las actualizaciones del sistema, identificando y corrigiendo proactivamente errores, así como gestionando las actualizaciones de dependencias para asegurar la estabilidad y funcionalidad óptima de la aplicación a lo largo del tiempo. ",
-    "dutiesTitle": "Responsabilidades:",
-    "duties": ["Encarge la arquitectura", "Mantenimiento constante de el RP"],
-    "methodologiesTitle": "Metodologias:",
-    "methodologies": ["Encarge la arquitectura", "Mantenimiento constante de el RP"],
-    "achivementTitle": "Logros:",
+    "description": "I actively participated in and led a variety of projects across different areas of development and business solutions. Key contributions include the creation of a virtual kiosk, a comprehensive tool that allowed employees to access and view information like trips, vacations, and bonuses. Additionally, I led an Android project aimed at simplifying inventory management for Tractocamiones, providing details about the state of their components, such as seats, tires, and other key elements. I also spearheaded the creation of a merchandise management program designed to clean and process customer data, ensuring only essential information for billing was maintained. Furthermore, I developed a web panel for the monitoring area, offering a detailed view of travel data, including start and end points, routes, emergency buttons, and engine stops, among other critical functions.",
+    "dutiesTitle": "Responsibilities:",
+    "duties": ["Defined and established the architecture of the merchandise management project, ensuring a scalable design that met business objectives.",
+    "Implemented advanced data cleaning and validation techniques, including the use of regular expressions, to ensure data integrity.",
+    "Developed algorithms using machine learning to extract key information from complex data sets, such as Excel sheets with variable formats.",
+    "Optimized system architecture using established technologies and protocols (FTP) to facilitate efficient data exchange across departments.",
+    "Designed and implemented a web version of the application following SOLID principles using .NET and Angular.",
+    "Performed continuous system maintenance and proactive error identification, including dependency management to ensure system stability.",
+    "Defined the structure of the Android inventory project, integrated APIs using Retrofit, and implemented data storage with SQLite.",
+    "Handled threads and concurrency using Kotlin Coroutines, optimized performance by resolving bottlenecks, and ensured compatibility with Android updates.",
+    "Developed and applied logic for extracting critical data for fleet management, monitoring events like unauthorized stops, and emergency alerts."],
+    "methodologiesTitle": "Methodologies:",
+    "methodologies": ["Applied Agile methodologies (Scrum) in all projects, working in sprints to implement improvements based on continuous feedback.", "Collaborated with cross-functional teams to ensure smooth communication and timely project deliveries."],
+    "achivementTitle": "Achievements:",
     "achivemens": ["Ms", "Mejorar tiempo de bla bla"],
     "timeTitle": "Time:",
-    "time": "2 years"
+    "time": "2021 May — 2024 July"
   },
   "SRE":
   {

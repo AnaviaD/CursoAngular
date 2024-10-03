@@ -11,7 +11,41 @@ export class FloatingCardComponent {
   // contentToShow: number | null = 1; // Variable que decide qué contenido mostrar
   //Declaramos este obj como Default
 
+  // contentToShow: any = {
+  //   title: "stupidFriendly.title",
+  //   techTitle: "stupidFriendly.techTitle",
+  //   tech: "stupidFriendly.tech",
+  //   techtack: "stupidFriendly.techtack",
+  //   descTitle: "stupidFriendly.descTitle",
+  //   description: "stupidFriendly.description",
+  //   dutiesTitle: "stupidFriendly.dutiesTitle",
+  //   duties: "stupidFriendly.duties",
+  //   achivementTitle: "stupidFriendly.achivementTitle",
+  //   achivemens: "stupidFriendly.achivemens",
+  //   methodologiesTitle: "stupidFriendly.methodologiesTitle",
+  //   methodologies: "stupidFriendly.methodologies",
+  //   timeTitle: "stupidFriendly.timeTitle",
+  //   time: "stupidFriendly.time"
+  // };
+
   contentToShow: any = {
+    title: "FletesTransportes.title",
+    techTitle: "FletesTransportes.techTitle",
+    tech: "FletesTransportes.tech",
+    techtack: "FletesTransportes.techtack",
+    descTitle: "FletesTransportes.descTitle",
+    description: "FletesTransportes.description",
+    dutiesTitle: "FletesTransportes.dutiesTitle",
+    duties: "FletesTransportes.duties",
+    achivementTitle: "FletesTransportes.achivementTitle",
+    achivemens: "FletesTransportes.achivemens",
+    methodologiesTitle: "FletesTransportes.methodologiesTitle",
+    methodologies: "FletesTransportes.methodologies",
+    timeTitle: "FletesTransportes.timeTitle",
+    time: "FletesTransportes.time"
+  }; // Variable donde guardarás el JSON dinámico
+
+  content1 = {
     title: "stupidFriendly.title",
     techTitle: "stupidFriendly.techTitle",
     tech: "stupidFriendly.tech",
@@ -25,22 +59,41 @@ export class FloatingCardComponent {
   }; // Variable donde guardarás el JSON dinámico
 
   // JSONs que cambiarán dependiendo de contentNumber
-  content1 = {
-    title: "stupidFriendly.title",
-    techTitle: "stupidFriendly.techTitle",
-    tech: "stupidFriendly.tech",
-    techtack: "stupidFriendly.techtack",
-    descTitle: "stupidFriendly.descTitle",
-    description: "stupidFriendly.description",
-    dutiesTitle: "stupidFriendly.dutiesTitle",
-    duties: "stupidFriendly.duties",
-    achivementTitle: "stupidFriendly.achivementTitle",
-    achivemens: "stupidFriendly.achivemens",
-    timeTitle: "stupidFriendly.timeTitle",
-    time: "stupidFriendly.time"
+  content2 = {
+    title: "Infotec.title",
+    techTitle: "Infotec.techTitle",
+    tech: "Infotec.tech",
+    techtack: "Infotec.techtack",
+    descTitle: "Infotec.descTitle",
+    description: "Infotec.description",
+    dutiesTitle: "Infotec.dutiesTitle",
+    duties: "Infotec.duties",
+    // achivementTitle: "Infotec.achivementTitle",
+    // achivemens: "Infotec.achivemens",
+    methodologiesTitle: "Infotec.methodologiesTitle",
+    methodologies: "Infotec.methodologies",
+    timeTitle: "Infotec.timeTitle",
+    time: "Infotec.time"
   };
 
-  content2 = {
+  content3 = {
+    title: "FletesTransportes.title",
+    techTitle: "FletesTransportes.techTitle",
+    tech: "FletesTransportes.tech",
+    techtack: "FletesTransportes.techtack",
+    descTitle: "FletesTransportes.descTitle",
+    description: "FletesTransportes.description",
+    dutiesTitle: "FletesTransportes.dutiesTitle",
+    duties: "FletesTransportes.duties",
+    achivementTitle: "FletesTransportes.achivementTitle",
+    achivemens: "FletesTransportes.achivemens",
+    methodologiesTitle: "FletesTransportes.methodologiesTitle",
+    methodologies: "FletesTransportes.methodologies",
+    timeTitle: "FletesTransportes.timeTitle",
+    time: "FletesTransportes.time"
+  };
+
+  content16 = {
     title: "Desarrollador Sr",
     techtack: ["Node.js, TypeScript, AWS"],
     description: "Trabajando en desarrollo backend"
