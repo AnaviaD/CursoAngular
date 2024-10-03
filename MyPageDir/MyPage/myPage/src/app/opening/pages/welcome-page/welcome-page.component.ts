@@ -181,45 +181,31 @@ export class WelcomePageComponent implements AfterViewInit {
     const loader = new GLTFLoader(loadingManager);
     let gltObject: THREE.Object3D;
 
-    // Cargamos los modelos
+    // Cargar el modelo
     loader.load(
-      'assets/glts/House_medieval01.glb',
-      (gltf) => {
-        scene.add(gltf.scene);
-      },
-      undefined,
-      (error) => {
-        console.error('Error al cargar el modelo GLTF:', error);
-      }
-    );
+    'assets/glts/groundMap.glb',
+    (gltf) => {
+      const original = gltf.scene;
+      original.position.set(0, -33, 0);
+      original.scale.set(10, 10, 10);
+      scene.add(original);
 
-     // // Cargamos los modelos
-    // loader.load(
-    //   'assets/glts/eyeBath.glb',
-    //   (gltf) => {
-    //     eyeBath = gltf.scene;
+      // Crear un mixer para el objeto original
+      mixer = new THREE.AnimationMixer(original);
+      gltf.animations.forEach(clip => {
+        const action = mixer.clipAction(clip);
+        action.timeScale = 1;
+        action.play();
+      });
 
-    //     eyeBath.position.set(10,1,10);
-    //     eyeBath.scale.set(0.01, 0.01, 0.01);
-    //     scene.add(eyeBath);
-    //     cubes.push(eyeBath);
-
-
-    //     mixer = new THREE.AnimationMixer(eyeBath);
-
-    //     gltf.animations.forEach(clip => {
-    //       const action = mixer.clipAction(clip);
-    //       action.timeScale = 0.1;
-    //       action.play();
-    //     });
-
-    //   },
-    //   undefined,
-    //   (error) => {
-    //     console.error('Error al cargar el modelo GLTF:', error);
-    //   }
-    // );
-
+      // Añadir los mixers al array para ser actualizados
+      mixerArray.push(mixer);
+      // mixerArray.push(mixer1);
+    },
+    undefined,
+    (error) => {
+      console.error('Error al cargar el modelo GLTF:', error);
+    });
 
 
 
@@ -272,17 +258,6 @@ export class WelcomePageComponent implements AfterViewInit {
     }
     );
 
-    loader.load(
-      'assets/glts/Switch01.glb',
-      (gltf) => {
-        scene.add(gltf.scene);
-      },
-      undefined,
-      (error) => {
-        console.error('Error al cargar el modelo GLTF:', error);
-      }
-    );
-
     // Cargar el modelo
     loader.load(
       'assets/glts/pyramid03.glb',
@@ -303,17 +278,6 @@ export class WelcomePageComponent implements AfterViewInit {
         // Añadir los mixers al array para ser actualizados
         mixerArray.push(mixer);
         // mixerArray.push(mixer01);
-      },
-      undefined,
-      (error) => {
-        console.error('Error al cargar el modelo GLTF:', error);
-      }
-    );
-
-    loader.load(
-      'assets/glts/Switch01.glb',
-      (gltf) => {
-        scene.add(gltf.scene);
       },
       undefined,
       (error) => {
@@ -376,21 +340,21 @@ export class WelcomePageComponent implements AfterViewInit {
       console.error('Error al cargar el modelo GLTF:', error);
     });
 
-    loader.load(
-      'assets/glts/Mustang.glb',
-      (gltf) => {
-        mustang01 = gltf.scene;
+    // loader.load(
+    //   'assets/glts/Mustang.glb',
+    //   (gltf) => {
+    //     mustang01 = gltf.scene;
 
 
-        scene.add(gltf.scene);
-        mustang01.position.set(10,0,0);
+    //     scene.add(gltf.scene);
+    //     mustang01.position.set(10,0,0);
 
-      },
-      undefined,
-      (error) => {
-        console.error('Error al cargar el modelo GLTF:', error);
-      }
-    );
+    //   },
+    //   undefined,
+    //   (error) => {
+    //     console.error('Error al cargar el modelo GLTF:', error);
+    //   }
+    // );
 
     loader.load(
       'assets/glts/UfoObj.glb',
