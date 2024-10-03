@@ -92,8 +92,20 @@
                 <img src="assets/mySVGs/cube.svg" alt="" class="icon-img">
                 <h3>{{ getTranslationKey('dutiesTitle')  | translate }} </h3>
               </div>
-              <div *ngFor="let tech of (getTranslationKey('duties') | translate)">
-                <p>{{ tech }}</p>
+              <div *ngFor="let dutie of (getTranslationKey('duties') | translate)">
+                <p>{{ dutie }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="getTranslationKey('methodologiesTitle')">
+            <div class="row card ">
+              <div class="col d-flex align-items-center">
+                <img src="assets/mySVGs/cube.svg" alt="" class="icon-img">
+                <h3>{{ getTranslationKey('methodologiesTitle')  | translate }} </h3>
+              </div>
+              <div *ngFor="let meth of (getTranslationKey('methodologies') | translate)">
+                <p>{{ meth }}</p>
               </div>
             </div>
           </div>

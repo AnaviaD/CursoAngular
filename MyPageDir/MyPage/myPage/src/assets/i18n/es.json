@@ -2,18 +2,20 @@
   "title": "hola espanol",
   "stupidFriendly":
   {
-    "title": "Desarrollador FullStack Jr",
-    "techTitle": "Tecnologías Utilizadas:",
+    "title": "Becario de Ingeniería de Software",
+    "techTitle": "Tecnologias utilizadas:",
     "tech": ["assets/mySVGs/wrench.svg", "assets/mySVGs/cubes.svg"],
-    "techtack": ["dotNet 5.0", "node express 3.8", "C#"],
-    "descTitle": "Descripcion",
-    "description": "Realizar el mantenimiento continuo y las actualizaciones del sistema, identificando y corrigiendo proactivamente errores, así como gestionando las actualizaciones de dependencias para asegurar la estabilidad y funcionalidad óptima de la aplicación a lo largo del tiempo. ",
+    "techtack": ["dotNet 0", "node express 8", "C#"],
+    "descTitle": "Description:",
+    "description": "las actualizaciones del sistema, identificando y corrigiendo proactivamente errores, así como gestionando las actualizaciones de dependencias para asegurar la estabilidad y funcionalidad óptima de la aplicación a lo largo del tiempo. ",
     "dutiesTitle": "Responsabilidades:",
-    "duties": ["Encargado de el desarrollo de la arquitectura", "Mantenimiento constante de el RP"],
+    "duties": ["Encarge la arquitectura", "Mantenimiento constante de el RP"],
+    "methodologiesTitle": "Metodologias:",
+    "methodologies": ["Encarge la arquitectura", "Mantenimiento constante de el RP"],
     "achivementTitle": "Logros:",
-    "achivemens": ["Mejorar desempeño en querys", "Mejorar tiempo de bla bla"],
-    "timeTitle": "Tiempo:",
-    "time": "2 años"
+    "achivemens": ["Ms", "Mejorar tiempo de bla bla"],
+    "timeTitle": "Time:",
+    "time": "2 years"
   },
   "SRE":
   {

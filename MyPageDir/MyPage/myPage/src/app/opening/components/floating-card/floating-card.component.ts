@@ -22,6 +22,8 @@ export class FloatingCardComponent {
     duties: "stupidFriendly.duties",
     achivementTitle: "stupidFriendly.achivementTitle",
     achivemens: "stupidFriendly.achivemens",
+    methodologiesTitle: "stupidFriendly.methodologiesTitle",
+    methodologies: "stupidFriendly.methodologies",
     timeTitle: "stupidFriendly.timeTitle",
     time: "stupidFriendly.time"
   }; // Variable donde guardarás el JSON dinámico
@@ -77,7 +79,7 @@ export class FloatingCardComponent {
   }
 
   getTranslationKey(property: string): string {
-    console.log(this.contentToShow[property]);
+    // console.log(this.contentToShow[property]);
     return this.contentToShow[property];
   }
 
