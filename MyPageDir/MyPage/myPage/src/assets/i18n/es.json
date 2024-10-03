@@ -4,6 +4,19 @@
   {
     "title": "Becario de Ingeniería de Software",
     "techTitle": "Tecnologias utilizadas:",
+    "tech": ["assets/mySVGs/HTML5.svg", "assets/mySVGs/Microsoft SQL Server.svg", "assets/mySVGs/Bootstrap.svg", "assets/mySVGs/BitBucket.svg", "assets/mySVGs/Django.svg"],
+    "techtack": ["Lenguajes y Frameworks: Python (TurboGears 2.0), JavaScript (jQuery 1.7), HTML, CSS", "Base de Datos: MySQL 5.5", "Herramientas: jQuery para el Front-End, MySQL Workbench, TurboGears para desarrollo Backend"],
+    "dutiesTitle": "Responsabilidades:",
+    "duties": ["Documentación de las páginas de inventario, distribución, y una plataforma externa de venta y distribución de boletos", "Colaboración en la creación y mantenimiento de APIs para la gestión de datos utilizando Python (TurboGears) y JavaScript (jQuery).", "Identificación y corrección de problemas relacionados con la fiabilidad del sistema."],
+    "achivementTitle": "Logros:",
+    "achivemens": ["Mejoré la fiabilidad del sistema mediante la eliminación de funciones redundantes, lo que redujo errores y mejoró el rendimiento del sistema en un 15%.", "Simplifiqué procesos mediante la optimización del código, lo que resultó en una mejor gestión de la información y un acceso más eficiente para los pequeños comerciantes."],
+    "timeTitle": "Tiempo:",
+    "time": "2014 July — 2016 Dec"
+  },
+  "FletesTransportes":
+  {
+    "title": "Becario",
+    "techTitle": "Tecnologias utilizadas:",
     "tech": ["assets/mySVGs/wrench.svg", "assets/mySVGs/cubes.svg"],
     "techtack": ["dotNet 0", "node express 8", "C#"],
     "descTitle": "Description:",
@@ -15,7 +28,7 @@
     "achivementTitle": "Logros:",
     "achivemens": ["Ms", "Mejorar tiempo de bla bla"],
     "timeTitle": "Time:",
-    "time": "2 years"
+    "time": "2014 July — 2016 Dec"
   },
   "SRE":
   {

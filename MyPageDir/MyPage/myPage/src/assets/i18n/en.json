@@ -1,22 +1,17 @@
 {
   "title": "welcome eng",
-  "stupidFriendly":
-  {
-    "title": "Becario de Ingeniería de Software",
-    "techTitle": "Tecnologias utilizadas:",
-    "tech": ["assets/mySVGs/wrench.svg", "assets/mySVGs/cubes.svg"],
-    "techtack": ["dotNet 0", "node express 8", "C#"],
-    "descTitle": "Description:",
-    "description": "las actualizaciones del sistema, identificando y corrigiendo proactivamente errores, así como gestionando las actualizaciones de dependencias para asegurar la estabilidad y funcionalidad óptima de la aplicación a lo largo del tiempo. ",
-    "dutiesTitle": "Responsabilidades:",
-    "duties": ["Encarge la arquitectura", "Mantenimiento constante de el RP"],
-    "methodologiesTitle": "Metodologias:",
-    "methodologies": ["Encarge la arquitectura", "Mantenimiento constante de el RP"],
-    "achivementTitle": "Logros:",
-    "achivemens": ["Ms", "Mejorar tiempo de bla bla"],
-    "timeTitle": "Time:",
-    "time": "2 years"
-  },
+  "stupidFriendly": {
+  "title": "Software Engineering Intern",
+  "techTitle": "Technologies Used:",
+  "tech": ["assets/mySVGs/HTML5.svg", "assets/mySVGs/Microsoft SQL Server.svg", "assets/mySVGs/Bootstrap.svg", "assets/mySVGs/BitBucket.svg", "assets/mySVGs/Django.svg"],
+  "techtack": ["Languages and Frameworks: Python (TurboGears 2.0), JavaScript (jQuery 1.7), HTML, CSS", "Database: MySQL 5.5", "Tools: jQuery for Front-End, MySQL Workbench, TurboGears for Backend development"],
+  "dutiesTitle": "Responsibilities:",
+  "duties": ["Documentation of inventory, distribution pages, and an external platform for ticket sales and distribution", "Collaboration in creating and maintaining APIs for data management using Python (TurboGears) and JavaScript (jQuery).", "Identification and correction of system reliability issues."],
+  "achivementTitle": "Achievements:",
+  "achivemens": ["Improved system reliability by eliminating redundant functions, reducing errors and enhancing system performance by 15%.", "Streamlined processes by optimizing code, resulting in better information management and more efficient access for small business merchants."],
+  "timeTitle": "Duration:",
+  "time": "2014 July — 2016 Dec"
+},
   "FletesTransportes":
   {
     "title": "Becario",

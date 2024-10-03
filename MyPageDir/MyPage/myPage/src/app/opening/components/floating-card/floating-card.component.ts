@@ -16,14 +16,10 @@ export class FloatingCardComponent {
     techTitle: "stupidFriendly.techTitle",
     tech: "stupidFriendly.tech",
     techtack: "stupidFriendly.techtack",
-    descTitle: "stupidFriendly.descTitle",
-    description: "stupidFriendly.description",
     dutiesTitle: "stupidFriendly.dutiesTitle",
     duties: "stupidFriendly.duties",
     achivementTitle: "stupidFriendly.achivementTitle",
     achivemens: "stupidFriendly.achivemens",
-    methodologiesTitle: "stupidFriendly.methodologiesTitle",
-    methodologies: "stupidFriendly.methodologies",
     timeTitle: "stupidFriendly.timeTitle",
     time: "stupidFriendly.time"
   }; // Variable donde guardarás el JSON dinámico
