@@ -5,26 +5,35 @@
 
 <div id="three-container" #threeContainer></div>
 
+
 <div class="row">
   <div class="col-3 d-flex flex-column align-items-end">
     <!-- Botón principal -->
-    <button id="nextStepButton" class="floating-btn" (click)="nextStep()">Next Step</button>
+    <button id="nextStepButton" class="floating-btn" (click)="nextStep()">C#</button>
 
     <!-- Lista desplegable 1 -->
     <div id="dropdownList1" [ngClass]="{ 'active': isDropdown1Visible }" class="dropdown-list">
-      <button class="dropdown-item" (click)="actionComponent1()">Componente 1</button>
-      <button class="dropdown-item" (click)="actionComponent2()">Componente 2</button>
+      <button class="dropdown-item" (click)="section03()">Componente 1</button>
+
+      <!-- Dropdown anidado dentro de Componente 1 -->
+      <div id="dropdownList1a" [ngClass]="{ 'active': isDropdown1aVisible }" class="dropdown-list nested-dropdown">
+        <button class="dropdown-item" (click)="actionComponent1(1)">Componente 1a</button>
+        <button class="dropdown-item" (click)="actionComponent1(2)">Componente 2a</button>
+      </div>
+
+      <button class="dropdown-item" (click)="actionComponent1(1)">Componente 2</button>
     </div>
 
     <!-- Lista desplegable 2 -->
     <div id="dropdownList2" [ngClass]="{ 'active': isDropdown2Visible }" class="dropdown-list">
-      <button class="dropdown-item" (click)="actionComponent1()">Componente 1</button>
-      <button class="dropdown-item" (click)="actionComponent2()">Componente 2</button>
-      <button class="dropdown-item" (click)="actionComponent3()">Componente 3</button>
-      <button class="dropdown-item" (click)="actionComponent4()">Componente 4</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 1</button>
+      <button class="dropdown-item" (click)="actionComponent1(1)">Componente 2</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 3</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 4</button>
     </div>
   </div>
 </div>
+
 
 
 <app-floating-card></app-floating-card>

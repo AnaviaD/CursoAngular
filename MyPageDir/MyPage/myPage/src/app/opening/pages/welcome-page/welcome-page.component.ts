@@ -20,33 +20,16 @@ import { transition } from '@angular/animations';
 export class WelcomePageComponent implements AfterViewInit {
 
   isDropdown1Visible = false;
+  isDropdown1aVisible = false;
   isDropdown2Visible = false;
+  public btnNextStepClicked : boolean = false;
+  public focusObj           : number = 0;
 
 
-  toggleDropdown1() {
-
+  actionComponent1(elem:number) {
+    this.focusObj = elem;
   }
 
-  toggleDropdown2() {
-  }
-
-  actionComponent1() {
-    // Acción para el componente 1
-  }
-
-  actionComponent2() {
-    // Acción para el componente 2
-  }
-
-  actionComponent3() {
-    // Acción para el componente 3
-  }
-
-  actionComponent4() {
-    // Acción para el componente 4
-  }
-
-  public btnNextStepClicked: boolean = false;
 
   @ViewChild('threeContainer', { static: true }) threeContainer!: ElementRef;
 
@@ -54,11 +37,22 @@ export class WelcomePageComponent implements AfterViewInit {
 
   constructor() {}
 
+  section01(){
+    this.isDropdown1Visible = !this.isDropdown1Visible;
+  }
+  section02(){
+    this.isDropdown2Visible = !this.isDropdown2Visible;
+  }
+
+  section03()
+  {
+    console.log("section03 presionada ");
+    this.isDropdown1aVisible = !this.isDropdown1aVisible;
+  }
 
   nextStep() {
     this.isDropdown1Visible = !this.isDropdown1Visible;
-    this.isDropdown2Visible = !this.isDropdown2Visible;
-    this.btnNextStepClicked = true;
+    // this.btnNextStepClicked = true;
     // this.floatingCard.open(Math.floor(Math.random() * 2) + 1); // Call the open method to show the card
     // console.log('Next step button clicked');
   }
@@ -741,6 +735,9 @@ export class WelcomePageComponent implements AfterViewInit {
         let targetObject = intersects[0].object;
 
         const cubeId = targetObject.userData['id'];
+
+        this.focusObj = targetObject.userData['id'];
+
         if (cubeId) {
           console.log('Cubo clicado con id:', cubeId);
 
@@ -849,6 +846,17 @@ export class WelcomePageComponent implements AfterViewInit {
       this.btnNextStepClicked = false;
     }
     //#endregion
+
+    //#region elemento de menu clicado
+    const menuElementClicked = () =>{
+      if(this.btnNextStepClicked)
+      {
+
+      }
+    }
+    //#endregion
+
+
 
     window.addEventListener('click', onMouseClick);
 
