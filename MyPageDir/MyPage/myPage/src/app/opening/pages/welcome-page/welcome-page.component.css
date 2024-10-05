@@ -1,68 +1,50 @@
-:host {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-#three-container {
-  width: 100%;
-  height: 100%;
-}
-
-.progress-bar-container{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height:100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-}
-
-#progress-bar{
-  width: 30%;
-  margin-top: 0.5%;
-  height: 20%;
-}
-
-label{
-  color: white;
-  font-size: 2rem;
-}
-
-
-/* #three-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-} */
-
 .floating-btn {
   position: fixed;
   top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 16.66%; /* 1/6 of the screen */
-  height: 100px; /* Large button */
+  right: 10px;
+  width: 8.33%; /* 1/12 de la pantalla */
+  height: 100px;
   font-size: 1.5em;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 8px;
-  z-index: 1000; /* Ensure it floats over the scene */
+  z-index: 1000;
   transition: width 0.3s ease, height 0.3s ease;
 }
 
 @media screen and (max-width: 768px) {
   .floating-btn {
-    width: 33.33%; /* 1/3 of the screen when small */
+    width: 16.66%; /* Ajuste para pantallas más pequeñas */
   }
+}
+
+.dropdown-list {
+  position: fixed;
+  top: 120px; /* Debajo del botón */
+  right: 10px;
+  width: 30%; /* 1/12 de la pantalla */
+  background-color: #333;
+  border-radius: 8px;
+  z-index: 1000;
+  display: none; /* Oculto por defecto */
+  transition: display 0.3s ease;
+}
+
+.dropdown-list .dropdown-item {
+  padding: 10px;
+  background-color: #444;
+  color: white;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-list .dropdown-item:hover {
+  background-color: #555;
+}
+
+.dropdown-list.active {
+  display: block; /* Mostrar la lista cuando esté activa */
 }

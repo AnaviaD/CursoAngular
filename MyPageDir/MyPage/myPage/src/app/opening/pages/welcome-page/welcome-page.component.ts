@@ -19,6 +19,33 @@ import { transition } from '@angular/animations';
 })
 export class WelcomePageComponent implements AfterViewInit {
 
+  isDropdown1Visible = false;
+  isDropdown2Visible = false;
+
+
+  toggleDropdown1() {
+
+  }
+
+  toggleDropdown2() {
+  }
+
+  actionComponent1() {
+    // Acción para el componente 1
+  }
+
+  actionComponent2() {
+    // Acción para el componente 2
+  }
+
+  actionComponent3() {
+    // Acción para el componente 3
+  }
+
+  actionComponent4() {
+    // Acción para el componente 4
+  }
+
   public btnNextStepClicked: boolean = false;
 
   @ViewChild('threeContainer', { static: true }) threeContainer!: ElementRef;
@@ -29,9 +56,11 @@ export class WelcomePageComponent implements AfterViewInit {
 
 
   nextStep() {
+    this.isDropdown1Visible = !this.isDropdown1Visible;
+    this.isDropdown2Visible = !this.isDropdown2Visible;
     this.btnNextStepClicked = true;
-    this.floatingCard.open(Math.floor(Math.random() * 2) + 1); // Call the open method to show the card
-    console.log('Next step button clicked');
+    // this.floatingCard.open(Math.floor(Math.random() * 2) + 1); // Call the open method to show the card
+    // console.log('Next step button clicked');
   }
 
   objClicked(clickedObject: number) {
