@@ -48,3 +48,41 @@
 .dropdown-list.active {
   display: block; /* Mostrar la lista cuando esté activa */
 }
+
+:host {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#three-container {
+  width: 100%;
+  height: 100%;
+}
+
+.progress-bar-container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#progress-bar{
+  width: 30%;
+  margin-top: 0.5%;
+  height: 20%;
+}
+
+label{
+  color: white;
+  font-size: 2rem;
+}
