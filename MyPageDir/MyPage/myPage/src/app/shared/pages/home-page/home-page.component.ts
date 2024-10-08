@@ -172,6 +172,34 @@ export class HomePageComponent {
       console.error('Error al cargar el modelo GLTF:', error);
     });
 
+    // Cargar el modelo
+    loader.load(
+      'assets/glts/Claw02.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(0, 0, 100);
+        original.scale.set(0.6, 0.6, 0.6);
+        original.rotation.y = 3.1;
+
+        scene.add(original);
+
+        // Crear un mixer para el objeto original
+        mixer = new THREE.AnimationMixer(original);
+        gltf.animations.forEach(clip => {
+          const action = mixer.clipAction(clip);
+          action.timeScale = 1;
+          action.play();
+        });
+
+        // Añadir los mixers al array para ser actualizados
+        mixerArray.push(mixer);
+        // mixerArray.push(mixer1);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      });
+
 
     //#endregion
 
