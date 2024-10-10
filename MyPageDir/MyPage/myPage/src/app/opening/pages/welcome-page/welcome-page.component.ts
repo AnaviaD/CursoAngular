@@ -363,6 +363,33 @@ export class WelcomePageComponent implements AfterViewInit {
       console.error('Error al cargar el modelo GLTF:', error);
     });
 
+
+    // Cargar el modelo
+    loader.load(
+      'assets/glts/ClawScene01.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(0, 0, 0);
+        original.scale.set(0.1, 0.1, 0.1);
+        scene.add(original);
+
+        // Crear un mixer para el objeto original
+        mixer = new THREE.AnimationMixer(original);
+        gltf.animations.forEach(clip => {
+          const action = mixer.clipAction(clip);
+          action.timeScale = 1;
+          action.play();
+        });
+
+        // Añadir los mixers al array para ser actualizados
+        mixerArray.push(mixer);
+        // mixerArray.push(mixer01);
+      },
+      undefined,
+    (error) => {
+      console.error('Error al cargar el modelo GLTF:', error);
+    });
+
     // loader.load(
     //   'assets/glts/Mustang.glb',
     //   (gltf) => {

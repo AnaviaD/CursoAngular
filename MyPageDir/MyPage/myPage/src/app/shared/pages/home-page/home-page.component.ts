@@ -174,7 +174,7 @@ export class HomePageComponent {
 
     // Cargar el modelo
     loader.load(
-      'assets/glts/Claw02.glb',
+      'assets/glts/ClawScene01.glb',
       (gltf) => {
         const original = gltf.scene;
         original.position.set(0, 0, 100);
