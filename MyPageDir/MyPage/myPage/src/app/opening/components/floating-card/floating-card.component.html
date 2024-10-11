@@ -122,6 +122,23 @@
             </div>
           </div>
 
+          <!-- Row 2: SVG Cards with horizontal scroll -->
+          <div *ngIf="getTranslationKey('images')">
+            <div class="card">
+              <div class="svg-scroll-wrapper">
+                <div class="svg-container">
+                  <div class="svg-card">
+                    <div *ngFor="let imgObj of (getTranslationKey('images') | translate)">
+                      <a [href]="imgObj" target="_blank">
+                        <img [src]="imgObj" alt="Images">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div *ngIf="getTranslationKey('timeTitle')">
             <div class="row card subtitle-card">
               <img src="assets/mySVGs/cube.svg" alt="" class="icon-img">

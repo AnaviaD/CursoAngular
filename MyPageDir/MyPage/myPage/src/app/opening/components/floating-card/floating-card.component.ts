@@ -54,6 +54,7 @@ export class FloatingCardComponent {
     duties: "stupidFriendly.duties",
     achivementTitle: "stupidFriendly.achivementTitle",
     achivemens: "stupidFriendly.achivemens",
+    images: "stupidFriendly.images",
     timeTitle: "stupidFriendly.timeTitle",
     time: "stupidFriendly.time"
   }; // Variable donde guardarás el JSON dinámico

@@ -11,6 +11,7 @@ import { TransportComponent } from './pages/transport/transport.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpLoaderFactory } from '../app.module';
 import { HttpClient } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -26,6 +27,7 @@ import { HttpClient } from '@angular/common/http';
   ],
   imports: [
     CommonModule,
+    MatCardModule,
     OpeningRoutingModule,
     TranslateModule.forRoot({
       loader: {

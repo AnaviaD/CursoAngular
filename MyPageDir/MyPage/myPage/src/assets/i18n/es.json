@@ -4,7 +4,15 @@
   {
     "title": "Becario de Ingeniería de Software",
     "techTitle": "Tecnologias utilizadas:",
-    "tech": ["assets/mySVGs/HTML5.svg", "assets/mySVGs/Microsoft SQL Server.svg", "assets/mySVGs/Bootstrap.svg", "assets/mySVGs/BitBucket.svg", "assets/mySVGs/Django.svg"],
+    "tech": ["assets/mySVGs/HTML5.svg",
+     "assets/mySVGs/Microsoft SQL Server.svg",
+     "assets/mySVGs/Bootstrap.svg",
+     "assets/mySVGs/BitBucket.svg",
+     "assets/mySVGs/Django.svg"],
+     "images": [
+     "assets/imgObj/proto01.jpg",
+     "assets/imgObj/proto02.jpg",
+     "assets/imgObj/board01.jpg"],
     "techtack": ["Lenguajes y Frameworks: Python (TurboGears 2.0), JavaScript (jQuery 1.7), HTML, CSS", "Base de Datos: MySQL 5.5", "Herramientas: jQuery para el Front-End, MySQL Workbench, TurboGears para desarrollo Backend"],
     "dutiesTitle": "Responsabilidades:",
     "duties": ["Documentación de las páginas de inventario, distribución, y una plataforma externa de venta y distribución de boletos", "Colaboración en la creación y mantenimiento de APIs para la gestión de datos utilizando Python (TurboGears) y JavaScript (jQuery).", "Identificación y corrección de problemas relacionados con la fiabilidad del sistema."],
