@@ -27,7 +27,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
 
   actionComponent1(elem:number) {
-    this.focusObj = elem;
+    this.objClicked(elem);
   }
 
 
@@ -59,6 +59,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
   objClicked(clickedObject: number) {
     this.btnNextStepClicked = true;
+    this.focusObj = clickedObject;
     this.floatingCard.open(clickedObject); // Call the open method to show the card
     console.log('Next step button clicked');
   }
@@ -506,9 +507,9 @@ export class WelcomePageComponent implements AfterViewInit {
       limitCameraMovement();
       UfoAnimation(deltaTime);
 
-      if (this.btnNextStepClicked) {
-        selectRandomObject()
-      }
+      // if (this.btnNextStepClicked) {
+      //   selectRandomObject()
+      // }
 
       if ((isAnimating || this.btnNextStepClicked) || (isAnimating && this.btnNextStepClicked)) {
         // Interpola la posición de la cámara hacia la posición objetivo
@@ -807,7 +808,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
 
       if (this.btnNextStepClicked) {
-        const randomObject = selectRandomObject();
+        const randomObject = findObjectById(this.focusObj);
         console.log('btn Cube clicado ');
 
         targetPosition.set(
@@ -880,6 +881,16 @@ export class WelcomePageComponent implements AfterViewInit {
       {
 
       }
+    }
+    //#endregion
+
+    //#region find objects
+    function findObjectById(id: number): THREE.Object3D | null {
+      // Buscar el objeto en la lista cubes que tenga el userData['id'] especificado
+      const object = cubes.find(obj => obj.userData['id'] === id);
+
+      // Si se encuentra el objeto, lo devuelve; de lo contrario, devuelve null
+      return object || null;
     }
     //#endregion
 
