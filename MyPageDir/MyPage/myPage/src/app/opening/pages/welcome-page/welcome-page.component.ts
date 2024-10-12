@@ -1,5 +1,6 @@
 import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 import { FloatingCardComponent } from '../../components/floating-card/floating-card.component';
+import { TranslateService } from '@ngx-translate/core';
 
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
@@ -44,7 +45,14 @@ export class WelcomePageComponent implements AfterViewInit {
 
   @ViewChild(FloatingCardComponent) floatingCard!: FloatingCardComponent;
 
-  constructor() {}
+  constructor(private translate: TranslateService) {
+    this.translate.setDefaultLang('es');
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
+
 
   section01(){
     // this.isDropdown1Visible = !this.isDropdown1Visible;

@@ -9,15 +9,15 @@
 <div class="row">
   <div class="col-3 d-flex flex-column align-items-end">
     <!-- Botón principal -->
-    <button id="nextStepButton" class="floating-btn" (click)="nextStep()">C#</button>
+    <button id="nextStepButton" class="floating-btn" (click)="nextStep()">{{ 'menu3dScene.mainTitle' | translate }}</button>
 
     <!-- Lista desplegable 1 -->
     <div id="dropdownList1" [ngClass]="{ 'active': isDropdownMainVisible }" class="dropdown-list">
-      <button class="dropdown-item" (click)="section01()">FullStack-Dev</button>
-      <button class="dropdown-item" (click)="section02()">Formación Académica</button>
-      <button class="dropdown-item" (click)="section03()">Proyectos Personales y Habilidades Técnicas</button>
-      <button class="dropdown-item" (click)="section04()">Cursos Online</button>
-      <button class="dropdown-item" (click)="section05()">Idiomas</button>
+      <button class="dropdown-item" (click)="section01()">{{ 'menu3dScene.subDiv01' | translate }}</button>
+      <button class="dropdown-item" (click)="section02()">{{ 'menu3dScene.subDiv02' | translate }}</button>
+      <button class="dropdown-item" (click)="section03()">{{ 'menu3dScene.subDiv03' | translate }}</button>
+      <button class="dropdown-item" (click)="section04()">{{ 'menu3dScene.subDiv04' | translate }}</button>
+      <button class="dropdown-item" (click)="section05()">{{ 'menu3dScene.subDiv05' | translate }}</button>
     </div>
 
     <!-- Dropdown anidado dentro de Componente 1 -->

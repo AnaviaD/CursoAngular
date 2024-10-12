@@ -1,5 +1,16 @@
 {
   "title": "Bienvenidos",
+
+  "menu3dScene":{
+    "mainTitle": "Menu",
+    "subDiv01": "FullStack-Dev",
+    "subDiv02": "Formación Académica",
+    "subDiv03": "Proyectos Personales y Habilidades Técnicas",
+    "subDiv04": "Cursos Online",
+    "subDiv05": "Idiomas"
+
+  },
+
   "stupidFriendly":
   {
     "title": "Becario de Ingeniería de Software",
