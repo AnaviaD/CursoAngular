@@ -11,6 +11,10 @@
     <!-- Botón principal -->
     <button id="nextStepButton" class="floating-btn" (click)="nextStep()">{{ 'menu3dScene.mainTitle' | translate }}</button>
 
+    <button id="leftButton" class="floating-btn left-btn" (click)="updateFocus(false)"><</button>
+    <button id="rightButton" class="floating-btn right-btn" (click)="updateFocus(true)">></button>
+
+
     <!-- Lista desplegable 1 -->
     <div id="dropdownList1" [ngClass]="{ 'active': isDropdownMainVisible }" class="dropdown-list">
       <button class="dropdown-item" (click)="section01()">{{ 'menu3dScene.subDiv01' | translate }}</button>

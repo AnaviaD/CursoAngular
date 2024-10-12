@@ -28,6 +28,7 @@ export class WelcomePageComponent implements AfterViewInit {
   isDropdown5Visible = false;
   public btnNextStepClicked : boolean = false;
   public focusObj           : number = 0;
+  private readonly maxFocus : number = 24;
 
 
   actionComponent1(elem:number) {
@@ -69,6 +70,19 @@ export class WelcomePageComponent implements AfterViewInit {
   }
   section05(){
     this.isDropdown5Visible = !this.isDropdown5Visible;
+  }
+
+  updateFocus(increment: boolean): void {
+    if (increment) {
+      // Si se presiona el botón de sumar
+      this.focusObj = (this.focusObj + 1) % (this.maxFocus + 1);
+      this.objClicked(this.focusObj);
+    } else {
+      // Si se presiona el botón de restar
+      this.focusObj = this.focusObj === 0 ? this.maxFocus : this.focusObj - 1;
+      this.objClicked(this.focusObj);
+    }
+    console.log(this.focusObj);
   }
 
   nextStep() {
