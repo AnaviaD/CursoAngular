@@ -19,15 +19,24 @@ import { transition } from '@angular/animations';
 })
 export class WelcomePageComponent implements AfterViewInit {
 
+  isDropdownMainVisible = false;
   isDropdown1Visible = false;
-  isDropdown1aVisible = false;
   isDropdown2Visible = false;
+  isDropdown3Visible = false;
+  isDropdown4Visible = false;
+  isDropdown5Visible = false;
   public btnNextStepClicked : boolean = false;
   public focusObj           : number = 0;
 
 
   actionComponent1(elem:number) {
     this.objClicked(elem);
+    this.isDropdownMainVisible = false;
+    this.isDropdown1Visible = false;
+    this.isDropdown2Visible = false;
+    this.isDropdown3Visible = false;
+    this.isDropdown4Visible = false;
+    this.isDropdown5Visible = false;
   }
 
 
@@ -38,20 +47,29 @@ export class WelcomePageComponent implements AfterViewInit {
   constructor() {}
 
   section01(){
+    // this.isDropdown1Visible = !this.isDropdown1Visible;
     this.isDropdown1Visible = !this.isDropdown1Visible;
   }
   section02(){
     this.isDropdown2Visible = !this.isDropdown2Visible;
   }
-
-  section03()
-  {
-    console.log("section03 presionada ");
-    this.isDropdown1aVisible = !this.isDropdown1aVisible;
+  section03(){
+    this.isDropdown3Visible = !this.isDropdown3Visible;
+  }
+  section04(){
+    this.isDropdown4Visible = !this.isDropdown4Visible;
+  }
+  section05(){
+    this.isDropdown5Visible = !this.isDropdown5Visible;
   }
 
   nextStep() {
-    this.isDropdown1Visible = !this.isDropdown1Visible;
+    this.isDropdownMainVisible = !this.isDropdownMainVisible;
+    this.isDropdown1Visible = false;
+    this.isDropdown2Visible = false;
+    this.isDropdown3Visible = false;
+    this.isDropdown4Visible = false;
+    this.isDropdown5Visible = false;
     // this.btnNextStepClicked = true;
     // this.floatingCard.open(Math.floor(Math.random() * 2) + 1); // Call the open method to show the card
     // console.log('Next step button clicked');

@@ -12,25 +12,59 @@
     <button id="nextStepButton" class="floating-btn" (click)="nextStep()">C#</button>
 
     <!-- Lista desplegable 1 -->
-    <div id="dropdownList1" [ngClass]="{ 'active': isDropdown1Visible }" class="dropdown-list">
-      <button class="dropdown-item" (click)="section03()">Componente 1</button>
-
-      <!-- Dropdown anidado dentro de Componente 1 -->
-      <div id="dropdownList1a" [ngClass]="{ 'active': isDropdown1aVisible }" class="dropdown-list nested-dropdown">
-        <button class="dropdown-item" (click)="actionComponent1(1)">Componente 1a</button>
-        <button class="dropdown-item" (click)="actionComponent1(2)">Componente 2a</button>
-      </div>
-
-      <button class="dropdown-item" (click)="actionComponent1(1)">Componente 2</button>
+    <div id="dropdownList1" [ngClass]="{ 'active': isDropdownMainVisible }" class="dropdown-list">
+      <button class="dropdown-item" (click)="section01()">FullStack-Dev</button>
+      <button class="dropdown-item" (click)="section02()">Formación Académica</button>
+      <button class="dropdown-item" (click)="section03()">Proyectos Personales y Habilidades Técnicas</button>
+      <button class="dropdown-item" (click)="section04()">Cursos Online</button>
+      <button class="dropdown-item" (click)="section05()">Idiomas</button>
     </div>
 
-    <!-- Lista desplegable 2 -->
-    <div id="dropdownList2" [ngClass]="{ 'active': isDropdown2Visible }" class="dropdown-list">
-      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 1</button>
-      <button class="dropdown-item" (click)="actionComponent1(1)">Componente 2</button>
-      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 3</button>
-      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 4</button>
+    <!-- Dropdown anidado dentro de Componente 1 -->
+    <div id="dropdownList1a" [ngClass]="{ 'active': isDropdown1Visible }" class="dropdown-list nested-dropdown">
+      <button class="dropdown-item" (click)="actionComponent1(1)">Componente 1a</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 2a</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 3a</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 4a</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 5a</button>
     </div>
+
+    <!-- Dropdown anidado dentro de Componente 1 -->
+    <div id="dropdownList1a" [ngClass]="{ 'active': isDropdown2Visible }" class="dropdown-list nested-dropdown">
+      <button class="dropdown-item" (click)="actionComponent1(1)">Componente 1b</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 2b</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 3b</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 4b</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 5b</button>
+    </div>
+
+    <!-- Dropdown anidado dentro de Componente 1 -->
+    <div id="dropdownList1a" [ngClass]="{ 'active': isDropdown3Visible }" class="dropdown-list nested-dropdown">
+      <button class="dropdown-item" (click)="actionComponent1(1)">Componente 1c</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 2c</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 3c</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 4c</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 5c</button>
+    </div>
+
+    <!-- Dropdown anidado dentro de Componente 1 -->
+    <div id="dropdownList1a" [ngClass]="{ 'active': isDropdown4Visible }" class="dropdown-list nested-dropdown">
+      <button class="dropdown-item" (click)="actionComponent1(1)">Componente 1d</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 2d</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 3d</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 4d</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 5d</button>
+    </div>
+
+    <!-- Dropdown anidado dentro de Componente 1 -->
+    <div id="dropdownList1a" [ngClass]="{ 'active': isDropdown5Visible }" class="dropdown-list nested-dropdown">
+      <button class="dropdown-item" (click)="actionComponent1(1)">Componente 1e</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 2e</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 3e</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 4e</button>
+      <button class="dropdown-item" (click)="actionComponent1(2)">Componente 5e</button>
+    </div>
+
   </div>
 </div>
 
