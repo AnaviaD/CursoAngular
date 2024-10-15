@@ -60,7 +60,7 @@ export class HomePageComponent {
 
     // Crear la cámara y posicionarla
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(0, 80, -310); // Alejar la cámara en el eje Z
+    camera.position.set(0, 40, -310); // Alejar la cámara en el eje Z
     camera.lookAt(0, 150, 0);
 
     // Añadir controles de órbita
@@ -82,6 +82,7 @@ export class HomePageComponent {
     // Estos serian los objetos interactuables del mapa
     const mixerArray: THREE.AnimationMixer[] = [];
     let mixer: THREE.AnimationMixer;
+    let spaceSphere : THREE.Object3D; // Variable global para referenciar el objeto
 
     const clock = new THREE.Clock();
 
@@ -144,13 +145,30 @@ export class HomePageComponent {
       console.error('Error al cargar el modelo GLTF:', error);
     });
 
+
+    // Cargar el modelo
+    loader.load(
+      'assets/glts/saceBack.glb',
+      (gltf) => {
+        spaceSphere = gltf.scene;
+        spaceSphere.position.set(0, 0, 0);
+        spaceSphere.scale.set(30, 30, 30);
+        scene.add(spaceSphere);
+
+
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      });
+
     // Cargar el modelo
     loader.load(
     'assets/glts/welcome.glb',
     (gltf) => {
       const original = gltf.scene;
-      original.position.set(0, 0, -300);
-      original.scale.set(0.4, 0.4, 0.4);
+      original.position.set(0, 0, -305);
+      original.scale.set(0.2, 0.2, 0.2);
       original.rotation.y = 3.1;
 
       scene.add(original);
@@ -173,32 +191,32 @@ export class HomePageComponent {
     });
 
     // Cargar el modelo
-    loader.load(
-      'assets/glts/ClawScene01.glb',
-      (gltf) => {
-        const original = gltf.scene;
-        original.position.set(0, 0, 100);
-        original.scale.set(0.6, 0.6, 0.6);
-        original.rotation.y = 3.1;
+    // loader.load(
+    //   'assets/glts/ClawScene01.glb',
+    //   (gltf) => {
+    //     const original = gltf.scene;
+    //     original.position.set(0, 0, 100);
+    //     original.scale.set(0.6, 0.6, 0.6);
+    //     original.rotation.y = 3.1;
 
-        scene.add(original);
+    //     scene.add(original);
 
-        // Crear un mixer para el objeto original
-        mixer = new THREE.AnimationMixer(original);
-        gltf.animations.forEach(clip => {
-          const action = mixer.clipAction(clip);
-          action.timeScale = 1;
-          action.play();
-        });
+    //     // Crear un mixer para el objeto original
+    //     mixer = new THREE.AnimationMixer(original);
+    //     gltf.animations.forEach(clip => {
+    //       const action = mixer.clipAction(clip);
+    //       action.timeScale = 1;
+    //       action.play();
+    //     });
 
-        // Añadir los mixers al array para ser actualizados
-        mixerArray.push(mixer);
-        // mixerArray.push(mixer1);
-      },
-      undefined,
-      (error) => {
-        console.error('Error al cargar el modelo GLTF:', error);
-      });
+    //     // Añadir los mixers al array para ser actualizados
+    //     mixerArray.push(mixer);
+    //     // mixerArray.push(mixer1);
+    //   },
+    //   undefined,
+    //   (error) => {
+    //     console.error('Error al cargar el modelo GLTF:', error);
+    //   });
 
 
     //#endregion
@@ -216,6 +234,8 @@ export class HomePageComponent {
 
       const deltaTime = (time - previousTime) * 0.0001; // Convierte el tiempo delta a segundos
       previousTime = time;
+
+      spaceSphere.rotation.z += deltaTime * 0.2;
 
       // Rotar el cubo
       // cube.rotation.x += deltaTime;
