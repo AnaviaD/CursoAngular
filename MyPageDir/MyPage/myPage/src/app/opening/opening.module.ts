@@ -36,6 +36,9 @@ import { MatCardModule } from '@angular/material/card';
         deps: [HttpClient]
       }
     })
+  ],
+  exports: [
+    FloatingCardComponent
   ]
 })
 export class OpeningModule { }

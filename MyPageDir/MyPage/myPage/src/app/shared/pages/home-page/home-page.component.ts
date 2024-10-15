@@ -235,7 +235,9 @@ export class HomePageComponent {
       const deltaTime = (time - previousTime) * 0.0001; // Convierte el tiempo delta a segundos
       previousTime = time;
 
-      spaceSphere.rotation.z += deltaTime * 0.2;
+      if(spaceSphere != undefined) {
+        spaceSphere.rotation.z += deltaTime * 0.15;
+      }
 
       // Rotar el cubo
       // cube.rotation.x += deltaTime;

@@ -10,6 +10,8 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import {  HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { FloatingCardComponent } from '../opening/components/floating-card/floating-card.component';
+import { OpeningModule } from '../opening/opening.module';
 // import { MatIconModule } from '@angular/material';
 
 
@@ -23,6 +25,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
   imports: [
     CommonModule,
     AppRoutingModule,
+    OpeningModule,
 
     TranslateModule.forRoot({
       loader: {
