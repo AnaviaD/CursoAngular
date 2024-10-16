@@ -13,7 +13,7 @@
 
   "mainCV":
   {
-    "description": "Soy un ingeniero Full Stack con experiencia especializada en la automatización, análisis y procesamiento de datos. He desarrollado soluciones que optimizan la recolección y tratamiento de información utilizando machine learning y bots, aportando mejoras significativas en la eficiencia de los sistemas. Aunque también tengo experiencia en bases de datos, mi mayor fortaleza reside en la automatización y optimización de procesos complejos. A lo largo de mi carrera, he manejado todas las tareas propias de un desarrollador Full Stack, desde la gestión de bases de datos, pruebas de APIs con Postman, hasta la creación de pruebas unitarias y automatizadas con herramientas como Selenium y unit testing. Mi enfoque integral me permite asegurar que cada parte del sistema, desde el back-end hasta el front-end, funcione de manera óptima y eficiente. Además, he desarrollado soluciones innovadoras integrando hardware como Raspberry Pi y Arduino para mejorar la obtención de datos en sistemas, siempre buscando formas de automatizar y mejorar procesos."
+    "description": "Soy un ingeniero Full Stack con experiencia en la automatización, análisis y procesamiento de datos. He desarrollado soluciones que optimizan la recolección y tratamiento de información utilizando machine learning, aportando mejoras significativas en la eficiencia de los sistemas. Aunque también tengo experiencia en bases de datos, mi mayor fortaleza reside en la automatización y optimización de procesos complejos. A lo largo de mi carrera, he manejado todas las tareas propias de un desarrollador Full Stack, desde la gestión de bases de datos, pruebas de APIs con Postman, hasta la creación de pruebas unitarias y automatizadas con herramientas como Selenium y unit testing. Mi enfoque integral me permite asegurar que cada parte del sistema, desde el back-end hasta el front-end, funcione de manera óptima y eficiente. Además, he desarrollado soluciones innovadoras integrando hardware como Raspberry Pi y Arduino para mejorar la obtención de datos en sistemas, siempre buscando formas de automatizar y mejorar procesos."
   },
   "school01":
   {
@@ -68,7 +68,7 @@
     "title": "Ingeniero de Software Junior",
     "techTitle": "Tecnologias utilizadas:",
     "tech": ["assets/mySVGs/JSON.svg", "assets/mySVGs/NETcore.svg", "assets/mySVGs/Bootstrap.svg", "assets/mySVGs/GitHub.svg", "assets/mySVGs/HTML5.svg"],
-    "techtack": ["Lenguajes y Frameworks: .NET Framework 4.7.x, .NET Core 2.x, JavaScript (ES6), Angular 6.", "Base de Datos: MySQL 5.7.", "Herramientas: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017, phpMyAdmin 4.0."],
+    "techtack": ["Lenguajes y Frameworks: .NET Framework 4.7.x, .NET Core 2.x, JavaScript (ES6), Angular 6.", "Base de Datos: MySQL 5.7.", "Herramientas: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017."],
     "descTitle": "Descripción:",
     "description": "Participé en el desarrollo de dos proyectos web enfocados en la administración de usuarios y la creación de citas, lo que contribuyó significativamente a la funcionalidad y el alcance de las aplicaciones.",
     "dutiesTitle": "Responsabilidades:",
@@ -88,8 +88,6 @@
     "time": "2019"
   },
 
-
-
   "FletesTransportes": {
     "title": "Ingeniero de Software Junior",
     "techTitle": "Tecnologías utilizadas:",
@@ -103,7 +101,7 @@
       "assets/mySVGs/GitHub.svg",
       "assets/mySVGs/HTML5.svg"
     ],
-    "techtack": ["Lenguajes y Frameworks: Kotlin 1.4, SQLite 3.35, Retrofit 2.9, .NET Core 3.1, .NET Core 2.x, JavaScript (ES6), Angular 6, Node Express 4", "Base de Datos: MySQL 5.7", "Herramientas: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017 y 2019, phpMyAdmin 4.0"],
+    "techtack": ["Lenguajes y Frameworks: Kotlin 1.4, SQLite 3.35, Retrofit 2.9, .NET Core 3.1, .NET Core 2.x, JavaScript (ES6), Angular 6, Node Express 4", "Base de Datos: MySQL 5.7", "Herramientas: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017 y 2019"],
     "descTitle": "Descripción:",
     "description": "Participé activamente y lideré una variedad de proyectos en diferentes áreas de desarrollo y soluciones empresariales. Las contribuciones clave incluyen la creación de un kiosco virtual, una herramienta integral que permitía a los empleados acceder y consultar información como viajes, vacaciones y bonos. Además, lideré un proyecto Android destinado a simplificar la gestión de inventario de tractocamiones, proporcionando detalles sobre el estado de sus componentes, como asientos, llantas y otros elementos clave. También dirigí la creación de un programa de gestión de mercancías diseñado para limpiar y procesar datos de los clientes, asegurando que solo la información esencial para la facturación fuera mantenida. Además, desarrollé un panel web para el área de monitoreo, que ofrecía una visión detallada de los datos de viaje, incluyendo puntos de inicio y fin, rutas, botones de emergencia y paradas de motor, entre otras funciones críticas.",
     "dutiesTitle": "Responsabilidades:",
@@ -128,6 +126,123 @@
     "timeTitle": "Tiempo:",
     "time": "Mayo 2021 — Julio 2024"
   },
+
+  "FletesTransportes01": {
+    "title": "Ingeniero de Software Junior",
+    "techTitle": "Tecnologías utilizadas:",
+    "tech": [
+      "assets/mySVGs/JSON.svg",
+      "assets/mySVGs/Microsoft SQL Server.svg",
+      "assets/mySVGs/CSharp.svg",
+      "assets/mySVGs/NETcore.svg",
+      "assets/mySVGs/GitHub.svg"
+    ],
+    "techtack": ["Lenguajes y Frameworks: .NET Core 3.1", "Base de Datos: MySQL 5.7", "Herramientas: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017 y 2019"],
+    "descTitle": "Descripción:",
+    "description": "Dirigí la creación de un programa de gestión de mercancías diseñado para limpiar y procesar datos de los clientes, asegurando que solo la información esencial para la facturación fuera mantenida.",
+    "dutiesTitle": "Responsabilidades:",
+    "duties": [
+        "Definir y establecer la arquitectura del proyecto de gestión de mercancías, asegurando un diseño escalable que cumpliera con los objetivos del negocio.",
+        "Implementar técnicas avanzadas de limpieza y validación de datos, incluyendo el uso de expresiones regulares para garantizar la integridad de los datos.",
+        "Desarrollar algoritmos utilizando aprendizaje automático para extraer información clave de conjuntos de datos complejos, como hojas de Excel con formatos variables."
+    ],
+    "methodologiesTitle": "Metodologías:",
+    "methodologies": [
+        "Aplicación de metodologías ágiles (Scrum) en todos los proyectos, trabajando en sprints para implementar mejoras basadas en retroalimentación continua.",
+        "Colaboración con equipos multifuncionales para asegurar una comunicación fluida y entregas de proyectos a tiempo."
+    ],
+    "achivementTitle": "Logros:",
+    "achivemens": ["Incremento en un 30% el volumen numero de mercancías procedentes de clientes mas pequeños."],
+    "timeTitle": "Tiempo:",
+    "time": "Mayo 2021 — Julio 2024"
+  },
+
+  "FletesTransportes02": {
+    "title": "Ingeniero de Software Junior",
+    "techTitle": "Tecnologías utilizadas:",
+    "tech": [
+      "assets/mySVGs/JSON.svg",
+      "assets/mySVGs/Microsoft SQL Server.svg",
+      "assets/mySVGs/Android.svg",
+      "assets/mySVGs/CSharp.svg",
+      "assets/mySVGs/NETcore.svg",
+      "assets/mySVGs/GitHub.svg"
+    ],
+    "techtack": ["Lenguajes y Frameworks: Kotlin 1.4, SQLite 3.35, Retrofit 2.9, .NET Core 3.1, .NET Core 2.x, JavaScript (ES6), Angular 6, Node Express 4", "Base de Datos: MySQL 5.7", "Herramientas: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017 y 2019"],
+    "descTitle": "Descripción:",
+    "description": "Lideré un proyecto clave destinado a modernizar el sistema de almacenamiento y registro de tractocamiones, que previamente operaba con un programa de escritorio desarrollado en .NET. El objetivo fue crear una solución más eficiente, desarrollando una API en C# y una aplicación Android que permitiera el envío y recepción de datos en formato JSON, junto con fotos de los componentes de las unidades, como llantas, tanques de gas, espejos, entre otros. La actualización trajo consigo diversas ventajas, como la posibilidad de registrar automáticamente cualquier componente que requiriera reemplazo. Esta información se almacenaba en el perfil de la unidad, lo que permitía su análisis posterior para alertar a las áreas correspondientes sobre la necesidad de mantenimiento preventivo o correctivo, como el cambio de llantas o la programación de una parada técnica. El sistema también optimizó los costos operativos, ya que reemplazar tablets, con un costo de aproximadamente $500 USD, resultaba mucho más económico que mantener los equipos de uso rudo, cuyo valor ascendía a $4000 USD. Esta implementación no solo facilitó el mantenimiento de los tractocamiones, sino que también mejoró la eficiencia en la recolección y análisis de datos, agilizando el proceso al momento de llegar o salir de los patios.",
+    "dutiesTitle": "Responsabilidades:",
+    "duties": [
+        "Definir la estructura del proyecto Android de inventario, integrar APIs usando Retrofit e implementar el almacenamiento de datos con SQLite.",
+        "Gestionar hilos y concurrencia utilizando Kotlin Coroutines, optimizando el rendimiento y resolviendo cuellos de botella, asegurando la compatibilidad con actualizaciones de Android.",
+        "Planificación y Arquitectura del Proyecto.",
+        "Conexiones y Comunicación entre Sistemas.",
+        "Base de Datos y Almacenamiento de Información.",
+        "Creación de Tests y Conexión con APIs.",
+        "Optimización del Sistema para el Usuario Final."
+    ],
+    "methodologiesTitle": "Metodologías:",
+    "methodologies": [
+        "Aplicación de metodologías ágiles (Scrum) en todos los proyectos, trabajando en sprints para implementar mejoras basadas en retroalimentación continua.",
+        "Colaboración con equipos multifuncionales para asegurar una comunicación fluida y entregas de proyectos a tiempo."
+    ],
+    "achivementTitle": "Logros:",
+    "achivemens": ["El sistema también optimizó los costos operativos, ya que reemplazar tablets, con un costo de aproximadamente $500 USD, resultaba mucho más económico que mantener los equipos de uso rudo, cuyo valor ascendía a $4000 USD. Esta implementación no solo facilitó el mantenimiento de los tractocamiones, sino que también mejoró la eficiencia en la recolección y análisis de datos, agilizando el proceso al momento de llegar o salir de los patios."],
+    "timeTitle": "Tiempo:",
+    "time": "Mayo 2021 — Julio 2024"
+  },
+
+  "FletesTransportes03": {
+    "title": "Ingeniero de Software Junior",
+    "techTitle": "Tecnologías utilizadas:",
+    "tech": [
+      "assets/mySVGs/Microsoft SQL Server.svg"
+    ],
+    "techtack": ["Base de Datos: MySQL 5.7", "Herramientas: SQL Server Management Studio (SSMS) 2017 y 2019"],
+    "descTitle": "Descripción:",
+    "description": "Desarrollé un panel web para el área de monitoreo, que ofrecía una visión detallada de los datos de viaje, incluyendo puntos de inicio y fin, rutas, botones de emergencia y paradas de motor, entre otras funciones críticas.",
+    "dutiesTitle": "Responsabilidades:",
+    "duties": [
+      "Creé y optimicé consultas SQL complejas para extraer datos en tiempo real sobre el posicionamiento de las unidades, su ruta actual y su historial de trayectos.",
+      "Apliqué técnicas de optimización como índices y partición de tablas para asegurar que las consultas de gran escala se ejecutaran de manera eficiente, incluso con un volumen elevado de datos.",
+      "Realizar mantenimiento continuo del sistema e identificar proactivamente errores, incluyendo la gestión de dependencias para asegurar la estabilidad del sistema.",
+      "Desarrollar y aplicar la lógica necesaria para la extracción de datos críticos para la gestión de flotas, monitoreando eventos como paradas no autorizadas y alertas de emergencia."
+    ],
+    "methodologiesTitle": "Metodologías:",
+    "methodologies": [
+        "Aplicación de metodologías ágiles (Scrum) en todos los proyectos, trabajando en sprints para implementar mejoras basadas en retroalimentación continua.",
+        "Colaboración con equipos multifuncionales para asegurar una comunicación fluida y entregas de proyectos a tiempo."
+    ],
+    "timeTitle": "Tiempo:",
+    "time": "Mayo 2021 — Julio 2024"
+  },
+
+  "pp01":
+  {
+    "title": "Bici-moto 2 tiempos",
+    "techTitle": "Tecnologias utilizadas:",
+    "tech": ["assets/mySVGs/Android.svg"],
+    "images": [
+     "assets/imgObj/weld01.jpg",
+     "assets/imgObj/bici01.jpg",
+     "assets/imgObj/bici02.jpg"],
+    "descTitle": "Descripción:",
+    "description": "Desarrollé una bici-moto desde la modificación del cuadro original de la bicicleta para integrar un motor de combustión de 2 tiempos. Implementé componentes electrónicos como el CDI y un sistema de encendido biométrico con Arduino. Utilicé dos sensores, uno de pulso cardíaco y un lector de huella digital, para asegurar que solo el usuario autorizado pudiera encender el motor, integrando el sistema con los componentes de arranque de la moto."
+  },
+  "pp02":
+  {
+    "title": "Bici-moto 4 tiempos",
+    "techTitle": "Tecnologias utilizadas:",
+    "tech": ["assets/mySVGs/Android.svg"],
+    "images": [
+     "assets/imgObj/weld01.jpg",
+     "assets/imgObj/bici03.jpg"],
+    "descTitle": "Descripción:",
+    "description": "Actualicé el proyecto reemplazando el motor de 2 tiempos por uno de 4 tiempos, lo que mejoró la eficiencia y el rendimiento del vehículo. Este cambio incluyó ajustes en el sistema de encendido biométrico, manteniendo el uso del sensor de huella digital, pero optimizando el control del motor para aprovechar las características del nuevo motor.",
+    "timeTitle": "Time:",
+    "time": "2019"
+  },
+
   "SRE":
   {
     "title": "Des Sr",
