@@ -15,6 +15,39 @@
   {
     "description": "Soy un ingeniero Full Stack con experiencia especializada en la automatización, análisis y procesamiento de datos. He desarrollado soluciones que optimizan la recolección y tratamiento de información utilizando machine learning y bots, aportando mejoras significativas en la eficiencia de los sistemas. Aunque también tengo experiencia en bases de datos, mi mayor fortaleza reside en la automatización y optimización de procesos complejos. A lo largo de mi carrera, he manejado todas las tareas propias de un desarrollador Full Stack, desde la gestión de bases de datos, pruebas de APIs con Postman, hasta la creación de pruebas unitarias y automatizadas con herramientas como Selenium y unit testing. Mi enfoque integral me permite asegurar que cada parte del sistema, desde el back-end hasta el front-end, funcione de manera óptima y eficiente. Además, he desarrollado soluciones innovadoras integrando hardware como Raspberry Pi y Arduino para mejorar la obtención de datos en sistemas, siempre buscando formas de automatizar y mejorar procesos."
   },
+  "school01":
+  {
+    "title": "Educacion",
+    "description": "Completé mi educación de bachillerato en la escuela politécnica del Instituto Politécnico Nacional (IPN), Cecyt 14, enfocada en el área de informática. Posteriormente, continué mis estudios universitarios en la Escuela Superior de Ingeniería Mecánica y Eléctrica (ESIME) del IPN, obteniendo el título de Ingeniero en Computación. Durante mi tiempo en ESIME, no solo amplié mis conocimientos en informática, sino que también adquirí una sólida base en electrónica y mecánica. Como parte de mis actividades extracurriculares, participé en el club ASME (American Society of Mechanical Engineers), donde tuve la oportunidad de trabajar con herramientas de soldadura y otros equipos especializados, lo que me permitió desarrollar automóviles no convencionales como parte de proyectos personales. Además, durante mi servicio social en la universidad, contribuí a mejorar la gestión de horarios y salones mediante la implementación de un sistema basado en códigos QR, facilitando el proceso de reasignación de espacios de manera más eficiente.",
+    "timeTitle": "Time:",
+    "time": "2014 — 2019",
+    "images": [
+     "assets/imgObj/weld02.jpg",
+     "assets/imgObj/weld03.jpg",
+     "assets/imgObj/board01.jpg"]
+  },
+  "school02":
+  {
+    "title": "Codigos Qr Horarios",
+    "description": "Durante mi servicio social en la universidad, diseñé e implementé un sistema de códigos QR para optimizar la gestión de horarios y la asignación de salones. El objetivo principal fue eliminar el uso de papel en los salones, proporcionando a los estudiantes y profesores acceso inmediato y actualizado a los horarios de clases mediante un simple escaneo de los códigos QR. Cada código estaba vinculado a un enlace específico que redirigía a un salón virtual correspondiente, lo que permitía la visualización del horario en tiempo real. Este sistema presentó varias ventajas, como la flexibilidad para realizar actualizaciones o cambios de última hora en los horarios sin necesidad de imprimir nuevas versiones. Además, la implementación de los códigos QR permitió una mayor eficiencia en la gestión de los salones, asegurando que todos los usuarios tuvieran acceso a la información más reciente, sin el desperdicio de papel ni la necesidad de revisiones manuales. La digitalización de los horarios no solo facilitó la comunicación entre los estudiantes y la administración, sino que también contribuyó a una solución más ecológica y moderna para la gestión de recursos en la escuela.",
+    "techTitle": "Tecnologias utilizadas:",
+    "tech": ["assets/mySVGs/HTML5.svg", "assets/mySVGs/JSON.svg"]
+  },
+  "school03":
+  {
+    "title": "Proyecto de titulacion",
+    "description": "Desarrollé un sistema de seguridad utilizando Arduino, integrando sensores biométricos como el de huella digital y un sensor de pulso cardíaco. La idea detrás del proyecto era crear un perfil de usuario personalizado mediante el registro del pulso y compararlo con valores anteriores para asegurar que el vehículo no pudiera ser arrancado por terceros, brindando mayor control y protección ante posibles robos. El sistema incluía el diseño, la codificación y la conexión de componentes clave de la motocicleta, como el relay y los motores de arranque eléctrico. El objetivo era que solo el usuario registrado pudiera activar el vehículo. Sin embargo, durante el desarrollo se presentaron dificultades con el sensor de pulso cardíaco, ya que los resultados variaban mucho dependiendo del entorno y las condiciones del usuario, haciendo que el sistema fuera poco confiable para la vida real. Este problema concluyó en que, aunque el prototipo logró su funcionalidad básica, la aplicación práctica del pulso cardíaco como método de seguridad no fue viable debido a su inexactitud y falta de estabilidad en diversas situaciones.",
+    "techTitle": "Tecnologias utilizadas:",
+    "tech": ["assets/mySVGs/Arduino.svg"],
+    "images": [
+     "assets/imgObj/proto01.jpg",
+     "assets/imgObj/proto02.jpg"]
+  },
+  "school04":
+  {
+    "title": "Idioma Ingles",
+    "description": "Mis estudios de inglés comenzaron en 2010, cuando inicié desde el nivel básico B1. Gracias a mi interés en los videojuegos y mi afinidad por la música rock/metal, me resultó sencillo avanzar rápidamente. Además, estudié en Harmon Hall, una escuela adicional a mi formación universitaria, lo que reforzó mi aprendizaje del idioma. En 2012, obtuve mi primera certificación oficial, y en 2014, logré la segunda certificación requerida para finalizar mis estudios de preparatoria. Finalmente, en 2022, obtuve la certificación necesaria para acreditar las materias de mi carrera universitaria."
+  },
   "stupidFriendly":
   {
     "title": "Becario de Ingeniería de Software",
@@ -24,15 +57,9 @@
      "assets/mySVGs/Bootstrap.svg",
      "assets/mySVGs/BitBucket.svg",
      "assets/mySVGs/Django.svg"],
-     "images": [
-     "assets/imgObj/proto01.jpg",
-     "assets/imgObj/proto02.jpg",
-     "assets/imgObj/board01.jpg"],
     "techtack": ["Lenguajes y Frameworks: Python (TurboGears 2.0), JavaScript (jQuery 1.7), HTML, CSS", "Base de Datos: MySQL 5.5", "Herramientas: jQuery para el Front-End, MySQL Workbench, TurboGears para desarrollo Backend"],
     "dutiesTitle": "Responsabilidades:",
     "duties": ["Documentación de las páginas de inventario, distribución, y una plataforma externa de venta y distribución de boletos", "Colaboración en la creación y mantenimiento de APIs para la gestión de datos utilizando Python (TurboGears) y JavaScript (jQuery).", "Identificación y corrección de problemas relacionados con la fiabilidad del sistema."],
-    "achivementTitle": "Logros:",
-    "achivemens": ["Mejoré la fiabilidad del sistema mediante la eliminación de funciones redundantes, lo que redujo errores y mejoró el rendimiento del sistema en un 15%.", "Simplifiqué procesos mediante la optimización del código, lo que resultó en una mejor gestión de la información y un acceso más eficiente para los pequeños comerciantes."],
     "timeTitle": "Tiempo:",
     "time": "2014 July — 2016 Dec"
   },
@@ -46,13 +73,23 @@
     "description": "Participé en el desarrollo de dos proyectos web enfocados en la administración de usuarios y la creación de citas, lo que contribuyó significativamente a la funcionalidad y el alcance de las aplicaciones.",
     "dutiesTitle": "Responsabilidades:",
     "duties": ["Implementación de eventos en el Front-End y seguimiento de la lógica de eventos hasta la base de datos.", "Resolución de problemas y mantenimiento del sistema, incluyendo la identificación y solución de errores.", "Comunicación continua con los usuarios iniciales para recolectar retroalimentación y definir nuevas funcionalidades junto con el equipo de QA."],
-    "methodologiesTitle": "Metodologias:",
-    "methodologies": ["Utilicé metodologías ágiles (Scrum) para garantizar la entrega continua de funcionalidades, trabajando en sprints para implementar mejoras basadas en retroalimentación constante y asegurando un flujo de trabajo eficiente en colaboración con el equipo."],
-    "achivementTitle": "Logros:",
-    "achivemens": ["Mejoré la estabilidad del sistema al resolver errores críticos que afectaban la experiencia del usuario.", "Recopilación y análisis de retroalimentación que resultaron en la implementación de características ajustadas a las necesidades del cliente."],
     "timeTitle": "Time:",
     "time": "2019 Feb — 2021 Sep"
   },
+  "Semovi":
+  {
+    "title": "Ingeniero de Software",
+    "techTitle": "Tecnologias utilizadas:",
+    "tech": ["assets/mySVGs/JSON.svg", "assets/mySVGs/Bootstrap.svg", "assets/mySVGs/GitHub.svg", "assets/mySVGs/HTML5.svg"],
+    "techtack": ["Lenguajes y Frameworks: Laravel, JavaScript (ES6)", "Base de Datos: MySQL 5.7.", "Herramientas: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017."],
+    "descTitle": "Descripción:",
+    "description": "Durante mi experiencia en SEMOVI, fui contratado por un periodo de 3 meses para trabajar en un proyecto relacionado con la Secretaría de Relaciones Exteriores (SRE), dado que ambas instituciones utilizaban el mismo stack de tecnologías. Mi labor principal consistió en agilizar la resolución y limpieza de bugs en una página dedicada a la generación de citas. Utilicé herramientas como Postman para verificar la integridad de los datos y encontrar errores en el sistema, lo que permitió mejorar significativamente el funcionamiento de la plataforma y optimizar su rendimiento.",
+    "timeTitle": "Time:",
+    "time": "2019"
+  },
+
+
+
   "FletesTransportes": {
     "title": "Ingeniero de Software Junior",
     "techTitle": "Tecnologías utilizadas:",
