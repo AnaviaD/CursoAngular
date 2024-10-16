@@ -4,6 +4,7 @@ import * as THREE from 'three';
 import TWEEN from '@tweenjs/tween.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { FloatingCardComponent } from '../../../opening/components/floating-card/floating-card.component';
 
 
 @Component({
@@ -12,6 +13,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
   styleUrls: ['home-page.component.css']
 })
 export class HomePageComponent {
+  @ViewChild(FloatingCardComponent) floatingCard!: FloatingCardComponent;
+  @ViewChild('threeContainer', { static: true }) threeContainer!: ElementRef;
 
   constructor(private translate: TranslateService) {
     // Establecer el idioma predeterminado
@@ -27,7 +30,9 @@ export class HomePageComponent {
 
   }
 
-  @ViewChild('threeContainer', { static: true }) threeContainer!: ElementRef;
+  objClicked(clickedObject: number) {
+    this.floatingCard.open(clickedObject); // Call the open method to show the card
+  }
 
   initThreeJS(): void {
 

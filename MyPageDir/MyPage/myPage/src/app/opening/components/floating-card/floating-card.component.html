@@ -73,9 +73,9 @@
 
 
           <!-- Row 3: Paragraph with scrollbar -->
-          <div *ngIf="getTranslationKey('descTitle')">
+          <div *ngIf="getTranslationKey('description')">
             <div class="row card ">
-              <div class="col d-flex align-items-center">
+              <div class="col d-flex align-items-center" *ngIf="getTranslationKey('descTitle')">
                 <img src="assets/mySVGs/cube.svg" alt="" class="icon-img">
                 <h3>{{ getTranslationKey('descTitle')  | translate }} </h3>
               </div>

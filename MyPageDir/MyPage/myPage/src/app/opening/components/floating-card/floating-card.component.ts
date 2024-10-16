@@ -29,20 +29,7 @@ export class FloatingCardComponent {
   // };
 
   contentToShow: any = {
-    title: "FletesTransportes.title",
-    techTitle: "FletesTransportes.techTitle",
-    tech: "FletesTransportes.tech",
-    techtack: "FletesTransportes.techtack",
-    descTitle: "FletesTransportes.descTitle",
-    description: "FletesTransportes.description",
-    dutiesTitle: "FletesTransportes.dutiesTitle",
-    duties: "FletesTransportes.duties",
-    achivementTitle: "FletesTransportes.achivementTitle",
-    achivemens: "FletesTransportes.achivemens",
-    methodologiesTitle: "FletesTransportes.methodologiesTitle",
-    methodologies: "FletesTransportes.methodologies",
-    timeTitle: "FletesTransportes.timeTitle",
-    time: "FletesTransportes.time"
+    description: "mainCV.description"
   }; // Variable donde guardarás el JSON dinámico
 
   content1 = {
@@ -94,6 +81,10 @@ export class FloatingCardComponent {
     time: "FletesTransportes.time"
   };
 
+  content99 = {
+    description: "mainCV.description"
+  };
+
   content16 = {
     title: "Desarrollador Sr",
     techtack: ["Node.js, TypeScript, AWS"],
@@ -120,8 +111,11 @@ export class FloatingCardComponent {
       case 3:
         this.contentToShow = this.content3; // Asigna el JSON 2
         break;
+      case 99:
+        this.contentToShow = this.content99; // Asigna el JSON 2
+        break;
       default:
-        this.contentToShow = this.contentToShow; // Valor por defecto si no coincide
+        this.contentToShow = this.content99; // Valor por defecto si no coincide
         break;
     }
   }
