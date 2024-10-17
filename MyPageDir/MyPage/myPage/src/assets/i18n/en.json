@@ -169,6 +169,195 @@
     "timeTitle": "Time:",
     "time": "May 2021 — July 2024"
   },
+  "FletesTransportes03": {
+    "title": "Junior Software Engineer",
+    "techTitle": "Technologies used:",
+    "tech": [
+      "assets/mySVGs/Microsoft SQL Server.svg"
+    ],
+    "techtack": ["Database: MySQL 5.7", "Tools: SQL Server Management Studio (SSMS) 2017 and 2019"],
+    "descTitle": "Description:",
+    "description": "Developed a web dashboard for the monitoring department, offering a detailed view of travel data, including start and end points, routes, emergency buttons, engine stops, and other critical functions.",
+    "dutiesTitle": "Responsibilities:",
+    "duties": [
+      "Created and optimized complex SQL queries to extract real-time data on vehicle positioning, current routes, and travel history.",
+      "Applied optimization techniques such as indexes and table partitioning to ensure that large-scale queries ran efficiently, even with high data volumes.",
+      "Conducted continuous system maintenance and proactively identified errors, including managing dependencies to ensure system stability.",
+      "Developed and applied logic for extracting critical data for fleet management, monitoring events like unauthorized stops and emergency alerts."
+    ],
+    "methodologiesTitle": "Methodologies:",
+    "methodologies": [
+      "Applied Agile methodologies (Scrum) in all projects, working in sprints to implement improvements based on continuous feedback.",
+      "Collaborated with cross-functional teams to ensure smooth communication and timely project deliveries."
+    ],
+    "timeTitle": "Time:",
+    "time": "May 2021 — July 2024"
+  },
+  "pp01": {
+    "title": "Two-Stroke Bike-Motor",
+    "techTitle": "Technologies used:",
+    "tech": ["assets/mySVGs/Arduino.svg"],
+    "images": [
+      "assets/imgObj/weld01.jpg",
+      "assets/imgObj/bici01.jpg",
+      "assets/imgObj/bici02.jpg"
+    ],
+    "descTitle": "Description:",
+    "description": "I developed a bike-motor from scratch by modifying the original bicycle frame to integrate a two-stroke combustion engine. I implemented electronic components such as the CDI and a biometric ignition system using Arduino. The system utilized two sensors—a heart rate monitor and a fingerprint reader—to ensure that only the authorized user could start the engine, integrating the system with the motorcycle's starter components."
+  },
+  "pp02": {
+    "title": "Four-Stroke Bike-Motor",
+    "techTitle": "Technologies used:",
+    "tech": ["assets/mySVGs/Arduino.svg"],
+    "images": [
+      "assets/imgObj/weld01.jpg",
+      "assets/imgObj/bici03.jpg"
+    ],
+    "descTitle": "Description:",
+    "description": "I upgraded the project by replacing the two-stroke engine with a four-stroke engine, improving the vehicle's efficiency and performance. This change required adjustments to the biometric ignition system, maintaining the fingerprint sensor but optimizing motor control to fully utilize the capabilities of the new engine."
+  },
+  "pp03": {
+    "title": "Automated Tinder with Selenium",
+    "techTitle": "Technologies used:",
+    "tech": ["assets/mySVGs/Selenium.svg", "assets/mySVGs/CSharp.svg"],
+    "descTitle": "Description:",
+    "description": "I developed a project in C# using Selenium to automate interactions on a social media platform. This system can log in, like profiles, browse photos, read descriptions, gather data on preferences or interests to start conversations, dislike profiles, and initiate conversations automatically. However, a key limitation is that it cannot autonomously understand or respond to emergent or personalized conversations, restricting interaction to basic automated processes."
+  },
+  "pp04": {
+    "title": "Mask with Raspberry Pi",
+    "techTitle": "Technologies used:",
+    "tech": ["assets/mySVGs/RaspberryPi.svg", "assets/mySVGs/Arduino.svg"],
+    "descTitle": "Description:",
+    "description": "I developed a project using a Raspberry Pi programmed in Python with OpenCV to detect and process eye movements through a camera. The eye movements (left, right, up, down, and blinks) were sent to an Arduino that controlled an LED module (MAX7219), simulating these movements on an LED matrix. I also implemented a microphone to recognize voice tone and encode it into an 8x128 LED matrix. Additionally, I designed the necessary boards to support the module and expand the matrix to 32x128 LEDs, all integrated with precise control over eye movement."
+  },
+  "pp05": {
+    "title": "Automatic Turret with Raspberry Pi",
+    "techTitle": "Technologies used:",
+    "tech": ["assets/mySVGs/RaspberryPi.svg", "assets/mySVGs/Arduino.svg"],
+    "descTitle": "Description:",
+    "description": "I developed an automatic turret using a Raspberry Pi, servomotors, and Python with OpenCV to track QR codes. The system utilized a camera to detect the QR code and process the image, adjusting the servomotors to precisely point at the code. Once aligned, a laser was activated, pointing directly at the QR code. Additionally, I implemented a hit counter that recorded the number of times the system successfully aimed at the target."
+  },
+  "pp06": {
+    "title": "Security Camera with Raspberry Pi",
+    "techTitle": "Technologies used:",
+    "tech": ["assets/mySVGs/RaspberryPi.svg", "assets/mySVGs/Arduino.svg"],
+    "descTitle": "Description:",
+    "description": "I developed a security system using a Raspberry Pi with a camera and Python along with OpenCV for QR code tracking. The initial project involved detecting movements and triggering an alarm in case of suspicious activity, functioning as a basic security system. This proposal has the potential to scale by adding advanced object detection capabilities for dangerous items like knives, weapons, or other threats, using real-time object recognition algorithms, thereby improving the system's precision and ability to react to risk situations."
+  },
+  "pp07": {
+    "title": "Juego para celular",
+    "techTitle": "Tecnologías utilizadas:",
+    "tech": ["assets/mySVGs/CSharp.svg", "assets/mySVGs/Unity.svg", "assets/mySVGs/JSON.svg"],
+    "descTitle": "Descripción:",
+    "description": "Desarrollé un juego para celular tipo runner en Unity utilizando C#. El juego incluye cuatro niveles con una dificultad progresiva, en los que cambian la velocidad de los enemigos y los obstáculos en cada mapa. Los assets fueron creados en Blender, y el juego cuenta con una integración a través de una API en C# para guardar y consultar los puntajes en una base de datos en SQL. El juego fue publicado en la Play Store de Android, aunque posteriormente fue retirado de la plataforma."
+  },
+  "curso01": {
+    "title": "ANGULAR and ASP.NET Core REST API - Real World Application.",
+    "techTitle": "Tecnologías utilizadas:",
+    "tech": ["assets/mySVGs/CSharp.svg", "assets/mySVGs/Angular.svg", "assets/mySVGs/JSON.svg"],
+    "techtack": ["Instructor: Sameer Saini"],
+    "dutiesTitle": "Temas:",
+    "duties": [
+      "Angular CLI", "Angular Components", "Angular Routing", "Angular Services", "HTTP calls", "CORS",
+      "Use Bootstrap CSS in Angular applications", "Create reusable components", "CRUD operations (Create Read Update Delete)",
+      "Angular Forms", "Live Markdown Preview", "Markdown to HTML", "Angular Form Elements",
+      "Authentication and Authorization", "JWT Tokens and Storage", "Cookie Services", "Local Storage",
+      "Interceptors", "Auth/Route Guards", "Image Upload in Angular applications", "Models and Interfaces",
+      "Create ASPNET Core APIs from scratch using C#", "Create endpoints and action methods",
+      "CRUD operations in ASP.NET Core (Create Read Update Delete)", "Install and Use Entity Framework Core to connect to SQL Server database",
+      "Understand and implement Entity framework core relationships", "Domain-Driven Design Patterns (DDD)", "Repository Pattern in ASP.NET Core",
+      "Domain Modelling", "Entity Framework Code First Approach", "SQL Server", "Seeding the Database", "HTTP Web Methods",
+      "Authentication and Authorization", "JWT Tokens", "Role Based Authorization", "Image Upload in ASP.NET Core Web API",
+      "Write Clean, Re-Usable Code"
+    ]
+  },
+  "curso02": {
+    "title": "Node: De cero a experto.",
+    "techTitle": "Tecnologías utilizadas:",
+    "tech": ["assets/mySVGs/NPM.svg", "assets/mySVGs/node01.svg", "assets/mySVGs/JSON.svg", "assets/mySVGs/GitHub.svg"],
+    "techtack": ["Instructor: Fernando Herrera"],
+    "dutiesTitle": "Temas:",
+    "duties": [
+      "SocketIO", "JWT", "Git", "GitHub", "JSON", "Google Services", "Google APIs", "Heroku", "MySQL", "TypeScript",
+      "PostMan", "Express", "YARGS", "Aplicaciones de consola básicas e interactivas", "Mongo Compass", "Paquetes", "NPM",
+      "RESTServer", "Socket Server", "Consumo de servicios", "Creación de archivos", "Despliegues"
+    ]
+  },
+  "curso03": {
+    "title": "JavaScript Moderno: Guía para dominar el lenguaje.",
+    "techTitle": "Tecnologías utilizadas:",
+    "tech": ["assets/mySVGs/NPM.svg", "assets/mySVGs/JavaScript.svg", "assets/mySVGs/JSON.svg", "assets/mySVGs/GitHub.svg"],
+    "techtack": ["Instructor: Fernando Herrera"],
+    "dutiesTitle": "Temas:",
+    "duties": [
+      "Bases de JavaScript", "Tipos de datos", "Objetos", "Operadores", "Ciclos", "ESNext", "Clases", "Propiedades privadas",
+      "Node", "Npm", "Instalación de paquetes en proyectos de JavaScript", "Promesas", "Callbacks", "CRUD",
+      "Modals manuales", "Carga de archivos", "Fetch", "Funciones generadoras", "Vite", "Mappers",
+      "JSDocs y documentación de funciones", "VSCode con tipos de datos en JavaScript", "Manipulación del DOM"
+    ]
+  },
+  "curso04": {
+    "title": "Angular: De cero a experto.",
+    "techTitle": "Tecnologías utilizadas:",
+    "tech": ["assets/mySVGs/NPM.svg", "assets/mySVGs/JavaScript.svg", "assets/mySVGs/JSON.svg", "assets/mySVGs/Angular.svg"],
+    "techtack": ["Instructor: Fernando Herrera"],
+    "dutiesTitle": "Temas:",
+    "duties": [
+      "Bases de TypeScript y ESCMAScript", "Hola Mundo en Angular", "Componentes", "Directivas", "Servicios", "Módulos",
+      "Todos los pipes de Angular", "Rutas", "Rutas Hijas", "Carga perezosa o Lazyload de módulos", "Guards", "Protección de rutas",
+      "Autenticación mediante JsonWebTokens", "Mapas", "Uso de librerías de terceros escritas en Angular", "Uso de librerías NO escritas para Angular",
+      "Consumo de APIs", "CRUD", "SPA", "Git", "GitHub", "Despliegues a producción", "MongoDB", "Node",
+      "Re-utilización de componentes, directivas, servicios", "Comunicación entre componentes y módulos", "Uso de extensiones reactivas",
+      "PrimeNG", "Material Design", "Bootstrap", "Tailwind", "Defer", "Triggers", "Signals", "Writable Signals", "Computed Signals"
+    ]
+  },
+  "curso05": {
+    "title": "Principios SOLID y Clean Code",
+    "techTitle": "Tecnologías utilizadas:",
+    "tech": ["assets/mySVGs/NPM.svg", "assets/mySVGs/JavaScript.svg", "assets/mySVGs/JSON.svg", "assets/mySVGs/TypeScript.svg"],
+    "techtack": ["Instructor: Fernando Herrera"],
+    "dutiesTitle": "Temas:",
+    "duties": [
+      "S – Single Responsibility Principle (SRP)", "O – Open/Closed Principle (OCP)", "L – Liskov Substitution Principle (LSP)",
+      "I – Interface Segregation Principle (ISP)", "D – Dependency Inversion Principle (DIP)"
+    ]
+  },
+  "curso06": {
+    "title": "Curso completo programación C# en .Net",
+    "techTitle": "Tecnologías utilizadas:",
+    "tech": ["assets/mySVGs/NPM.svg", "assets/mySVGs/CSharp.svg", "assets/mySVGs/JSON.svg", "assets/mySVGs/NETcore.svg"],
+    "techtack": ["Instructor: Alberto Picazo"],
+    "dutiesTitle": "Temas:",
+    "duties": [
+      "Inicialización a SQL Server", "Iniciación a Entity Framework Core", "Clean Code", "Iniciación a Azure",
+      "Principios SOLID", "Principios API REST", "Conceptos de Inyección Dependencias en .Net Core",
+      "Creación de API de .Net Core desde cero", "OpenApi / Swagger en proyectos de API de .Net Core",
+      "HttpClientFactory en Net Core 2.1+"
+    ]
+  },
+  "curso07": {
+    "title": "Docker, de principiante a experto",
+    "techTitle": "Tecnologías utilizadas:",
+    "tech": ["assets/mySVGs/Docker.svg"],
+    "techtack": ["Instructor: Ricardo Andre Gonzalez Gomez"],
+    "dutiesTitle": "Temas:",
+    "duties": [
+      "Imágenes", "Contenedores", "Volúmenes", "Redes", "Docker Compose", "Docker Registry"
+    ]
+  },
+  "curso08": {
+    "title": "Android Retrofit 2 complete course in Kotlin",
+    "techTitle": "Tecnologías utilizadas:",
+    "tech": ["assets/mySVGs/JSON.svg", "assets/mySVGs/Android.svg"],
+    "techtack": ["Instructor: Catalin Stefan"],
+    "dutiesTitle": "Temas:",
+    "duties": [
+      "Basic Retrofit implementation", "Logging", "URL resolution", "GET, POST and other request methods", "Queries",
+      "URL manipulation", "Request body", "Sending form data", "Headers", "Canceling requests",
+      "Caching", "Pagination", "Synchronous vs asynchronous communications", "Retrofit with RxJava", "Authentication"
+    ]
+  },
+
   "SRE":
   {
     "title": "Des Sr",
