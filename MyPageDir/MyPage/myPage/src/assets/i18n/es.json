@@ -370,6 +370,25 @@
     "dutiesTitle": "Temas:",
     "duties": ["DML Statement with examples", "DDL Statements with examples", "DCL Statement with examples", "TCL Statement with examples", "Create TABLE(s) and Temp Table(s)", "What Is a View?", "SELECT Statement in detail", "Operators, Expressions and Conditions", "WHERE Clause, ORDER BY, HAVING BY, GROUP BY Clause", "Select from two tables – JOINS", "Different Types of JOINS", "What is a Sub Query?", "INSERT, UPDATE, DELETE and Truncate Statements", "What is a Store Procedure?", "Function, Trigger and INDEX", "Clustered ,Non-clustered Indexes and Index Design considerations", "Index Fragmentation and Lab for Index", "Overview of MSSQL Management Tools", "Exploring SQL Server Management Studio (SSMS)", "Exploring SQL Server Configuration Manager", "MSSQL System Databases, DO's and DONT's of System databases", "What is master, etmpdb, msdb and other system databases?", "What are Pages , Extents, Page Architecture and PFS?", "MSSQL Architecture", "MSSQL Database Architecture", "Operation and working of transaction log", "Configuring user Database", "Best practices while creating user Database"]
   },
+  "curso11":
+  {
+    "title": "Blender 2.9x Modelado 3D para Videojuegos FLUJO COMPLETO",
+    "techTitle": "Tecnologias utilizadas:",
+    "tech": ["assets/mySVGs/Blender.svg"],
+    "techtack": ["Instructor: Mariano Rivas"],
+    "dutiesTitle": "Temas:",
+    "duties": ["Análisis de referencias: Estudiar y analizar imágenes de referencia para comprender la estructura del tanque.", "Blocking de volumen: Crear formas básicas que representen el volumen general del tanque antes de agregar detalles.", "Modelado detallado: Modelar los accesorios y detalles finales del tanque.", "Limpieza de geometría: Optimizar la geometría para mejorar el rendimiento del modelo en motores de videojuegos.", "Reducción de polígonos: Disminuir la cantidad de polígonos sin sacrificar detalles esenciales para un mejor rendimiento.", "Mapeado UV: Crear y aplicar coordenadas UV para las partes modeladas del tanque.", "Optimización de texturas UV: Organizar la geometría en una textura optimizada para el uso eficiente de recursos.", "Pintura 2D y 3D en Blender: Crear texturas y colores base utilizando herramientas integradas de Blender.", "Generación de mapas de oclusión: Generar y aplicar mapas de oclusión para mejorar el sombreado en el modelo.", "Técnicas de pintura manual: Pintar manualmente sobre el modelo utilizando diferentes herramientas de Blender.", "Pintura con texturas STENCIL: Aplicar texturas mediante la técnica STENCIL.", "Uso de nodos en el Shader Graph: Profundizar en el uso de nodos para crear materiales en Blender.", "Preparación para exportar a Unity: Exportar el modelo y las texturas desde Blender para integrarlas en Unity.", "Generación de texturas para flujos de trabajo en motores de videojuegos: Crear texturas específicas para renderizado en tiempo real o con luz almacenada en Unity."]
+  },
+
+  "curso12":
+  {
+    "title": "Three.js and TypeScript",
+    "techTitle": "Tecnologias utilizadas:",
+    "tech": ["assets/mySVGs/NPM.svg", "assets/mySVGs/TypeScript.svg", "assets/mySVGs/Three.js.svg"],
+    "techtack": ["Instructor: Sean Bradley"],
+    "dutiesTitle": "Temas:",
+    "duties": ["Create a Threejs project using NPM and package json", "Learn about the VIte bundler and serving ES6 modules to the browser clients.", "Create (or optionally Install) a Threejs TypeScript Boilerplate for use throughout the course", "Learn about the Threejs Scene, Camera and Renderer", "Learn about the Animation loop", "Learn about the Stats, Dat GUI and lil-gui panels", "Learn about Object3D base class, and the Rotation, Position, Scale, Visibility and Matrix properties", "Learn about Geometries such as Box, Sphere, Icosahedron, Plane, TorusKnot and more", "Learn about the Basic, Normal, Phong, Standard, Physical and other materials", "Learn about PBR Roughness and Metalness", "Learn about lighting using the Ambient, Directional, Point and Spot lights.", "Learn about shadows using both the Perspective and Orthographic shadow cameras.", "Learn about the Orbit, Trackball and Pointerlock mouse and touch interaction controls", "Learn about loaders such as the GLTF, DRACO, OBJ, Texture, RGBE and more", "Import third party glTF/glB animations", "Animate using Lerp, JEasings and the Animation Mixer", "Use Raycaster and how to use it for mouse picking 3D objects in the scene,", "Physics with Rapier", "The Rapier Debug Renderer", "Understanding Shapes for Collision Detection", "Provision, Deploy and Start our Threejs Projects to a Production server", "Matching Blender Lighting and Environment Maps"]
+  },
 
 
   "SRE":
