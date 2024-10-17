@@ -1,58 +1,76 @@
 {
   "title": "welcome",
 
-  "mainCV":
-  {
-    "description": "Soy un ingeniero Full Stack con experiencia en la automatización, análisis y procesamiento de datos. He desarrollado soluciones que optimizan la recolección y tratamiento de información utilizando machine learning, aportando mejoras significativas en la eficiencia de los sistemas. Aunque también tengo experiencia en bases de datos, mi mayor fortaleza reside en la automatización y optimización de procesos complejos. A lo largo de mi carrera, he manejado todas las tareas propias de un desarrollador Full Stack, desde la gestión de bases de datos, pruebas de APIs con Postman, hasta la creación de pruebas unitarias y automatizadas con herramientas como Selenium y unit testing. Mi enfoque integral me permite asegurar que cada parte del sistema, desde el back-end hasta el front-end, funcione de manera óptima y eficiente. Además, he desarrollado soluciones innovadoras integrando hardware como Raspberry Pi y Arduino para mejorar la obtención de datos en sistemas, siempre buscando formas de automatizar y mejorar procesos."
+  "mainCV": {
+    "description": "I am a Full Stack engineer with experience in data automation, analysis, and processing. I have developed solutions that optimize the collection and treatment of information using machine learning, significantly improving system efficiency. While I also have experience with databases, my greatest strength lies in the automation and optimization of complex processes. Throughout my career, I have handled all the tasks typical of a Full Stack developer, from database management, API testing with Postman, to creating unit and automated tests with tools like Selenium and unit testing. My comprehensive approach ensures that every part of the system, from the back-end to the front-end, works optimally and efficiently. Additionally, I have developed innovative solutions by integrating hardware such as Raspberry Pi and Arduino to enhance data collection in systems, always seeking ways to automate and improve processes."
   },
-
+  "school01": {
+    "title": "Education",
+    "description": "I completed my high school education at the Polytechnic School of the National Polytechnic Institute (IPN), Cecyt 14, focused on the field of computer science. Later, I continued my university studies at the Superior School of Mechanical and Electrical Engineering (ESIME) of IPN, obtaining a degree in Computer Engineering. During my time at ESIME, I not only expanded my knowledge in computer science but also gained a solid foundation in electronics and mechanics. As part of my extracurricular activities, I participated in the ASME (American Society of Mechanical Engineers) club, where I had the opportunity to work with welding tools and other specialized equipment, allowing me to develop unconventional automobiles as part of personal projects. Additionally, during my social service at the university, I contributed to improving the management of schedules and classrooms by implementing a system based on QR codes, making the process of reassigning spaces more efficient.",
+    "timeTitle": "Time:",
+    "time": "2014 — 2019",
+    "images": [
+      "assets/imgObj/weld02.jpg",
+      "assets/imgObj/weld03.jpg",
+      "assets/imgObj/board01.jpg"
+    ]
+  },
+  "school02": {
+    "title": "QR Codes for Scheduling",
+    "description": "During my university social service, I designed and implemented a QR code system to optimize schedule management and classroom assignments. The main goal was to eliminate paper usage in classrooms, providing students and teachers with immediate and up-to-date access to class schedules through a simple QR code scan. Each code was linked to a specific URL that redirected to a corresponding virtual classroom, allowing real-time schedule viewing. This system presented several advantages, such as the flexibility to make last-minute updates or changes to the schedules without needing to print new versions. Additionally, the implementation of QR codes led to greater efficiency in classroom management, ensuring that all users had access to the most recent information without paper waste or manual revisions. The digitalization of schedules not only facilitated communication between students and administration but also contributed to a more eco-friendly and modern solution for resource management in the school.",
+    "techTitle": "Technologies used:",
+    "tech": ["assets/mySVGs/HTML5.svg", "assets/mySVGs/JSON.svg"]
+  },
+  "school03": {
+    "title": "Thesis Project",
+    "description": "I developed a security system using Arduino, integrating biometric sensors such as a fingerprint scanner and a heart rate sensor. The idea behind the project was to create a personalized user profile by recording the pulse and comparing it to previous values to ensure the vehicle couldn't be started by third parties, providing greater control and protection against potential theft. The system included the design, coding, and connection of key motorcycle components, such as the relay and electric starter motors. The goal was for only the registered user to activate the vehicle. However, during development, there were difficulties with the heart rate sensor, as the results varied greatly depending on the environment and the user's conditions, making the system unreliable for real-life use. This issue concluded that, although the prototype achieved its basic functionality, the practical application of heart rate as a security method was not feasible due to its inaccuracy and lack of stability in various situations.",
+    "techTitle": "Technologies used:",
+    "tech": ["assets/mySVGs/Arduino.svg"],
+    "images": [
+      "assets/imgObj/proto01.jpg",
+      "assets/imgObj/proto02.jpg"
+    ]
+  },
+  "school04": {
+    "title": "English Language",
+    "description": "My English studies began in 2010, starting from the basic B1 level. Thanks to my interest in video games and my affinity for rock/metal music, I found it easy to progress quickly. Additionally, I studied at Harmon Hall, a school outside of my university curriculum, which reinforced my language learning. In 2012, I obtained my first official certification, and in 2014, I achieved the second certification required to complete my high school education. Finally, in 2022, I earned the certification necessary to fulfill the language requirements for my university degree."
+  },
   "stupidFriendly": {
-  "title": "Software Engineering Intern",
-  "techTitle": "Technologies Used:",
-  "tech": ["assets/mySVGs/HTML5.svg", "assets/mySVGs/Microsoft SQL Server.svg", "assets/mySVGs/Bootstrap.svg", "assets/mySVGs/BitBucket.svg", "assets/mySVGs/Django.svg"],
-  "techtack": ["Languages and Frameworks: Python (TurboGears 2.0), JavaScript (jQuery 1.7), HTML, CSS", "Database: MySQL 5.5", "Tools: jQuery for Front-End, MySQL Workbench, TurboGears for Backend development"],
-  "dutiesTitle": "Responsibilities:",
-  "duties": ["Documentation of inventory, distribution pages, and an external platform for ticket sales and distribution", "Collaboration in creating and maintaining APIs for data management using Python (TurboGears) and JavaScript (jQuery).", "Identification and correction of system reliability issues."],
-  "achivementTitle": "Achievements:",
-  "achivemens": ["Improved system reliability by eliminating redundant functions, reducing errors and enhancing system performance by 15%.", "Streamlined processes by optimizing code, resulting in better information management and more efficient access for small business merchants."],
-  "timeTitle": "Duration:",
-  "time": "2014 July — 2016 Dec"
+    "title": "Software Engineering Intern",
+    "techTitle": "Technologies used:",
+    "tech": ["assets/mySVGs/HTML5.svg",
+    "assets/mySVGs/Microsoft SQL Server.svg",
+    "assets/mySVGs/Bootstrap.svg",
+    "assets/mySVGs/BitBucket.svg",
+    "assets/mySVGs/Django.svg"],
+    "techtack": ["Languages and Frameworks: Python (TurboGears 2.0), JavaScript (jQuery 1.7), HTML, CSS", "Database: MySQL 5.5", "Tools: jQuery for Front-End, MySQL Workbench, TurboGears for Backend development"],
+    "dutiesTitle": "Responsibilities:",
+    "duties": ["Documentation of inventory pages, distribution, and an external platform for ticket sales and distribution", "Collaboration in the creation and maintenance of APIs for data management using Python (TurboGears) and JavaScript (jQuery).", "Identifying and resolving system reliability issues."],
+    "timeTitle": "Time:",
+    "time": "2014 July — 2016 Dec"
   },
   "Infotec":
   {
-    "title": "Junior Software Engineer",
-    "techTitle": "Technologies used:",
-    "tech": [
-      "assets/mySVGs/JSON.svg",
-      "assets/mySVGs/NETcore.svg",
-      "assets/mySVGs/Bootstrap.svg",
-      "assets/mySVGs/GitHub.svg",
-      "assets/mySVGs/HTML5.svg"
-    ],
-    "techtack": [
-      "Languages and Frameworks: .NET Framework 4.7.x, .NET Core 2.x, JavaScript (ES6), Angular 6.",
-      "Database: MySQL 5.7.",
-      "Tools: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017, phpMyAdmin 4.0."
-    ],
-    "descTitle": "Description:",
-    "description": "I participated in the development of two web projects focused on user management and appointment scheduling, which significantly contributed to the functionality and reach of the applications.",
-    "dutiesTitle": "Responsibilities:",
-    "duties": [
-      "Implemented front-end events and tracked event logic to the database.",
-      "Troubleshooting and system maintenance, including error identification and resolution.",
-      "Maintained continuous communication with early users to gather feedback and define new features with the QA team."
-    ],
-    "methodologiesTitle": "Methodologies:",
-    "methodologies": [
-      "I used agile methodologies (Scrum) to ensure continuous delivery of features, working in sprints to implement improvements based on constant feedback and ensuring an efficient workflow in collaboration with the team."
-    ],
-    "achivementTitle": "Achievements:",
-    "achivemens": [
-      "Improved system stability by resolving critical errors affecting user experience.",
-      "Collected and analyzed feedback, resulting in the implementation of features tailored to client needs."
-    ],
+    "title": "Ingeniero de Software Junior",
+    "techTitle": "Tecnologias utilizadas:",
+    "tech": ["assets/mySVGs/JSON.svg", "assets/mySVGs/NETcore.svg", "assets/mySVGs/Bootstrap.svg", "assets/mySVGs/GitHub.svg", "assets/mySVGs/HTML5.svg"],
+    "techtack": ["Lenguajes y Frameworks: .NET Framework 4.7.x, .NET Core 2.x, JavaScript (ES6), Angular 6.", "Base de Datos: MySQL 5.7.", "Herramientas: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017."],
+    "descTitle": "Descripción:",
+    "description": "Participé en el desarrollo de dos proyectos web enfocados en la administración de usuarios y la creación de citas, lo que contribuyó significativamente a la funcionalidad y el alcance de las aplicaciones.",
+    "dutiesTitle": "Responsabilidades:",
+    "duties": ["Implementación de eventos en el Front-End y seguimiento de la lógica de eventos hasta la base de datos.", "Resolución de problemas y mantenimiento del sistema, incluyendo la identificación y solución de errores.", "Comunicación continua con los usuarios iniciales para recolectar retroalimentación y definir nuevas funcionalidades junto con el equipo de QA."],
     "timeTitle": "Time:",
     "time": "2019 Feb — 2021 Sep"
+  },
+  "Semovi": {
+    "title": "Software Engineer",
+    "techTitle": "Technologies used:",
+    "tech": ["assets/mySVGs/JSON.svg", "assets/mySVGs/Bootstrap.svg", "assets/mySVGs/GitHub.svg", "assets/mySVGs/HTML5.svg"],
+    "techtack": ["Languages and Frameworks: Laravel, JavaScript (ES6)", "Database: MySQL 5.7.", "Tools: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017."],
+    "descTitle": "Description:",
+    "description": "During my time at SEMOVI, I was contracted for a 3-month period to work on a project linked to the Ministry of Foreign Affairs (SRE), as both institutions used the same technology stack. My main role involved speeding up the resolution and cleaning of bugs on a page dedicated to appointment scheduling. I used tools like Postman to verify data integrity and find system errors, which significantly improved platform performance and optimized its overall efficiency.",
+    "timeTitle": "Time:",
+    "time": "2019"
   },
   "FletesTransportes":
   {
@@ -87,6 +105,69 @@
     "achivemens": ["Ms", "Mejorar tiempo de bla bla"],
     "timeTitle": "Time:",
     "time": "2021 May — 2024 July"
+  },
+  "FletesTransportes01": {
+    "title": "Junior Software Engineer",
+    "techTitle": "Technologies used:",
+    "tech": [
+      "assets/mySVGs/JSON.svg",
+      "assets/mySVGs/Microsoft SQL Server.svg",
+      "assets/mySVGs/CSharp.svg",
+      "assets/mySVGs/NETcore.svg",
+      "assets/mySVGs/GitHub.svg"
+    ],
+    "techtack": ["Languages and Frameworks: .NET Core 3.1", "Database: MySQL 5.7", "Tools: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017 and 2019"],
+    "descTitle": "Description:",
+    "description": "Led the creation of a goods management program designed to clean and process client data, ensuring that only essential information for billing was retained.",
+    "dutiesTitle": "Responsibilities:",
+    "duties": [
+      "Defined and established the architecture of the goods management project, ensuring a scalable design that met business objectives.",
+      "Implemented advanced data cleaning and validation techniques, including the use of regular expressions to ensure data integrity.",
+      "Developed algorithms using machine learning to extract key information from complex datasets, such as Excel sheets with variable formats."
+    ],
+    "methodologiesTitle": "Methodologies:",
+    "methodologies": [
+      "Applied Agile methodologies (Scrum) in all projects, working in sprints to implement improvements based on continuous feedback.",
+      "Collaborated with cross-functional teams to ensure smooth communication and timely project deliveries."
+    ],
+    "achievementTitle": "Achievements:",
+    "achievements": ["Increased the volume of goods processed from smaller clients by 30%."],
+    "timeTitle": "Time:",
+    "time": "May 2021 — July 2024"
+  },
+  "FletesTransportes02": {
+    "title": "Junior Software Engineer",
+    "techTitle": "Technologies used:",
+    "tech": [
+      "assets/mySVGs/JSON.svg",
+      "assets/mySVGs/Microsoft SQL Server.svg",
+      "assets/mySVGs/Android.svg",
+      "assets/mySVGs/CSharp.svg",
+      "assets/mySVGs/NETcore.svg",
+      "assets/mySVGs/GitHub.svg"
+    ],
+    "techtack": ["Languages and Frameworks: Kotlin 1.4, SQLite 3.35, Retrofit 2.9, .NET Core 3.1, .NET Core 2.x, JavaScript (ES6), Angular 6, Node Express 4", "Database: MySQL 5.7", "Tools: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017 and 2019"],
+    "descTitle": "Description:",
+    "description": "Led a key project aimed at modernizing the storage and registration system for heavy trucks, which previously operated with a desktop program developed in .NET. The goal was to create a more efficient solution, developing an API in C# and an Android application that allowed for sending and receiving data in JSON format, along with photos of vehicle components such as tires, gas tanks, and mirrors. The update brought multiple advantages, including the automatic registration of components requiring replacement. This information was stored in the unit’s profile, enabling further analysis and alerts for preventive or corrective maintenance, such as tire replacement or scheduling a technical stop. The system also optimized operational costs by replacing tablets, priced at approximately $500 USD, which was significantly cheaper than maintaining rugged devices worth $4000 USD. This implementation not only streamlined truck maintenance but also enhanced data collection and analysis, speeding up processes when arriving or leaving the yards.",
+    "dutiesTitle": "Responsibilities:",
+    "duties": [
+      "Define the structure of the Android inventory project, integrate APIs using Retrofit, and implement data storage with SQLite.",
+      "Manage threads and concurrency using Kotlin Coroutines, optimizing performance and resolving bottlenecks while ensuring compatibility with Android updates.",
+      "Project Planning and Architecture.",
+      "System Connections and Communication.",
+      "Database and Information Storage.",
+      "Creation of Tests and API Integration.",
+      "System Optimization for the End User."
+    ],
+    "methodologiesTitle": "Methodologies:",
+    "methodologies": [
+      "Applied Agile methodologies (Scrum) in all projects, working in sprints to implement improvements based on continuous feedback.",
+      "Collaborated with cross-functional teams to ensure smooth communication and timely project deliveries."
+    ],
+    "achievementTitle": "Achievements:",
+    "achievements": ["The system also optimized operational costs by replacing tablets, priced at approximately $500 USD, which was significantly cheaper than maintaining rugged devices worth $4000 USD. This implementation not only streamlined truck maintenance but also improved data collection and analysis efficiency, speeding up processes when arriving or leaving the yards."],
+    "timeTitle": "Time:",
+    "time": "May 2021 — July 2024"
   },
   "SRE":
   {
