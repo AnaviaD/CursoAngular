@@ -379,16 +379,38 @@
     "dutiesTitle": "Temas:",
     "duties": ["Análisis de referencias: Estudiar y analizar imágenes de referencia para comprender la estructura del tanque.", "Blocking de volumen: Crear formas básicas que representen el volumen general del tanque antes de agregar detalles.", "Modelado detallado: Modelar los accesorios y detalles finales del tanque.", "Limpieza de geometría: Optimizar la geometría para mejorar el rendimiento del modelo en motores de videojuegos.", "Reducción de polígonos: Disminuir la cantidad de polígonos sin sacrificar detalles esenciales para un mejor rendimiento.", "Mapeado UV: Crear y aplicar coordenadas UV para las partes modeladas del tanque.", "Optimización de texturas UV: Organizar la geometría en una textura optimizada para el uso eficiente de recursos.", "Pintura 2D y 3D en Blender: Crear texturas y colores base utilizando herramientas integradas de Blender.", "Generación de mapas de oclusión: Generar y aplicar mapas de oclusión para mejorar el sombreado en el modelo.", "Técnicas de pintura manual: Pintar manualmente sobre el modelo utilizando diferentes herramientas de Blender.", "Pintura con texturas STENCIL: Aplicar texturas mediante la técnica STENCIL.", "Uso de nodos en el Shader Graph: Profundizar en el uso de nodos para crear materiales en Blender.", "Preparación para exportar a Unity: Exportar el modelo y las texturas desde Blender para integrarlas en Unity.", "Generación de texturas para flujos de trabajo en motores de videojuegos: Crear texturas específicas para renderizado en tiempo real o con luz almacenada en Unity."]
   },
-
-  "curso12":
-  {
+  "curso12": {
     "title": "Three.js and TypeScript",
-    "techTitle": "Tecnologias utilizadas:",
+    "techTitle": "Tecnologías utilizadas:",
     "tech": ["assets/mySVGs/NPM.svg", "assets/mySVGs/TypeScript.svg", "assets/mySVGs/Three.js.svg"],
     "techtack": ["Instructor: Sean Bradley"],
     "dutiesTitle": "Temas:",
-    "duties": ["Create a Threejs project using NPM and package json", "Learn about the VIte bundler and serving ES6 modules to the browser clients.", "Create (or optionally Install) a Threejs TypeScript Boilerplate for use throughout the course", "Learn about the Threejs Scene, Camera and Renderer", "Learn about the Animation loop", "Learn about the Stats, Dat GUI and lil-gui panels", "Learn about Object3D base class, and the Rotation, Position, Scale, Visibility and Matrix properties", "Learn about Geometries such as Box, Sphere, Icosahedron, Plane, TorusKnot and more", "Learn about the Basic, Normal, Phong, Standard, Physical and other materials", "Learn about PBR Roughness and Metalness", "Learn about lighting using the Ambient, Directional, Point and Spot lights.", "Learn about shadows using both the Perspective and Orthographic shadow cameras.", "Learn about the Orbit, Trackball and Pointerlock mouse and touch interaction controls", "Learn about loaders such as the GLTF, DRACO, OBJ, Texture, RGBE and more", "Import third party glTF/glB animations", "Animate using Lerp, JEasings and the Animation Mixer", "Use Raycaster and how to use it for mouse picking 3D objects in the scene,", "Physics with Rapier", "The Rapier Debug Renderer", "Understanding Shapes for Collision Detection", "Provision, Deploy and Start our Threejs Projects to a Production server", "Matching Blender Lighting and Environment Maps"]
+    "duties": [
+      "Crear un proyecto Three.js utilizando NPM y package.json",
+      "Aprender sobre el empaquetador Vite y el uso de módulos ES6 en el cliente del navegador",
+      "Crear (o instalar opcionalmente) una plantilla base en TypeScript para proyectos con Three.js",
+      "Entender la escena, cámara y renderizador en Three.js",
+      "Aprender sobre el ciclo de animación",
+      "Uso de paneles como Stats, Dat GUI y lil-gui",
+      "Trabajar con la clase Object3D y las propiedades de rotación, posición, escala, visibilidad y matrices",
+      "Uso de geometrías como Caja, Esfera, Icosaedro, Plano, TorusKnot y más",
+      "Materiales básicos, normales, Phong, Standard, Physical y otros",
+      "Introducción a PBR, rugosidad y metalicidad",
+      "Iluminación con luces Ambientales, Direccionales, Puntuales y Spot",
+      "Uso de sombras con cámaras de sombra en perspectiva y ortográficas",
+      "Controles de interacción con el ratón y el tacto: Orbit, Trackball y Pointerlock",
+      "Cargar modelos con loaders como GLTF, DRACO, OBJ, Texturas, RGBE y otros",
+      "Importar animaciones de terceros en formatos glTF/glB",
+      "Animar utilizando Lerp, JEasings y Animation Mixer",
+      "Uso de Raycaster para la selección de objetos 3D con el ratón",
+      "Física con Rapier",
+      "Depuración de física con Rapier Debug Renderer",
+      "Comprensión de formas para la detección de colisiones",
+      "Provisión, despliegue y puesta en marcha de proyectos Three.js en un servidor de producción",
+      "Ajuste de la iluminación y mapas de entorno para coincidir con Blender"
+    ]
   },
+
 
 
   "SRE":
