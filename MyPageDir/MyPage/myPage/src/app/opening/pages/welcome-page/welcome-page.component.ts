@@ -247,7 +247,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
     // Cargar el modelo
     loader.load(
-    'assets/glts/groundMap.glb',
+    'assets/glts/groundMap01.glb',
     (gltf) => {
       const original = gltf.scene;
       original.position.set(0, -32, 0);
@@ -270,9 +270,6 @@ export class WelcomePageComponent implements AfterViewInit {
     (error) => {
       console.error('Error al cargar el modelo GLTF:', error);
     });
-
-
-
 
     // Cargar el modelo
     loader.load(
@@ -383,27 +380,131 @@ export class WelcomePageComponent implements AfterViewInit {
     'assets/glts/pool.glb',
     (gltf) => {
       const original = gltf.scene;
-      original.position.set(-10, 1, -170);
-      original.scale.set(0.1, 0.1, 0.1);
+      original.position.set(-90, 5, -330);
+      original.scale.set(0.08, 0.08, 0.08);
       scene.add(original);
-
-      // Crear un mixer para el objeto original
-      mixer = new THREE.AnimationMixer(original);
-      gltf.animations.forEach(clip => {
-        const action = mixer.clipAction(clip);
-        action.timeScale = 1;
-        action.play();
-      });
-
-      // Añadir los mixers al array para ser actualizados
-      mixerArray.push(mixer);
-      // mixerArray.push(mixer1);
     },
     undefined,
     (error) => {
       console.error('Error al cargar el modelo GLTF:', error);
     }
     );
+
+    // Cargar el modelo
+    loader.load(
+      'assets/glts/Cemetery01.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(120, 5, 465);
+        original.scale.set(0.5, 0.5, 0.5);
+        scene.add(original);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+      );
+
+      // Cargar el modelo
+    loader.load(
+      'assets/glts/police.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(-50, 5, 465);
+        original.scale.set(0.8, 0.8, 0.8);
+        scene.add(original);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+      );
+
+    loader.load(
+      'assets/glts/jail.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(-40, 5, 300);
+        original.scale.set(0.4, 0.4, 0.4);
+        scene.add(original);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+      );
+
+
+    loader.load(
+      'assets/glts/Lighthouse01.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(200, 5, -295);
+        original.scale.set(10, 10, 10);
+        scene.add(original);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+      );
+
+    loader.load(
+      'assets/glts/truck01.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(75, 5, 450);
+        original.scale.set(1, 1, 1);
+        scene.add(original);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+      );
+
+    loader.load(
+      'assets/glts/school.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(90, 5, 330);
+        original.scale.set(0.20, 0.20, 0.20);
+        scene.add(original);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+      );
+
+    loader.load(
+      'assets/glts/pizzeria.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(10, 5, 280);
+        original.scale.set(0.15, 0.15, 0.15);
+        scene.add(original);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+      );
+
+    loader.load(
+      'assets/glts/greasyDinner01.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(-30, 5, 400);
+        original.scale.set(5, 5, 5);
+        scene.add(original);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+      );
+
 
 
     // Cargar el modelo
@@ -438,8 +539,8 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/ClawScene01.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(0, 0, 0);
-        original.scale.set(0.1, 0.1, 0.1);
+        original.position.set(50, 5, 140);
+        original.scale.set(0.2, 0.2, 0.2);
         scene.add(original);
 
         // Crear un mixer para el objeto original
@@ -458,6 +559,128 @@ export class WelcomePageComponent implements AfterViewInit {
     (error) => {
       console.error('Error al cargar el modelo GLTF:', error);
     });
+
+    // Cargar el modelo
+    loader.load(
+      'assets/glts/ClawScene02.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(-50, 5, 140);
+        original.scale.set(0.2, 0.2, 0.2);
+        scene.add(original);
+
+        // Crear un mixer para el objeto original
+        mixer = new THREE.AnimationMixer(original);
+        gltf.animations.forEach(clip => {
+          const action = mixer.clipAction(clip);
+          action.timeScale = 1;
+          action.play();
+        });
+
+        // Añadir los mixers al array para ser actualizados
+        mixerArray.push(mixer);
+        // mixerArray.push(mixer01);
+      },
+      undefined,
+    (error) => {
+      console.error('Error al cargar el modelo GLTF:', error);
+    });
+
+
+    // Cargar el modelo
+    loader.load(
+      'assets/glts/moline.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(180, 5, -230);
+        original.scale.set(0.15, 0.15, 0.15);
+        scene.add(original);
+
+        // Crear un mixer para el objeto original
+        mixer = new THREE.AnimationMixer(original);
+        gltf.animations.forEach(clip => {
+          const action = mixer.clipAction(clip);
+          action.timeScale = 1;
+          action.play();
+        });
+
+        // Añadir los mixers al array para ser actualizados
+        mixerArray.push(mixer);
+        // mixerArray.push(mixer01);
+      },
+      undefined,
+    (error) => {
+      console.error('Error al cargar el modelo GLTF:', error);
+    });
+
+
+    // Cargar el modelo
+    loader.load(
+      'assets/glts/moline.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(180, 5, -230);
+        original.scale.set(0.15, 0.15, 0.15);
+        scene.add(original);
+
+        // Crear un mixer para el objeto original
+        mixer = new THREE.AnimationMixer(original);
+        gltf.animations.forEach(clip => {
+          const action = mixer.clipAction(clip);
+          action.timeScale = 1;
+          action.play();
+        });
+
+        // Añadir los mixers al array para ser actualizados
+        mixerArray.push(mixer);
+        // mixerArray.push(mixer01);
+      },
+      undefined,
+    (error) => {
+      console.error('Error al cargar el modelo GLTF:', error);
+    });
+
+    // Cargar el modelo
+    loader.load(
+      'assets/glts/miniMoose.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(20, 5, -330);
+        original.scale.set(0.1, 0.1, 0.1);
+        scene.add(original);
+
+        // Crear un mixer para el objeto original
+        mixer = new THREE.AnimationMixer(original);
+        gltf.animations.forEach(clip => {
+          const action = mixer.clipAction(clip);
+          action.timeScale = 0.1;
+          action.play();
+        });
+
+        // Añadir los mixers al array para ser actualizados
+        mixerArray.push(mixer);
+        // mixerArray.push(mixer01);
+      },
+      undefined,
+    (error) => {
+      console.error('Error al cargar el modelo GLTF:', error);
+    });
+
+
+    // Cargar el modelo
+    loader.load(
+      'assets/glts/ship.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(140, 5, -230);
+        original.scale.set(0.35, 0.35, 0.35);
+        scene.add(original);
+      },
+      undefined,
+    (error) => {
+      console.error('Error al cargar el modelo GLTF:', error);
+    });
+
 
     // loader.load(
     //   'assets/glts/Mustang.glb',
