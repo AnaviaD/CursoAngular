@@ -333,8 +333,11 @@ export class FloatingCardComponent {
     this.isVisible = true;
      // Dependiendo del número asignamos un JSON diferente
      switch(contentNumber) {
+      case 0:
+        this.contentToShow = this.curso11 ;
+        break;
       case 1:
-        this.contentToShow = this.mainCV;
+        this.contentToShow = this.curso12;
         break;
       case 2:
         this.contentToShow = this.school01;
@@ -420,12 +423,7 @@ export class FloatingCardComponent {
       case 29:
         this.contentToShow = this.curso10 ;
         break;
-      case 30:
-        this.contentToShow = this.curso11 ;
-        break;
-      case 31:
-        this.contentToShow = this.curso12;
-        break;
+
 
       default:
         this.contentToShow = this.mainCV; // Valor por defecto si no coincide

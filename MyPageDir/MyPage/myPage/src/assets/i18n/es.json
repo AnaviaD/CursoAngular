@@ -423,7 +423,7 @@
   "curso12": {
     "title": "Three.js and TypeScript",
     "techTitle": "Tecnologías utilizadas:",
-    "tech": ["assets/mySVGs/NPM.svg", "assets/mySVGs/TypeScript.svg", "assets/mySVGs/Three.js.svg"],
+    "tech": ["assets/mySVGs/NPM.svg", "assets/mySVGs/TypeScript.svg", "assets/mySVGs/Three.svg"],
     "techtack": ["Instructor: Sean Bradley"],
     "dutiesTitle": "Temas:",
     "duties": [

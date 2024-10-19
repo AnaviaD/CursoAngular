@@ -28,7 +28,7 @@ export class WelcomePageComponent implements AfterViewInit {
   isDropdown5Visible = false;
   public btnNextStepClicked : boolean = false;
   public focusObj           : number = 0;
-  private readonly maxFocus : number = 24;
+  private readonly maxFocus : number = 29;
 
 
   actionComponent1(elem:number) {
@@ -439,6 +439,35 @@ export class WelcomePageComponent implements AfterViewInit {
 
 
     loader.load(
+      'assets/glts/fungi02.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(-110, 0, 250);
+        original.scale.set(0.04, 0.04, 0.04);
+        scene.add(original);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+      );
+
+    loader.load(
+      'assets/glts/fungi04.glb',
+      (gltf) => {
+        const original = gltf.scene;
+        original.position.set(-110, 0, 200);
+        original.scale.set(0.04, 0.04, 0.04);
+        scene.add(original);
+      },
+      undefined,
+      (error) => {
+        console.error('Error al cargar el modelo GLTF:', error);
+      }
+      );
+
+
+    loader.load(
       'assets/glts/Lighthouse01.glb',
       (gltf) => {
         const original = gltf.scene;
@@ -748,7 +777,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/bmo.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(-30, 30, -230);
+        original.position.set(-30, 15, -230);
         original.scale.set(1, 1, 1);
         scene.add(original);
       },
@@ -927,154 +956,168 @@ export class WelcomePageComponent implements AfterViewInit {
     scene.add(baitCube13);
     cubes.push(baitCube13);
 
-    const baitCube05 = new THREE.Mesh(new THREE.BoxGeometry(40, 20, 30), new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
-    baitCube05.position.set(-40, 5, 300);
+    const baitCube05 = new THREE.Mesh(new THREE.BoxGeometry(50, 20, 60), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube05.position.set(-50, 5, 280);
     baitCube05.userData = { id: 12 }; // Asignamos un id único a cada cubo
     baitCube05.castShadow = false;
     baitCube05.receiveShadow = false;
     scene.add(baitCube05);
     cubes.push(baitCube05);
 
-    const baitCube090 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
-    baitCube090.position.set(10, 5, 280);
-    baitCube090.userData = { id: 16 }; // Asignamos un id único a cada cubo
+    const baitCube16 = new THREE.Mesh(new THREE.BoxGeometry(20, 20, 20), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube16.position.set(120, 5, -310);
+    baitCube16.userData = { id: 14 }; // Asignamos un id único a cada cubo
+    baitCube16.castShadow = false;
+    baitCube16.receiveShadow = false;
+    scene.add(baitCube16);
+    cubes.push(baitCube16);
+
+    const baitCube17 = new THREE.Mesh(new THREE.BoxGeometry(20, 20, 20), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube17.position.set(80, 5, -310);
+    baitCube17.userData = { id: 13 }; // Asignamos un id único a cada cubo
+    baitCube17.castShadow = false;
+    baitCube17.receiveShadow = false;
+    scene.add(baitCube17);
+    cubes.push(baitCube17);
+
+    const baitCube090 = new THREE.Mesh(new THREE.BoxGeometry(40, 20, 40), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube090.position.set(35, 5, 265);
+    baitCube090.userData = { id: 15 }; // Asignamos un id único a cada cubo
     baitCube090.castShadow = false;
     baitCube090.receiveShadow = false;
     scene.add(baitCube090);
     cubes.push(baitCube090);
 
+    const baitCube120 = new THREE.Mesh(new THREE.BoxGeometry(50, 20, 50), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube120.position.set(-90, 5, -310);
+    baitCube120.userData = { id: 16 }; // Asignamos un id único a cada cubo
+    baitCube120.castShadow = false;
+    baitCube120.receiveShadow = false;
+    scene.add(baitCube120);
+    cubes.push(baitCube120);
 
-    // const baitCube130 = new THREE.Mesh(new THREE.BoxGeometry(30, 20, 30), new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
-    // baitCube130.position.set(0, -5, -100);
-    // baitCube130.userData = { id: 120 }; // Asignamos un id único a cada cubo
-    // baitCube130.castShadow = false;
-    // baitCube130.receiveShadow = false;
-    // scene.add(baitCube130);
-    // cubes.push(baitCube130);
+    const baitCube020 = new THREE.Mesh(new THREE.BoxGeometry(60, 30, 60), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube020.position.set(-90, 15, -230);
+    baitCube020.userData = { id: 17 }; // Asignamos un id único a cada cubo
+    baitCube020.castShadow = false;
+    baitCube020.receiveShadow = false;
+    scene.add(baitCube020);
+    cubes.push(baitCube020);
 
-    // const baitCube120 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
-    // baitCube120.position.set(-90, 5, -330);
-    // baitCube120.userData = { id: 130 }; // Asignamos un id único a cada cubo
-    // baitCube120.castShadow = false;
-    // baitCube120.receiveShadow = false;
-    // scene.add(baitCube120);
-    // cubes.push(baitCube120);
+    const baitCube19 = new THREE.Mesh(new THREE.BoxGeometry(20, 30, 20), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube19.position.set(20, 5, -165);
+    baitCube19.userData = { id: 18 }; // Asignamos un id único a cada cubo
+    baitCube19.castShadow = false;
+    baitCube19.receiveShadow = false;
+    scene.add(baitCube19);
+    cubes.push(baitCube19);
 
-    // const baitCube020 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
-    // baitCube020.position.set(-90, 15, -230);
-    // baitCube020.userData = { id: 140 }; // Asignamos un id único a cada cubo
-    // baitCube020.castShadow = false;
-    // baitCube020.receiveShadow = false;
-    // scene.add(baitCube020);
-    // cubes.push(baitCube020);
+    const baitCube20 = new THREE.Mesh(new THREE.BoxGeometry(20, 40, 20), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube20.position.set(-30, 30, -230);
+    baitCube20.userData = { id: 19 }; // Asignamos un id único a cada cubo
+    baitCube20.castShadow = false;
+    baitCube20.receiveShadow = false;
+    scene.add(baitCube20);
+    cubes.push(baitCube20);
+
+    const baitCube110 = new THREE.Mesh(new THREE.BoxGeometry(20, 80, 20), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube110.position.set(-20, 1, -170);
+    baitCube110.userData = { id: 20 }; // Asignamos un id único a cada cubo
+    baitCube110.castShadow = false;
+    baitCube110.receiveShadow = false;
+    scene.add(baitCube110);
+    cubes.push(baitCube110);
+
+    const baitCube130 = new THREE.Mesh(new THREE.BoxGeometry(30, 20, 30), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube130.position.set(0, -5, -100);
+    baitCube130.userData = { id: 21 }; // Asignamos un id único a cada cubo
+    baitCube130.castShadow = false;
+    baitCube130.receiveShadow = false;
+    scene.add(baitCube130);
+    cubes.push(baitCube130);
+
+    const baitCube06 = new THREE.Mesh(new THREE.BoxGeometry(5, 60, 5), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube06.position.set(200, 5, -295);
+    baitCube06.userData = { id: 22 }; // Asignamos un id único a cada cubo
+    baitCube06.castShadow = false;
+    baitCube06.receiveShadow = false;
+    scene.add(baitCube06);
+    cubes.push(baitCube06);
 
 
-
-    // const baitCube06 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
-    // baitCube06.position.set(200, 5, -295);
-    // baitCube06.userData = { id: 8 }; // Asignamos un id único a cada cubo
-    // baitCube06.castShadow = false;
-    // baitCube06.receiveShadow = false;
-    // scene.add(baitCube06);
-    // cubes.push(baitCube06);
-
-    // const baitCube11 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
-    // baitCube11.position.set(-20, 1, -170);
-    // baitCube11.userData = { id: 13 }; // Asignamos un id único a cada cubo
-    // baitCube11.castShadow = false;
-    // baitCube11.receiveShadow = false;
-    // scene.add(baitCube11);
-    // cubes.push(baitCube11);
-
-    const baitCube12 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    const baitCube12 = new THREE.Mesh(new THREE.BoxGeometry(15, 80, 15), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
     baitCube12.position.set(-60, 1, -170);
-    baitCube12.userData = { id: 14 }; // Asignamos un id único a cada cubo
+    baitCube12.userData = { id: 23 }; // Asignamos un id único a cada cubo
     baitCube12.castShadow = false;
     baitCube12.receiveShadow = false;
     scene.add(baitCube12);
     cubes.push(baitCube12);
 
 
-
-    const baitCube14 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    const baitCube14 = new THREE.Mesh(new THREE.BoxGeometry(10, 40, 10), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
     baitCube14.position.set(180, 5, -230);
-    baitCube14.userData = { id: 17 }; // Asignamos un id único a cada cubo
+    baitCube14.userData = { id: 24 }; // Asignamos un id único a cada cubo
     baitCube14.castShadow = false;
     baitCube14.receiveShadow = false;
     scene.add(baitCube14);
     cubes.push(baitCube14);
 
-    const baitCube15 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
-    baitCube15.position.set(20, 5, -330);
-    baitCube15.userData = { id: 18 }; // Asignamos un id único a cada cubo
-    baitCube15.castShadow = false;
-    baitCube15.receiveShadow = false;
-    scene.add(baitCube15);
-    cubes.push(baitCube15);
-
-    const baitCube16 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
-    baitCube16.position.set(120, 5, -310);
-    baitCube16.userData = { id: 19 }; // Asignamos un id único a cada cubo
-    baitCube16.castShadow = false;
-    baitCube16.receiveShadow = false;
-    scene.add(baitCube16);
-    cubes.push(baitCube16);
-
-    const baitCube17 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
-    baitCube17.position.set(80, 5, -310);
-    baitCube17.userData = { id: 20 }; // Asignamos un id único a cada cubo
-    baitCube17.castShadow = false;
-    baitCube17.receiveShadow = false;
-    scene.add(baitCube17);
-    cubes.push(baitCube17);
-
-    const baitCube18 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    const baitCube18 = new THREE.Mesh(new THREE.BoxGeometry(10, 10, 10), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
     baitCube18.position.set(140, 5, -230);
-    baitCube18.userData = { id: 21 }; // Asignamos un id único a cada cubo
+    baitCube18.userData = { id: 25 }; // Asignamos un id único a cada cubo
     baitCube18.castShadow = false;
     baitCube18.receiveShadow = false;
     scene.add(baitCube18);
     cubes.push(baitCube18);
 
-    const baitCube19 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
-    baitCube19.position.set(20, 5, -165);
-    baitCube19.userData = { id: 22 }; // Asignamos un id único a cada cubo
-    baitCube19.castShadow = false;
-    baitCube19.receiveShadow = false;
-    scene.add(baitCube19);
-    cubes.push(baitCube19);
+    const baitCube15 = new THREE.Mesh(new THREE.BoxGeometry(40, 30, 40), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube15.position.set(0, 5, -330);
+    baitCube15.userData = { id: 26 }; // Asignamos un id único a cada cubo
+    baitCube15.castShadow = false;
+    baitCube15.receiveShadow = false;
+    scene.add(baitCube15);
+    cubes.push(baitCube15);
 
-    const baitCube20 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
-    baitCube20.position.set(-30, 30, -230);
-    baitCube20.userData = { id: 23 }; // Asignamos un id único a cada cubo
-    baitCube20.castShadow = false;
-    baitCube20.receiveShadow = false;
-    scene.add(baitCube20);
-    cubes.push(baitCube20);
 
-    const baitCube21 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    const baitCube21 = new THREE.Mesh(new THREE.BoxGeometry(25, 20, 25), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
     baitCube21.position.set(30, 5, -240);
-    baitCube21.userData = { id: 24 }; // Asignamos un id único a cada cubo
+    baitCube21.userData = { id: 27 }; // Asignamos un id único a cada cubo
     baitCube21.castShadow = false;
     baitCube21.receiveShadow = false;
     scene.add(baitCube21);
     cubes.push(baitCube21);
 
-    const baitCube22 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    const baitCube22 = new THREE.Mesh(new THREE.BoxGeometry(25, 30, 25), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
     baitCube22.position.set(65, 5, -165);
-    baitCube22.userData = { id: 25 }; // Asignamos un id único a cada cubo
+    baitCube22.userData = { id: 28 }; // Asignamos un id único a cada cubo
     baitCube22.castShadow = false;
     baitCube22.receiveShadow = false;
     scene.add(baitCube22);
     cubes.push(baitCube22);
 
-    const baitCube23 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    const baitCube23 = new THREE.Mesh(new THREE.BoxGeometry(25, 30, 25), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
     baitCube23.position.set(65, 5, -240);
-    baitCube23.userData = { id: 26 }; // Asignamos un id único a cada cubo
+    baitCube23.userData = { id: 29 }; // Asignamos un id único a cada cubo
     baitCube23.castShadow = false;
     baitCube23.receiveShadow = false;
     scene.add(baitCube23);
     cubes.push(baitCube23);
+
+    const baitCube231 = new THREE.Mesh(new THREE.BoxGeometry(25, 130, 25), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube231.position.set(-110, 0, 250);
+    baitCube231.userData = { id: 0 }; // Asignamos un id único a cada cubo
+    baitCube231.castShadow = false;
+    baitCube231.receiveShadow = false;
+    scene.add(baitCube231);
+    cubes.push(baitCube231);
+
+    const baitCube232 = new THREE.Mesh(new THREE.BoxGeometry(25, 130, 25), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube232.position.set(-110, 0, 200);
+    baitCube232.userData = { id: 1 }; // Asignamos un id único a cada cubo
+    baitCube232.castShadow = false;
+    baitCube232.receiveShadow = false;
+    scene.add(baitCube232);
+    cubes.push(baitCube232);
 
 
 
