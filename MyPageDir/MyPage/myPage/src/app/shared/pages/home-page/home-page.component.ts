@@ -5,6 +5,7 @@ import TWEEN from '@tweenjs/tween.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { FloatingCardComponent } from '../../../opening/components/floating-card/floating-card.component';
+import { MainCardComponent } from '../../../opening/components/main-card/main-card.component';
 
 
 @Component({
@@ -13,7 +14,8 @@ import { FloatingCardComponent } from '../../../opening/components/floating-card
   styleUrls: ['home-page.component.css']
 })
 export class HomePageComponent {
-  @ViewChild(FloatingCardComponent) floatingCard!: FloatingCardComponent;
+  @ViewChild(FloatingCardComponent) floatingCard!:  FloatingCardComponent;
+  @ViewChild(MainCardComponent)     maingCard!:     MainCardComponent;
   @ViewChild('threeContainer', { static: true }) threeContainer!: ElementRef;
 
   constructor(private translate: TranslateService) {
@@ -31,7 +33,8 @@ export class HomePageComponent {
   }
 
   objClicked(clickedObject: number) {
-    this.floatingCard.open(clickedObject); // Call the open method to show the card
+    this.maingCard.open(clickedObject); // Call the open method to show the card
+    // this.floatingCard.open(clickedObject); // Call the open method to show the card
   }
 
   initThreeJS(): void {

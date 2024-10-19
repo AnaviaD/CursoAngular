@@ -894,7 +894,7 @@ export class WelcomePageComponent implements AfterViewInit {
     const cubeMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
 
 
-    const baitCube08 = new THREE.Mesh(new THREE.BoxGeometry(20,60,20), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    const baitCube08 = new THREE.Mesh(new THREE.BoxGeometry(20,50,20), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
     baitCube08.position.set(90, 5, 300);
     baitCube08.userData = { id: 2 }; // Asignamos un id único a cada cubo
     baitCube08.castShadow = false;

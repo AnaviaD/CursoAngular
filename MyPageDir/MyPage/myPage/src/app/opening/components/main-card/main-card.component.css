@@ -1,0 +1,153 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999; /* Debe estar debajo de la tarjeta flotante */
+  pointer-events: none; /* Esto previene cualquier interacción */
+}
+
+.floating-card {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 66%;
+  height: 66%;
+  background-color: rgba(255, 255, 255, 0.249);
+  border-radius: 50px;
+  padding: 20px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Debe estar encima de la capa de fondo */
+  pointer-events: auto; /* Permite la interacción en la tarjeta */
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.close-btn img {
+  width: 24px; /* Ajusta el tamaño como prefieras */
+  height: 24px;
+}
+
+.language-btn .row {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5em;
+  background-color: transparent;
+}
+
+.language-btn img {
+  width: 24px; /* Ajusta el tamaño como prefieras */
+  height: 24px;
+}
+
+.language-btn button {
+  width: 24px; /* Ajusta el tamaño como prefieras */
+  height: 24px;
+}
+
+.language-btn, .close-btn {
+  background-color: transparent !important; /* Asegura que sea completamente transparente */
+  border: none !important; /* Elimina cualquier borde */
+  padding: 0; /* Elimina el padding */
+  margin: 0; /* Elimina el margen */
+}
+
+.language-btn img, .close-btn img {
+  width: 24px; /* Ajusta el tamaño de las imágenes */
+  height: 24px;
+  display: block; /* Asegura que la imagen ocupe todo el botón */
+  padding: 0; /* Elimina el padding de las imágenes */
+  border: none; /* Asegúrate de que no haya bordes */
+}
+
+
+.profile-card {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  border-radius: 40px;
+  padding: 40px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image {
+  flex: 0 0 100px;
+  margin-right: 20px;
+}
+
+.profile-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid yellow;
+  object-fit: cover;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-info h2 {
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.profile-info p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.profile-info span {
+  color: #faff00;
+  font-weight: bold;
+}
+
+.description {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #cccccc;
+  max-height: 200px;  /* Ajusta esta altura según lo que necesites */
+  overflow-y: auto;  /* Activa el scroll vertical */
+  padding-right: 10px;  /* Espacio para evitar que el texto quede pegado al borde */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #faff00;
+}

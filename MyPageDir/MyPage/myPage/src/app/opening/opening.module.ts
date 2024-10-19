@@ -12,6 +12,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpLoaderFactory } from '../app.module';
 import { HttpClient } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import { MainCardComponent } from './components/main-card/main-card.component';
 
 
 
@@ -23,7 +24,8 @@ import { MatCardModule } from '@angular/material/card';
     GFSceneComponent,
     CatSceneComponent,
     CarSceneComponent,
-    TransportComponent
+    TransportComponent,
+    MainCardComponent
   ],
   imports: [
     CommonModule,
@@ -38,6 +40,7 @@ import { MatCardModule } from '@angular/material/card';
     })
   ],
   exports: [
+    MainCardComponent,
     FloatingCardComponent
   ]
 })

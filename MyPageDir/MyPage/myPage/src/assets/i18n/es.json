@@ -51,10 +51,12 @@
     "subDiv10": "Blender 2.9",
     "subDiv11": "Three.js and TypeScript"
   },
-
-  "mainCV":
-  {
-    "description": "Soy un ingeniero Full Stack con experiencia en la automatización, análisis y procesamiento de datos. He desarrollado soluciones que optimizan la recolección y tratamiento de información utilizando machine learning, aportando mejoras significativas en la eficiencia de los sistemas. Aunque también tengo experiencia en bases de datos, mi mayor fortaleza reside en la automatización y optimización de procesos complejos. A lo largo de mi carrera, he manejado todas las tareas propias de un desarrollador Full Stack, desde la gestión de bases de datos, pruebas de APIs con Postman, hasta la creación de pruebas unitarias y automatizadas con herramientas como Selenium y unit testing. Mi enfoque integral me permite asegurar que cada parte del sistema, desde el back-end hasta el front-end, funcione de manera óptima y eficiente. Además, he desarrollado soluciones innovadoras integrando hardware como Raspberry Pi y Arduino para mejorar la obtención de datos en sistemas, siempre buscando formas de automatizar y mejorar procesos."
+  "mainCV": {
+    "description": "Soy un ingeniero Full Stack con experiencia en automatización, análisis y procesamiento de datos. He desarrollado soluciones que optimizan la recolección y tratamiento de información utilizando machine learning, mejorando significativamente la eficiencia del sistema. Aunque también tengo experiencia con bases de datos, mi mayor fortaleza radica en la automatización y optimización de procesos complejos. A lo largo de mi carrera, he manejado todas las tareas típicas de un desarrollador Full Stack, desde la gestión de bases de datos, pruebas de API con Postman, hasta la creación de pruebas unitarias y automatizadas con herramientas como Selenium y pruebas unitarias. Mi enfoque integral asegura que cada parte del sistema, desde el back-end hasta el front-end, funcione de manera óptima y eficiente. Además, he desarrollado soluciones innovadoras integrando hardware como Raspberry Pi y Arduino para mejorar la recolección de datos en sistemas, siempre buscando formas de automatizar y mejorar los procesos.",
+    "title": "Alberto Navia",
+    "prof": "FullStack",
+    "prof01": "Integración",
+    "secProf": "Ingeniero"
   },
   "school01":
   {

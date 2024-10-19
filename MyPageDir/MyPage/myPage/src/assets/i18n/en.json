@@ -52,7 +52,11 @@
   },
 
   "mainCV": {
-    "description": "I am a Full Stack engineer with experience in data automation, analysis, and processing. I have developed solutions that optimize the collection and treatment of information using machine learning, significantly improving system efficiency. While I also have experience with databases, my greatest strength lies in the automation and optimization of complex processes. Throughout my career, I have handled all the tasks typical of a Full Stack developer, from database management, API testing with Postman, to creating unit and automated tests with tools like Selenium and unit testing. My comprehensive approach ensures that every part of the system, from the back-end to the front-end, works optimally and efficiently. Additionally, I have developed innovative solutions by integrating hardware such as Raspberry Pi and Arduino to enhance data collection in systems, always seeking ways to automate and improve processes."
+    "description": "I am a Full Stack engineer with experience in data automation, analysis, and processing. I have developed solutions that optimize the collection and treatment of information using machine learning, significantly improving system efficiency. While I also have experience with databases, my greatest strength lies in the automation and optimization of complex processes. Throughout my career, I have handled all the tasks typical of a Full Stack developer, from database management, API testing with Postman, to creating unit and automated tests with tools like Selenium and unit testing. My comprehensive approach ensures that every part of the system, from the back-end to the front-end, works optimally and efficiently. Additionally, I have developed innovative solutions by integrating hardware such as Raspberry Pi and Arduino to enhance data collection in systems, always seeking ways to automate and improve processes.",
+    "title": "Alberto Navia",
+    "prof": "FullStack",
+    "prof01": "Integration",
+    "secProf": "Engineer"
   },
   "school01": {
     "title": "Education",

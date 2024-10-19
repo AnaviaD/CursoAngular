@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./floating-card.component.css']
 })
 export class FloatingCardComponent {
-  isVisible: boolean = true;        //Cambiar a false
+  isVisible: boolean = false;        //Cambiar a false
   // contentToShow: number | null = 1; // Variable que decide qué contenido mostrar
   //Declaramos este obj como Default
 
