@@ -70,11 +70,12 @@
   height: 100vh;
   overflow: hidden;
 }
+
 #three-container {
   width: 100%;
   height: 100%;
+  z-index: 1; /* Tresjs por debajo de los botones */
 }
-
 .progress-bar-container{
   position: absolute;
   left: 50%;

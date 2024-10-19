@@ -1,4 +1,4 @@
-import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, ViewChild, HostListener } from '@angular/core';
 import { FloatingCardComponent } from '../../components/floating-card/floating-card.component';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -20,6 +20,30 @@ import { transition } from '@angular/animations';
 })
 export class WelcomePageComponent implements AfterViewInit {
 
+  @HostListener('mouseenter', ['$event.target'])
+  onMouseEnter(target: HTMLElement) {
+    if (target.id === 'leftButton' || target.id === 'rightButton') {
+      const threeContainer = document.getElementById('three-container');
+      if (threeContainer) {
+        threeContainer.style.pointerEvents = 'none'; // Desactiva los clics en la escena
+      }
+    }
+  }
+
+  @HostListener('mouseleave', ['$event.target'])
+  onMouseLeave(target: HTMLElement) {
+    if (target.id === 'leftButton' || target.id === 'rightButton') {
+      const threeContainer = document.getElementById('three-container');
+      if (threeContainer) {
+        threeContainer.style.pointerEvents = 'auto'; // Activa de nuevo los clics en la escena
+      }
+    }
+  }
+
+  @ViewChild('threeContainer', { static: true }) threeContainer!: ElementRef;
+
+  @ViewChild(FloatingCardComponent) floatingCard!: FloatingCardComponent;
+
   isDropdownMainVisible = false;
   isDropdown1Visible = false;
   isDropdown2Visible = false;
@@ -40,12 +64,6 @@ export class WelcomePageComponent implements AfterViewInit {
     this.isDropdown4Visible = false;
     this.isDropdown5Visible = false;
   }
-
-
-  @ViewChild('threeContainer', { static: true }) threeContainer!: ElementRef;
-
-  @ViewChild(FloatingCardComponent) floatingCard!: FloatingCardComponent;
-
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang('es');
   }
@@ -215,8 +233,8 @@ export class WelcomePageComponent implements AfterViewInit {
     const ufoLight = new THREE.SpotLight(0xffffff, intensity);
     ufoLight.position.set(0, 20, 0); // Posición inicial de la luz
     ufoLight.castShadow = true;
-    ufoLight.angle = Math.PI / 18; // Ángulo de apertura del haz
-    ufoLight.penumbra = 1; // Suaviza los bordes del haz
+    ufoLight.angle = Math.PI / 5; // Ángulo de apertura del haz
+    ufoLight.penumbra = 0; // Suaviza los bordes del haz
     scene.add(ufoLight);
     //#endregion
 
@@ -384,7 +402,7 @@ export class WelcomePageComponent implements AfterViewInit {
     (gltf) => {
       const original = gltf.scene;
       original.position.set(-90, 15, -230);
-      original.scale.set(4, 4, 4);
+      original.scale.set(2, 2, 2);
       scene.add(original);
     },
     undefined,
@@ -1236,7 +1254,7 @@ export class WelcomePageComponent implements AfterViewInit {
         targetPositionWithOffset?.setY(currentTarget!.position.y + 30);
 
         // Verifica si el cubo ha llegado al objetivo
-        if (distance < 3.6) {
+        if (distance < 35) {
           // Selecciona una nueva posición cuando llega al destino
 
           currentTarget = selectRandomObject();
@@ -1372,7 +1390,7 @@ export class WelcomePageComponent implements AfterViewInit {
           const ufoPos = ufoObject.position;
 
           // Calcula la nueva posición de la cámara detrás y arriba del ufoObject
-          const cameraOffset = new THREE.Vector3(0, 50, -85); // 5 unidades arriba y 5 unidades atrás
+          const cameraOffset = new THREE.Vector3(0, 5, -55); // 5 unidades arriba y 5 unidades atrás
           const newCameraPos = ufoPos.clone().add(cameraOffset);
 
           // Establece la nueva posición de la cámara
@@ -1403,7 +1421,7 @@ export class WelcomePageComponent implements AfterViewInit {
       // console.log("pos",camera.position.distanceTo(targetPosition));
 
       // Detener la animación si la cámara está cerca de la posición objetivo
-      if (camera.position.distanceTo(targetLook) < 10) {
+      if (camera.position.distanceTo(targetLook) < 100) {
         controls.target.set(targetPosition.x, targetPosition.y, targetPosition.z);
         isAnimating = false;
         isPosicion = true;
