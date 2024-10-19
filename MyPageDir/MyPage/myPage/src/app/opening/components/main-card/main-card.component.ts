@@ -16,7 +16,12 @@ export class MainCardComponent {
   }
 
   contentToShow: any = {
-    description : "mainCV.description",
+    description01 : "mainCV.description01",
+    description02 : "mainCV.description02",
+    description03 : "mainCV.description03",
+    description04 : "mainCV.description04",
+    description05 : "mainCV.description05",
+    description06 : "mainCV.description06",
     title : "mainCV.title",
     prof  : "mainCV.prof",
     prof01  : "mainCV.prof01",

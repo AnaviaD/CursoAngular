@@ -1,15 +1,15 @@
 export const navbarData =
 [
   {
+    routeLink: '/',
+    icon: 'fal fa-gamepad',
+    label:'MainPage'
+  },
+  {
     routeLink: 'opening/welcome',
     icon: 'fal fa-truck',
     label:'MainPage',
     svg:''
-  },
-  {
-    routeLink: 'opening/cat',
-    icon: 'fal fa-gamepad',
-    label:'MainPage'
   },
 ];
 

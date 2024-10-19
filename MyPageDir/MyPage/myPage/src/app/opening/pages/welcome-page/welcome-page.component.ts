@@ -100,7 +100,7 @@ export class WelcomePageComponent implements AfterViewInit {
       this.focusObj = this.focusObj === 0 ? this.maxFocus : this.focusObj - 1;
       this.objClicked(this.focusObj);
     }
-    console.log(this.focusObj);
+    // console.log(this.focusObj);
   }
 
   nextStep() {
@@ -119,7 +119,7 @@ export class WelcomePageComponent implements AfterViewInit {
     this.btnNextStepClicked = true;
     this.focusObj = clickedObject;
     this.floatingCard.open(clickedObject); // Call the open method to show the card
-    console.log('Next step button clicked');
+    // console.log('Next step button clicked');
   }
 
   ngAfterViewInit(): void {
@@ -1384,7 +1384,7 @@ export class WelcomePageComponent implements AfterViewInit {
          // Verifica si UfoFollows es verdadero
         if (UfoFollows) {
           const distance = targetLook.distanceTo(ufoObject.position);
-          console.log('Distancia entre la cámara y el ufoObject:', distance);
+          // console.log('Distancia entre la cámara y el ufoObject:', distance);
 
           // Mantén la cámara a 5 unidades detrás y 5 unidades arriba del ufoObject
           const ufoPos = ufoObject.position;
@@ -1451,7 +1451,7 @@ export class WelcomePageComponent implements AfterViewInit {
         this.focusObj = targetObject.userData['id'];
 
         if (cubeId) {
-          console.log('Cubo clicado con id:', cubeId);
+          // console.log('Cubo clicado con id:', cubeId);
 
           // Llamar a la función `objClicked` desde Angular
           this.objClicked(cubeId);
@@ -1460,16 +1460,16 @@ export class WelcomePageComponent implements AfterViewInit {
 
         // Verificar si el objeto tiene geometría (es un Mesh)
         if (targetObject.isObject3D) {
-        console.log('Objeto clicado (Mesh):', targetObject.position);
+        // console.log('Objeto clicado (Mesh):', targetObject.position);
         // Si no tiene geometría, tratar de obtener la posición global
         const globalPosition = new THREE.Vector3();
         targetObject.getWorldPosition(globalPosition);
         targetObject.position.set(globalPosition.x, globalPosition.y, globalPosition.z);
-        console.log('Posición global del objeto:', globalPosition);
+        // console.log('Posición global del objeto:', globalPosition);
         }
 
-        console.log('Objeto clicado:', targetObject.position);
-        console.log('Objeto clicado:', targetObject);
+        // console.log('Objeto clicado:', targetObject.position);
+        // console.log('Objeto clicado:', targetObject);
 
         // Configura la posición objetivo y la bandera de animación
         targetPosition.set(
@@ -1484,7 +1484,7 @@ export class WelcomePageComponent implements AfterViewInit {
             targetObject.position.z
         );
 
-        console.log('Cubo - cambiamos a false');
+        // console.log('Cubo - cambiamos a false');
         isAnimating = true; // Activa la animación
         this.btnNextStepClicked = false;
         UfoFollows = false;
@@ -1493,7 +1493,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
       if (this.btnNextStepClicked) {
         const randomObject = findObjectById(this.focusObj);
-        console.log('btn Cube clicado ');
+        // console.log('btn Cube clicado ');
 
         targetPosition.set(
           randomObject!.position.x,
@@ -1507,7 +1507,7 @@ export class WelcomePageComponent implements AfterViewInit {
           randomObject!.position.z
         );
 
-        console.log('BTN - cambiamos a false');
+        // console.log('BTN - cambiamos a false');
         isAnimating = true; // Activa la animación
         this.btnNextStepClicked = false;
         UfoFollows = false;
@@ -1515,7 +1515,7 @@ export class WelcomePageComponent implements AfterViewInit {
       }
       if(ufoIntersections.length > 0)
         {
-        console.log('Ufo clicado');
+        // console.log('Ufo clicado');
         UfoFollows = true;
         isRotating = false;
         isPosicion = false;
