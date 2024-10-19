@@ -144,7 +144,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
     const defaultPosition = new THREE.Vector3(0, 10, 0); // Posición por defecto cuando targetPosition es indeterminada
     const rotationSpeed = (2 * Math.PI) / 60000;
-    const radius = 5;
+    const radius = 30;
     const cubeScale = 0.5;
     const clones = [];
     const numClones = 3;
@@ -413,7 +413,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/police.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(-50, 5, 465);
+        original.position.set(-50, 0, 465);
         original.scale.set(0.8, 0.8, 0.8);
         scene.add(original);
       },
@@ -427,7 +427,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/jail.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(-40, 5, 300);
+        original.position.set(-40, 0, 300);
         original.scale.set(0.4, 0.4, 0.4);
         scene.add(original);
       },
@@ -442,7 +442,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/Lighthouse01.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(200, 5, -295);
+        original.position.set(200, 0, -295);
         original.scale.set(10, 10, 10);
         scene.add(original);
       },
@@ -470,7 +470,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/school.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(90, 5, 330);
+        original.position.set(90, 0, 330);
         original.scale.set(0.20, 0.20, 0.20);
         scene.add(original);
       },
@@ -484,7 +484,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/pizzeria.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(10, 5, 280);
+        original.position.set(10, 0, 280);
         original.scale.set(0.15, 0.15, 0.15);
         scene.add(original);
       },
@@ -519,17 +519,6 @@ export class WelcomePageComponent implements AfterViewInit {
         original.scale.set(0.5, 0.5, 0.5);
         scene.add(original);
 
-        // Crear un mixer para el objeto original
-        mixer = new THREE.AnimationMixer(original);
-        gltf.animations.forEach(clip => {
-          const action = mixer.clipAction(clip);
-          action.timeScale = 1;
-          action.play();
-        });
-
-        // Añadir los mixers al array para ser actualizados
-        mixerArray.push(mixer);
-        // mixerArray.push(mixer01);
       },
       undefined,
     (error) => {
@@ -544,7 +533,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/waterTower01.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(-60, 1, -170);
+        original.position.set(-60, 0, -170);
         original.scale.set(1, 1, 1);
         scene.add(original);
 
@@ -624,7 +613,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/moline.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(180, 5, -230);
+        original.position.set(180, 0, -230);
         original.scale.set(0.15, 0.15, 0.15);
         scene.add(original);
 
@@ -650,7 +639,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/miniMoose.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(20, 5, -330);
+        original.position.set(20, 0, -330);
         original.scale.set(0.1, 0.1, 0.1);
         scene.add(original);
 
@@ -677,7 +666,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/akiraMotorCycle.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(120, 5, -310);
+        original.position.set(120, 0, -310);
         original.scale.set(1, 1, 1);
         scene.add(original);
 
@@ -704,7 +693,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/akiraMotorCycle01.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(80, 5, -310);
+        original.position.set(80, 0, -310);
         original.scale.set(1, 1, 1);
         scene.add(original);
 
@@ -731,7 +720,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/ship.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(140, 5, -230);
+        original.position.set(140, 0, -230);
         original.scale.set(0.35, 0.35, 0.35);
         scene.add(original);
       },
@@ -745,7 +734,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/butterMachine.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(20, 5, -165);
+        original.position.set(20, 0, -165);
         original.scale.set(0.3, 0.3, 0.3);
         scene.add(original);
       },
@@ -774,7 +763,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/kart.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(30, 5, -240);
+        original.position.set(30, 0, -240);
         original.scale.set(0.8, 0.8, 0.8);
         scene.add(original);
       },
@@ -788,7 +777,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/fungi.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(65, 5, -165);
+        original.position.set(65, 0, -165);
         original.scale.set(0.08, 0.08, 0.08);
         scene.add(original);
       },
@@ -803,7 +792,7 @@ export class WelcomePageComponent implements AfterViewInit {
       'assets/glts/fungi01.glb',
       (gltf) => {
         const original = gltf.scene;
-        original.position.set(65, 5, -240);
+        original.position.set(65, 0, -240);
         original.scale.set(0.08, 0.08, 0.08);
         scene.add(original);
       },
@@ -836,6 +825,7 @@ export class WelcomePageComponent implements AfterViewInit {
         scene.add(gltf.scene);
 
         ufoObject.position.set(0, 22, 0); // Ejemplo: moverlo a (10, 5, 0)
+        ufoObject.scale.set(5, 5, 5);
       },
       undefined,
       (error) => {
@@ -853,32 +843,239 @@ export class WelcomePageComponent implements AfterViewInit {
     plane.rotation.x = -Math.PI / 2;
     scene.add(plane);
 
-    const cubeGeometry = new THREE.BoxGeometry(2, 20, 2);
+    const cubeGeometry = new THREE.BoxGeometry(20, 120, 20);
     const cubeMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
 
-    const baitCube = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
-    baitCube.position.set(15, 1, 170);
-    baitCube.userData = { id: 1 }; // Asignamos un id único a cada cubo
-    baitCube.castShadow = false;
-    baitCube.receiveShadow = false;
-    scene.add(baitCube);
-    cubes.push(baitCube);
 
-    const baitCube01 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
-    baitCube01.position.set(150, 1, -170);
-    baitCube01.userData = { id: 2 }; // Asignamos un id único a cada cubo
-    baitCube01.castShadow = false;
-    baitCube01.receiveShadow = false;
-    scene.add(baitCube01);
-    cubes.push(baitCube01);
+    const baitCube08 = new THREE.Mesh(new THREE.BoxGeometry(20,60,20), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube08.position.set(90, 5, 300);
+    baitCube08.userData = { id: 2 }; // Asignamos un id único a cada cubo
+    baitCube08.castShadow = false;
+    baitCube08.receiveShadow = false;
+    scene.add(baitCube08);
+    cubes.push(baitCube08);
 
-    const baitCube02 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
-    baitCube02.position.set(-15, 1, -170);
-    baitCube02.userData = { id: 3 }; // Asignamos un id único a cada cubo
-    baitCube02.castShadow = false;
-    baitCube02.receiveShadow = false;
-    scene.add(baitCube02);
-    cubes.push(baitCube02);
+    const baitCube09 = new THREE.Mesh(new THREE.BoxGeometry(20,50,20), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube09.position.set(70, 5, 320);
+    baitCube09.userData = { id: 3 }; // Asignamos un id único a cada cubo
+    baitCube09.castShadow = false;
+    baitCube09.receiveShadow = false;
+    scene.add(baitCube09);
+    cubes.push(baitCube09);
+
+    const baitCube10 = new THREE.Mesh(new THREE.BoxGeometry(20,50,20), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube10.position.set(110, 5, 320);
+    baitCube10.userData = { id: 4 }; // Asignamos un id único a cada cubo
+    baitCube10.castShadow = false;
+    baitCube10.receiveShadow = false;
+    scene.add(baitCube10);
+    cubes.push(baitCube10);
+
+    const baitCube11 = new THREE.Mesh(new THREE.BoxGeometry(20,50,20), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube11.position.set(90, 5, 330);
+    baitCube11.userData = { id: 5 }; // Asignamos un id único a cada cubo
+    baitCube11.castShadow = false;
+    baitCube11.receiveShadow = false;
+    scene.add(baitCube11);
+    cubes.push(baitCube11);
+
+    const baitCube030 = new THREE.Mesh(new THREE.BoxGeometry(50,20,50), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube030.position.set(135, 0, 440);
+    baitCube030.userData = { id: 6 }; // Asignamos un id único a cada cubo
+    baitCube030.castShadow = false;
+    baitCube030.receiveShadow = false;
+    scene.add(baitCube030);
+    cubes.push(baitCube030);
+
+    const baitCube04 = new THREE.Mesh(new THREE.BoxGeometry(30, 20, 30), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube04.position.set(-35, 5, 470);
+    baitCube04.userData = { id: 7 }; // Asignamos un id único a cada cubo
+    baitCube04.castShadow = false;
+    baitCube04.receiveShadow = false;
+    scene.add(baitCube04);
+    cubes.push(baitCube04);
+
+    const baitCube100 = new THREE.Mesh(new THREE.BoxGeometry(30, 30, 50), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube100.position.set(-30, 5, 400);
+    baitCube100.userData = { id: 8 }; // Asignamos un id único a cada cubo
+    baitCube100.castShadow = false;
+    baitCube100.receiveShadow = false;
+    scene.add(baitCube100);
+    cubes.push(baitCube100);
+
+    const baitCube07 = new THREE.Mesh(new THREE.BoxGeometry(40, 20, 30), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube07.position.set(75, 5, 450);
+    baitCube07.userData = { id: 9 }; // Asignamos un id único a cada cubo
+    baitCube07.castShadow = false;
+    baitCube07.receiveShadow = false;
+    scene.add(baitCube07);
+    cubes.push(baitCube07);
+
+    const baitCube24 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube24.position.set(50, 5, 140);
+    baitCube24.userData = { id: 10 }; // Asignamos un id único a cada cubo
+    baitCube24.castShadow = false;
+    baitCube24.receiveShadow = false;
+    scene.add(baitCube24);
+    cubes.push(baitCube24);
+
+    const baitCube13 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: true, opacity: 0.001}));
+    baitCube13.position.set(-50, 5, 140);
+    baitCube13.userData = { id: 11 }; // Asignamos un id único a cada cubo
+    baitCube13.castShadow = false;
+    baitCube13.receiveShadow = false;
+    scene.add(baitCube13);
+    cubes.push(baitCube13);
+
+    const baitCube05 = new THREE.Mesh(new THREE.BoxGeometry(40, 20, 30), new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    baitCube05.position.set(-40, 5, 300);
+    baitCube05.userData = { id: 12 }; // Asignamos un id único a cada cubo
+    baitCube05.castShadow = false;
+    baitCube05.receiveShadow = false;
+    scene.add(baitCube05);
+    cubes.push(baitCube05);
+
+    const baitCube090 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    baitCube090.position.set(10, 5, 280);
+    baitCube090.userData = { id: 16 }; // Asignamos un id único a cada cubo
+    baitCube090.castShadow = false;
+    baitCube090.receiveShadow = false;
+    scene.add(baitCube090);
+    cubes.push(baitCube090);
+
+
+    // const baitCube130 = new THREE.Mesh(new THREE.BoxGeometry(30, 20, 30), new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    // baitCube130.position.set(0, -5, -100);
+    // baitCube130.userData = { id: 120 }; // Asignamos un id único a cada cubo
+    // baitCube130.castShadow = false;
+    // baitCube130.receiveShadow = false;
+    // scene.add(baitCube130);
+    // cubes.push(baitCube130);
+
+    // const baitCube120 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    // baitCube120.position.set(-90, 5, -330);
+    // baitCube120.userData = { id: 130 }; // Asignamos un id único a cada cubo
+    // baitCube120.castShadow = false;
+    // baitCube120.receiveShadow = false;
+    // scene.add(baitCube120);
+    // cubes.push(baitCube120);
+
+    // const baitCube020 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    // baitCube020.position.set(-90, 15, -230);
+    // baitCube020.userData = { id: 140 }; // Asignamos un id único a cada cubo
+    // baitCube020.castShadow = false;
+    // baitCube020.receiveShadow = false;
+    // scene.add(baitCube020);
+    // cubes.push(baitCube020);
+
+
+
+    // const baitCube06 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    // baitCube06.position.set(200, 5, -295);
+    // baitCube06.userData = { id: 8 }; // Asignamos un id único a cada cubo
+    // baitCube06.castShadow = false;
+    // baitCube06.receiveShadow = false;
+    // scene.add(baitCube06);
+    // cubes.push(baitCube06);
+
+    // const baitCube11 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    // baitCube11.position.set(-20, 1, -170);
+    // baitCube11.userData = { id: 13 }; // Asignamos un id único a cada cubo
+    // baitCube11.castShadow = false;
+    // baitCube11.receiveShadow = false;
+    // scene.add(baitCube11);
+    // cubes.push(baitCube11);
+
+    const baitCube12 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    baitCube12.position.set(-60, 1, -170);
+    baitCube12.userData = { id: 14 }; // Asignamos un id único a cada cubo
+    baitCube12.castShadow = false;
+    baitCube12.receiveShadow = false;
+    scene.add(baitCube12);
+    cubes.push(baitCube12);
+
+
+
+    const baitCube14 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    baitCube14.position.set(180, 5, -230);
+    baitCube14.userData = { id: 17 }; // Asignamos un id único a cada cubo
+    baitCube14.castShadow = false;
+    baitCube14.receiveShadow = false;
+    scene.add(baitCube14);
+    cubes.push(baitCube14);
+
+    const baitCube15 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    baitCube15.position.set(20, 5, -330);
+    baitCube15.userData = { id: 18 }; // Asignamos un id único a cada cubo
+    baitCube15.castShadow = false;
+    baitCube15.receiveShadow = false;
+    scene.add(baitCube15);
+    cubes.push(baitCube15);
+
+    const baitCube16 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    baitCube16.position.set(120, 5, -310);
+    baitCube16.userData = { id: 19 }; // Asignamos un id único a cada cubo
+    baitCube16.castShadow = false;
+    baitCube16.receiveShadow = false;
+    scene.add(baitCube16);
+    cubes.push(baitCube16);
+
+    const baitCube17 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    baitCube17.position.set(80, 5, -310);
+    baitCube17.userData = { id: 20 }; // Asignamos un id único a cada cubo
+    baitCube17.castShadow = false;
+    baitCube17.receiveShadow = false;
+    scene.add(baitCube17);
+    cubes.push(baitCube17);
+
+    const baitCube18 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    baitCube18.position.set(140, 5, -230);
+    baitCube18.userData = { id: 21 }; // Asignamos un id único a cada cubo
+    baitCube18.castShadow = false;
+    baitCube18.receiveShadow = false;
+    scene.add(baitCube18);
+    cubes.push(baitCube18);
+
+    const baitCube19 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    baitCube19.position.set(20, 5, -165);
+    baitCube19.userData = { id: 22 }; // Asignamos un id único a cada cubo
+    baitCube19.castShadow = false;
+    baitCube19.receiveShadow = false;
+    scene.add(baitCube19);
+    cubes.push(baitCube19);
+
+    const baitCube20 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    baitCube20.position.set(-30, 30, -230);
+    baitCube20.userData = { id: 23 }; // Asignamos un id único a cada cubo
+    baitCube20.castShadow = false;
+    baitCube20.receiveShadow = false;
+    scene.add(baitCube20);
+    cubes.push(baitCube20);
+
+    const baitCube21 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    baitCube21.position.set(30, 5, -240);
+    baitCube21.userData = { id: 24 }; // Asignamos un id único a cada cubo
+    baitCube21.castShadow = false;
+    baitCube21.receiveShadow = false;
+    scene.add(baitCube21);
+    cubes.push(baitCube21);
+
+    const baitCube22 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    baitCube22.position.set(65, 5, -165);
+    baitCube22.userData = { id: 25 }; // Asignamos un id único a cada cubo
+    baitCube22.castShadow = false;
+    baitCube22.receiveShadow = false;
+    scene.add(baitCube22);
+    cubes.push(baitCube22);
+
+    const baitCube23 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({transparent: false, opacity: 0.001}));
+    baitCube23.position.set(65, 5, -240);
+    baitCube23.userData = { id: 26 }; // Asignamos un id único a cada cubo
+    baitCube23.castShadow = false;
+    baitCube23.receiveShadow = false;
+    scene.add(baitCube23);
+    cubes.push(baitCube23);
+
 
 
     // for (let i = 0; i < 7; i++) {
@@ -982,7 +1179,7 @@ export class WelcomePageComponent implements AfterViewInit {
           const x = target.x + radius * Math.cos(angle);
           const z = target.z + radius * Math.sin(angle);
 
-          ufoObject.position.set(x, 5, z);
+          ufoObject.position.set(x, 30, z);
           ufoObject.lookAt(target); // Mantiene el Ufo mirando hacia el centro de la circunferencia
 
           // Actualizar la posición y dirección de la luz para que siempre apunte a targetPosition
@@ -993,7 +1190,7 @@ export class WelcomePageComponent implements AfterViewInit {
       }else {
         const distance = ufoObject.position.distanceTo(currentTarget!.position);
         let targetPositionWithOffset = currentTarget?.position.clone();
-        targetPositionWithOffset?.setY(currentTarget!.position.y + 3);
+        targetPositionWithOffset?.setY(currentTarget!.position.y + 30);
 
         // Verifica si el cubo ha llegado al objetivo
         if (distance < 3.6) {
@@ -1092,7 +1289,7 @@ export class WelcomePageComponent implements AfterViewInit {
     //#region    rotateCameraAnimation
     function rotateCameraAnimation(deltaTime: number){
       // Define el radio y el ángulo de rotación
-      let radius = 12;
+      let radius = 60;
 
       function animateRotation() {
 
@@ -1107,7 +1304,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
           targetPositionRotation.set(
             x,
-            camera.position.y,
+            100,
             z
           );
 
@@ -1132,7 +1329,7 @@ export class WelcomePageComponent implements AfterViewInit {
           const ufoPos = ufoObject.position;
 
           // Calcula la nueva posición de la cámara detrás y arriba del ufoObject
-          const cameraOffset = new THREE.Vector3(0, 5, -15); // 5 unidades arriba y 5 unidades atrás
+          const cameraOffset = new THREE.Vector3(0, 50, -85); // 5 unidades arriba y 5 unidades atrás
           const newCameraPos = ufoPos.clone().add(cameraOffset);
 
           // Establece la nueva posición de la cámara

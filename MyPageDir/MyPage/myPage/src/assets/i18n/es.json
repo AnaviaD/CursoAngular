@@ -1,14 +1,55 @@
 {
   "title": "Bienvenidos",
 
-  "menu3dScene":{
+  "menu3dScene": {
     "mainTitle": "Menu",
     "subDiv01": "FullStack-Dev",
     "subDiv02": "Formación Académica",
     "subDiv03": "Proyectos Personales y Habilidades Técnicas",
     "subDiv04": "Cursos Online",
     "subDiv05": "Idiomas"
+  },
 
+  "FullStackExp": {
+    "mainTitle": "Becario Full stack",
+    "subDiv01": "2014-2016",
+    "subDiv02": "2019-2021",
+    "subDiv03": "C# 2021-2024",
+    "subDiv04": "ML 2021-2024",
+    "subDiv05": "Android 2021-2024",
+    "subDiv06": "SQL 2021-2024"
+  },
+
+  "SchoolEd": {
+    "mainTitle": "Educación",
+    "subDiv01": "Serv. Social",
+    "subDiv02": "Proy Titulación",
+    "subDiv03": "Idioma Inglés"
+  },
+
+  "PersonalP": {
+    "mainTitle": "Bici-moto 2 tiempos",
+    "subDiv01": "Bici-moto 4 tiempos",
+    "subDiv02": "Selenium",
+    "subDiv03": "Máscara en Raspberry Pi",
+    "subDiv04": "Torreta en Raspberry Pi",
+    "subDiv05": "Cámara de seguridad en Raspberry Pi",
+    "subDiv06": "Juego para celular"
+  },
+
+  "cursos0": {
+    "mainTitle": "ANGULAR and ASP.NET",
+    "subDiv01": "Node",
+    "subDiv02": "JavaScript Moderno",
+    "subDiv03": "Angular",
+    "subDiv04": "SOLID",
+    "subDiv05": "C# en .Net",
+    "subDiv06": "Docker",
+    "subDiv07": "Android Retrofit",
+    "subDiv08": "Android Kotlin",
+    "subDiv09": "SQL",
+    "subDiv10": "Blender 2.9",
+    "subDiv11": "Three.js and TypeScript"
   },
 
   "mainCV":

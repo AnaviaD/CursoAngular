@@ -1,6 +1,56 @@
 {
   "title": "welcome",
 
+  "menu3dScene": {
+    "mainTitle": "Menu",
+    "subDiv01": "FullStack-Dev",
+    "subDiv02": "Academic Background",
+    "subDiv03": "Personal Projects and Technical Skills",
+    "subDiv04": "Online Courses",
+    "subDiv05": "Languages"
+  },
+
+  "FullStackExp": {
+    "mainTitle": "Full Stack Intern",
+    "subDiv01": "2014-2016",
+    "subDiv02": "2019-2021",
+    "subDiv03": "C# 2021-2024",
+    "subDiv04": "ML 2021-2024",
+    "subDiv05": "Android 2021-2024",
+    "subDiv06": "SQL 2021-2024"
+  },
+
+  "SchoolEd": {
+    "mainTitle": "Education",
+    "subDiv01": "Social Service",
+    "subDiv02": "Graduation Project",
+    "subDiv03": "English Language"
+  },
+
+  "PersonalP": {
+    "mainTitle": "2-Stroke Motorbike",
+    "subDiv01": "4-Stroke Motorbike",
+    "subDiv02": "Selenium",
+    "subDiv03": "Raspberry Pi Mask",
+    "subDiv04": "Raspberry Pi Turret",
+    "subDiv05": "Raspberry Pi Security Camera",
+    "subDiv06": "Mobile Game"
+  },
+
+  "cursos0": {
+    "mainTitle": "ANGULAR and ASP.NET",
+    "subDiv01": "Node",
+    "subDiv02": "Modern JavaScript",
+    "subDiv03": "Angular",
+    "subDiv04": "SOLID",
+    "subDiv05": "C# in .Net",
+    "subDiv06": "Docker",
+    "subDiv07": "Android Retrofit",
+    "subDiv08": "SQL",
+    "subDiv09": "Blender 2.9",
+    "subDiv10": "Three.js and TypeScript"
+  },
+
   "mainCV": {
     "description": "I am a Full Stack engineer with experience in data automation, analysis, and processing. I have developed solutions that optimize the collection and treatment of information using machine learning, significantly improving system efficiency. While I also have experience with databases, my greatest strength lies in the automation and optimization of complex processes. Throughout my career, I have handled all the tasks typical of a Full Stack developer, from database management, API testing with Postman, to creating unit and automated tests with tools like Selenium and unit testing. My comprehensive approach ensures that every part of the system, from the back-end to the front-end, works optimally and efficiently. Additionally, I have developed innovative solutions by integrating hardware such as Raspberry Pi and Arduino to enhance data collection in systems, always seeking ways to automate and improve processes."
   },
