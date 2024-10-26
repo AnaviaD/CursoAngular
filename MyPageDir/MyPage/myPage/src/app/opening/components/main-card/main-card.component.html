@@ -6,11 +6,11 @@
         <div class="col-6 col-md-4">
           <!-- alinear a la izq -->
            <div class="d-flex">
-             <button class="header-btn" (click)="changetoSp()">
+             <button class="btn header-btn" (click)="changetoSp()">
                <img class="header-btn-img" src="assets/mySVGs/spain-flag.svg" alt="">
              </button>
              <!-- alinear a la izq -->
-             <button class="header-btn" (click)="changetoEn()">
+             <button class="btn header-btn" (click)="changetoEn()">
                <img class="header-btn-img" src="assets/mySVGs/uk-flag.svg" alt="">
              </button>
            </div>
@@ -26,74 +26,65 @@
 
 
 
-      <div class="profile-card">
-        <div class="row-cols-sm-auto col-md-4 profile-image">
-          <img src="assets/imgObj/prof.png" alt="Foto de perfil">
-        </div>
-        <div class="profile-info">
-          <h2>{{ getTranslationKey('title')  | translate }}</h2>
-          <p>{{ getTranslationKey('secProf')  | translate }} <span>{{ getTranslationKey('prof')  | translate }}</span> / <span>{{ getTranslationKey('prof01')  | translate }}</span></p>
-          <p class="description">
-            {{ getTranslationKey('description01')  | translate }}
-            <br>
-            <br>
-            {{ getTranslationKey('description02')  | translate }}
-            <br>
-            <br>
-            {{ getTranslationKey('description03')  | translate }}
-            <br>
-            <br>
-            {{ getTranslationKey('description04')  | translate }}
-            <br>
-            <br>
-            {{ getTranslationKey('description05')  | translate }}
-            <br>
-            <br>
-            {{ getTranslationKey('description06')  | translate }}
-            <br>
-            <br>
-          </p>
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/enrique-navia-roa-ab49b92b8" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <!-- <a href="#"><i class="fab fa-instagram"></i></a> -->
-            <a href="https://github.com/AnaviaD"><i class="fab fa-github"></i></a>
-          </div>
+      <div class="profile-card card">
+        <div class="card-body">
+          <div class="row ">
 
-          <footer class="contact-footer">
-            <div class="contact-info">
-              <i class="icon-phone"></i>
-              <span>+52 55 21 42 17 86</span>
+            <div class="col-12 col-md-4 profile-image">
+              <img src="assets/imgObj/prof.png" alt="Foto de perfil">
             </div>
-            <div class="contact-info">
-              <i class="icon-mail"></i>
-              <span>enr_navia&#64;outlook.com</span>
-            </div>
-          </footer>
 
-          <!-- <div class="social-icons">
-            <a href="#">
-              <i class="icon-phone">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone" viewBox="0 0 24 24">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.84 19.84 0 0 1-8.63-2.9A19.47 19.47 0 0 1 3.08 12.8 19.84 19.84 0 0 1 0 4.37a2 2 0 0 1 2-2h3a2 2 0 0 1 2 1.72 12.41 12.41 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L6 10.91a16 16 0 0 0 7.09 7.09l2.9-1.3a2 2 0 0 1 2.11-.45 12.41 12.41 0 0 0 2.81.7 2 2 0 0 1 1.72 2z"></path>
-                </svg>
-              </i>
-            </a>
-            5515033245
+            <div class="col-12 col-md-8 profile-info">
+              <h2>{{ getTranslationKey('title')  | translate }}</h2>
+              <p>{{ getTranslationKey('secProf')  | translate }} <span>{{ getTranslationKey('prof')  | translate }}</span> / <span>{{ getTranslationKey('prof01')  | translate }}</span></p>
+            </div>
+
+            <div class="col-12 col-md-12 profile-info">
+              <p class="description">
+                {{ getTranslationKey('description01')  | translate }}
+                <br>
+                <br>
+                {{ getTranslationKey('description02')  | translate }}
+                <br>
+                <br>
+                {{ getTranslationKey('description03')  | translate }}
+                <br>
+                <br>
+                {{ getTranslationKey('description04')  | translate }}
+                <br>
+                <br>
+                {{ getTranslationKey('description05')  | translate }}
+                <br>
+                <br>
+                {{ getTranslationKey('description06')  | translate }}
+                <br>
+                <br>
+              </p>
+
+              <div class="social-icons">
+                <a href="https://www.linkedin.com/in/enrique-navia-roa-ab49b92b8" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <!-- <a href="#"><i class="fab fa-instagram"></i></a> -->
+                <a href="https://github.com/AnaviaD"><i class="fab fa-github"></i></a>
+              </div>
+
+            </div>
+
+            <div class="col-12 col-md-12 profile-info">
+              <div class="contact-info">
+                <i class="icon-phone"></i>
+                <span>+52 55 21 42 17 86</span>
+              </div>
+              <div class="contact-info">
+                <i class="icon-mail"></i>
+                <span>enr_navia&#64;outlook.com</span>
+              </div>
+            </div>
+
           </div>
-          <div class="social-icons">
-            <a href="#">
-              <i class="icon-mail">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail" viewBox="0 0 24 24">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-              </i>
-            </a>
-            <span> anavia_n&#64;outlook.com</span>
-          </div> -->
         </div>
+
       </div>
 
 
