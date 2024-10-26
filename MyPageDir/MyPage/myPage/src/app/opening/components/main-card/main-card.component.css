@@ -15,30 +15,18 @@
   pointer-events: auto; /* Permite la interacción en la tarjeta */
 }
 
-.close-btn {
-  position: absolute;
+.header-btn {
   top: 15px;
   right: 25px;
   background-color: transparent;
-  border: none;
-  font-size: 1.5em;
-  cursor: pointer;
-}
-
-.language-btn, .close-btn {
-  background-color: transparent !important; /* Asegura que sea completamente transparente */
   border: none !important; /* Elimina cualquier borde */
   padding: 0; /* Elimina el padding */
   margin: 0; /* Elimina el margen */
-}
-
-.language-btn img, .close-btn img {
-  width: 24px; /* Ajusta el tamaño de las imágenes */
+  width: 24px;
   height: 24px;
   display: block; /* Asegura que la imagen ocupe todo el botón */
-  padding: 0; /* Elimina el padding de las imágenes */
-  border: none; /* Asegúrate de que no haya bordes */
 }
+
 
 
 .profile-card {
