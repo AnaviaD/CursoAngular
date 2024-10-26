@@ -1,23 +1,25 @@
 <div class="content">
-  <div class="overlay" *ngIf="isVisible">
+  <div class="" *ngIf="isVisible">
     <div class="floating-card ">
 
-      <div class="row">
-        <div class="btn-group-left">
+      <div class="row justify-content-between">
+        <div class="col-6 col-md-4">
           <!-- alinear a la izq -->
-          <button class="header-btn" (click)="changetoSp()">
-            <img src="assets/mySVGs/spain-flag.svg" alt="">
-          </button>
-          <!-- alinear a la izq -->
-          <button class="header-btn" (click)="changetoEn()">
-            <img src="assets/mySVGs/uk-flag.svg" alt="">
-          </button>
+           <div class="d-flex">
+             <button class="header-btn" (click)="changetoSp()">
+               <img class="header-btn-img" src="assets/mySVGs/spain-flag.svg" alt="">
+             </button>
+             <!-- alinear a la izq -->
+             <button class="header-btn" (click)="changetoEn()">
+               <img class="header-btn-img" src="assets/mySVGs/uk-flag.svg" alt="">
+             </button>
+           </div>
         </div>
 
         <!-- alinear a la derecha -->
-        <div class="btn-group-right">
-          <button class="header-btn" (click)="close()">
-            <img src="assets/mySVGs/circle-xmark.svg" alt="">
+        <div class="col-6 col-md-4 d-flex justify-content-end">
+          <button class="btn btn-secondary ml-auto header-btn" (click)="close()">
+            <img class="header-btn-img" src="assets/mySVGs/circle-xmark.svg" alt="">
           </button>
         </div>
       </div>
@@ -93,6 +95,8 @@
           </div> -->
         </div>
       </div>
+
+
 
     </div>
   </div>

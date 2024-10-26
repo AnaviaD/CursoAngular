@@ -22,9 +22,12 @@
   border: none !important; /* Elimina cualquier borde */
   padding: 0; /* Elimina el padding */
   margin: 0; /* Elimina el margen */
+  display: block; /* Asegura que la imagen ocupe todo el botón */
+}
+
+.header-btn-img {
   width: 24px;
   height: 24px;
-  display: block; /* Asegura que la imagen ocupe todo el botón */
 }
 
 
