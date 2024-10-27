@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-carousel',
@@ -45,5 +46,32 @@ export class CarouselComponent {
       }
     ]
   };
+
+
+  contentToShow: any = {
+    images: "mainCV.images",
+  };
+
+  getTranslationKey(property: string): string {
+    // console.log(this.contentToShow[property]);
+    return this.contentToShow[property];
+  }
+
+  changetoSp(){
+    this.translate.use('es');
+  }
+
+  changetoEn(){
+    this.translate.use('en');
+  }
+
+  constructor(private translate: TranslateService) {
+    // Establecer el idioma predeterminado
+    this.translate.setDefaultLang('es');
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
 
 }
