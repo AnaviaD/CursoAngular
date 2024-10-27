@@ -1,11 +1,9 @@
-<h1 style="margin-left: 10%; margin-right: 10%;"></h1>
-  <div style="margin-left: 10%; margin-right: 10%; margin-top: 5%;">
-    <ngx-slick-carousel class="carousel"
-    #slickModal="slick-carousel"
-    [config]="slideConfig"
-    >
-    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-      <img src="{{ slide.img }}" alt="" class="img-style">
+<div class="col-12 col-md-12 profile-info">
+  <div class="horizontal-scroll">
+    <div *ngFor="let imgObj of (getTranslationKey('images') | translate)" class="image-wrapper">
+      <a [href]="imgObj" target="_blank">
+        <img [src]="imgObj" alt="Image" class="responsive-image">
+      </a>
     </div>
-    </ngx-slick-carousel>
   </div>
+</div>
