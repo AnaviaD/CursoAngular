@@ -106,3 +106,10 @@
   height: 24px;
   vertical-align: middle;
 }
+
+.carousel .carousel-item img,
+.carousel .carousel-item video {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}

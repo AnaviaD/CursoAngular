@@ -24,12 +24,20 @@ export class MainCardComponent {
     description05 : "mainCV.description05",
     description06 : "mainCV.description06",
     switchTitle : "mainCV.switchTitle",
+    images: "mainCV.images",
     title : "mainCV.title",
     prof  : "mainCV.prof",
     prof01  : "mainCV.prof01",
     secProf : "mainCV.secProf"
   };
 
+  chunkArray(arr: any[], chunkSize: number) {
+    const results = [];
+    for (let i = 0; i < arr.length; i += chunkSize) {
+      results.push(arr.slice(i, i + chunkSize));
+    }
+    return results;
+  }
 
   switchLanguage(language: string) {
     this.translate.use(language);

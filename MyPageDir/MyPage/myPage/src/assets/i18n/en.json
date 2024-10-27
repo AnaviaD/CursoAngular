@@ -59,6 +59,15 @@
     "description05": "Additionally, I have developed innovative solutions by integrating hardware such as Raspberry Pi and Arduino to improve data collection in systems.",
     "description06": "My greatest strength lies in the automation and optimization of complex processes.",
     "switchTitle": "Description.",
+    "images": [
+      "assets/imgObj/code.mp4",
+      "assets/imgObj/proto03.jpeg",
+      "assets/imgObj/mask (1).mp4",
+      "assets/imgObj/mask (3).jpeg",
+      "assets/imgObj/tinder01.mp4",
+      "assets/imgObj/kosko (2).jpeg",
+      "assets/imgObj/torretGun02.jpeg"
+    ],
     "title": "Alberto Navia",
     "prof": "FullStack",
     "prof01": "Integration",
