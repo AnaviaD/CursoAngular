@@ -22,16 +22,5 @@ export class CarouselComponent {
     return this.contentToShow[property];
   }
 
-  changetoSp(){
-    this.translate.use('es');
-  }
-
-  changetoEn(){
-    this.translate.use('en');
-  }
-
-  switchLanguage(language: string) {
-    this.translate.use(language);
-  }
 
 }
