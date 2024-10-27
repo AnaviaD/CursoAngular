@@ -14,6 +14,8 @@ import { HttpClient } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MainCardComponent } from './components/main-card/main-card.component';
 import { FormsModule } from '@angular/forms';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 
@@ -26,10 +28,12 @@ import { FormsModule } from '@angular/forms';
     CatSceneComponent,
     CarSceneComponent,
     TransportComponent,
-    MainCardComponent
+    MainCardComponent,
+    CarouselComponent
   ],
   imports: [
     CommonModule,
+    SlickCarouselModule,
     FormsModule,
     MatCardModule,
     OpeningRoutingModule,

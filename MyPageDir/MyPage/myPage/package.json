@@ -27,8 +27,11 @@
     "cannon": "github:schteppe/cannon.js",
     "cannon-es": "^0.20.0",
     "glslify-loader": "^2.0.0",
+    "jquery": "^3.7.1",
+    "ngx-slick-carousel": "^17.0.0",
     "raw-loader": "^4.0.2",
     "rxjs": "~7.8.0",
+    "slick-carousel": "^1.8.1",
     "three": "^0.167.1",
     "three-stdlib": "^2.33.0",
     "tslib": "^2.7.0"

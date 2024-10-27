@@ -73,63 +73,7 @@
               <div *ngIf="!isSwitchOn">
 
                 <div class="col-12 col-md-12 profile-info">
-                  <div id="mediaCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div
-                        *ngFor="let chunk of chunkArray(getTranslationKey('images') | translate, 4); let i = index"
-                        [ngClass]="{ 'carousel-item': true, active: i === 0 }"
-                      >
-                        <div class="row">
-                          <div class="col-6 col-md-3" *ngFor="let media of chunk">
-                            <ng-container *ngIf="media.endsWith('.mp4'); else imageTemplate">
-                              <!-- Video -->
-                              <video
-                                class="img-fluid"
-                                controls
-                                [style.maxWidth]="'100%'"
-                                [style.maxHeight]="'150px'"
-                              >
-                                <source [src]="media" type="video/mp4" />
-                                Your browser does not support the video tag.
-                              </video>
-                            </ng-container>
-                            <ng-template #imageTemplate>
-                              <!-- Image -->
-                              <a [href]="media" target="_blank">
-                                <img
-                                  [src]="media"
-                                  class="img-fluid"
-                                  [style.maxWidth]="'100%'"
-                                  [style.maxHeight]="'150px'"
-                                  alt="Media content"
-                                />
-                              </a>
-                            </ng-template>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Carousel controls -->
-                    <button
-                      class="carousel-control-prev"
-                      type="button"
-                      data-bs-target="#mediaCarousel"
-                      data-bs-slide="prev"
-                    >
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button
-                      class="carousel-control-next"
-                      type="button"
-                      data-bs-target="#mediaCarousel"
-                      data-bs-slide="next"
-                    >
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
+                  <app-carousel></app-carousel>
                 </div>
 
                 <div class="col-12 col-md-12 profile-info">
