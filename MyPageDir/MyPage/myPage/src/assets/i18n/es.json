@@ -60,13 +60,13 @@
     "description06": "Mi mayor fortaleza radica en la automatización y optimización de procesos complejos. ",
     "switchTitle": "Descripción.",
     "images": [
-      "assets/imgObj/code.gif",
       "assets/imgObj/proto03.jpeg",
-      "assets/imgObj/mask01.gif",
-      "assets/imgObj/mask (3).jpeg",
       "assets/imgObj/tinder01.gif",
+      "assets/imgObj/mask01.gif",
       "assets/imgObj/kosko (2).jpeg",
-      "assets/imgObj/torretGun02.jpeg"
+      "assets/imgObj/mask (3).jpeg",
+      "assets/imgObj/torretGun02.jpeg",
+      "assets/imgObj/code.gif"
     ],
     "title": "Alberto Navia",
     "prof": "FullStack",
