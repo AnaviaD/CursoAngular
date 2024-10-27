@@ -13,6 +13,7 @@ import { HttpLoaderFactory } from '../app.module';
 import { HttpClient } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MainCardComponent } from './components/main-card/main-card.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -29,6 +30,7 @@ import { MainCardComponent } from './components/main-card/main-card.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     MatCardModule,
     OpeningRoutingModule,
     TranslateModule.forRoot({

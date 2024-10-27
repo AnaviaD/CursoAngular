@@ -30,6 +30,12 @@
   height: 24px;
 }
 
+.svg-btn-img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1) brightness(2);
+}
+
 
 
 .profile-card {

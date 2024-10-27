@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class MainCardComponent {
 
   isVisible: boolean = false;
+  isSwitchOn: boolean = false;
 
   constructor(private translate: TranslateService) {
     // Establecer el idioma predeterminado
@@ -22,6 +23,7 @@ export class MainCardComponent {
     description04 : "mainCV.description04",
     description05 : "mainCV.description05",
     description06 : "mainCV.description06",
+    switchTitle : "mainCV.switchTitle",
     title : "mainCV.title",
     prof  : "mainCV.prof",
     prof01  : "mainCV.prof01",

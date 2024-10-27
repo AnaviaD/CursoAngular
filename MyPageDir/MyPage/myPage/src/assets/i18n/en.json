@@ -52,12 +52,13 @@
   },
 
   "mainCV": {
-    "description01": "I am a Full Stack engineer with experience in data automation, analysis, and processing.",
+    "description01": "I am a Full Stack engineer with experience in automation, data analysis, and processing.",
     "description02": "I have developed solutions that optimize the collection and processing of information using machine learning, significantly improving system efficiency.",
     "description03": "Throughout my career, I have handled all the typical tasks of a Full Stack developer, from database management and API testing with Postman, to creating unit and automated tests with tools like Selenium and unit testing.",
     "description04": "My comprehensive approach ensures that every part of the system, from the back-end to the front-end, operates optimally and efficiently.",
-    "description05": "Additionally, I have developed innovative solutions by integrating hardware like Raspberry Pi and Arduino to improve data collection in systems, always seeking ways to automate and enhance processes.",
+    "description05": "Additionally, I have developed innovative solutions by integrating hardware such as Raspberry Pi and Arduino to improve data collection in systems.",
     "description06": "My greatest strength lies in the automation and optimization of complex processes.",
+    "switchTitle": "Description.",
     "title": "Alberto Navia",
     "prof": "FullStack",
     "prof01": "Integration",
