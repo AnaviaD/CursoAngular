@@ -110,13 +110,13 @@
             </div>
           </div>
 
-          <div *ngIf="getTranslationKey('achivementTitle')">
+          <div *ngIf="getTranslationKey('achievementTitle')">
             <div class="row card ">
               <div class="col d-flex align-items-center">
                 <img src="assets/mySVGs/cube.svg" alt="" class="icon-img">
-                <h3>{{ getTranslationKey('achivementTitle')  | translate }} </h3>
+                <h3>{{ getTranslationKey('achievementTitle')  | translate }} </h3>
               </div>
-              <div *ngFor="let tech of (getTranslationKey('achivemens') | translate)">
+              <div *ngFor="let tech of (getTranslationKey('achievements') | translate)">
                 <p>{{ tech }}</p>
               </div>
             </div>

@@ -182,8 +182,8 @@
         "Aplicación de metodologías ágiles (Scrum) en todos los proyectos, trabajando en sprints para implementar mejoras basadas en retroalimentación continua.",
         "Colaboración con equipos multifuncionales para asegurar una comunicación fluida y entregas de proyectos a tiempo."
     ],
-    "achivementTitle": "Logros:",
-    "achivemens": ["Mejoré el tiempo de respuesta del sistema en un 20%", "Reduje el tiempo de procesamiento de datos en un 15% mediante la optimización de algoritmos."],
+    "achievementTitle": "Logros:",
+    "achievements": ["Mejoré el tiempo de respuesta del sistema en un 20%", "Reduje el tiempo de procesamiento de datos en un 15% mediante la optimización de algoritmos."],
     "timeTitle": "Tiempo:",
     "time": "Mayo 2021 — Julio 2024"
   },
@@ -212,8 +212,8 @@
         "Aplicación de metodologías ágiles (Scrum) en todos los proyectos, trabajando en sprints para implementar mejoras basadas en retroalimentación continua.",
         "Colaboración con equipos multifuncionales para asegurar una comunicación fluida y entregas de proyectos a tiempo."
     ],
-    "achivementTitle": "Logros:",
-    "achivemens": ["Incremento en un 30% el volumen numero de mercancías procedentes de clientes mas pequeños."],
+    "achievementTitle": "Logros:",
+    "achievements": ["Incremento en un 30% el volumen numero de mercancías procedentes de clientes mas pequeños."],
     "timeTitle": "Tiempo:",
     "time": "Mayo 2021 — Julio 2024"
   },
@@ -247,8 +247,8 @@
         "Aplicación de metodologías ágiles (Scrum) en todos los proyectos, trabajando en sprints para implementar mejoras basadas en retroalimentación continua.",
         "Colaboración con equipos multifuncionales para asegurar una comunicación fluida y entregas de proyectos a tiempo."
     ],
-    "achivementTitle": "Logros:",
-    "achivemens": ["El sistema también optimizó los costos operativos, ya que reemplazar tablets, con un costo de aproximadamente $500 USD, resultaba mucho más económico que mantener los equipos de uso rudo, cuyo valor ascendía a $4000 USD. Esta implementación no solo facilitó el mantenimiento de los tractocamiones, sino que también mejoró la eficiencia en la recolección y análisis de datos, agilizando el proceso al momento de llegar o salir de los patios."],
+    "achievementTitle": "Logros:",
+    "achievements": ["El sistema también optimizó los costos operativos, ya que reemplazar tablets, con un costo de aproximadamente $500 USD, resultaba mucho más económico que mantener los equipos de uso rudo, cuyo valor ascendía a $4000 USD. Esta implementación no solo facilitó el mantenimiento de los tractocamiones, sino que también mejoró la eficiencia en la recolección y análisis de datos, agilizando el proceso al momento de llegar o salir de los patios."],
     "timeTitle": "Tiempo:",
     "time": "Mayo 2021 — Julio 2024"
   },
@@ -480,6 +480,6 @@
     "tech": ["assets/mySVGs/wrench01.svg", "assets/mySVGs/cubes01.svg"],
     "techtack": ["dotNet 5.0", "node express 3.8"],
     "description": " lorem ipsum dolor sit amet",
-    "achivement": "llorem ipsum dolor sit amet"
+    "achievements": "llorem ipsum dolor sit amet"
   }
 }

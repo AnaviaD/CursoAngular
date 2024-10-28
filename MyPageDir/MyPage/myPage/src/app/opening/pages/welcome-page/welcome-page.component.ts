@@ -44,6 +44,9 @@ export class WelcomePageComponent implements AfterViewInit {
 
   @ViewChild(FloatingCardComponent) floatingCard!: FloatingCardComponent;
 
+
+
+  isVisible = false;
   isDropdownMainVisible = false;
   isDropdown1Visible = false;
   isDropdown2Visible = false;
@@ -72,6 +75,10 @@ export class WelcomePageComponent implements AfterViewInit {
     this.translate.use(language);
   }
 
+  handleVisibilityChange(isVisible: boolean) {
+    console.log('cerrar ventana');
+    this.isVisible = true;
+  }
 
   section01(){
     // this.isDropdown1Visible = !this.isDropdown1Visible;
@@ -119,6 +126,7 @@ export class WelcomePageComponent implements AfterViewInit {
     this.btnNextStepClicked = true;
     this.focusObj = clickedObject;
     this.floatingCard.open(clickedObject); // Call the open method to show the card
+    this.isVisible = true;
     // console.log('Next step button clicked');
   }
 
@@ -1443,53 +1451,66 @@ export class WelcomePageComponent implements AfterViewInit {
       const intersects = raycaster.intersectObjects(cubes);
       const ufoIntersections = raycaster.intersectObject(ufoObject);
 
-      if (intersects.length > 0) {
-        let targetObject = intersects[0].object;
+      if(this.isVisible)
+      {
+        if (intersects.length > 0) {
+          let targetObject = intersects[0].object;
 
-        const cubeId = targetObject.userData['id'];
+          const cubeId = targetObject.userData['id'];
 
-        this.focusObj = targetObject.userData['id'];
+          this.focusObj = targetObject.userData['id'];
 
-        if (cubeId) {
-          // console.log('Cubo clicado con id:', cubeId);
+          if (cubeId) {
+            // console.log('Cubo clicado con id:', cubeId);
 
-          // Llamar a la función `objClicked` desde Angular
-          this.objClicked(cubeId);
+            // Llamar a la función `objClicked` desde Angular
+            this.objClicked(cubeId);
+          }
+
+
+          // Verificar si el objeto tiene geometría (es un Mesh)
+          if (targetObject.isObject3D) {
+          // console.log('Objeto clicado (Mesh):', targetObject.position);
+          // Si no tiene geometría, tratar de obtener la posición global
+          const globalPosition = new THREE.Vector3();
+          targetObject.getWorldPosition(globalPosition);
+          targetObject.position.set(globalPosition.x, globalPosition.y, globalPosition.z);
+          // console.log('Posición global del objeto:', globalPosition);
+          }
+
+          // console.log('Objeto clicado:', targetObject.position);
+          // console.log('Objeto clicado:', targetObject);
+
+          // Configura la posición objetivo y la bandera de animación
+          targetPosition.set(
+              targetObject.position.x,
+              1,
+              targetObject.position.z
+          );
+
+          targetLook.set(
+              targetObject.position.x,
+              1,
+              targetObject.position.z
+          );
+
+          // console.log('Cubo - cambiamos a false');
+          isAnimating = true; // Activa la animación
+          this.btnNextStepClicked = false;
+          UfoFollows = false;
         }
+        if(ufoIntersections.length > 0)
+          {
+          // console.log('Ufo clicado');
+          UfoFollows = true;
+          isRotating = false;
+          isPosicion = false;
+          isAnimating = false;
 
-
-        // Verificar si el objeto tiene geometría (es un Mesh)
-        if (targetObject.isObject3D) {
-        // console.log('Objeto clicado (Mesh):', targetObject.position);
-        // Si no tiene geometría, tratar de obtener la posición global
-        const globalPosition = new THREE.Vector3();
-        targetObject.getWorldPosition(globalPosition);
-        targetObject.position.set(globalPosition.x, globalPosition.y, globalPosition.z);
-        // console.log('Posición global del objeto:', globalPosition);
+          currentTarget = selectRandomObject();
+          rotateCameraAnimation(1);
         }
-
-        // console.log('Objeto clicado:', targetObject.position);
-        // console.log('Objeto clicado:', targetObject);
-
-        // Configura la posición objetivo y la bandera de animación
-        targetPosition.set(
-            targetObject.position.x,
-            1,
-            targetObject.position.z
-        );
-
-        targetLook.set(
-            targetObject.position.x,
-            1,
-            targetObject.position.z
-        );
-
-        // console.log('Cubo - cambiamos a false');
-        isAnimating = true; // Activa la animación
-        this.btnNextStepClicked = false;
-        UfoFollows = false;
       }
-
 
       if (this.btnNextStepClicked) {
         const randomObject = findObjectById(this.focusObj);
@@ -1513,18 +1534,6 @@ export class WelcomePageComponent implements AfterViewInit {
         UfoFollows = false;
 
       }
-      if(ufoIntersections.length > 0)
-        {
-        // console.log('Ufo clicado');
-        UfoFollows = true;
-        isRotating = false;
-        isPosicion = false;
-        isAnimating = false;
-
-        currentTarget = selectRandomObject();
-        rotateCameraAnimation(1);
-      }
-
 
 
     }

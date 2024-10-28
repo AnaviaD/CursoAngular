@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -7,7 +7,9 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./floating-card.component.css']
 })
 export class FloatingCardComponent {
+
   isVisible: boolean = false;        //Cambiar a false
+  @Output() visibilityChange = new EventEmitter<boolean>();
   // contentToShow: number | null = 1; // Variable que decide qué contenido mostrar
   //Declaramos este obj como Default
 
@@ -96,8 +98,8 @@ export class FloatingCardComponent {
     duties: "FletesTransportes.duties" ,
     methodologiesTitle: "FletesTransportes.methodologiesTitle" ,
     methodologies: "FletesTransportes.methodologies" ,
-    achivementTitle: "FletesTransportes.achivementTitle" ,
-    achivemens: "FletesTransportes.achivemens" ,
+    achievementTitle: "FletesTransportes.achievementTitle" ,
+    achievements: "FletesTransportes.achievements" ,
     timeTitle: "FletesTransportes.timeTitle" ,
     time: "FletesTransportes.time" ,
   };
@@ -106,7 +108,7 @@ export class FloatingCardComponent {
   FletesTransportes01 = {
     title: "FletesTransportes01.title",
     techTitle: "FletesTransportes01.techTitle",
-    tech: "FletesTransportes01.tech"         ,
+    tech: "FletesTransportes01.tech",
     techtack: "FletesTransportes01.techtack",
     descTitle: "FletesTransportes01.descTitle",
     description: "FletesTransportes01.description",
@@ -114,11 +116,11 @@ export class FloatingCardComponent {
     duties: "FletesTransportes01.duties",
     methodologiesTitle: "FletesTransportes01.methodologiesTitle",
     methodologies: "FletesTransportes01.methodologies",
-    achivementTitle: "FletesTransportes01.achivementTitle",
-    achivemens: "FletesTransportes01.achivemens",
+    achievementTitle: "FletesTransportes01.achievementTitle", // cambio de nombre
+    achievements: "FletesTransportes01.achievements", // cambio de nombre
     timeTitle: "FletesTransportes01.timeTitle",
     time: "FletesTransportes01.time",
-  };
+};
 
 
   FletesTransportes02 = {
@@ -132,8 +134,8 @@ export class FloatingCardComponent {
     duties: "FletesTransportes02.duties",
     methodologiesTitle: "FletesTransportes02.methodologiesTitle",
     methodologies: "FletesTransportes02.methodologies",
-    achivementTitle: "FletesTransportes02.achivementTitle",
-    achivemens: "FletesTransportes02.achivemens",
+    achievementTitle: "FletesTransportes02.achievementTitle",
+    achievements: "FletesTransportes02.achievements",
     timeTitle: "FletesTransportes02.timeTitle",
     time: "FletesTransportes02.time",
   };
@@ -433,6 +435,7 @@ export class FloatingCardComponent {
 
   close() {
     this.isVisible = false;
+    this.visibilityChange.emit(this.isVisible);
     this.contentToShow = null; // Resetea el contenido cuando cierras
   }
 

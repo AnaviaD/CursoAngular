@@ -121,18 +121,25 @@
     "timeTitle": "Time:",
     "time": "2014 July — 2016 Dec"
   },
-  "Infotec":
-  {
-    "title": "Ingeniero de Software Junior",
-    "techTitle": "Tecnologias utilizadas:",
+  "Infotec": {
+    "title": "Junior Software Engineer",
+    "techTitle": "Technologies Used:",
     "tech": ["assets/mySVGs/JSON.svg", "assets/mySVGs/NETcore.svg", "assets/mySVGs/Bootstrap.svg", "assets/mySVGs/GitHub.svg", "assets/mySVGs/HTML5.svg"],
-    "techtack": ["Lenguajes y Frameworks: .NET Framework 4.7.x, .NET Core 2.x, JavaScript (ES6), Angular 6.", "Base de Datos: MySQL 5.7.", "Herramientas: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017."],
-    "descTitle": "Descripción:",
-    "description": "Participé en el desarrollo de dos proyectos web enfocados en la administración de usuarios y la creación de citas, lo que contribuyó significativamente a la funcionalidad y el alcance de las aplicaciones.",
-    "dutiesTitle": "Responsabilidades:",
-    "duties": ["Implementación de eventos en el Front-End y seguimiento de la lógica de eventos hasta la base de datos.", "Resolución de problemas y mantenimiento del sistema, incluyendo la identificación y solución de errores.", "Comunicación continua con los usuarios iniciales para recolectar retroalimentación y definir nuevas funcionalidades junto con el equipo de QA."],
+    "techtack": [
+      "Languages and Frameworks: .NET Framework 4.7.x, .NET Core 2.x, JavaScript (ES6), Angular 6.",
+      "Database: MySQL 5.7.",
+      "Tools: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017."
+    ],
+    "descTitle": "Description:",
+    "description": "I participated in the development of two web projects focused on user management and appointment scheduling, which significantly contributed to the functionality and reach of the applications.",
+    "dutiesTitle": "Responsibilities:",
+    "duties": [
+      "Implemented front-end events and tracked event logic to the database.",
+      "Troubleshooting and system maintenance, including bug identification and resolution.",
+      "Maintained ongoing communication with initial users to gather feedback and define new functionalities with the QA team."
+    ],
     "timeTitle": "Time:",
-    "time": "2019 Feb — 2021 Sep"
+    "time": "Feb 2019 — Sep 2021"
   },
   "Semovi": {
     "title": "Software Engineer",
@@ -144,10 +151,9 @@
     "timeTitle": "Time:",
     "time": "2019"
   },
-  "FletesTransportes":
-  {
+ "FletesTransportes": {
     "title": "Junior Software Engineer",
-    "techTitle": "Technologies used:",
+    "techTitle": "Technologies Used:",
     "tech": [
       "assets/mySVGs/JSON.svg",
       "assets/mySVGs/Microsoft SQL Server.svg",
@@ -158,25 +164,34 @@
       "assets/mySVGs/GitHub.svg",
       "assets/mySVGs/HTML5.svg"
     ],
-    "techtack": ["Languages & Frameworks: Kotlin 1.4, SQLite 3.35, Retrofit 2.9, .NET Core 3.1, .NET Core 2.x, JavaScript (ES6), Angular 6, Node Express 4", "Database: MySQL 5.7", "Tools: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017 & 2019, phpMyAdmin 4.0"],
+    "techtack": [
+      "Languages and Frameworks: Kotlin 1.4, SQLite 3.35, Retrofit 2.9, .NET Core 3.1, .NET Core 2.x, JavaScript (ES6), Angular 6, Node Express 4",
+      "Database: MySQL 5.7",
+      "Tools: Visual Studio Code, Visual Studio, SQL Server Management Studio (SSMS) 2017 and 2019"
+    ],
     "descTitle": "Description:",
-    "description": "I actively participated in and led a variety of projects across different areas of development and business solutions. Key contributions include the creation of a virtual kiosk, a comprehensive tool that allowed employees to access and view information like trips, vacations, and bonuses. Additionally, I led an Android project aimed at simplifying inventory management for Tractocamiones, providing details about the state of their components, such as seats, tires, and other key elements. I also spearheaded the creation of a merchandise management program designed to clean and process customer data, ensuring only essential information for billing was maintained. Furthermore, I developed a web panel for the monitoring area, offering a detailed view of travel data, including start and end points, routes, emergency buttons, and engine stops, among other critical functions.",
+    "description": "I actively participated in and led a variety of projects in different areas of development and business solutions. Key contributions include the creation of a virtual kiosk, an integrated tool allowing employees to access and view information such as trips, vacations, and bonuses. Additionally, I led an Android project aimed at streamlining inventory management for trucks, providing details on the status of components such as seats, tires, and other critical parts. I also directed the creation of a goods management program designed to clean and process customer data, ensuring that only essential billing information was retained. Furthermore, I developed a web dashboard for the monitoring area, offering detailed travel data insights, including starting and ending points, routes, emergency buttons, and engine stops, among other critical functions.",
     "dutiesTitle": "Responsibilities:",
-    "duties": ["Defined and established the architecture of the merchandise management project, ensuring a scalable design that met business objectives.",
-    "Implemented advanced data cleaning and validation techniques, including the use of regular expressions, to ensure data integrity.",
-    "Developed algorithms using machine learning to extract key information from complex data sets, such as Excel sheets with variable formats.",
-    "Optimized system architecture using established technologies and protocols (FTP) to facilitate efficient data exchange across departments.",
-    "Designed and implemented a web version of the application following SOLID principles using .NET and Angular.",
-    "Performed continuous system maintenance and proactive error identification, including dependency management to ensure system stability.",
-    "Defined the structure of the Android inventory project, integrated APIs using Retrofit, and implemented data storage with SQLite.",
-    "Handled threads and concurrency using Kotlin Coroutines, optimized performance by resolving bottlenecks, and ensured compatibility with Android updates.",
-    "Developed and applied logic for extracting critical data for fleet management, monitoring events like unauthorized stops, and emergency alerts."],
+    "duties": [
+      "Defined and established the architecture of the goods management project, ensuring a scalable design that met business objectives.",
+      "Implemented advanced data cleansing and validation techniques, including regular expressions, to ensure data integrity.",
+      "Developed algorithms using machine learning to extract key information from complex data sets, such as variably formatted Excel sheets.",
+      "Optimized system architecture using established technologies and protocols (FTP) to facilitate efficient data exchange between departments.",
+      "Designed and implemented a web version of the application following SOLID principles using .NET and Angular.",
+      "Performed ongoing system maintenance and proactively identified bugs, including dependency management to ensure system stability.",
+      "Defined the structure of the Android inventory project, integrated APIs using Retrofit, and implemented data storage with SQLite.",
+      "Managed threads and concurrency using Kotlin Coroutines, optimizing performance and resolving bottlenecks, ensuring compatibility with Android updates.",
+      "Developed and implemented logic needed to extract critical fleet management data, monitoring events such as unauthorized stops and emergency alerts."
+    ],
     "methodologiesTitle": "Methodologies:",
-    "methodologies": ["Applied Agile methodologies (Scrum) in all projects, working in sprints to implement improvements based on continuous feedback.", "Collaborated with cross-functional teams to ensure smooth communication and timely project deliveries."],
-    "achivementTitle": "Achievements:",
-    "achivemens": ["Ms", "Mejorar tiempo de bla bla"],
+    "methodologies": [
+      "Applied Agile methodologies (Scrum) to all projects, working in sprints to implement improvements based on continuous feedback.",
+      "Collaborated with cross-functional teams to ensure smooth communication and on-time project deliveries."
+    ],
+    "achievementTitle": "Achievements:",
+    "achievements": ["Improved system response time by 20%", "Reduced data processing time by 15% through algorithm optimization."],
     "timeTitle": "Time:",
-    "time": "2021 May — 2024 July"
+    "time": "May 2021 — July 2024"
   },
   "FletesTransportes01": {
     "title": "Junior Software Engineer",
