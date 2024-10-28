@@ -46,7 +46,7 @@ export class WelcomePageComponent implements AfterViewInit {
 
 
 
-  isVisible = false;
+  isVisible = true;
   isDropdownMainVisible = false;
   isDropdown1Visible = false;
   isDropdown2Visible = false;
@@ -76,7 +76,7 @@ export class WelcomePageComponent implements AfterViewInit {
   }
 
   handleVisibilityChange(isVisible: boolean) {
-    console.log('cerrar ventana');
+    console.log('cerrar ventana: ', isVisible);
     this.isVisible = true;
   }
 
@@ -126,7 +126,7 @@ export class WelcomePageComponent implements AfterViewInit {
     this.btnNextStepClicked = true;
     this.focusObj = clickedObject;
     this.floatingCard.open(clickedObject); // Call the open method to show the card
-    this.isVisible = true;
+    this.isVisible = false;
     // console.log('Next step button clicked');
   }
 
