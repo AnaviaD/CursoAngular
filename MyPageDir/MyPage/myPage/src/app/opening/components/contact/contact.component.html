@@ -38,39 +38,7 @@
             </div>
             <br>
 
-            <div class="col-12 col-md-12 d-flex justify-content-end">
-              <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" [(ngModel)]="isSwitchOn">
-                <label class="form-check-label" for="flexSwitchCheckDefault">{{ getTranslationKey('switchTitle') | translate }}</label>
-              </div>
-            </div>
-            <br>
 
-            <div class="col-12 col-md-12 profile-info"
-            *ngIf="isSwitchOn">
-              <p class="description">
-                {{ getTranslationKey('description01')  | translate }}
-                <br>
-                <br>
-                {{ getTranslationKey('description02')  | translate }}
-                <br>
-                <br>
-                {{ getTranslationKey('description03')  | translate }}
-                <br>
-                <br>
-                {{ getTranslationKey('description04')  | translate }}
-                <br>
-                <br>
-                {{ getTranslationKey('description05')  | translate }}
-                <br>
-                <br>
-                {{ getTranslationKey('description06')  | translate }}
-                <br>
-                <br>
-              </p>
-            </div>
-
-              <div *ngIf="!isSwitchOn">
 
                 <div class="col-12 col-md-12 d-flex justify-content-center profile-info">
                   <app-carousel></app-carousel>
@@ -95,7 +63,6 @@
                   </div>
                 </div>
 
-            </div>
 
           </div>
         </div>

@@ -451,7 +451,7 @@ export class FloatingCardComponent {
 
   constructor(private translate: TranslateService) {
     // Establecer el idioma predeterminado
-    this.translate.setDefaultLang('es');
+    this.translate.setDefaultLang('en');
   }
 
   switchLanguage(language: string) {

@@ -35,6 +35,13 @@
   background-color: rgba(0, 0, 0, 0.3); /* Fondo negro transparente al 70% */
 }
 
+.right-btn-two {
+  top: 20%;
+  right: 15px; /* Margen derecho de 15px */
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3); /* Fondo negro transparente al 70% */
+}
+
 .progress-bar-container{
   position: absolute;
   left: 50%;
@@ -59,4 +66,10 @@
 label{
   color: white;
   font-size: 2rem;
+}
+
+.svg-btn-img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1) brightness(2);
 }

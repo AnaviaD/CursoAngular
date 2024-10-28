@@ -10,8 +10,9 @@ export class CarouselComponent {
 
   constructor(private translate: TranslateService) {
     // Establecer el idioma predeterminado
-    this.translate.setDefaultLang('es');
+    this.translate.setDefaultLang('en');
   }
+
 
   contentToShow: any = {
     images: "mainCV.images",

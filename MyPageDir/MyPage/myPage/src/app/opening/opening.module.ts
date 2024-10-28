@@ -16,6 +16,7 @@ import { MainCardComponent } from './components/main-card/main-card.component';
 import { FormsModule } from '@angular/forms';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 
@@ -29,7 +30,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     CarSceneComponent,
     TransportComponent,
     MainCardComponent,
-    CarouselComponent
+    CarouselComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,
@@ -47,6 +49,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
   ],
   exports: [
     MainCardComponent,
+    ContactComponent,
     FloatingCardComponent
   ]
 })

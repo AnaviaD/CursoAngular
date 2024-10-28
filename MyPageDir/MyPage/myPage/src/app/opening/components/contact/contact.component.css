@@ -1,0 +1,115 @@
+.floating-card {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 66%;
+  height: 66%;
+  background-color: rgba(255, 255, 255, 0.249);
+  border-radius: 50px;
+  padding: 20px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Debe estar encima de la capa de fondo */
+  pointer-events: auto; /* Permite la interacción en la tarjeta */
+}
+
+.header-btn {
+  top: 15px;
+  right: 25px;
+  background-color: transparent;
+  border: none !important; /* Elimina cualquier borde */
+  padding: 0; /* Elimina el padding */
+  margin: 0; /* Elimina el margen */
+  display: block; /* Asegura que la imagen ocupe todo el botón */
+}
+
+.header-btn-img {
+  width: 24px;
+  height: 24px;
+}
+
+.svg-btn-img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1) brightness(2);
+}
+
+
+
+.profile-card {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  border-radius: 40px;
+  padding: 40px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.profile-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid yellow;
+  object-fit: cover;
+}
+
+
+.profile-info span {
+  color: #faff00;
+  font-weight: bold;
+}
+
+.description {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #cccccc;
+  max-height: 200px;  /* Ajusta esta altura según lo que necesites */
+  overflow-y: auto;  /* Activa el scroll vertical */
+  padding-right: 10px;  /* Espacio para evitar que el texto quede pegado al borde */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #faff00;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.contact-info i {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.carousel .carousel-item img,
+.carousel .carousel-item video {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
