@@ -33,10 +33,13 @@
 .svg-btn-img {
   width: 24px;
   height: 24px;
-  filter: invert(1) brightness(2);
 }
 
-
+.svg-btn-img-cont {
+  width: 24px;
+  height: 24px;
+  filter: invert(1) brightness(2);
+}
 
 .profile-card {
   width: 100%;
@@ -112,4 +115,21 @@
   object-fit: cover;
   width: 100%;
   height: auto;
+}
+
+
+.download-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #45a049;
 }

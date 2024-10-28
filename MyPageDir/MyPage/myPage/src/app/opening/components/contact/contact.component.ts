@@ -25,6 +25,7 @@ export class ContactComponent {
     description05 : "mainCV.description05",
     description06 : "mainCV.description06",
     switchTitle : "mainCV.switchTitle",
+    switchTitleCont : "mainCV.switchTitleCont",
     images: "mainCV.images",
     title : "mainCV.title",
     prof  : "mainCV.prof",
@@ -38,7 +39,7 @@ export class ContactComponent {
     this.translate.use(language);
   }
 
-  open(clickedObject: number) {
+  open() {
     this.isVisible = true;
   }
 
