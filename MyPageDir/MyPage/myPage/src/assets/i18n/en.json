@@ -188,6 +188,12 @@
       "Applied Agile methodologies (Scrum) to all projects, working in sprints to implement improvements based on continuous feedback.",
       "Collaborated with cross-functional teams to ensure smooth communication and on-time project deliveries."
     ],
+    "images": [
+      "assets/imgObj/android (1).jpeg",
+      "assets/imgObj/kosko (1).jpeg",
+      "assets/imgObj/kosko (2).jpeg",
+      "assets/imgObj/kosko (3).jpeg"
+    ],
     "achievementTitle": "Achievements:",
     "achievements": ["Improved system response time by 20%", "Reduced data processing time by 15% through algorithm optimization."],
     "timeTitle": "Time:",
@@ -253,6 +259,13 @@
     ],
     "achievementTitle": "Achievements:",
     "achievements": ["The system also optimized operational costs by replacing tablets, priced at approximately $500 USD, which was significantly cheaper than maintaining rugged devices worth $4000 USD. This implementation not only streamlined truck maintenance but also improved data collection and analysis efficiency, speeding up processes when arriving or leaving the yards."],
+    "images": [
+      "assets/imgObj/android (1).jpeg",
+      "assets/imgObj/android (2).jpeg",
+      "assets/imgObj/android (3).jpeg",
+      "assets/imgObj/android (4).jpeg",
+      "assets/imgObj/android (5).jpeg"
+    ],
     "timeTitle": "Time:",
     "time": "May 2021 — July 2024"
   },
@@ -298,6 +311,9 @@
     "tech": ["assets/mySVGs/Arduino.svg"],
     "images": [
       "assets/imgObj/weld01.jpg",
+      "assets/imgObj/bici00.jpeg",
+      "assets/imgObj/motor01.jpeg",
+      "assets/imgObj/motor02.jpg",
       "assets/imgObj/bici03.jpg"
     ],
     "descTitle": "Description:",
@@ -307,6 +323,9 @@
     "title": "Automated Tinder with Selenium",
     "techTitle": "Technologies used:",
     "tech": ["assets/mySVGs/Selenium.svg", "assets/mySVGs/CSharp.svg"],
+    "images": [
+      "assets/imgObj/tinder01.gif"
+    ],
     "descTitle": "Description:",
     "description": "I developed a project in C# using Selenium to automate interactions on a social media platform. This system can log in, like profiles, browse photos, read descriptions, gather data on preferences or interests to start conversations, dislike profiles, and initiate conversations automatically. However, a key limitation is that it cannot autonomously understand or respond to emergent or personalized conversations, restricting interaction to basic automated processes."
   },
@@ -314,6 +333,12 @@
     "title": "Mask with Raspberry Pi",
     "techTitle": "Technologies used:",
     "tech": ["assets/mySVGs/RaspberryPi.svg", "assets/mySVGs/Arduino.svg"],
+    "images": [
+      "assets/imgObj/mask (1).jpeg",
+      "assets/imgObj/mask (2).jpeg",
+      "assets/imgObj/mask (3).jpeg",
+      "assets/imgObj/mask01.gif"
+    ],
     "descTitle": "Description:",
     "description": "I developed a project using a Raspberry Pi programmed in Python with OpenCV to detect and process eye movements through a camera. The eye movements (left, right, up, down, and blinks) were sent to an Arduino that controlled an LED module (MAX7219), simulating these movements on an LED matrix. I also implemented a microphone to recognize voice tone and encode it into an 8x128 LED matrix. Additionally, I designed the necessary boards to support the module and expand the matrix to 32x128 LEDs, all integrated with precise control over eye movement."
   },
@@ -321,6 +346,11 @@
     "title": "Automatic Turret with Raspberry Pi",
     "techTitle": "Technologies used:",
     "tech": ["assets/mySVGs/RaspberryPi.svg", "assets/mySVGs/Arduino.svg"],
+    "images": [
+      "assets/imgObj/torretGun01.jpeg",
+      "assets/imgObj/torretGun02.jpeg",
+      "assets/imgObj/torretGun03.jpeg"
+    ],
     "descTitle": "Description:",
     "description": "I developed an automatic turret using a Raspberry Pi, servomotors, and Python with OpenCV to track QR codes. The system utilized a camera to detect the QR code and process the image, adjusting the servomotors to precisely point at the code. Once aligned, a laser was activated, pointing directly at the QR code. Additionally, I implemented a hit counter that recorded the number of times the system successfully aimed at the target."
   },
@@ -336,6 +366,19 @@
     "techTitle": "Tecnologías utilizadas:",
     "tech": ["assets/mySVGs/CSharp.svg", "assets/mySVGs/Unity.svg", "assets/mySVGs/JSON.svg"],
     "descTitle": "Descripción:",
+    "images": [
+      "assets/imgObj/goryGame (1).jpeg",
+      "assets/imgObj/goryGame (2).jpeg",
+      "assets/imgObj/goryGame (3).jpeg",
+      "assets/imgObj/goryGame (4).jpeg",
+      "assets/imgObj/goryGame (5).jpeg",
+      "assets/imgObj/goryGame (6).jpeg",
+      "assets/imgObj/goryGame (7).jpeg",
+      "assets/imgObj/goryGame (8).jpeg",
+      "assets/imgObj/goryGame (9).jpeg",
+      "assets/imgObj/goryGame (10).jpeg",
+      "assets/imgObj/code.gif"
+     ],
     "description": "Desarrollé un juego para celular tipo runner en Unity utilizando C#. El juego incluye cuatro niveles con una dificultad progresiva, en los que cambian la velocidad de los enemigos y los obstáculos en cada mapa. Los assets fueron creados en Blender, y el juego cuenta con una integración a través de una API en C# para guardar y consultar los puntajes en una base de datos en SQL. El juego fue publicado en la Play Store de Android, aunque posteriormente fue retirado de la plataforma."
   },
   "curso01": {

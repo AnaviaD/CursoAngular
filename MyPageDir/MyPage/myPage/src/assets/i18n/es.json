@@ -182,6 +182,12 @@
         "Aplicación de metodologías ágiles (Scrum) en todos los proyectos, trabajando en sprints para implementar mejoras basadas en retroalimentación continua.",
         "Colaboración con equipos multifuncionales para asegurar una comunicación fluida y entregas de proyectos a tiempo."
     ],
+    "images": [
+      "assets/imgObj/android (1).jpeg",
+      "assets/imgObj/kosko (1).jpeg",
+      "assets/imgObj/kosko (2).jpeg",
+      "assets/imgObj/kosko (3).jpeg"
+    ],
     "achievementTitle": "Logros:",
     "achievements": ["Mejoré el tiempo de respuesta del sistema en un 20%", "Reduje el tiempo de procesamiento de datos en un 15% mediante la optimización de algoritmos."],
     "timeTitle": "Tiempo:",
@@ -249,6 +255,13 @@
     ],
     "achievementTitle": "Logros:",
     "achievements": ["El sistema también optimizó los costos operativos, ya que reemplazar tablets, con un costo de aproximadamente $500 USD, resultaba mucho más económico que mantener los equipos de uso rudo, cuyo valor ascendía a $4000 USD. Esta implementación no solo facilitó el mantenimiento de los tractocamiones, sino que también mejoró la eficiencia en la recolección y análisis de datos, agilizando el proceso al momento de llegar o salir de los patios."],
+    "images": [
+      "assets/imgObj/android (1).jpeg",
+      "assets/imgObj/android (2).jpeg",
+      "assets/imgObj/android (3).jpeg",
+      "assets/imgObj/android (4).jpeg",
+      "assets/imgObj/android (5).jpeg"
+    ],
     "timeTitle": "Tiempo:",
     "time": "Mayo 2021 — Julio 2024"
   },
@@ -284,9 +297,10 @@
     "techTitle": "Tecnologias utilizadas:",
     "tech": ["assets/mySVGs/Arduino.svg"],
     "images": [
-     "assets/imgObj/weld01.jpg",
-     "assets/imgObj/bici01.jpg",
-     "assets/imgObj/bici02.jpg"],
+      "assets/imgObj/weld01.jpg",
+      "assets/imgObj/bici01.jpg",
+      "assets/imgObj/bici02.jpg"
+    ],
     "descTitle": "Descripción:",
     "description": "Desarrollé una bici-moto desde la modificación del cuadro original de la bicicleta para integrar un motor de combustión de 2 tiempos. Implementé componentes electrónicos como el CDI y un sistema de encendido biométrico con Arduino. Utilicé dos sensores, uno de pulso cardíaco y un lector de huella digital, para asegurar que solo el usuario autorizado pudiera encender el motor, integrando el sistema con los componentes de arranque de la moto."
   },
@@ -296,8 +310,12 @@
     "techTitle": "Tecnologias utilizadas:",
     "tech": ["assets/mySVGs/Arduino.svg"],
     "images": [
-     "assets/imgObj/weld01.jpg",
-     "assets/imgObj/bici03.jpg"],
+      "assets/imgObj/weld01.jpg",
+      "assets/imgObj/bici00.jpeg",
+      "assets/imgObj/motor01.jpeg",
+      "assets/imgObj/motor02.jpg",
+      "assets/imgObj/bici03.jpg"
+    ],
     "descTitle": "Descripción:",
     "description": "Actualicé el proyecto reemplazando el motor de 2 tiempos por uno de 4 tiempos, lo que mejoró la eficiencia y el rendimiento del vehículo. Este cambio incluyó ajustes en el sistema de encendido biométrico, manteniendo el uso del sensor de huella digital, pero optimizando el control del motor para aprovechar las características del nuevo motor."
   },
@@ -306,6 +324,9 @@
     "title": "Tinder automatico con Selenium",
     "techTitle": "Tecnologias utilizadas:",
     "tech": ["assets/mySVGs/Selenium.svg", "assets/mySVGs/CSharp.svg"],
+    "images": [
+      "assets/imgObj/tinder01.gif"
+    ],
     "descTitle": "Descripción:",
     "description": "Desarrollé un proyecto en C# utilizando Selenium para automatizar la interacción en una plataforma de redes sociales. Este sistema puede iniciar sesión, dar likes, navegar entre fotos, leer descripciones, recopilar datos de preferencias o intereses para iniciar conversaciones, dar dislikes, e iniciar conversaciones de forma automática. Sin embargo, una limitante clave es que no puede comprender ni responder de manera autónoma a conversaciones emergentes o personalizadas, lo que restringe la interacción a procesos básicos automatizados."
   },
@@ -314,6 +335,12 @@
     "title": "Mascara en Raspberry Pi",
     "techTitle": "Tecnologias utilizadas:",
     "tech": ["assets/mySVGs/RaspberryPi.svg", "assets/mySVGs/Arduino.svg"],
+    "images": [
+      "assets/imgObj/mask (1).jpeg",
+      "assets/imgObj/mask (2).jpeg",
+      "assets/imgObj/mask (3).jpeg",
+      "assets/imgObj/mask01.gif"
+    ],
     "descTitle": "Descripción:",
     "description": "Desarrollé un proyecto utilizando una Raspberry Pi programada en Python con OpenCV para detectar y procesar movimientos oculares con una cámara. Los movimientos del ojo (izquierda, derecha, arriba, abajo, y parpadeos) eran enviados a un Arduino que controlaba un módulo LED (MAX7219), simulando los movimientos en una matriz de LEDs. También implementé un micrófono para reconocer el tono de voz y codificarlo en una matriz de 8x128 LEDs. Creé las placas para soportar el módulo y expandir la matriz hasta 32x128 LEDs, todo integrado con control preciso del movimiento ocular."
   },
@@ -322,6 +349,11 @@
     "title": "Torreta en Raspberry Pi",
     "techTitle": "Tecnologias utilizadas:",
     "tech": ["assets/mySVGs/RaspberryPi.svg", "assets/mySVGs/Arduino.svg"],
+    "images": [
+      "assets/imgObj/torretGun01.jpeg",
+      "assets/imgObj/torretGun02.jpeg",
+      "assets/imgObj/torretGun03.jpeg"
+    ],
     "descTitle": "Descripción:",
     "description": "Desarrollé una torreta automática utilizando una Raspberry Pi, servomotores y Python con OpenCV para seguir códigos QR. El sistema utilizaba una cámara para detectar el código QR y procesar la imagen, ajustando los servomotores para apuntar con precisión hacia el código. Una vez alineado, se activaba un láser que señalaba directamente el código QR. Además, implementé un contador de disparos positivos, que llevaba el registro de las veces que el sistema lograba apuntar correctamente al objetivo."
   },
@@ -339,6 +371,19 @@
     "techTitle": "Tecnologias utilizadas:",
     "tech": ["assets/mySVGs/CSharp.svg", "assets/mySVGs/Unity.svg", "assets/mySVGs/JSON.svg"],
     "descTitle": "Descripción:",
+    "images": [
+     "assets/imgObj/goryGame (1).jpeg",
+     "assets/imgObj/goryGame (2).jpeg",
+     "assets/imgObj/goryGame (3).jpeg",
+     "assets/imgObj/goryGame (4).jpeg",
+     "assets/imgObj/goryGame (5).jpeg",
+     "assets/imgObj/goryGame (6).jpeg",
+     "assets/imgObj/goryGame (7).jpeg",
+     "assets/imgObj/goryGame (8).jpeg",
+     "assets/imgObj/goryGame (9).jpeg",
+     "assets/imgObj/goryGame (10).jpeg",
+     "assets/imgObj/code.gif"
+    ],
     "description": "Desarrollé un juego para celular tipo runner en Unity utilizando C#. El juego incluye cuatro niveles con una dificultad progresiva, en los que cambian la velocidad de los enemigos y los obstáculos en cada mapa. Los assets fueron creados en Blender, y el juego cuenta con una integración a través de una API en C# para guardar y consultar los puntajes en una base de datos en SQL. El juego fue publicado en la Play Store de Android, aunque posteriormente fue retirado de la plataforma."
   },
   "curso01":

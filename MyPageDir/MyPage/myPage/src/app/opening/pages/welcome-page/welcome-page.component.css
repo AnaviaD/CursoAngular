@@ -9,6 +9,21 @@
   color: white;
   border: none;
   border-radius: 8px;
+  z-index: 100;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.floating-btn-menu {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 20%; /* 1/12 de la pantalla */
+  height: 100px;
+  font-size: 1.5em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
   z-index: 1;
   transition: width 0.3s ease, height 0.3s ease;
 }

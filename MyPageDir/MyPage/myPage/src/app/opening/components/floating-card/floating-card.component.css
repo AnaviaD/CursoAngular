@@ -9,7 +9,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999; /* Debe estar debajo de la tarjeta flotante */
+  z-index: 10; /* Debe estar debajo de la tarjeta flotante */
   pointer-events: none; /* Esto previene cualquier interacción */
 }
 
@@ -26,7 +26,7 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000; /* Debe estar encima de la capa de fondo */
+  z-index: 10; /* Debe estar encima de la capa de fondo */
   pointer-events: auto; /* Permite la interacción en la tarjeta */
 }
 

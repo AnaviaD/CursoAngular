@@ -100,6 +100,7 @@ export class FloatingCardComponent {
     methodologies: "FletesTransportes.methodologies" ,
     achievementTitle: "FletesTransportes.achievementTitle" ,
     achievements: "FletesTransportes.achievements" ,
+    images: "FletesTransportes.images" ,
     timeTitle: "FletesTransportes.timeTitle" ,
     time: "FletesTransportes.time" ,
   };
@@ -136,6 +137,7 @@ export class FloatingCardComponent {
     methodologies: "FletesTransportes02.methodologies",
     achievementTitle: "FletesTransportes02.achievementTitle",
     achievements: "FletesTransportes02.achievements",
+    images: "FletesTransportes02.images",
     timeTitle: "FletesTransportes02.timeTitle",
     time: "FletesTransportes02.time",
   };
@@ -179,6 +181,7 @@ export class FloatingCardComponent {
     title:"pp03.title",
     techTitle:"pp03.techTitle",
     tech:"pp03.tech",
+    images:"pp03.images",
     descTitle:"pp03.descTitle",
     description:"pp03.description"
   };
@@ -187,6 +190,7 @@ export class FloatingCardComponent {
     title: "pp04.title",
     techTitle: "pp04.techTitle",
     tech: "pp04.tech",
+    images: "pp04.images",
     descTitle: "pp04.descTitle",
     description: "pp04.description",
   };
@@ -195,6 +199,7 @@ export class FloatingCardComponent {
     title: "pp05.title",
     techTitle: "pp05.techTitle",
     tech: "pp05.tech",
+    images: "pp05.images",
     descTitle: "pp05.descTitle",
     description: "pp05.description",
   };
@@ -212,6 +217,7 @@ export class FloatingCardComponent {
     techTitle: "pp07.techTitle",
     tech: "pp07.tech",
     descTitle: "pp07.descTitle",
+    images: "pp07.images",
     description: "pp07.description",
   };
 
