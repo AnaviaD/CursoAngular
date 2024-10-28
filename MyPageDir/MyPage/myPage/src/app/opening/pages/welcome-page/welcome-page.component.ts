@@ -76,7 +76,7 @@ export class WelcomePageComponent implements AfterViewInit {
   }
 
   handleVisibilityChange(isVisible: boolean) {
-    console.log('cerrar ventana: ', isVisible);
+    // console.log('cerrar ventana: ', isVisible);
     this.isVisible = true;
   }
 

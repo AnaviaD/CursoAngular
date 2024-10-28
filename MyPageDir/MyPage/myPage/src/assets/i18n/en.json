@@ -362,10 +362,10 @@
     "description": "I developed a security system using a Raspberry Pi with a camera and Python along with OpenCV for QR code tracking. The initial project involved detecting movements and triggering an alarm in case of suspicious activity, functioning as a basic security system. This proposal has the potential to scale by adding advanced object detection capabilities for dangerous items like knives, weapons, or other threats, using real-time object recognition algorithms, thereby improving the system's precision and ability to react to risk situations."
   },
   "pp07": {
-    "title": "Juego para celular",
-    "techTitle": "Tecnologías utilizadas:",
+    "title": "Mobile Game",
+    "techTitle": "Technologies Used:",
     "tech": ["assets/mySVGs/CSharp.svg", "assets/mySVGs/Unity.svg", "assets/mySVGs/JSON.svg"],
-    "descTitle": "Descripción:",
+    "descTitle": "Description:",
     "images": [
       "assets/imgObj/goryGame (1).jpeg",
       "assets/imgObj/goryGame (2).jpeg",
@@ -378,15 +378,15 @@
       "assets/imgObj/goryGame (9).jpeg",
       "assets/imgObj/goryGame (10).jpeg",
       "assets/imgObj/code.gif"
-     ],
-    "description": "Desarrollé un juego para celular tipo runner en Unity utilizando C#. El juego incluye cuatro niveles con una dificultad progresiva, en los que cambian la velocidad de los enemigos y los obstáculos en cada mapa. Los assets fueron creados en Blender, y el juego cuenta con una integración a través de una API en C# para guardar y consultar los puntajes en una base de datos en SQL. El juego fue publicado en la Play Store de Android, aunque posteriormente fue retirado de la plataforma."
+    ],
+    "description": "I developed a mobile runner game in Unity using C#. The game includes four levels with progressive difficulty, where enemy speed and obstacles change with each map. The assets were created in Blender, and the game has an integration through a C# API to save and retrieve scores in a SQL database. The game was published on the Android Play Store but was later removed from the platform."
   },
   "curso01": {
     "title": "ANGULAR and ASP.NET Core REST API - Real World Application.",
-    "techTitle": "Tecnologías utilizadas:",
+    "techTitle": "Technologies Used:",
     "tech": ["assets/mySVGs/CSharp.svg", "assets/mySVGs/Angular.svg", "assets/mySVGs/JSON.svg"],
     "techtack": ["Instructor: Sameer Saini"],
-    "dutiesTitle": "Temas:",
+    "dutiesTitle": "Topics:",
     "duties": [
       "Angular CLI", "Angular Components", "Angular Routing", "Angular Services", "HTTP calls", "CORS",
       "Use Bootstrap CSS in Angular applications", "Create reusable components", "CRUD operations (Create Read Update Delete)",
@@ -396,73 +396,73 @@
       "Create ASPNET Core APIs from scratch using C#", "Create endpoints and action methods",
       "CRUD operations in ASP.NET Core (Create Read Update Delete)", "Install and Use Entity Framework Core to connect to SQL Server database",
       "Understand and implement Entity framework core relationships", "Domain-Driven Design Patterns (DDD)", "Repository Pattern in ASP.NET Core",
-      "Domain Modelling", "Entity Framework Code First Approach", "SQL Server", "Seeding the Database", "HTTP Web Methods",
+      "Domain Modeling", "Entity Framework Code First Approach", "SQL Server", "Seeding the Database", "HTTP Web Methods",
       "Authentication and Authorization", "JWT Tokens", "Role Based Authorization", "Image Upload in ASP.NET Core Web API",
-      "Write Clean, Re-Usable Code"
+      "Write Clean, Reusable Code"
     ]
   },
   "curso02": {
-    "title": "Node: De cero a experto.",
-    "techTitle": "Tecnologías utilizadas:",
+    "title": "Node: From Zero to Expert.",
+    "techTitle": "Technologies Used:",
     "tech": ["assets/mySVGs/NPM.svg", "assets/mySVGs/node01.svg", "assets/mySVGs/JSON.svg", "assets/mySVGs/GitHub.svg"],
     "techtack": ["Instructor: Fernando Herrera"],
-    "dutiesTitle": "Temas:",
+    "dutiesTitle": "Topics:",
     "duties": [
       "SocketIO", "JWT", "Git", "GitHub", "JSON", "Google Services", "Google APIs", "Heroku", "MySQL", "TypeScript",
-      "PostMan", "Express", "YARGS", "Aplicaciones de consola básicas e interactivas", "Mongo Compass", "Paquetes", "NPM",
-      "RESTServer", "Socket Server", "Consumo de servicios", "Creación de archivos", "Despliegues"
+      "PostMan", "Express", "YARGS", "Basic and interactive console applications", "Mongo Compass", "Packages", "NPM",
+      "RESTServer", "Socket Server", "Service consumption", "File creation", "Deployments"
     ]
   },
   "curso03": {
-    "title": "JavaScript Moderno: Guía para dominar el lenguaje.",
-    "techTitle": "Tecnologías utilizadas:",
+    "title": "Modern JavaScript: Guide to Mastering the Language.",
+    "techTitle": "Technologies Used:",
     "tech": ["assets/mySVGs/NPM.svg", "assets/mySVGs/JavaScript.svg", "assets/mySVGs/JSON.svg", "assets/mySVGs/GitHub.svg"],
     "techtack": ["Instructor: Fernando Herrera"],
-    "dutiesTitle": "Temas:",
+    "dutiesTitle": "Topics:",
     "duties": [
-      "Bases de JavaScript", "Tipos de datos", "Objetos", "Operadores", "Ciclos", "ESNext", "Clases", "Propiedades privadas",
-      "Node", "Npm", "Instalación de paquetes en proyectos de JavaScript", "Promesas", "Callbacks", "CRUD",
-      "Modals manuales", "Carga de archivos", "Fetch", "Funciones generadoras", "Vite", "Mappers",
-      "JSDocs y documentación de funciones", "VSCode con tipos de datos en JavaScript", "Manipulación del DOM"
+      "JavaScript Basics", "Data Types", "Objects", "Operators", "Loops", "ESNext", "Classes", "Private Properties",
+      "Node", "Npm", "Installing packages in JavaScript projects", "Promises", "Callbacks", "CRUD",
+      "Manual modals", "File upload", "Fetch", "Generator functions", "Vite", "Mappers",
+      "JSDocs and function documentation", "VSCode with data types in JavaScript", "DOM Manipulation"
     ]
   },
   "curso04": {
-    "title": "Angular: De cero a experto.",
-    "techTitle": "Tecnologías utilizadas:",
+    "title": "Angular: From Zero to Expert.",
+    "techTitle": "Technologies Used:",
     "tech": ["assets/mySVGs/NPM.svg", "assets/mySVGs/JavaScript.svg", "assets/mySVGs/JSON.svg", "assets/mySVGs/Angular.svg"],
     "techtack": ["Instructor: Fernando Herrera"],
-    "dutiesTitle": "Temas:",
+    "dutiesTitle": "Topics:",
     "duties": [
-      "Bases de TypeScript y ESCMAScript", "Hola Mundo en Angular", "Componentes", "Directivas", "Servicios", "Módulos",
-      "Todos los pipes de Angular", "Rutas", "Rutas Hijas", "Carga perezosa o Lazyload de módulos", "Guards", "Protección de rutas",
-      "Autenticación mediante JsonWebTokens", "Mapas", "Uso de librerías de terceros escritas en Angular", "Uso de librerías NO escritas para Angular",
-      "Consumo de APIs", "CRUD", "SPA", "Git", "GitHub", "Despliegues a producción", "MongoDB", "Node",
-      "Re-utilización de componentes, directivas, servicios", "Comunicación entre componentes y módulos", "Uso de extensiones reactivas",
+      "TypeScript and ECMAScript basics", "Hello World in Angular", "Components", "Directives", "Services", "Modules",
+      "All Angular pipes", "Routes", "Child Routes", "Lazy Loading modules", "Guards", "Route Protection",
+      "Authentication with JsonWebTokens", "Maps", "Using third-party libraries written for Angular", "Using libraries not written for Angular",
+      "API consumption", "CRUD", "SPA", "Git", "GitHub", "Production deployments", "MongoDB", "Node",
+      "Component, directive, and service reuse", "Component and module communication", "Using reactive extensions",
       "PrimeNG", "Material Design", "Bootstrap", "Tailwind", "Defer", "Triggers", "Signals", "Writable Signals", "Computed Signals"
     ]
   },
   "curso05": {
-    "title": "Principios SOLID y Clean Code",
-    "techTitle": "Tecnologías utilizadas:",
+    "title": "SOLID Principles and Clean Code",
+    "techTitle": "Technologies Used:",
     "tech": ["assets/mySVGs/NPM.svg", "assets/mySVGs/JavaScript.svg", "assets/mySVGs/JSON.svg", "assets/mySVGs/TypeScript.svg"],
     "techtack": ["Instructor: Fernando Herrera"],
-    "dutiesTitle": "Temas:",
+    "dutiesTitle": "Topics:",
     "duties": [
       "S – Single Responsibility Principle (SRP)", "O – Open/Closed Principle (OCP)", "L – Liskov Substitution Principle (LSP)",
       "I – Interface Segregation Principle (ISP)", "D – Dependency Inversion Principle (DIP)"
     ]
   },
   "curso06": {
-    "title": "Curso completo programación C# en .Net",
-    "techTitle": "Tecnologías utilizadas:",
+    "title": "Complete Programming Course in C# with .Net",
+    "techTitle": "Technologies Used:",
     "tech": ["assets/mySVGs/NPM.svg", "assets/mySVGs/CSharp.svg", "assets/mySVGs/JSON.svg", "assets/mySVGs/NETcore.svg"],
     "techtack": ["Instructor: Alberto Picazo"],
-    "dutiesTitle": "Temas:",
+    "dutiesTitle": "Topics:",
     "duties": [
-      "Inicialización a SQL Server", "Iniciación a Entity Framework Core", "Clean Code", "Iniciación a Azure",
-      "Principios SOLID", "Principios API REST", "Conceptos de Inyección Dependencias en .Net Core",
-      "Creación de API de .Net Core desde cero", "OpenApi / Swagger en proyectos de API de .Net Core",
-      "HttpClientFactory en Net Core 2.1+"
+      "SQL Server Basics", "Introduction to Entity Framework Core", "Clean Code", "Introduction to Azure",
+      "SOLID Principles", "REST API Principles", "Dependency Injection Concepts in .Net Core",
+      "Creating .Net Core API from Scratch", "OpenApi / Swagger in .Net Core API projects",
+      "HttpClientFactory in .Net Core 2.1+"
     ]
   },
   "curso07": {
