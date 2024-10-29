@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ContactComponent } from './components/contact/contact.component';
+import { InfoComponent } from './components/info/info.component';
 
 
 
@@ -31,7 +32,8 @@ import { ContactComponent } from './components/contact/contact.component';
     TransportComponent,
     MainCardComponent,
     CarouselComponent,
-    ContactComponent
+    ContactComponent,
+    InfoComponent
   ],
   imports: [
     CommonModule,
@@ -50,6 +52,7 @@ import { ContactComponent } from './components/contact/contact.component';
   exports: [
     MainCardComponent,
     ContactComponent,
+    InfoComponent,
     FloatingCardComponent
   ]
 })

@@ -1,7 +1,7 @@
 .floating-btn {
   position: fixed;
   width: 8.33%; /* 1/12 de la pantalla */
-  height: 100px;
+  height: 10px;
   font-size: 1.5em;
   color: white;
   border: none;
@@ -37,6 +37,13 @@
 
 .right-btn-two {
   top: 20%;
+  right: 15px; /* Margen derecho de 15px */
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3); /* Fondo negro transparente al 70% */
+}
+
+.right-btn-inf{
+  top: 30%;
   right: 15px; /* Margen derecho de 15px */
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.3); /* Fondo negro transparente al 70% */

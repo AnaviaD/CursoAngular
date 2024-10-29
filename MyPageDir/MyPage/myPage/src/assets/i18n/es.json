@@ -516,6 +516,21 @@
       "Ajuste de la iluminación y mapas de entorno para coincidir con Blender"
     ]
   },
+  "pageInfo": {
+    "title": "Información de la Página",
+    "techTitle": "Tecnologías Utilizadas:",
+    "tech": [
+      "assets/mySVGs/Azure.svg",
+      "assets/mySVGs/Docker.svg",
+      "assets/mySVGs/NPM.svg",
+      "assets/mySVGs/Angular.svg",
+      "assets/mySVGs/Three.svg",
+      "assets/mySVGs/Blender.svg",
+      "assets/mySVGs/Bootstrap.svg"
+    ],
+    "descTitle": "Descripción:",
+    "description": "Este proyecto es una aplicación web 3D interactiva desarrollada con Three.js y Angular, proporcionando una experiencia de usuario dinámica y atractiva con gráficos renderizados en tiempo real. Los modelos 3D fueron diseñados en Blender, garantizando detalles y optimización visual en cada elemento. La interfaz de usuario ha sido desarrollada con Bootstrap, logrando un diseño responsivo que asegura una navegación fluida y accesible desde cualquier dispositivo. La aplicación está implementada en un contenedor Docker para una portabilidad eficiente y desplegada en Microsoft Azure, beneficiándose de su capacidad de escalabilidad y alta disponibilidad para un rendimiento confiable. Este sistema combina la potencia de Three.js, Angular y Docker sobre la infraestructura de Azure, ofreciendo una plataforma robusta y atractiva que permite a los usuarios explorar contenido 3D de forma interactiva y accesible."
+  },
 
 
 
