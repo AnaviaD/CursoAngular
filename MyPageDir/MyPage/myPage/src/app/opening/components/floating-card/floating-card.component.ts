@@ -441,8 +441,10 @@ export class FloatingCardComponent {
 
   close() {
     this.isVisible = false;
-    this.visibilityChange.emit(this.isVisible);
     this.contentToShow = null; // Resetea el contenido cuando cierras
+    setTimeout(() => {
+      this.visibilityChange.emit(this.isVisible);
+    }, 100);
   }
 
   getTranslationKey(property: string): string {
