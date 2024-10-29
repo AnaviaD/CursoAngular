@@ -22,7 +22,8 @@ body {
   height: 80%;
   background-color: rgba(255, 255, 255, 0.249);
   border-radius: 50px;
-  padding: 20px;
+  padding: 5px;
+  padding-bottom: 100px;
   overflow-y: hidden;
   overflow-x: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -36,6 +37,7 @@ body {
   overflow-x: hidden; /* Activar scrollbar vertical */
   scrollbar-width: none;
   scrollbar-color: rgba(165, 157, 211, 0.5) transparent;
+  border-radius: 10%;
 }
 
 .mainDiv::-webkit-scrollbar {
@@ -93,7 +95,11 @@ body {
   background-color: transparent;
 }
 
-
+.btn-group-main{
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
 
 
 .svg-card {
@@ -119,23 +125,14 @@ body {
 
 
 .close-btn {
-  position: absolute;
-  top: 15px;
-  right: 25px;
   background-color: transparent;
   border: none;
   font-size: 1.5em;
   cursor: pointer;
 }
 
-.close-btn img {
-  width: 24px; /* Ajusta el tamaño como prefieras */
-  height: 24px;
-}
-
 .language-btn .row {
-  cursor: pointer;
-  position: absolute;
+  position:fixed;
   top: 10px;
   right: 20px;
   font-size: 1.5em;
@@ -143,8 +140,8 @@ body {
 }
 
 .language-btn img {
-  width: 24px; /* Ajusta el tamaño como prefieras */
-  height: 24px;
+  width: 10%; /* Ajusta el tamaño como prefieras */
+  height: 10%;
 }
 
 .language-btn button {
@@ -159,7 +156,15 @@ body {
   margin: 0; /* Elimina el margen */
 }
 
-.language-btn img, .close-btn img {
+.close-btn img {
+  width: 50px; /* Ajusta el tamaño de las imágenes */
+  height: 50px;
+  display: block; /* Asegura que la imagen ocupe todo el botón */
+  padding: 0; /* Elimina el padding de las imágenes */
+  border: none; /* Asegúrate de que no haya bordes */
+}
+
+.language-btn img {
   width: 24px; /* Ajusta el tamaño de las imágenes */
   height: 24px;
   display: block; /* Asegura que la imagen ocupe todo el botón */

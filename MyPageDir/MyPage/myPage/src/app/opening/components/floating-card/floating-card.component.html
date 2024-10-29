@@ -2,8 +2,8 @@
   <div class="overlay" *ngIf="isVisible">
     <div class="floating-card ">
 
-      <div class="row">
-        <div class="btn-group-left">
+      <div class="row btn-group-main">
+        <div class="col-5 col-md-5 d-flex justify-content-start">
           <!-- alinear a la izq -->
           <button class="language-btn" (click)="changetoSp()">
             <img src="assets/mySVGs/spain-flag.svg" class="icon-img" alt="">
@@ -15,8 +15,8 @@
         </div>
 
         <!-- alinear a la derecha -->
-         <div class="btn-group-right">
-           <button class="close-btn" (click)="close()">
+         <div class="col-7 col-md-7 d-flex justify-content-start">
+           <button class="close-btn btn btn-lg" (mouseup)="close()">
              <img src="assets/mySVGs/circle-xmark.svg" alt="">
            </button>
          </div>
@@ -158,9 +158,8 @@
           </div>
 
 
-        </div>
       </div>
-
+    </div>
   </div>
 </div>
 
