@@ -3,7 +3,7 @@
     <div class="floating-card ">
 
       <div class="row justify-content-between">
-        <div class="col-6 col-md-4">
+        <div class="col-5 col-md-5">
           <!-- alinear a la izq -->
            <div class="d-flex">
              <button class="btn header-btn" (click)="changetoSp()">
@@ -17,69 +17,72 @@
           </div>
 
           <!-- alinear a la derecha -->
-          <div class="col-6 col-md-4 d-flex justify-content-end">
+          <div class="col-7 col-md-7 d-flex justify-content-start">
             <button class="btn btn-secondary ml-auto header-btn" (click)="close()">
-              <img class="header-btn-img" src="assets/mySVGs/circle-xmark.svg" alt="">
+              <img class="close-btn-img" src="assets/mySVGs/circle-xmark.svg" alt="">
             </button>
           </div>
       </div>
 
-      <div class="profile-card card">
-        <div class="card-body">
-          <div class="row ">
+      <div class="mainDiv">
+        <div class="profile-card card">
+          <div class="card-body">
+            <div class="row ">
 
-            <div class="col-12 col-md-4 profile-image">
-              <img src="assets/imgObj/prof.png" alt="Foto de perfil">
-            </div>
-
-            <div class="col-12 col-md-8 profile-info">
-              <h2>{{ getTranslationKey('title')  | translate }}</h2>
-              <p>{{ getTranslationKey('secProf')  | translate }} <span>{{ getTranslationKey('prof')  | translate }}</span> / <span>{{ getTranslationKey('prof01')  | translate }}</span></p>
-            </div>
-            <br>
-
-            <div class="col-12 col-md-12 d-flex justify-content-end">
-              <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" [(ngModel)]="isSwitchOn">
-                <label class="form-check-label" for="flexSwitchCheckDefault">{{ getTranslationKey('switchTitle') | translate }}</label>
+              <div class="col-12 col-md-4 profile-image">
+                <img src="assets/imgObj/prof.png" alt="Foto de perfil">
               </div>
-            </div>
-            <br>
 
-            <div class="col-12 col-md-12 profile-info"
-            *ngIf="isSwitchOn">
-              <p class="description">
-                {{ getTranslationKey('description01')  | translate }}
-                <br>
-                <br>
-                {{ getTranslationKey('description02')  | translate }}
-                <br>
-                <br>
-                {{ getTranslationKey('description03')  | translate }}
-                <br>
-                <br>
-                {{ getTranslationKey('description04')  | translate }}
-                <br>
-                <br>
-                {{ getTranslationKey('description05')  | translate }}
-                <br>
-                <br>
-                {{ getTranslationKey('description06')  | translate }}
-                <br>
-                <br>
-              </p>
-            </div>
+              <div class="col-12 col-md-8 profile-info">
+                <h2>{{ getTranslationKey('title')  | translate }}</h2>
+                <p>{{ getTranslationKey('secProf')  | translate }} <span>{{ getTranslationKey('prof')  | translate }}</span> / <span>{{ getTranslationKey('prof01')  | translate }}</span></p>
+              </div>
+              <br>
 
-              <div *ngIf="!isSwitchOn">
-                <div class="col-12 col-md-12 d-flex justify-content-center profile-info">
-                  <app-carousel></app-carousel>
+              <div class="col-12 col-md-12 d-flex justify-content-end">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" [(ngModel)]="isSwitchOn">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">{{ getTranslationKey('switchTitle') | translate }}</label>
                 </div>
               </div>
+              <br>
 
+              <div class="col-12 col-md-12 profile-info"
+              *ngIf="isSwitchOn">
+                <p class="description">
+                  {{ getTranslationKey('description01')  | translate }}
+                  <br>
+                  <br>
+                  {{ getTranslationKey('description02')  | translate }}
+                  <br>
+                  <br>
+                  {{ getTranslationKey('description03')  | translate }}
+                  <br>
+                  <br>
+                  {{ getTranslationKey('description04')  | translate }}
+                  <br>
+                  <br>
+                  {{ getTranslationKey('description05')  | translate }}
+                  <br>
+                  <br>
+                  {{ getTranslationKey('description06')  | translate }}
+                  <br>
+                  <br>
+                </p>
+              </div>
+
+                <div *ngIf="!isSwitchOn">
+                  <div class="col-12 col-md-12 d-flex justify-content-center profile-info">
+                    <app-carousel></app-carousel>
+                  </div>
+                </div>
+
+            </div>
           </div>
-        </div>
 
+        </div>
       </div>
+
 
 
 

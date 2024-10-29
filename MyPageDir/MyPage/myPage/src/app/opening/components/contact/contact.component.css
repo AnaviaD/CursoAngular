@@ -31,6 +31,30 @@
   height: 24px;
 }
 
+.close-btn-img{
+  width: 40px;
+  height: 40px;
+}
+
+.mainDiv {
+  height: 100%;
+  overflow-y: auto; /* Activar scrollbar vertical */
+  overflow-x: hidden; /* Activar scrollbar vertical */
+  scrollbar-width: none;
+  scrollbar-color: rgba(165, 157, 211, 0.5) transparent;
+  border-radius: 10%;
+}
+
+.mainDiv::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mainDiv::-webkit-scrollbar-thumb {
+  background-color: rgba(165, 157, 211, 0.5);
+  border-radius: 30px;
+}
+
+
 .svg-btn-img {
   width: 24px;
   height: 24px;
@@ -47,7 +71,7 @@
   height: 100%;
   background-color: #000;
   border-radius: 40px;
-  padding: 40px;
+  padding: 10px;
   color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
