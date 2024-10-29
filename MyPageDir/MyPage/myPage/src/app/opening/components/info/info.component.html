@@ -61,13 +61,11 @@
 
           <!-- Row 2: SVG Cards with horizontal scroll -->
           <div *ngIf="getTranslationKey('tech')">
-            <div class="card">
-              <div class="svg-scroll-wrapper">
-                <div class="svg-container">
-                  <div class="svg-card">
-                    <div *ngFor="let tech of (getTranslationKey('tech') | translate)">
-                      <img [src]="tech" alt="Tech Image">
-                    </div>
+            <div class="row card subtitle-card">
+              <div class="svg-container">
+                <div class="svg-card">
+                  <div *ngFor="let tech of (getTranslationKey('tech') | translate)">
+                    <img [src]="tech" alt="Tech Image">
                   </div>
                 </div>
               </div>

@@ -329,6 +329,14 @@ export class FloatingCardComponent {
     duties: "curso12.duties",
   };
 
+  infoPage = {
+    title: "pageInfo.title",
+    descTitle: "pageInfo.descTitle",
+    description: "pageInfo.description",
+    techTitle: "pageInfo.techTitle",
+    tech: "pageInfo.tech",
+  };
+
 
   defaultContent = {
     title: 'stupidFriendly.title0',
@@ -430,6 +438,9 @@ export class FloatingCardComponent {
         break;
       case 29:
         this.contentToShow = this.curso10 ;
+        break;
+      case 30:
+        this.contentToShow = this.infoPage;
         break;
 
 

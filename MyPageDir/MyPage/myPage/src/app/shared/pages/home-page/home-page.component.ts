@@ -46,7 +46,7 @@ export class HomePageComponent {
   }
 
   infoPage(){
-    this.infocomponent.open(); // Call the open method to show the card
+    this.floatingCard.open(30); // Call the open method to show the card
   }
 
   initThreeJS(): void {
