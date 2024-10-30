@@ -15,7 +15,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MainCardComponent } from './components/main-card/main-card.component';
 import { FormsModule } from '@angular/forms';
 import { CarouselComponent } from './components/carousel/carousel.component';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ContactComponent } from './components/contact/contact.component';
 import { InfoComponent } from './components/info/info.component';
 
@@ -37,7 +36,6 @@ import { InfoComponent } from './components/info/info.component';
   ],
   imports: [
     CommonModule,
-    SlickCarouselModule,
     FormsModule,
     MatCardModule,
     OpeningRoutingModule,

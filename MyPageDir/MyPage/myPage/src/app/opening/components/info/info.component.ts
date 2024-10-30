@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
-  styleUrl: './info.component.css'
+  styleUrls: ['./info.component.css']
 })
 export class InfoComponent {
 
