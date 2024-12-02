@@ -36,10 +36,7 @@
         public  role            : string;
         public  lastAccess      : Date;
 
-        constructor({             
-            email,
-            role
-        } : UserProps)
+        constructor({ email, role } : UserProps)
         {            
             this.email          = email;
             this.role           = role;
@@ -61,7 +58,7 @@
         public workingDirectory        : string;
         public lastOpenFolder          : string;
 
-        constructor({ workingDirectory, lastOpenFolder}: Settings ) 
+        constructor({ workingDirectory, lastOpenFolder}: SettingsProps ) 
         {
             this.workingDirectory = workingDirectory;
             this.lastOpenFolder = lastOpenFolder;
