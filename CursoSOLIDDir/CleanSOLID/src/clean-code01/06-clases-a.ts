@@ -10,6 +10,15 @@
         ) {}
     }
 
+    const newPerson = new Person('Fenando', 'M', new Date('2014-01-21'));
+
+    console.log({newPerson});
+
+})();
+
+
+
+
     // Long ver
     // class Person{
     //     public name: string;
@@ -23,9 +32,3 @@
     //         this.birthdate = birthdate;
     //     }
     // }
-
-    const newPerson = new Person('Fenando', 'M', new Date('2014-01-21'));
-
-    console.log({newPerson});
-
-})();
