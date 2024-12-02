@@ -50,7 +50,6 @@
             this.email          = email;
             this.role           = role;
             this.lastAccess     = new Date();
-
         }
 
         checkCredentials() {
@@ -58,34 +57,51 @@
         }            
     }
 
-    // class UserSettings extends User{
-    //     constructor(
-    //         public workingDirectory : string,
-    //         public lastOpenFolder   : string,
-    //         email                   : string,
-    //         role                    : string,
-    //         name                    : string,
-    //         gender                  : Gender,
-    //         birthdate               : Date,
+    interface UserSettings{
+        workingDirectory        : string
+        lastOpenFolder          : string
+        email                   : string
+        role                    : string
+        name                    : string
+        gender                  : Gender
+        birthdate               : Date
+    }
 
-    //     ) 
-    //     {
-    //         super(email, role, name, gender, birthdate);
-    //     }
-    // }
+    class UserSettings extends User{
 
-    // const userSettings = new UserSettings(
-    //     '/usr/home',
-    //     '/home',
-    //     'fedelobo@gmail.lolcow',
-    //     'Admin',
-    //     'Fernando',
-    //     'M',
-    //     new Date('1985-10-21')
-    // );    
+        public workingDirectory        : string;
+        public lastOpenFolder          : string;
 
-    // console.log({   userSettings    });
-    // console.log({   areCredentiasAreTrue:userSettings.checkCredentials()    });
+        constructor({
+            workingDirectory,
+            lastOpenFolder,
+            email,
+            role,
+            name,
+            gender,
+            birthdate,
+        }: UserSettings ) 
+        {
+            super({email, role, name, gender, birthdate});
+            this.workingDirectory = workingDirectory;
+            this.lastOpenFolder = lastOpenFolder;
+        }
+    }
+
+    //Podemos observar como ahora el helper detecta el error pero el codigo sige corriendo
+
+    const userSettings = new UserSettings({
+        workingDirectory: '/usr/home',
+        lastOpenFolder: '/home',
+        email: 'fedelobo@gmail.lolcow',
+        role: 'Admin',
+        name: 'Fernando02',
+        gender: 'M',
+        birthdate:  new Date('1985-10-21')
+    });    
+
+    console.log({   userSettings    });
+    console.log({   areCredentiasAreTrue:userSettings.checkCredentials()    });
     
 })();
 
