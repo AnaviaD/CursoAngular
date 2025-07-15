@@ -1,5 +1,5 @@
 import './style.css'
-import './topics/04-homework-types';
+import './topics/06-function-destructuring';
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
 
