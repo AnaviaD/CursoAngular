@@ -3,7 +3,7 @@ import { Component, signal } from "@angular/core";
 
 
 @Component({
-  templateUrl: 'counter.component.html'
+  templateUrl: './counter-page.component.html'
 })
 export class CounterPageComponent {
 
