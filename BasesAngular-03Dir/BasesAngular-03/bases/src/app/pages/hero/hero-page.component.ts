@@ -1,4 +1,4 @@
-import { Component, signal } from "@angular/core";
+import { Component, computed, signal } from "@angular/core";
 
 
 @Component({
@@ -13,6 +13,12 @@ export class HeroPageComponent
   getHeroDescription() {
     return `${ this.name() } - ${ this.age() }`
   }
+
+  heroDescription = computed(() =>{
+    const description = `${this.name()} - ${this.age()}`
+    return description;
+  });
+
   changeHero() {
     this.name.set('spiderman')
     this.age.set(22)
