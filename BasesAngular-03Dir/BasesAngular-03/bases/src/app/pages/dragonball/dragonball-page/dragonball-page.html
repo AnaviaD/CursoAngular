@@ -2,9 +2,26 @@
 <hr>
 <section class="row">
   <div class="col-12 col-sm-6">
-    <h3>Agregar</h3>
-    <input placeholder="Nombre" type="text" class="form-control mt-2"/>
-    <input placeholder="Poder"  type="number" class="form-control mt-2"/>
+    <h3>Agregar: {{name()}} </h3>
+
+    <input
+    placeholder="Nombre"
+    type="text"
+    class="form-control mt-2"
+    [value]="name()"
+    (change)="name.set(txtName.value)"
+    #txtName
+    />
+    <h3>{{power()}}</h3>
+
+    <input
+    placeholder="Poder"
+    type="number"
+    class="form-control mt-2"
+    [value]="power()"
+    (change)="power.set(txtPower.valueAsNumber)"
+    #txtPower
+    />
 
     <button class="mt-2 btn btn-primary">Agregar</button>
 
