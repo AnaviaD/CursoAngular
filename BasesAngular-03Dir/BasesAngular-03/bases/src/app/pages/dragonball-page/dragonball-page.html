@@ -12,7 +12,6 @@
     (change)="name.set(txtName.value)"
     #txtName
     />
-    <h3>{{power()}}</h3>
 
     <input
     placeholder="Poder"
@@ -23,7 +22,8 @@
     #txtPower
     />
 
-    <button class="mt-2 btn btn-primary">Agregar</button>
+    <button (click)="addCharacter()"
+    class="mt-2 btn btn-primary">Agregar</button>
 
   </div>
 
