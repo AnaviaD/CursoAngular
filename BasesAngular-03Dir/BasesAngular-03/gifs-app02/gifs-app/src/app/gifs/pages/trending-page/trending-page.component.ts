@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { GiftListComponent } from "../../components/gift-list/gift-list.component";
 
 @Component({
   selector: 'app-trending-page',
-  imports: [],
+  imports: [GiftListComponent],
   templateUrl: './trending-page.component.html',
 })
 export default class TrendingPageComponent { }
