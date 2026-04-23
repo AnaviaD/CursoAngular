@@ -1,5 +1,5 @@
 import './style.css'
-import './topics/01-basics-types'
+import './topics/05-basic-destructuring'
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
 
