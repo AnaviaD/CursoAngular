@@ -24,10 +24,14 @@ const audioPlayer: AudioPlayer = {
 const { song: anotherSong } = audioPlayer;
 const { author: autor01, year: year01 } = audioPlayer.details;
 
-console.log(`Song:`, anotherSong)
-console.log(`Song:`, autor01)
-console.log(`Song:`, year01)
+// console.log(`Song:`, anotherSong)
+// console.log(`Song:`, autor01)
+// console.log(`Song:`, year01)
 
+
+const [ p1, p2, p3]: string[] = ['Goku', 'Vegeta', 'Trunks'];
+
+console.log('Personaje 3:', p3 || 'Personaje no encontrado')
 
 
 export {};
