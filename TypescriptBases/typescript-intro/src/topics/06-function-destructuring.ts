@@ -18,27 +18,31 @@ interface TaxCalculationOptions{
     products: Product[];
 }
 
-function taxCalculation(options: TaxCalculationOptions): number[]{
+// function taxCalculation({tax, products}: TaxCalculationOptions): [number, number]{
+function taxCalculation(options: TaxCalculationOptions): [number, number]{
+    const {products, tax} = options
+    
     let total = 0;
+    
+    products.forEach( ({    price   }) =>  {
 
-    options.products.forEach( product =>  {
-        total += product.price;
+        total += price;
     });
 
-    return [total, total*options.tax];
+    return [total, total*tax];
 }
 
 const shoppingCart = [phone, tablet];
 const tax = 0.15;
 
 
-const result = taxCalculation({
+const [result, taxR] = taxCalculation({
     products: shoppingCart,
     tax
 });
 
-console.log('Total', result[0])
-console.log('Tax', result[1])
+console.log('Total', result)
+console.log('Tax', taxR)
 
 
 export {};
