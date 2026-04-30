@@ -1,5 +1,6 @@
 const skills: string[]  = ['Bash', 'Counter', 'Healing'];
 
+console.log(skills)
 
 interface Character{
     name: string;
