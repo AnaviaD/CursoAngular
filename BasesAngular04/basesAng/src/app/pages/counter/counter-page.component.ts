@@ -1,4 +1,4 @@
-import { Component, signal } from "@angular/core";
+import { ChangeDetectionStrategy, Component, signal } from "@angular/core";
 
 @Component({
   templateUrl: './counter-page.component.html',
@@ -8,11 +8,21 @@ import { Component, signal } from "@angular/core";
     margin: 5px 10px;
     width: 75px;
   }
-  `
+  `,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class counterPageComponent{
   counter = 10;
   counterSignal = signal(10);
+
+  constructor(){
+    setInterval(() =>{
+      this.counter += 1;
+      // this.counterSignal.update( (v) => v + 1)
+      this.counterSignal.update( (current) => current + 1)
+      console.log('Tick');
+    }, 2000)
+  }
 
   increaseBy(value:number){
     this.counter += value;
