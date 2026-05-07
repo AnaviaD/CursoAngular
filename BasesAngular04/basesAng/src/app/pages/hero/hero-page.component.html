@@ -1,4 +1,4 @@
-<h1>{{ name() }}</h1>
+<h1>{{ name().toUpperCase() }}</h1>
 
 <dl>
   <td>Nombre:</td>
@@ -8,11 +8,11 @@
   <dd>{{ age() }}</dd>
 
   <td>Método:</td>
-  <dd>{{ getHeroDescription() }}</dd>
+  <dd>{{ heroDescription() }}</dd>
 
   <td>Capitalizado:</td>
   <!-- ! Intentar  -->
-  <!-- <dd> {{ 'Mostrar nombre TODO EN MAYÚSCULAS' }} </dd> -->
+  <dd> {{ capitalizedName() }} </dd>
 </dl>
 
 <button (click)="changeHero()" class="btn btn-primary mx-2">
