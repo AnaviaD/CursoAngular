@@ -20,9 +20,14 @@ carrito.push(producto)
 carrito.push(producto01)
 carrito.push(producto02)
 
-console.log(carrito)
+console.table(carrito)
 
 //Elimina ultimo elemento de un arreglo
 carrito.pop()
 
-console.log(carrito)
+console.table(carrito)
+
+//Eliminamos desde el inicio
+carrito.shift()
+
+console.table(carrito)
