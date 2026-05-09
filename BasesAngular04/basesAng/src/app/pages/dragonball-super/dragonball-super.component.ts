@@ -10,10 +10,6 @@ import { CharacterAddComponent } from "../../components/dragonball/character-add
 })
 export class DragonballSuperPageComponent {
 
-  name = signal('Gohan');
-  power = signal(100);
-
-
   characters = signal<Character[]>([
     { id: 1, name: 'Goku', power:9001},
     { id: 2, name: 'Vegeta', power:8000},
@@ -21,38 +17,9 @@ export class DragonballSuperPageComponent {
     { id: 4, name: 'Yamcha', power:300},
   ]);
 
-  powerClasses = computed(() =>{
-    return{
-      'text-danger': true
-    }
-  })
-
-  addCharacter(){
-    if(!this.name() || !this.power() || this.power() <= 0)
-    {
-      return;
-    }
-
-    const newCharacter: Character = {
-      id: this.characters.length + 1,
-      name: this.name(),
-      power: this.power()
-    }
-
-    this.characters.update(
-      (list) => [... list, newCharacter]
-    );
-
-
-    console.log(`${this.name()} - ${this.power()}`)
-
-    this.resetFields()
+  addCharacter(character: Character){
+    console.log('llego aqui')
+    this.characters.update((list) => [... list, character]);
   }
 
-  resetFields()
-  {
-    this.name.set('');
-    this.power.set(0)
-
-  }
 }
