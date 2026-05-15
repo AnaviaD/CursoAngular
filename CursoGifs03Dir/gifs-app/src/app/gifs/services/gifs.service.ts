@@ -31,4 +31,8 @@ export class GifService {
         console.log({gifs})
       });
   }
+
+  searchGifs(query:string){
+
+  }
 }
