@@ -55,10 +55,9 @@ export class GifService {
           }))
         })
       )
+  }
 
-      // .subscribe((resp)=>{
-      //   const gifs = GifMapper.mapGiphyItemToGifArray(resp.data)
-      //   console.log({ search: gifs})
-      // });
+  getHistoryGifs(query:string):Gif[]{
+    return this.searchHistory()[query]  ?? [];
   }
 }
