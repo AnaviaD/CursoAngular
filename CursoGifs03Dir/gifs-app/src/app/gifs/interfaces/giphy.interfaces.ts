@@ -1,9 +1,9 @@
-export interface GiphyItem {
-  data: Data;
+export interface GiphyResponse {
+  data: GiphyItem[];
   meta: Meta;
 }
 
-export interface Data {
+export interface GiphyItem {
   type:                       string;
   id:                         string;
   url:                        string;
