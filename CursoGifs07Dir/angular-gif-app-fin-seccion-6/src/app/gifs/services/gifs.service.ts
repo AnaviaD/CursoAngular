@@ -11,12 +11,19 @@ export class Gifs {
   private http = inject(HttpClient);
   env = environment
 
+  constructor(){
+    this.loadTrendingGifs()
+  }
+
   loadTrendingGifs(){
+    console.log("hola")
     this.http.get<GiphyResponse>(`${this.env.giphyUrl}/gifs/trending`, {
       params: {
         api_key: this.env.giphyApiKey,
         limit: 20,
       }
-    })
+    }).subscribe( (resp)=>{
+      console.log(resp);
+    });
   }
 }
