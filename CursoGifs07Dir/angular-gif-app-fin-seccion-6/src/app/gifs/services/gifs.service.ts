@@ -10,9 +10,10 @@ import { GifMapper } from '../mapper/gifs.mapper';
 })
 export class Gifs {
 
-  private http = inject(HttpClient);
   env = environment
+  private http = inject(HttpClient);
   trendingGifs = signal<Gif[]>([])
+  trendingGifsLoading = signal(true);
 
   constructor(){
     this.loadTrendingGifs()
@@ -28,6 +29,7 @@ export class Gifs {
     }).subscribe( (resp)=>{
       const gifs = GifMapper.mapGiphyItemsToGifArray(resp.data);
       this.trendingGifs.set(gifs);
+      this.trendingGifsLoading.set(false)
       console.log(gifs);
     });
   }
