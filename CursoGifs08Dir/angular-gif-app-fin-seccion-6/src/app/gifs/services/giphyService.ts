@@ -29,6 +29,7 @@ export class GiphyService {
     .subscribe((resp) =>{
       const gifs = GifMapper.mapGiphyItemToGifArray(resp.data);
       this.trendingGifs.set(gifs)
+      this.trendingGifsLoading.set(false)
       console.log(gifs)
     })
   }
