@@ -7,7 +7,7 @@ export class GifMapper{
     return {
       id: item.id,
       title: item.title,
-      url: item.url
+      url: item.images.original.url
     }
   }
 

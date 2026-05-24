@@ -15,6 +15,7 @@ export class GifService {
   env = environment
   private http = inject(HttpClient)
   trendingGifs = signal<Gif[]>([]);
+  trendingLoading = signal(true)
 
   LoadTrendingGifs(){
     this.http.get<GiphyResponse>(`${this.env.giphyUrl}/gifs/trending`,
@@ -26,6 +27,8 @@ export class GifService {
       }
     ).subscribe((resp) => {
       const gif = GifMapper.mapGiphyToGifArray(resp.data)
+      this.trendingGifs.set(gif)
+      this.trendingLoading.set(false)
       console.log(gif)
 
     })
