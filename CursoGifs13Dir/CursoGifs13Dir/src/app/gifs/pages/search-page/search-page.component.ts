@@ -1,16 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { GifListComponent } from "../../components/gif-list/gif-list.component";
 
 @Component({
   selector: 'app-search-page',
-  imports: [GifListComponent],
+  imports: [],
   templateUrl: './search-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class SearchPageComponent {
-
-  onSearch(query: string){
-    console.log(query)
-  }
-
-}
+export default class SearchPageComponent {}
