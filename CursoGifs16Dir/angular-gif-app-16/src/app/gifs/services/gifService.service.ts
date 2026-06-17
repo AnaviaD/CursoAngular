@@ -27,4 +27,17 @@ export class GifService {
       console.log(gifs)
     })
   }
+
+  searchGifsGifs(){
+    this.http.get<GiphyResponse>(`${environment.urlApi}/gifs/trending`,{
+      params:{
+        api_key: environment.giphyApiKey,
+        limit: 20
+      }
+    }).subscribe((resp) =>{
+      const gifs = GifMapper.giphyArrayToGifArray(resp.data)
+      this.trendingGifs.set(gifs)
+      console.log(gifs)
+    })
+  }
 }

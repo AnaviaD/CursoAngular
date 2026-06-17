@@ -6,4 +6,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './search-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class SearchPageComponent {}
+export default class SearchPageComponent {
+
+  onSearch(query: string){
+    console.log(query)
+  }
+
+}
