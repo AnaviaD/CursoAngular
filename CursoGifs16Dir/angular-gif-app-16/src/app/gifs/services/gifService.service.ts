@@ -11,6 +11,7 @@ export class GifService {
 
   private http = inject(HttpClient)
   trendingGifs = signal<myGif[]>([])
+  searchHistory = signal<Record<string, myGif[]>>({})
 
   constructor() {
     this.loadingTrendingGifs()
