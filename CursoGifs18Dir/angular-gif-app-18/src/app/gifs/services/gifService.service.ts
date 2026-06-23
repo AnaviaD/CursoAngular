@@ -50,4 +50,8 @@ export class GifService {
     )
   }
 
+  getHistoryGifs(query:string){
+    return this.searchHistory()[query] ?? [];
+  }
+
 }
