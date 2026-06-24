@@ -1,4 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+
 
 @Component({
   selector: 'app-gif-history',
@@ -6,4 +9,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './gif-history.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class GifHistory {}
+export default class GifHistory {
+
+  query = toSignal(
+    inject(ActivatedRoute).params
+  )
+
+}
