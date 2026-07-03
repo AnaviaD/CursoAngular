@@ -1,1 +1,13 @@
 <app-game-canvas></app-game-canvas>
+
+@if (gameState() === 'playing' || gameState() === 'paused') {
+  <app-hud />
+}
+
+@if (gameState() === 'menu') {
+  <app-main-menu (startGame)="onStartGame()" />
+}
+
+@if (gameState() === 'paused') {
+  <app-pause-menu (resume)="onResume()" (quit)="onQuit()" />
+}
