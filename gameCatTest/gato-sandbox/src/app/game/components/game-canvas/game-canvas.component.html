@@ -1,1 +1,23 @@
-<p>game-canvas works!</p>
+<canvas #gameCanvas class="game-canvas"></canvas>
+
+    <!-- Overlay de debug - quítalo cuando todo funcione -->
+    <div class="debug-panel">
+      <div class="status" [class.connected]="ws.connected()">
+        {{ ws.connected() ? '✅ Conectado' : '❌ Desconectado' }}
+      </div>
+      <div class="info" *ngIf="ws.connected()">
+        <p>🐱 <strong>{{ ws.myName() }}</strong></p>
+        <p>🆔 {{ ws.myId() }}</p>
+        <p>👥 Jugadores: {{ ws.playerCount() }}</p>
+        <hr>
+        <p *ngFor="let p of ws.players()">
+          {{ p.id === ws.myId() ? '👉' : '  ' }} {{ p.name }}
+          ({{ p.x.toFixed(0) }}, {{ p.z.toFixed(0) }})
+        </p>
+      </div>
+      <div class="controls">
+        <button (click)="ws.sendPing()">🏓 Ping</button>
+        <button (click)="ws.sendMessage('¡Hola desde el gato!')">💬 Chat</button>
+        <p class="hint">WASD para mover</p>
+      </div>
+    </div>
