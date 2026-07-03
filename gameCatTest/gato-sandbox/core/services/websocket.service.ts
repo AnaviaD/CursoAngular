@@ -35,7 +35,7 @@ export class WebsocketService {
   readonly messages$ = new Subject<ServerMessage>();
 
   // URL de tu servidor (ajústala si es necesario)
-  private url = 'ws://localhost:3000/ws';
+  private url = 'ws://34.195.140.148:3000/ws';
 
   /**
    * Conecta al servidor WebSocket
