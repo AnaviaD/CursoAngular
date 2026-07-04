@@ -5,16 +5,22 @@
       <div class="status" [class.connected]="ws.connected()">
         {{ ws.connected() ? '✅ Conectado' : '❌ Desconectado' }}
       </div>
-      <div class="info" *ngIf="ws.connected()">
-        <p>🐱 <strong>{{ ws.myName() }}</strong></p>
-        <p>🆔 {{ ws.myId() }}</p>
-        <p>👥 Jugadores: {{ ws.playerCount() }}</p>
-        <hr>
-        <p *ngFor="let p of ws.players()">
+
+@if (ws.connected()) {
+    <div class="info">
+      <p>🐱 <strong>{{ ws.myName() }}</strong></p>
+      <p>🆔 {{ ws.myId() }}</p>
+      <p>👥 Jugadores: {{ ws.playerCount() }}</p>
+      <hr>
+      @for (p of ws.players(); track p.id) {
+        <p>
           {{ p.id === ws.myId() ? '👉' : '  ' }} {{ p.name }}
           ({{ p.x.toFixed(0) }}, {{ p.z.toFixed(0) }})
         </p>
-      </div>
+      }
+    </div>
+  }
+
       <div class="controls">
         <button (click)="ws.sendPing()">🏓 Ping</button>
         <button (click)="ws.sendMessage('¡Hola desde el gato!')">💬 Chat</button>
