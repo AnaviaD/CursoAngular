@@ -1,4 +1,4 @@
-import { Component, Inject, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { GifListComponent } from '../../components/gif-list/gif-list.component';
 import { GifService } from '../../services/gif.service';
 
@@ -9,7 +9,7 @@ import { GifService } from '../../services/gif.service';
 })
 export default class TrendingPageComponent {
 
-  gifServis = Inject(GifService);
+  gifServis = inject(GifService);
 
   constructor(){
   }

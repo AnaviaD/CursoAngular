@@ -25,7 +25,7 @@ export class GifService {
     }).subscribe((data) =>{
       const gifs = GifMapper.giphyArrayToGifArray(data.data)
       this.trendingGifs.set(gifs)
-    })
+    });
   }
 
 
