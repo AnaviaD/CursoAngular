@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GameCanvasComponent } from "./game/components/game-canvas/game-canvas.component";
+import { GameCanvasComponent } from './game/components/game-canvas/game-canvas.component';
 
 
 export type GameState = 'menu' | 'playing' | 'paused' | 'gameover';

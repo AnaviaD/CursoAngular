@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WebsocketService } from '../../../../../core/services/websocket.service';
+import { WebsocketService } from '../../../core/services/websocket.service';
 
 @Component({
   selector: 'app-game-canvas',
