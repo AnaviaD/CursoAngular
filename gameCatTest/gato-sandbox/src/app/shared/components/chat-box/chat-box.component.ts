@@ -1,10 +1,11 @@
 import { Component, ElementRef, signal, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { WebsocketService } from '../../../core/services/websocket.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-chat-box',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './chat-box.component.html',
   styleUrl: './chat-box.component.scss'
 })
