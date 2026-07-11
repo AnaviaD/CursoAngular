@@ -27,3 +27,21 @@
         <p class="hint">WASD para mover</p>
       </div>
     </div>
+<canvas #gameCanvas class="game-canvas"></canvas>
+
+<!-- Botón de chat -->
+<button class="chat-toggle" (click)="toggleChat()">
+  💬
+</button>
+
+<!-- Chat flotante -->
+@if (showChat) {
+  <div class="chat-wrapper">
+    <app-chat-box />
+  </div>
+}
+
+<!-- Panel debug (el que ya tienes) -->
+<div class="debug-panel">
+  ...
+</div>

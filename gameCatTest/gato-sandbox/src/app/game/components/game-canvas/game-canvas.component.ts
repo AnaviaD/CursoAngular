@@ -1,16 +1,21 @@
 import { Component } from '@angular/core';
 import { WebsocketService } from '../../../core/services/websocket.service';
+import { ChatBoxComponent } from "../../../shared/components/chat-box/chat-box.component";
 
 @Component({
   selector: 'app-game-canvas',
-  imports: [],
+  imports: [ChatBoxComponent],
   templateUrl: './game-canvas.component.html',
   styleUrl: './game-canvas.component.scss'
 })
 export class GameCanvasComponent {
   private keysPressed = new Set<string>();
-
+  showChat = false;
   constructor(public ws: WebsocketService) {}
+
+  toggleChat(): void {
+    this.showChat = !this.showChat;
+  }
 
   ngOnInit(): void {
     // Conectar al servidor

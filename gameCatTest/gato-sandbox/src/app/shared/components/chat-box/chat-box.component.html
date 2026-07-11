@@ -1,1 +1,28 @@
-<p>chat-box works!</p>
+<div class="chat-container">
+  <div class="chat-header">
+    💬 Chat
+  </div>
+
+  <div class="messages" #scrollContainer>
+    @for (msg of messages(); track $index) {
+      <div class="message" [class.mine]="msg.mine">
+        <span class="sender">{{ msg.sender }}</span>
+        <span class="text">{{ msg.text }}</span>
+      </div>
+    }
+
+    @if (messages().length === 0) {
+      <div class="empty">No hay mensajes aún</div>
+    }
+  </div>
+
+  <div class="input-area">
+    <input
+      type="text"
+      [(ngModel)]="newMessage"
+      placeholder="Escribe un mensaje..."
+      (keydown.enter)="sendMessage()"
+    />
+    <button (click)="sendMessage()">Enviar</button>
+  </div>
+</div>
