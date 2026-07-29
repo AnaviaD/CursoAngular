@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
 import { environment } from '@environments/environment';
 import { GiphyResponse } from '../interfaces/giphy.interface';
 import { myGif } from '../interfaces/myGif.interface';
@@ -10,7 +10,12 @@ import { map } from 'rxjs';
 export class GifService {
 
   private http = inject(HttpClient);
+
   trendingGifs = signal<myGif[]>([])
+  trendingGifsLoading = signal(true);
+
+  searchHistory = signal<Record<string, myGif[]>>({})
+  searchHistoryKeys = computed(() => Object.keys(this.searchHistory()))
 
   constructor() {
     this.loadTrendingGifs()
