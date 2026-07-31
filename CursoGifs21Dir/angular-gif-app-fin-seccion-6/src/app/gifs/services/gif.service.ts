@@ -11,7 +11,9 @@ export class GifService {
   private http = inject(HttpClient)
   trendingGifs = signal<myGif[]>([])
 
-  constructor() { }
+  constructor() {
+    this.loadingTrendingGifs()
+  }
 
   loadingTrendingGifs(){
     this.http.get<GiphyResponse>(`${environment.urlApi}/gifs/trending`,{
