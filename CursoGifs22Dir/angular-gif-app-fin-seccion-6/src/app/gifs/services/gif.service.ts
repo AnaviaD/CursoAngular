@@ -4,6 +4,7 @@ import { myGif } from '../interface/myGif.interface';
 import { environment } from '@environments/environment';
 import { giphyToGif } from '../Mapper/giphyToGif.mapper';
 import { GiphyResponse } from '../interface/giphyResponse.interface';
+import { map } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class GifService {
@@ -15,7 +16,7 @@ export class GifService {
   trendingGifs = signal<myGif[]>([])
 
   loadTrendingGifs(){
-    this.http.get<GiphyResponse>(`${environment.urlApi}/gif/trending`,{
+    this.http.get<GiphyResponse>(`${environment.urlApi}/gifs/trending`,{
       params:{
         api_key: environment.giphyApiKey,
         limit: 10
@@ -26,5 +27,15 @@ export class GifService {
     })
   }
 
-
+  searchGifs(query: string){
+    return this.http.get<GiphyResponse>(`${environment.urlApi}/gifs/search`,{
+      params:{
+        api_key: environment.giphyApiKey,
+        q: query,
+        limit: 10
+      }
+    }).pipe(
+      map((items) => giphyToGif.giphyToGifArray(items.data))
+    )
+  }
 }
