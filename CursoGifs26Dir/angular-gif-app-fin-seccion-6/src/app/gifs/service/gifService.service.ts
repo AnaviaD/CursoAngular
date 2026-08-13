@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { GiphyResponse } from '../interface/giphyResponse.interface';
 import { environment } from '@environments/environment';
 import { giphyMapper } from '../Mapper/giphyMapper.mapper';
+import { map, Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class GifService {
@@ -11,7 +12,9 @@ export class GifService {
   trendingGifs = signal<myGif[]>([])
   private http = inject(HttpClient)
 
-  constructor() { }
+  constructor() {
+    this.loadTrendingGifs()
+  }
 
   loadTrendingGifs(){
     this.http.get<GiphyResponse>(`${environment.urlApi}/gifs/trending`,{
@@ -23,6 +26,18 @@ export class GifService {
       const gifs = giphyMapper.giphyArrayToGif(items.data)
       this.trendingGifs.set(gifs)
     })
+  }
+
+  searchGifsByName(query: string):Observable<myGif[]>{
+    return this.http.get<GiphyResponse>(`${environment.urlApi}/gifs/search`,{
+      params: {
+        api_key: environment.giphyApiKey,
+        limit: 10,
+        q:query
+      }
+    }).pipe(
+      map((items) => giphyMapper.giphyArrayToGif(items.data))
+    )
   }
 
 }
