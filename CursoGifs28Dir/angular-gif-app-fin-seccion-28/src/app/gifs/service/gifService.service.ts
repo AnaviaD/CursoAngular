@@ -27,4 +27,16 @@ export class GifService {
     })
   }
 
+  searchGifsByName(){
+    this.http.get<GiphyResponse>(`${environment.urlApi}/gifs/seach`,{
+      params: {
+        api_key: environment.giphyApiKey,
+        limit: 10
+      }
+    }).subscribe((items) =>{
+      const gifs = GiffMapper.giphyToGifArray(items.data)
+      this.trendingGifs.set(gifs)
+    })
+  }
+
 }
