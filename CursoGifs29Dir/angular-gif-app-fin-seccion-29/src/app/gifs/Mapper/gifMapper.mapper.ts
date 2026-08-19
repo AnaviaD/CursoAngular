@@ -1,5 +1,6 @@
-import { ItemResponse } from "../giphyResponse.interface";
-import { myGif } from "../myGif.interface";
+import { ItemResponse } from "../interface/giphyResponse.interface"
+import { myGif } from "../interface/myGif.interface"
+
 
 export class giphyMapper{
   static giphyItemToGif(item: ItemResponse): myGif{
