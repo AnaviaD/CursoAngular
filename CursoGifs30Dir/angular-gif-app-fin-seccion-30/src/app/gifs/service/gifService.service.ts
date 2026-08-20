@@ -39,7 +39,7 @@ export class GifService {
   }
 
   searchGifsByName(query: string):Observable<myGif[]>{
-    return this.http.get<GiphyResponse>(`${environment.urlApi}/gifs/trending`,{
+    return this.http.get<GiphyResponse>(`${environment.urlApi}/gifs/search`,{
       params:{
         api_key: environment.giphyApiKey,
         limit: 10,
